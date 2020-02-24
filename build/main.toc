@@ -1,0 +1,33 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Introduzione}{3}{section.1}
+\contentsline {section}{\numberline {2}Spazi metrici e spazi topologici}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Spazi metrici}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Continuit\IeC {\`a} in spazi metrici}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Spazi topologici}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Continuit\IeC {\`a} in spazi topologici}{10}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Ordinamento fra topologie, basi e prebasi}{11}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Assiomi di numerabilit\IeC {\`a}}{14}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Sottospazi topologici}{20}{subsection.2.7}
+\contentsline {section}{\numberline {3}Prodotti e quozienti topologici}{23}{section.3}
+\contentsline {subsection}{\numberline {3.1}Topologie prodotto}{23}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Propriet\IeC {\`a} delle topologie prodotto}{25}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Assiomi di separazione}{29}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Quozienti topologici}{35}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Quozienti per azioni di gruppi}{38}{subsection.3.5}
+\contentsline {section}{\numberline {4}Connessioni e compattezza}{39}{section.4}
+\contentsline {subsection}{\numberline {4.1}Ricoprimenti}{39}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Connessioni}{41}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Compattezza}{46}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Compattificazione di Alexandroff ed esaustioni}{54}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Compattezza per successioni}{56}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Completezza e caratterizzazione dei metrici compatti}{57}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Spazi di Baire}{61}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Azioni proprie}{62}{subsection.4.8}
+\contentsline {section}{\numberline {5}Spazi proiettivi e variet\IeC {\`a}}{66}{section.5}
+\contentsline {subsection}{\numberline {5.1}Spazi proiettivi}{66}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Proiettivi complessi}{69}{subsection.5.2}
+\contentsline {section}{\numberline {6}Omotopia}{71}{section.6}
+\contentsline {subsection}{\numberline {6.1}Omotopie, equivalenze omotopiche e retrazioni}{71}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Gruppo fondamentale}{74}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Il gruppo fondamentale come funtore}{76}{subsection.6.3}
