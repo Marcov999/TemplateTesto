@@ -3,14 +3,14 @@ SECS := $(wildcard secs/*.tex)
 
 all: ECA.pdf
 
-Geometria2.pdf: $(AUXX) main.tex $(SECS) mstyle.sty
+ECA.pdf: $(AUXX) main.tex $(SECS) mstyle.sty
 	cp $(AUXX) .
 	pdflatex main.tex
 	mv *.toc build
 	mv *.aux build
 	mv *.log build
 	mv *.out build
-	mv main.pdf Geometria2.pdf
+	mv main.pdf ECA.pdf
 
 $(AUXX): main.tex $(SECS)
 	pdflatex main.tex
