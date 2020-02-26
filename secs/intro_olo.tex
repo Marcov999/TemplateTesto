@@ -1,0 +1,29 @@
+Notazioni: $z=x+iy \in \mathbb{C}$ indica un numero complesso, $\bar{z}=x-iy$ il suo complesso coniugato. Con il termine \textit{dominio} si intende un aperto connesso. $\mathcal{O}(\Omega)=\{f: \Omega \rightarrow \mathbb{C} | f \text{ è olomorfa} \}$.
+$\text{Hol}(\Omega_1, \Omega_2)=\{f: \Omega_1 \rightarrow \Omega_2 | f \text{ è olomorfa} \}$.
+$\dfrac{\partial}{\partial z}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x}-i\dfrac{\partial}{\partial y}\right), \dfrac{\partial}{\partial \bar{z}}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x}+i\dfrac{\partial}{\partial y}\right)$. \\
+$\diff z=\diff x+i\diff y, \diff\bar{z}=\diff x-i\diff y, \diff z\left(\dfrac{\partial}{\partial z}\right)=1, \diff z\left(\dfrac{\partial}{\partial \bar{z}}\right)=0$. \\
+
+Daremo ora una definizione di funzione olomorfa basata su quattro definizioni, l'equivalenza delle quali è un prerequisito del corso e dovrebbe essere quindi nota agli studenti.
+
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}$ un aperto, $f: \Omega \in \mathbb{C}$ si dice \textsc{olomorfa} se vale una delle seguenti condizioni equivalenti:
+  \begin{nlist}
+      \item $f$ è \textit{$\mathbb{C}$-differenziabile}, cioè per ogni $a \in \Omega$ esiste $\displaystyle f'(a)=\lim_{z \rightarrow a}=\frac{f(z)-f(a)}{z-a}$;
+      \item $f$ è \textit{analitica}, cioè per ogni $a \in \Omega$ esiste $U \subseteq \Omega$ aperto e intorno di $a$ e $\{c_n\}\subset \mathbb{C}$ t.c. per ogni $z \in U$ $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$;
+      \item $f$ è \textit{olomorfa}, cioè $f$ è continua, $\partial f/\partial x$ e $\partial f/\partial y$ esistono su $\Omega$ e $\dfrac{\partial f}{\partial x}+i\dfrac{\partial f}{\partial y} \equiv 0$ (equazione di Cauchy-Riemann).
+      Si noti che la condizione è $\dfrac{\partial f}{\partial \bar{z}} \equiv 0$, da cui si ricava $\dfrac{\partial f}{\partial z}=f'$;
+      \item $f$ è continua e per ogni rettangolo (o disco) chiuso $D \subseteq \Omega$ si ha $\displaystyle \int_{\partial D} f\diff z=0$ (teorema di Cauchy-Goursat+Morera).
+  \end{nlist}
+\end{defn}
+
+La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli studenti che seguono il corso.
+
+\begin{prop}
+  Sia $\{c_n\} \in \mathbb{C}$. Allora:
+  \begin{nlist}
+    \item esiste $R \in [0, +\infty]$ t.c. $\displaystyle \sum_{n=0}^{+\infty} c_nz^n$ converge per $|z|<R$ e diverge per $|z|>R$. $R$ è detto \textit{raggio di convergenza}. La convergenza +è uniforme su $\Delta_r=\{|z| \le r\}, r<R$. $\displaystyle \limsup_{n \rightarrow +\infty} |c_n|^{1/n}=\frac{1}{R}$;
+    \item $\displaystyle \sum_{n=0}^{+\infty} nc_nz^{n-1}$ ha lo stesso raggio di convergenza;
+    \item se $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ allora $f'(z)=\sum_{n=0}^{+\infty} nc_n(z-a)^{n-1}$;
+    \item se $f \in \mathcal{O}(\Omega)$ e $a \in \Omega$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} \frac{1}{n!}f^{(n)}(a)(z-a)^n$. Questa formula è valida nel più grande disco aperto centrato in $a$ e contenuto in $\Omega$, cioè di raggio minore o uguale di $d(a, \partial \Omega)$.
+  \end{nlist}
+\end{prop}
