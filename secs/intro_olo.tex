@@ -27,3 +27,47 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
     \item se $f \in \mathcal{O}(\Omega)$ e $a \in \Omega$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} \frac{1}{n!}f^{(n)}(a)(z-a)^n$. Questa formula è valida nel più grande disco aperto centrato in $a$ e contenuto in $\Omega$, cioè di raggio minore o uguale di $d(a, \partial \Omega)$.
   \end{nlist}
 \end{prop}
+
+\begin{thm}
+  (Formula di Cauchy) Sia $\Omega$ aperto, $f \in \mathcal{O}(\Omega), D \subseteq \Omega$ disco/rettangolo chiuso. Per ogni $\displaystyle a \in D, f(a)=\frac{1}{2\pi i} \int_{\partial D} \frac{\zeta}{\zeta-a} \diff\zeta$.
+  Si ha che $\displaystyle f^{(n)}(a)=\frac{n!}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{(\zeta-a)^{n+1}}\diff \zeta$.
+\end{thm}
+
+\begin{cor}
+  (Disuguaglianze di Cauchy) $f \in \mathcal{O}(\Omega), D=D(a, r) \subseteq \Omega$ disco di centro $a \in \Omega$ e raggio $r>0$. Sia $\displaystyle M=\max_{\zeta \in \partial D} |f(\zeta)|$. Allora per ogni $n \ge 1, |f^{(n)}(a)| \le \dfrac{n!}{r^n}M$.
+\end{cor}
+
+\begin{cor}
+  (Teorema di Liouville) Sia $f \in \mathcal{O}(\mathbb{C})$ limitata. Allora $f$ è costante.
+\end{cor}
+
+\begin{proof}
+  Le disuguaglianze di Cauchy danno, per ogni $r>0$, $|f'(a)| \le \dfrac{M}{r}$ dove $\displaystyle M=\sup_{z \in \mathbb{C}} |f(z)|<+\infty \implies
+  f' \equiv 0$.
+\end{proof}
+
+\begin{thm}
+  (Principio di identità o del prolungamento analitico) $\Omega \subseteq \mathbb{C}$ dominio, $f, g \in \mathcal{O}(\Omega)$. Se $\{z \in \Omega | f(z)=g(z)\}$ ha un punto di accumulazione in $\Omega$, allora $f \equiv g$.
+\end{thm}
+
+\begin{cor}
+  $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$ non identicamente nulla, allora $\{z \in \Omega | f(z)=0\}$ è discreto in $\Omega$.
+\end{cor}
+
+\begin{thm} \label{pr_max}
+  (Principio del massimo) $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$. Allora:
+  \begin{nlist}
+    \item se $U$ è aperto e $U \subset \subset \Omega$ (si legge "$U$ relativamente compatto in $\Omega$" e si intende $\overline{U} \subset \Omega$ e $\overline{U}$ compatto) allora $\displaystyle \sup_{z \in U} |f(z)| \le \sup_{z \in \partial D} |f(z)|$. Inoltre, se $|f|$ ha un massimo locale in $U$, allora $f$ è costante in $\Omega$;
+    \item la stessa affermazione vale per $\mathfrak{Re} f$ e $\mathfrak{Im} f$;
+    \item se $\Omega$ è limitato poniamo $\displaystyle M=\sup_{x \in \partial D} \limsup_{z \rightarrow x} |f(z)| \in [0, +\infty]$. Allora per ogni $z \in \Omega$ $|f(z)| \le M$ con uguaglianza in un punto se e solo se $f$ è costante.
+  \end{nlist}
+\end{thm}
+
+\begin{ex}
+  Controesempio per vedere che serve $\Omega$ limitato per il punto (iii) del teorema \ref{pr_max}: $\Omega=\{z \in \mathbb{C} | \mathfrak{Re} z>0\}, f(z)=e^z$. $f \in \mathcal{O}(\mathbb{C}) \subset \mathcal{O}(\Omega)$.
+  $z \in \partial\Omega \implies z=iy \implies |f(iy)|=|e^{iy}|=1$, ma $f$ è illimitata in $\Omega$. Per correggere questa cosa si aggiunge il punto all'infinito.
+\end{ex}
+
+\begin{thm}
+  (Applicazione aperta) $f \in \mathcal{O}(\Omega)$ non costante $\implies$ $f$ è un'applicazione aperta.
+\end{thm}
