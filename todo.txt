@@ -1,3 +1,4 @@
-Lez 01: controlla appena aggiorna il registro delle lezioni
+Lez 01: ok
+Lez 02: ok
 
 Scrivere un README decente

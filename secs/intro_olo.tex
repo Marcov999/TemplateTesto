@@ -71,3 +71,62 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
 \begin{thm}
   (Applicazione aperta) $f \in \mathcal{O}(\Omega)$ non costante $\implies$ $f$ è un'applicazione aperta.
 \end{thm}
+
+Siano $X, Y$ spazi topologici e indichiamo con $C^0(X, Y)$ le funzioni continue da $X$ in $Y$.
+
+La \textit{topologia della convergenza puntuale} è la restrizione a $C^0(X, Y) \subset Y^X=\{f:X \rightarrow Y\}$ della topologia prodotto. Una prebase è data da $\mathcal{F}(x, U)=\{f \in C^0(X, Y) |f(x) \in U\}$ dove $x \in X$ e $U \subseteq Y$ è un aperto.
+
+\begin{exc}
+  $f_n \rightarrow f \in C^0(X, Y)$ per questa topologia se e solo se $f_n(x) \rightarrow f(x)$ per ogni $x \in X$.
+\end{exc}
+
+La \textit{topologia compatta aperta} ha invece come prebase $\mathcal{F}(K, U)=\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $l \subseteq X$ è un compatto.
+
+\begin{prop}
+  \begin{nlist}
+    \item La topologia compatta aperta è più fine della topologia della convergenza puntuale;
+    \item $Y$ Hausdorff $\implies$ topologia compatta aperta Hausdorff.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  \begin{nlist}
+    \item Ovvia (il singoletto è un compatto).
+    \item Prendiamo $f \not\equiv g$ continue, allora esiste $x_0 \in X$ t.c. $f(x_0) \not= g(x_0)$, per cui, dato che $Y$ è Hausdorff,
+    esistono $U, V \subset Y$ aperti disgiunti con $f(x_0) \in U, g(x_0) \in V \implies f \in \mathcal{F}(x_0, U), g \in \mathcal{F}(x_0, V), \mathcal{F}(x_0, U) \cap \mathcal{F}(x_0, V)=\emptyset$.
+  \end{nlist}
+\end{proof}
+
+\begin{thm}
+  (Ascoli-Arzelà) Siano $X, Y$ spazi metrici con $X$ localmente compatto, allora $\mathcal{F} \subseteq C^0(X, Y)$ è relativamente compatta rispetto alla topologia compatta aperta se e solo se:
+  \begin{nlist}
+    \item per ogni $x \in X$ $\{f(x) | f \in \mathcal{F}\} \subset \subset Y$;
+    \item $\mathcal{F}$ è equicontinua.
+  \end{nlist}
+\end{thm}
+
+La topologia compatta aperta viene detta anche topologia della \textit{convergenza uniforme sui compatti}: $\{f_n\} \subset C^0(X, \mathbb{R}^N)$. Se $K \subseteq X$ definiamo $\displaystyle \|f\|_K=\sup_{z \in K} \|f(z)\|$.
+$f_n \rightarrow f$ uniformemente sui compatti se per ogni $K \subset \subset X$ compatto e per ogni $\epsilon>0$ esiste $n_0$ t.c. $n \ge n_0 \implies \|f_n-f\|_K<\epsilon$.
+
+\begin{exc}
+  $f_n \rightarrow f$ uniformemente sui compatti se e solo se $f_n \rightarrow f$ nella topologia compatta aperta.
+\end{exc}
+
+\begin{thm}
+  (Weierstrass) Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ t.c. $f_n \rightarrow f \in C^0(\Omega, \mathcal{C})$ uniformemente sui compatti. Allora:
+  \begin{nlist}
+    \item $f \in \mathcal{O}(\Omega)$;
+    \item $f_n' \rightarrow f'$ uniformemente sui compatti.
+  \end{nlist}
+\end{thm}
+
+\begin{proof}
+  \begin{nlist}
+    \item Sia $a \in \Omega$, $0<r<d(a, \partial\Omega)$ t.c. $D=D(a, r) \subset \subset \Omega$. $\displaystyle f_n(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$ per ogni $z \in D(a, \rho)$ per ogni $0<\rho<r$.
+    Allora $\dfrac{1}{|\zeta-z|} \le \dfrac{1}{r-\rho}$ per ogni $z \in D(a, \rho), \zeta \in \partial{D}$.
+    Per ogni $\displaystyle z \in D(a, \rho), f(z)=\lim_{n \rightarrow +\infty} \frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$.
+    Adesso, per uniforme convergenza e uniforme limitatezza si può portare il limite dentro, perciò $\displaystyle f(z)=\frac{1}{2\pi i}\int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff \zeta$, ma questo, per il teorema di Cauchy-Goursat+Morera, implica $f \in \mathcal{O}(\Omega)$.
+    \item $\displaystyle f_n'(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n'(\zeta)}{(\zeta-z)^2}\diff\zeta \rightarrow \frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff\zeta=f'(z)$.
+    $f_n' \rightarrow f'$ uniformemente sui dischi e ogni compatto è coperto da un numero finito di dischi $\implies$ $f_n' \rightarrow f'$ uniformemente sui compatti.
+  \end{nlist}
+\end{proof}
