@@ -1,4 +1,5 @@
 Lez 01: ok
 Lez 02: ok
+Lez 03: Teorema di Vitali. Richiami sullo sviluppo di Laurent. Teorema di estensione di Riemann. Funzioni olomorfe bigettive sono biolomorfismi. Ordine, poli e singolarità essenziali. Residui. 
 
 Scrivere un README decente
