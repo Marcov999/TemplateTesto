@@ -80,7 +80,7 @@ La \textit{topologia della convergenza puntuale} è la restrizione a $C^0(X, Y) 
   $f_n \rightarrow f \in C^0(X, Y)$ per questa topologia se e solo se $f_n(x) \rightarrow f(x)$ per ogni $x \in X$.
 \end{exc}
 
-La \textit{topologia compatta aperta} ha invece come prebase $\mathcal{F}(K, U)=\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $l \subseteq X$ è un compatto.
+La \textit{topologia compatta aperta} ha invece come prebase $\mathcal{F}(K, U)= \\ =\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $K \subseteq X$ è un compatto.
 
 \begin{prop}
   \begin{nlist}
@@ -129,4 +129,22 @@ $f_n \rightarrow f$ uniformemente sui compatti se per ogni $K \subset \subset X$
     \item $\displaystyle f_n'(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n'(\zeta)}{(\zeta-z)^2}\diff\zeta \rightarrow \frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff\zeta=f'(z)$.
     $f_n' \rightarrow f'$ uniformemente sui dischi e ogni compatto è coperto da un numero finito di dischi $\implies$ $f_n' \rightarrow f'$ uniformemente sui compatti.
   \end{nlist}
+\end{proof}
+
+\begin{thm}
+  (Montel) $\Omega \subseteq \mathbb{C}$ aperto, $\mathcal{F} \subseteq \mathcal{O}(\Omega)$ t.c. per ogni $K \subset \subset C$ compatto esiste $M_K>0$ t.c. $\|f\|_K \le M_K$ per ogni $f \in \mathcal{F}$ (si diche che $\mathcal{F}$ è \textit{uniformemente limitata sui compatti}).
+  Allora $\mathcal{F}$ è relativamente compatta in $\mathcal{O}(\Omega)$.
+\end{thm}
+
+\begin{proof}
+  Basta vedere che ogni successione $\{f_n\} \subseteq \mathcal{F}$ ha una sottosuccessione convergente (??? alla peggio chiedi chiarimenti ad Abate). \\
+  Dati $a \in \Omega, 0<r<d(a, \partial \Omega), f \in \mathcal{O}(\Omega)$, sia $c_n(f)=\dfrac{f^{(n)}(a)}{n!}$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(f)(z-a)^n$ in $\overline{D(a, r)}$.
+  Inoltre, se $\|f\|_{\overline{D(a, r)}} \le M$, allora per le disuguaglianze di Cauchy $|c_n(f)| \le \dfrac{M}{r^n}$ per ogni $n \ge 0$.
+  Sia $\{f_n\} \subseteq \mathcal{F}$. Per ipotesi, esiste $M$ t.c. $\|f_n\|_{\overline{D(a, r)}} \le M$ per ogni $n$ $\implies$ $|c_0(f_n)| \le M$ per ogni $n$ $\implies$ esiste una sottosuccessione $c_0(f_{n_j^{(0)}})$ che tende a $c_0 \in \mathbb{C}$.
+  Per  induzione, da $\{f_{n_j^{(k-1)}}\}$ possiamo estrarre una sottosuccessione $\{f_{n_j^{(k)}}\}$ t.c. $c_k(f_{n_j^{(k)}}) \rightarrow c_k \in \mathbb{C}$. Consideriamo $\{f_{n_j^{(j)}}$, allora $c_k(f_{n_j^{(j)}}) \rightarrow c_k \in \mathbb{C}$ per ogni $k$.
+  Sia $f_{\nu_j}=f_{n_j^{(j)}}$. Poniamo $D_a=\overline{D(a, r/2)}$ e sia $z \in D_a$. Vogliamo $\displaystyle f_{\nu_j} \rightarrow f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ in $D_a$. Basta vedere che $f_{\nu:j}$ è di Cauchy uniformemente in $D_a$.
+  $\displaystyle |f_{\nu_h}(z)-f_{\nu_k}(z)| \le \sum_{n=0}^{+\infty} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n=\sum_{n=0}^N |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n+\sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n$.
+  Sappiamo che $|c_n(f_{\nu_k})| \le \dfrac{M}{r^n}$ e $z \in D_a \implies |z-a| \le \dfrac{r}{2}$.
+  Allora $\displaystyle \sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n \le \sum_{n>N} \frac{2M}{r^n}\left(\frac{r}{2}\right)^n=\frac{M}{2^{N-1}}$.
+  aA
 \end{proof}
