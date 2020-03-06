@@ -113,10 +113,16 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
   $c_{-1}=:res_f(a)$ è detto \textsc{residuo di $f$ in $a$}.
 \end{defn}
 
-$\gamma(t)=a+\rho e^{2\pi i t}, 0<\rho<r$.
-$\displaystyle \frac{1}{2\pi i} \int_{\gamma} f \diff z=\frac{1}{2\pi i} \sum_{n=-\infty}^{+\infty} c_n \int_{\gamma} (z-a)^n \diff z=\frac{1}{2\pi i} \sum_{n=-\infty}^{+\infty} c_n \int_0^1 \rho^ne^{2\pi i n t} \rho 2 \pi i e^{2\pi i t} \diff t=\sum_{n=-\infty}^{+\infty} c_n \rho^{n+1} \int_0^1 e^{2\pi i (n+1)t} \diff t=c_{-1}$.
+\begin{oss} \label{int_res}
+  $\gamma(t)=a+\rho e^{2\pi i t}, 0<\rho<r$. \\
+  $\displaystyle \frac{1}{2\pi i} \int_{\gamma} f \diff z=\frac{1}{2\pi i} \sum_{n=-\infty}^{+\infty} c_n \int_{\gamma} (z-a)^n \diff z= \\ \frac{1}{2\pi i} \sum_{n=-\infty}^{+\infty} c_n \int_0^1 \rho^ne^{2\pi i n t} \rho 2 \pi i e^{2\pi i t} \diff t=\sum_{n=-\infty}^{+\infty} c_n \rho^{n+1} \int_0^1 e^{2\pi i (n+1)t} \diff t=c_{-1}$.
+\end{oss}
 
 \begin{prop}
   $\Omega \subseteq \mathbb{C}$ aperto, $E \subset \Omega$ discreto, $D \subset \subset \Omega$ disco chiuso t.c. $E \cap \partial D=\emptyset$, $f\in \mathcal{O}(\Omega \setminus E)$.
   Allora $\displaystyle \frac{1}{2\pi i}\int_{\partial D} f \diff z=\sum_{a \in D \cap E} res_f(a)$.
 \end{prop}
+
+\begin{proof}
+  Traccia: si tratta di applicare una versione leggermente più forte del teorema di Cauchy-Goursat+Morera, prendendo per ogni punto di $E$ un dischetto tutto contenuto in $D$ che lo isoli dagli altri (qui si usa che $E$ è discreto) e considerare la regione $D$ meno quei dischetti. Il bordo di questa regione è considerato il bordo di $D$ meno il bordo dei dischetti. A questo punto l'integrale lungo questo bordo può essere approssimato con l'integrale di cammini che via via lo approssimano, i quali fanno tutti $0$ per la versione forte del teorema di C-G+M, dunque l'integrale sul bordo di $D$ meno l'integrale sul bordo dei dischetti (occhio al verso di percorrenza di uno e degli altri!) deve essere uguale a $0$. Per l'osservazione \ref{int_res} si ha la tesi.
+\end{proof}
