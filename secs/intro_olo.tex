@@ -50,7 +50,7 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
   (Principio di identità o del prolungamento analitico) $\Omega \subseteq \mathbb{C}$ dominio, $f, g \in \mathcal{O}(\Omega)$. Se $\{z \in \Omega | f(z)=g(z)\}$ ha un punto di accumulazione in $\Omega$, allora $f \equiv g$.
 \end{thm}
 
-\begin{cor}
+\begin{cor} \label{olo_discr}
   $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$ non identicamente nulla, allora $\{z \in \Omega | f(z)=0\}$ è discreto in $\Omega$.
 \end{cor}
 
@@ -111,47 +111,3 @@ $f_n \rightarrow f$ uniformemente sui compatti se per ogni $K \subset \subset X$
 \begin{exc}
   $f_n \rightarrow f$ uniformemente sui compatti se e solo se $f_n \rightarrow f$ nella topologia compatta aperta.
 \end{exc}
-
-\begin{thm}
-  (Weierstrass) Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ t.c. $f_n \rightarrow f \in C^0(\Omega, \mathcal{C})$ uniformemente sui compatti. Allora:
-  \begin{nlist}
-    \item $f \in \mathcal{O}(\Omega)$;
-    \item $f_n' \rightarrow f'$ uniformemente sui compatti.
-  \end{nlist}
-\end{thm}
-
-\begin{proof}
-  \begin{nlist}
-    \item Sia $a \in \Omega$, $0<r<d(a, \partial\Omega)$ t.c. $D=D(a, r) \subset \subset \Omega$. $\displaystyle f_n(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$ per ogni $z \in D(a, \rho)$ per ogni $0<\rho<r$.
-    Allora $\dfrac{1}{|\zeta-z|} \le \dfrac{1}{r-\rho}$ per ogni $z \in D(a, \rho), \zeta \in \partial{D}$.
-    Per ogni $\displaystyle z \in D(a, \rho), f(z)=\lim_{n \rightarrow +\infty} \frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$.
-    Adesso, per uniforme convergenza e uniforme limitatezza si può portare il limite dentro, perciò $\displaystyle f(z)=\frac{1}{2\pi i}\int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff \zeta$, ma questo, per il teorema di Cauchy-Goursat+Morera, implica $f \in \mathcal{O}(\Omega)$.
-    \item $\displaystyle f_n'(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n'(\zeta)}{(\zeta-z)^2}\diff\zeta \rightarrow \frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff\zeta=f'(z)$.
-    $f_n' \rightarrow f'$ uniformemente sui dischi e ogni compatto è coperto da un numero finito di dischi $\implies$ $f_n' \rightarrow f'$ uniformemente sui compatti.
-  \end{nlist}
-\end{proof}
-
-\begin{thm}
-  (Montel) $\Omega \subseteq \mathbb{C}$ aperto, $\mathcal{F} \subseteq \mathcal{O}(\Omega)$ t.c. per ogni $K \subset \subset C$ compatto esiste $M_K>0$ t.c. $\|f\|_K \le M_K$ per ogni $f \in \mathcal{F}$ (si diche che $\mathcal{F}$ è \textit{uniformemente limitata sui compatti}).
-  Allora $\mathcal{F}$ è relativamente compatta in $\mathcal{O}(\Omega)$.
-\end{thm}
-
-\begin{proof}
-  Basta vedere che ogni successione $\{f_n\} \subseteq \mathcal{F}$ ha una sottosuccessione convergente (segue dal fatto che, nelle ipotesi del teorema di Montel, la topologia compatta aperta è metrizzabile). \\
-  Dati $a \in \Omega, 0<r<d(a, \partial \Omega), f \in \mathcal{O}(\Omega)$, sia $c_n(f)=\dfrac{f^{(n)}(a)}{n!}$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(f)(z-a)^n$ in $\overline{D(a, r)}$.
-  Inoltre, se $\|f\|_{\overline{D(a, r)}} \le M$, allora per le disuguaglianze di Cauchy $|c_n(f)| \le \dfrac{M}{r^n}$ per ogni $n \ge 0$.
-  Sia $\{f_n\} \subseteq \mathcal{F}$. Per ipotesi, esiste $M$ t.c. $\|f_n\|_{\overline{D(a, r)}} \le M$ per ogni $n$ $\implies$ $|c_0(f_n)| \le M$ per ogni $n$ $\implies$ esiste una sottosuccessione $c_0(f_{n_j^{(0)}})$ che tende a $c_0 \in \mathbb{C}$.
-  Per  induzione, da $\{f_{n_j^{(k-1)}}\}$ possiamo estrarre una sottosuccessione $\{f_{n_j^{(k)}}\}$ t.c. $c_k(f_{n_j^{(k)}}) \rightarrow c_k \in \mathbb{C}$. Consideriamo $\{f_{n_j^{(j)}}\}$, allora $c_k(f_{n_j^{(j)}}) \rightarrow c_k \in \mathbb{C}$ per ogni $k$.
-  Sia $f_{\nu_j}=f_{n_j^{(j)}}$. Poniamo $D_a=\overline{D(a, r/2)}$ e sia $z \in D_a$. Vogliamo $\displaystyle f_{\nu_j} \rightarrow f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ in $D_a$. Basta vedere che $f_{\nu_j}$ è di Cauchy uniformemente in $D_a$.
-  $\displaystyle |f_{\nu_h}(z)-f_{\nu_k}(z)| \le \sum_{n=0}^{+\infty} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n=\sum_{n=0}^N |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n+\sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n$.
-  Sappiamo che $|c_n(f_{\nu_k})| \le \dfrac{M}{r^n}$ e $z \in D_a \implies |z-a| \le \dfrac{r}{2}$.
-  Allora $\displaystyle \sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n \le \sum_{n>N} \frac{2M}{r^n}\left(\frac{r}{2}\right)^n=\frac{M}{2^{N-1}}$.
-  $\displaystyle \sum_{n=0}^{+\infty} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n \le \sum_{n=0}^{+\infty} |c_n(f_{\nu_h})-c_n(f_{\nu_k})|\left(\dfrac{r}{2}\right)^n$.
-  Dato $\epsilon>0$, scegliamo $N>>1$ t.c. $\dfrac{M}{2^{N-1}}<\epsilon/2$ e $n_0$ t.c. per ogni $h, k \ge n_0, |c_n(f_{\nu_h})-c_n(f_{\nu_k})|\left(\dfrac{r}{2}\right)^n<\dfrac{\epsilon}{2(N+1)}$
-  (possiamo farlo, una volta fissato $N$, perché gli $n$ tra $0$ e $N$ sono in numero finito e le successioni $c_n(f_{\nu_j})$ convergono, dunque si sceglie un indice per ogni successione e si prende come $n_0$ il massimo di questi indici).
-  Mettendo insieme le disuguaglianze si ha che per ogni $\epsilon>0$ esiste $n_0$ t.c. per ogni $h, k \ge n_0$ e per ogni $z \in D_a$, $|f_{\nu_k}(z)-f_{\nu_k}(z)|<\epsilon$, dunque la sottosuccessione $f_{\nu_j}$ è di Cauchy e converge uniformemente su $D_a$.
-  Deve convergere a $f$ perché, per il teorema di Weierstrass, le derivate convergono al valore della derivata limite, e questo ci dice che i coefficienti della serie della funzione limite sono proprio quelli di $f$. \\
-  $\Omega$ è a base numerabile, dunque possiamo estrarre un sottoricoprimento numerabile da $\{D_a | a \in \Omega\}$. Sia dunque $\{a_j\} \subseteq \Omega$ t.c. $\displaystyle \bigcup_j D_{a_j}=\Omega$. Per quanto dimostrato finora, possiamo estrarre da $\{f_n\}$ una sottosuccessione $\{f_{n_j^{(0)}}\}$ convergente uniformemente in $D_{a_0}$.
-  Per induzione, da $\{f_{n_j^{(k-1)}}\}$ estraiamo una sottosuccessione $\{f_{n_j^{(k)}}\}$ convergente uniformemente in $D_{a_0} \cup \dots \cup D_{a_k}$. Prendiamo $\{f_{n_j^{(j)}}\}$ che converge uniformemente in ogni $D_{a_k}$.
-  Adesso, ogni compatto è coperto da un numero finito di $D_{a_k}$, quindi (scegliendo per ogni $\epsilon$ il massimo degli indici t.c. le cose che vogliamo valgono in quei $D_{a_k}$) $\{f_{n_j^{(j)}}\}$ converge uniformemente sui compatti.
-\end{proof}
