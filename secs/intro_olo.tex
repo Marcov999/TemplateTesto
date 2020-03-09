@@ -80,11 +80,11 @@ La \textit{topologia della convergenza puntuale} è la restrizione a $C^0(X, Y) 
   $f_n \rightarrow f \in C^0(X, Y)$ per questa topologia se e solo se $f_n(x) \rightarrow f(x)$ per ogni $x \in X$.
 \end{exc}
 
-La \textit{topologia compatta aperta} ha invece come prebase $\mathcal{F}(K, U)= \\ =\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $K \subseteq X$ è un compatto.
+La \textit{topologia compatta-aperta} ha invece come prebase $\mathcal{F}(K, U)= \\ =\{f \in C^0(X, Y) | f(K) \subseteq U\}$ dove $U$ è preso come sopra e $K \subseteq X$ è un compatto.
 
 \begin{prop}
   \begin{nlist}
-    \item La topologia compatta aperta è più fine della topologia della convergenza puntuale;
+    \item La topologia compatta-aperta è più fine della topologia della convergenza puntuale;
     \item $Y$ Hausdorff $\implies$ topologia compatta aperta Hausdorff.
   \end{nlist}
 \end{prop}
@@ -98,16 +98,16 @@ La \textit{topologia compatta aperta} ha invece come prebase $\mathcal{F}(K, U)=
 \end{proof}
 
 \begin{thm}
-  (Ascoli-Arzelà) Siano $X, Y$ spazi metrici con $X$ localmente compatto, allora $\mathcal{F} \subseteq C^0(X, Y)$ è relativamente compatta rispetto alla topologia compatta aperta se e solo se:
+  (Ascoli-Arzelà) Siano $X, Y$ spazi metrici con $X$ localmente compatto, allora $\mathcal{F} \subseteq C^0(X, Y)$ è relativamente compatta rispetto alla topologia compatta-aperta se e solo se:
   \begin{nlist}
     \item per ogni $x \in X$ $\{f(x) | f \in \mathcal{F}\} \subset \subset Y$;
     \item $\mathcal{F}$ è equicontinua.
   \end{nlist}
 \end{thm}
 
-La topologia compatta aperta viene detta anche topologia della \textit{convergenza uniforme sui compatti}: $\{f_n\} \subset C^0(X, \mathbb{R}^N)$. Se $K \subseteq X$ definiamo $\displaystyle \|f\|_K=\sup_{z \in K} \|f(z)\|$.
+La topologia compatta-aperta viene detta anche topologia della \textit{convergenza uniforme sui compatti}: $\{f_n\} \subset C^0(X, \mathbb{R}^N)$. Se $K \subseteq X$ definiamo $\displaystyle \|f\|_K=\sup_{z \in K} \|f(z)\|$.
 $f_n \rightarrow f$ uniformemente sui compatti se per ogni $K \subset \subset X$ compatto e per ogni $\epsilon>0$ esiste $n_0$ t.c. $n \ge n_0 \implies \|f_n-f\|_K<\epsilon$.
 
 \begin{exc}
-  $f_n \rightarrow f$ uniformemente sui compatti se e solo se $f_n \rightarrow f$ nella topologia compatta aperta.
+  $f_n \rightarrow f$ uniformemente sui compatti se e solo se $f_n \rightarrow f$ nella topologia compatta-aperta.
 \end{exc}

@@ -102,7 +102,7 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
 
 \begin{defn}
   Sia $\displaystyle f(z)=\sum_{n=-\infty}^{+\infty} c_n(z-a)^n$ in $D^*=D(a, r) \setminus \{a\}$. $ord_a(f):=\inf\{n \in \mathbb{Z} | c_n \not=0\}$ è detto \textsc{ordine di $f$ in $a$}. $ord_a(f) \ge 0 \Leftrightarrow f$ è olomorfa in $a$.
-  Se $0>ord_a(f)>-\infty$ diremo che $a$ è un \textsc{polo} di $f$. Se $ord_a=-\infty$ $a$ è una \textsc{singolarità essenziale}.
+  Se $0>ord_a(f)>-\infty$ diremo che $a$ è un \textsc{polo} di $f$. Se $ord_a(f)=-\infty$ $a$ è una \textsc{singolarità essenziale}.
 \end{defn}
 
 \begin{thm}
@@ -119,11 +119,71 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
 \end{oss}
 
 \begin{prop}
-  $\Omega \subseteq \mathbb{C}$ aperto, $E \subset \Omega$ discreto, $D \subset \subset \Omega$ disco chiuso t.c. $E \cap \partial D=\emptyset$, $f\in \mathcal{O}(\Omega \setminus E)$.
+  $\Omega \subseteq \mathbb{C}$ aperto, $E \subset \Omega$ discreto e chiuso in $\Omega$, $D \subset \subset \Omega$ disco chiuso t.c. $E \cap \partial D=\emptyset$, $f\in \mathcal{O}(\Omega \setminus E)$.
   Allora $\displaystyle \frac{1}{2\pi i}\int_{\partial D} f \diff z=\sum_{a \in D \cap E} res_f(a)$.
 \end{prop}
 
 \begin{proof}
-  Traccia: nel caso in cui $E \cap D$ sia finito si tratta di applicare una versione leggermente più forte del teorema di Cauchy-Goursat+Morera, prendendo per ogni punto di $E$ un dischetto tutto contenuto in $D$ che lo isoli dagli altri e considerando la regione $D$ meno quei dischetti. Il bordo di questa regione è considerato il bordo di $D$ meno il bordo dei dischetti. A questo punto l'integrale lungo questo bordo può essere approssimato con l'integrale di cammini sufficientemente regolari che via via lo approssimano, i quali fanno tutti $0$ per la versione forte del teorema di C-G+M, dunque l'integrale sul bordo di $D$ meno l'integrale sul bordo dei dischetti (occhio al verso di percorrenza di uno e degli altri!) deve essere uguale a $0$. Per l'osservazione \ref{int_res} si ha la tesi. \\
-  Aggiungere come fare se $E \cap D$ è infinito (cerca in giro o chiedi ad Abate). Potrebbe essere che $E$ non può avere punti di accumulazione in $D$ e che quindi l'unico caso sensato è che $D$ sia tutto il piano complesso.
+  Traccia: si dimostra che $E \cap D$ è finito e si applica una versione leggermente più forte del teorema di Cauchy-Goursat+Morera, prendendo per ogni punto di $E$ un dischetto tutto contenuto in $D$ che lo isoli dagli altri e considerando la regione $D$ meno quei dischetti. Il bordo di questa regione è considerato il bordo di $D$ meno il bordo dei dischetti. Questo bordo, a meno di aggiungere dei tratti lineari che uniscono una circonferenza all'altra (che quindi verranno percorsi in entrambi i sensi nell'integrale e non daranno contributo), è percorribile con un solo cammino omotopo al cammino costante in $\Omega \setminus E$, il cui integrale fa $0$ per la versione forte del teorema di C-G+M, dunque l'integrale sul bordo di $D$ meno l'integrale sul bordo dei dischetti (occhio al verso di percorrenza di uno e degli altri!) deve essere uguale a $0$. Per l'osservazione \ref{int_res} si ha la tesi.
+\end{proof}
+
+\begin{oss} \label{wn}
+  $\gamma:[0, 1] \rightarrow \mathbb{C}$ chiusa ($\gamma(0)=\gamma(1))$, $a \not\in \gamma([0, 1])$. $p_s: \mathbb{C} \rightarrow \mathbb{C} \setminus \{a\}$, $p_a(z)=a+e^z$ è un rivestimento.
+  \begin{center}
+    \begin{tikzcd}
+            & \mathbb{C} \arrow[d, "p_a"]\\
+            \left[0,1\right] \arrow[ru, "\tilde{\gamma}"] \arrow[r, "\gamma"'] & \mathbb{C} \setminus \{a\}
+     \end{tikzcd}
+  \end{center}
+  Sia $\tilde{\gamma}$ un sollevamento di $\gamma$ rispetto a $p_a$, $p_a(\tilde{\gamma}(1))=\gamma(1)=\gamma(0)=p_a(\tilde{\gamma}(0)) \iff e^{\tilde{\gamma}(1)}=e^{\tilde{\gamma}(0)} \iff \tilde{\gamma}(1)-\tilde{\gamma}(0) \in 2\pi i \mathbb{Z}$.
+\end{oss}
+
+\begin{defn}
+  L'\textsc{indice di avvolgimento $\gamma$ rispetto ad $a$} (\textit{winding number} in inglese) è dato dall'osservazione \ref{wn}: $n(\gamma, a):=\dfrac{1}{2\pi i}(\tilde{\gamma}(1)-\tilde{\gamma}(0)) \in \mathbb{Z}$.
+\end{defn}
+
+\begin{thm}
+  \begin{nlist}
+    \item $n(\gamma, a)$ dipende solo da $a$ e da $\gamma$ e non dal sollevamento scelto;
+    \item $n(\gamma, a) \in \mathbb{Z}$;
+    \item $\displaystyle n(\gamma, a)=\frac{1}{2\pi i}\int_{\gamma} \frac{1}{z-a} \diff z$;
+    \item $a \mapsto n(\gamma, a)$ è costante sulle componente connesse di $\mathbb{C} \setminus \gamma([0, 1])$. In particolare $n(\gamma, a)=0$ sulla componente connessa illimitata di $\mathbb{C} \setminus \gamma([0, 1])$;
+    \item $\gamma(t)=a_0+re^{2\pi i t} \implies n(a, \gamma)=1$ per ogni $a \in D(a_0, r)$;
+    \item $\gamma_1$ e $\gamma_2$ chiuse con $\gamma_1(0)=\gamma_2(0)=p_0$ omotope (tramite omotopia che fissa il punto base $p_0$) e $a \not\in \gamma_1([0, 1]) \cup \gamma_2([0, 1])$, se l'omotopia è in $\mathbb{C} \setminus \{a\}$ allora $n(\gamma_1, a)=n(\gamma_2, a)$.
+  \end{nlist}
+\end{thm}
+
+\begin{thm}
+  (Teorema dei residui) $\Omega \subseteq \mathbb{C}$ aperto, $E \subset \Omega$ discreto e chiuso in $\Omega$, $\gamma$ curva chiusa in $\Omega \setminus E$ omotopa a una costante in $\Omega$.
+  Allora per ogni $f \in \mathcal{O}(\Omega \setminus E)$ $\displaystyle \frac{1}{2\pi i} \int_{\gamma} f \diff z=\sum_{a \in E} res_f(a) \cdot n(\gamma, a)$.
+\end{thm}
+
+\begin{defn}
+  $\Omega \subseteq \mathbb{C}$, $f$ è \textsc{meromorfa} in $\Omega$ se esiste $E \subset \Omega$ discreto e chiuso in $\Omega$ t.c. $f \in \mathcal{O}(\Omega \setminus E)$ e nessun punto di $E$ è una singolarità essenziale. Scriveremo che $f \in \mathcal{M}(\Omega)$.
+\end{defn}
+
+\begin{prop}
+  \begin{nlist}
+    \item $f \in \mathcal{O}(\Omega \setminus E)$ è meromorfa $\iff$ localmente è quoziente di due funzioni olomorfe;
+    \item $f \in \mathcal{O}(\Omega \setminus E)$ è meromorfa $\iff$ per ogni $a \in E$ o $|f|$ è limitato vicino ad $a$ o $\displaystyle \lim_{z \rightarrow a} |f(z)|=+\infty$.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  \begin{nlist}
+    \item ($\implies$) Se $a \in \Omega \setminus E$ banalmente $f=\dfrac{f}{1}$ vicino ad $a$. \\
+    Se $a \in E$, $\displaystyle f(z)=\sum_{n \ge n_0} c_n(z-a)^n=(z-a)^{n_0}(c_{n_0}+h(z))$, $h$ olomorfa vicino ad $a$. Se $n_0<0$, $f(z)=\dfrac{c_{n_0}+h(z)}{(z-a)^{-n_0}}$.
+
+    ($\Leftarrow$) Se $\displaystyle f(z)=\frac{h_1(z)}{h_2(z)}=\frac{\sum_{n \ge n_1 b_n(z-a)^n}}{\sum_{m \ge n_2} c_m(z-a)^m}=(z-a)^{n_1-n_2}k(z)$, $k$ olomorfa vicino ad $a$.
+    \item Per Casorati-Weierstrass, $a \in E$ è singolarità essenziale $\iff$ $\displaystyle \lim_{z \rightarrow a} |f(z)|$ non esiste. Per lo stesso motivo, è un polo $\iff$ $\displaystyle \lim_{z \rightarrow a} |f(z)|=+\infty$.
+  \end{nlist}
+\end{proof}
+
+\begin{thm}
+  (Principio dell'argomento) $\Omega \subseteq \mathbb{C}$, $f \in \mathcal{M}(\Omega)$. $Z_f:=\{\text{zeri di } f\}, P_f:=\{\text{poli di } f\}$. $\gamma$ curva chiusa in $\Omega \setminus (Z_f \cup P_f)$ omotopa a una costante in $\Omega$.
+  Allora $\displaystyle \sum_{a \in Z_f \cup P_f} n(\gamma, a) \cdot ord_a(f)=\frac{1}{2\pi i}\int_{\gamma} \frac{f'}{f} \diff z$.
+\end{thm}
+
+\begin{proof}
+  $ord_a(f)=res_{f'/f}(a)$. Infatti $f(z)=(z-a)^mh(z)$ con $m=ord_a(f)$, $h(a) \not=0$ e $h$ olomorfa. $f'(z)=m(z-a)^{m-1}h(z)+(z-a)^mh'(z)$. Allora $\dfrac{f'}{f}=\dfrac{m}{z-a}+\dfrac{h'(z)}{h(z)}$ e $\dfrac{h'}{h}$ è olomorfa $\implies$ $res_{f'/f}(a)=m=ord_a(f)$. La tesi segue allora dal teorema dei residui.
 \end{proof}

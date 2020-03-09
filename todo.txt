@@ -1,5 +1,6 @@
 Lez 01: ok
 Lez 02: ok
 Lez 03: ok
+Lez 04: Teorema di Rouché. Teorema di Ritt. Teoremi di Hurwitz.
 
 Scrivere un README decente
