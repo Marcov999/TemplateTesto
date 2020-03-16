@@ -1,0 +1,60 @@
+Come abbiamo già visto, il disco unitario (aperto) è definito come $\mathbb{D}=\{z \in \mathbb{C} \mid |z|<1\}$.
+
+\begin{lm}
+  (Lemma di Schwarz) Sia $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$ t.c. $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguale nella prima per $z \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z, \theta \in \mathbb{R}$, cioè $f$ è una rotazione.
+\end{lm}
+
+\begin{proof}
+  $f(0)=0$ $\implies$ possiamo costruire $g \in \text{Hol}(\mathbb{D}, \mathbb{C})$ con $g(z)=\dfrac{f(z)}{z}$ estendendola per continuità in $0$ a $g(0)=f'(0)$. Fissiamo $0<r<1$.
+  Per ogni $|z| \le r$, per il principio del massimo $\displaystyle |g(z)| \le \max_{|w|=r} |g(w)|=\max_{|w|=r} \frac{|f(w)|}{r} \le \frac{1}{r}$. Mandando $r$ a $1$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|g(z)| \le 1$, da cui $|f(z)|\le |z|$ e $|f'(0)| \le 1$. \\
+  Se vale uno dei due uguali sopra, allora esiste $z_0 \in \mathbb{D}$ t.c. $|g(z_0)|=1$, per cui sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$, cioè $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$ da cui $f(z)=e^{i\theta}z$.
+\end{proof}
+
+\begin{cor}
+  Se $f \in \text{Aut}(\mathbb{D})$ è t.c. $f(0)=0$, allora $f(z)=e^{i\theta}z$.
+\end{cor}
+
+\begin{proof}
+  $f^{-1} \in \text{Aut}(\mathbb{D})$. $(f^{-1})'(0)=\dfrac{1}{f'(0)}$. Per il lemma di Schwarz, $|f'(0)| \le 1$ e $|(f^{-1})'(0)| \le 1$ $\implies$ $|f'(0)|=1$, da cui la tesi sempre per il lemma di Schwarz.
+\end{proof}
+
+\begin{lm} \label{az_gr}
+  Sia $G$ un gruppo che agisce fedelmente su uno spazio $X$, cioè per ogni $g \in G$ è data una biezione $\gamma_g:X \rightarrow X$ t.c. $\gamma_{e}=\id$ e $\gamma_{g_1} \circ \gamma_{g_2} =\gamma_{g_1g_2}$, inoltre $\gamma_{g_1}=\gamma_{g_2} \iff g_1=g_2$.
+  Sia $G_{x_0}$ il gruppo di isotropia di $x_0 \in X$, cioè $G_{x_0}=\{g \in G \mid \gamma_g(x_0)=x_0\}$. Supponiamo che per ogni $x \in X$ esiste $g_x \in G$ t.c. $\gamma_{g_x}(x)=x_0$ e sia $\Gamma=\{g_x \mid x \in X\}$.
+  Allora $G$ è generato da $\Gamma$ e $G_{x_0}$, cioè ogni $g \in G$ è della forma $g=hg_x$ con $x \in X$ e $h \in G_{x_0}$.
+\end{lm}
+
+\begin{proof}
+  Sia $g \in G$ e $x=\gamma_g(x_0)$. Allora $(\gamma_{g_x}\circ \gamma_g)(x_0)=x_0$ $\implies$ $\gamma_{g_x}\circ \gamma_g=\gamma_{g_xg}=\gamma_h$ con $h \in G_{x_0}$ $\implies$ $g_xg=h$ $\implies$ $g=g_x^{-1}h$.
+  Partendo da $g^{-1}$ avremmo ottenuto $g^{-1}=g_x^{-1}h$ $\implies$ $g=h^{-1}g_x$ con $h \in G_{x_0}$.
+\end{proof}
+
+\begin{prop}
+  $f \in \text{Aut}(\mathbb{D})$ $\iff$ esistono $\theta \in \mathbb{R}$ e $a \in \mathbb{D}$ t.c. $f(z)=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$.
+\end{prop}
+
+\begin{proof}
+  ($\Leftarrow$) $1-\left|\dfrac{z-a}{1-\bar{a}z}\right|^2=\dfrac{(1-|a|^2)(1-|z|^2)}{|1-\bar{a}z|^2}$. Se $a, z \in \mathbb{D}$, $f(z) \in \mathbb{D}$.
+  Se $a \in \mathbb{D}, z \in \partial\mathbb{D}$, $f(z) \in \partial\mathbb{D}$. L'inversa è $f^{-1}(z)=e^{-i\theta}\dfrac{z+ae^{i\theta}}{z+\bar{a}e^{-i\theta}z}$ ed è della stessa forma. Si noti che $f(a)=0$.
+
+  ($\implies$) Scriviamo per semplicità $f_{a, \theta}=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$. Vediamo $\text{Aut}(\mathbb{D})$ come gruppo che agisce su $\mathbb{D}$. $\text{Aut}(\mathbb{D})_0$ è, per il corollario del lemma di Schwarz, $\{f_{0, \theta} \mid \theta \in \mathbb{R}\}$.
+  $\Gamma=\{f_{a, 0} \mid a \in \mathbb{D}\}$ ($f_{a, 0}(a)=0$).
+  Per il lemma \ref{az_gr}, $\text{Aut}(\mathbb{D})$ è generato da $\text{Aut}(\mathbb{D})$ e $\Gamma$, cioè ogni $\gamma \in \text{Aut}(\mathbb{D})$ è della forma $\gamma=f_{0, \theta} \circ f_{a, 0}=f_{a, \theta}$.
+\end{proof}
+
+\begin{cor}
+  $\text{Aut}(\mathbb{D})$ agisce in modo transitivo su $\mathbb{D}$, cioè per ogni $z_0, z_1 \in \mathbb{D}$ esiste $\gamma \in \text{Aut}(\mathbb{D})$ t.c. $\gamma(z_0)=z_1$.
+\end{cor}
+
+\begin{proof}
+  $\gamma=f_{z_1, 0}^{-1} \circ f_{z_0, 0}$.
+\end{proof}
+
+\begin{oss}
+  Dati $z_0, z_1, w_0, w_1 \in \mathbb{D}$ ($z_0 \not=z_1, w_0 \not=w_1$), in generale non esiste $\gamma \in \text{Aut}(\mathbb{D})$ t.c. $\gamma(z_0)=w_0$ e $\gamma_(z_1)=w_1$.
+  Infatti, se poniamo $z_0=w_0=0, z_1, w_1 \not=0$, abbiamo che $\gamma(0)=0$ $\implies$ $\gamma(z)=e^{i\theta}z$ $\implies$ $|\gamma(z_1)|=|z_1|$, per cui se $|w_1|\not=|z_1|$ non è possibile trovare un siffatto $\gamma$.
+\end{oss}
+
+\begin{exc}
+  Per ogni $\sigma_0, \sigma_1, \tau_0, \tau_1 \in \partial\mathbb{D}$ con $\sigma_0\not=\sigma_1, \tau_0\not=\tau_1$ esiste $\gamma \in \text{Aut}(\mathbb{D})$ t.c. $\gamma(\sigma_0)=\tau_0$ e $\gamma(\sigma_1)=\tau_1$.
+\end{exc}

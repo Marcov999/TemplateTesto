@@ -2,6 +2,7 @@ Lez 01: ok
 Lez 02: ok
 Lez 03: ok
 Lez 04: ok
-Lez 05: aggiornare appena aggiorna il registro delle lezioni
+Lez 05: ok
+Lez 06: Lemma di Schwarz-Pick. Distanza di Poincaré. Geometria della distanza di Poincaré.
 
 Scrivere un README decente

@@ -115,7 +115,7 @@ Possiamo ora dare una definizione generale.
 \end{oss}
 
 \begin{cor}
-  Sia $f \in \text{Hol}(\hat{\mathbb{C}}, \hat{\mathbb{C}})$, $f \in \text{Aut}(\hat{\mathbb{C}})$ $\iff$ $\deg{f}=1$ $\iff$ $f(z)=\dfrac{az+b}{cz+d}$ con $ad-bc=1$.
+  $f \in \text{Aut}(\hat{\mathbb{C}})$ $\iff$ $\deg{f}=1$ $\iff$ $f(z)=\dfrac{az+b}{cz+d}$ con $ad-bc=1$.
 \end{cor}
 
 \begin{proof}
@@ -131,3 +131,13 @@ Possiamo ora dare una definizione generale.
 \begin{exc}
   $\text{Aut}(\hat{\mathbb{C}})$ è isomorfo a $\faktor{SL(2, \mathbb{C})}{\{\pm I_2\}}$.
 \end{exc}
+
+\begin{cor}
+  $f \in \text{Aut}(\mathbb{C})$ $\iff$ $f(z)=az+b, a, b \in \mathbb{C}, a\not=0$.
+\end{cor}
+
+\begin{proof}
+  ($\Leftarrow$) Ovvia.
+
+  ($\implies$) $f \in \text{Aut}(\mathbb{C})$ $\implies$ $f$ è iniettiva, dunque per Casorati-Weierstrass $\infty$ è un polo di $f$ $\implies$ $f$ si estende a un automorfismo di $\hat{\mathbb{C}}$ con $f(\infty)=\infty$ $\implies$ $f(z)=\frac{a}{d}z+\frac{b}{d}$.
+\end{proof}
