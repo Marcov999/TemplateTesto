@@ -61,3 +61,86 @@ $\Psi$ è un biolomorfismo fra $\mathbb{D}$ e $\mathbb{H}^+$ che si estende cont
 \begin{ex}
   $\gamma \in \text{Aut}(\mathbb{H}^+)$ è iperbolico con $\gamma(\infty)=\infty$ e $\gamma(0)=0$ $\iff$ $\gamma(w)=\alpha w$ con $\alpha>0$.
 \end{ex}
+
+Passiamo ora alla \textsc{dinamica di funzioni iterate}. Abbiamo uno spazio generico $X$ e una funzione $f:X \rightarrow X$. Le sue \textit{iterate} sono $f^2=f \circ f$ e, induttivamente, $f^{k+1}=f \circ f^{k-1}$. Vogliamo capire il comportamento asintotico di $\{f^k\}$ (in relazione alla struttura presente su $X$), per esempio, capire cosa succede all'\textit{orbita} $O^+(x)=\{f^k(x)\}$ con $x \in X$.
+
+\begin{ex}
+  $\gamma(w)=\alpha w \implies \gamma^2(w)=\alpha(\alpha w)=\alpha^2 w \implies \gamma^k(w)=\alpha^k w$.
+  Quindi: se $0<\alpha<1$, $\gamma^k(w) \rightarrow 0$ per $k \rightarrow +\infty$ $\implies$ $\gamma^k \rightarrow 0$ (costante) uniformemente sui compatti; se $\alpha>1$, $\gamma^k(w) \rightarrow \infty$ per $k \rightarrow +\infty$ $\implies$ $\gamma^k \rightarrow \infty$ (costante) uniformemente sui compatti.
+\end{ex}
+
+\begin{ex}
+  $\gamma(w)=w+\beta \implies \gamma^k(w)=w+k\beta \implies \gamma^k(w) \rightarrow \infty$ per $k \rightarrow +\infty$ $\implies$ $\gamma^k \rightarrow \infty$ (costante) uniformemente sui compatti.
+\end{ex}
+
+\begin{oss}
+  \begin{center}
+    \begin{tikzcd}
+      X \arrow[r, "f"] & X\\
+      Y \arrow[u, "\Psi", "\cong" right] \arrow[r, "F"] & Y \arrow[u, "\cong", "\Psi" right]
+    \end{tikzcd}
+  \end{center}
+  $\Psi$ bigezione (omeomorfismo/biolomorfismo/eccetera), $F=\Psi^{-1} \circ f \circ \Psi$, cioè \textit{$F$ è coniugata a $f$}. Allora $f^k=\Psi^{-1} \circ f^k \circ \Psi$, cioè $F^k$ è coniugata a $f^k$ per ogni $k$. In particolare, la "dinamica di $F$" è "uguale" alla "dinamica di $f$".
+\end{oss}
+
+\begin{cor}
+  Sia $\gamma \in \text{Aut}(\mathbb{D})$ parabolico o iperbolico, allora $\gamma^k$ converge uniformemente sui compatti a una funzione costantemente uguale a un punto fisso di $\gamma$ sul bordo.
+\end{cor}
+
+\begin{proof}
+  A meno di coniugio possiamo supporre $\text{Fix}(\gamma)=\{1\}$ nel caso parabolico e $\{1, -1\}$ nel caso iperbolico. Coniughiamo con $\Psi$ e usiamo gli esempi.
+\end{proof}
+
+Sia $\gamma \in \text{Aut}(\mathbb{D})$ ellittico, a meno di coniugio $\gamma(0)=0 \implies \gamma(z)=e^{2\pi i \theta}z \implies \gamma^k(z)=e^{2k\pi i \theta}z$.
+Se $\theta \in \mathbb{Q}$, esiste $k_0$ t.c. $k_0\theta \in \mathbb{Z} \implies \gamma^{k_0}(z) \equiv z \iff \gamma^{k_0}=\id_{\mathbb{D}}$.
+
+\begin{exc}
+  Se $\theta \not\in \mathbb{Q}$, $\gamma^k(z) \not=z$ per ogni $z \not=0$ e $k \in \mathbb{N}^*$, da cui si ha anche che $\gamma^k(z)\not=\gamma^h(z)$ per ogni $z \not=0$ e $h \not=k$.
+\end{exc}
+
+\begin{exc}
+  Se $\theta \not\in \mathbb{Q}$, $\{\gamma^k(z_0) \mid k \in \mathbb{N}\}$ è densa nella circonferenza $\{|z|=|z_0|\}$.
+\end{exc}
+
+Vogliamo adesso studiare la dinamica di una $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$ qualunque.
+
+\begin{defn}
+  Sia $f \in \text{Hol}(\Omega, \Omega)$, un \textit{punto limite} di $\{f^k\}$ è $g \in \text{Hol}(\Omega, \mathbb{C})$ t.c. è il limite di una sottosuccessione $\{f^{k_{\nu}}\}$, cioè $f^{k_{\nu}} \rightarrow g$.
+\end{defn}
+
+\begin{lm} \label{pli}
+  Sia $\Omega \subseteq \mathbb{C}$ dominio, $f \in \text{Hol}(\Omega, \Omega)$. Se $\id_{\Omega}$ è un punto limite di $\{f^k\}$, allora $f \in \text{Aut}(\Omega)$.
+\end{lm}
+
+\begin{proof}
+  $f^{k_{\nu}} \rightarrow \id_{\Omega}$ $\implies$ $f$ è iniettiva (se $z_1 \not=z_2$ sono t.c. $f(z_1)=f(z_2)$, allora $f^{k_{\nu}}(z_1)=f^{k_{\nu}}(z_2)$, ma la prima tende a $z_1$ e la seconda a $z_2$, che sono diversi, assurdo).
+  Se $z_0 \in \Omega$, $z_0=\id_{\Omega}(z_0)$. Per il primo teorema di Hurwitz, $\id_{\Omega}(z_0) \in f^{k_{\nu}}(\Omega)$ per $\nu \gg 1$, ma $f^{k_{\nu}}(\Omega) \subseteq f(\Omega)$ $\implies$ $f$ è suriettiva.
+\end{proof}
+
+\begin{prop}
+  Sia $\Omega \subset \subset \mathbb{C}$ un dominio limitato, $f \in \text{Hol}(\Omega, \Omega)$. Sia $h \in \text{Hol}(\Omega, \mathbb{C})$ un punto limite di $\{f^k\}$ (che esiste per il teorema di Montel). Allora o
+  \begin{nlist}
+    \item $h \equiv c \in \overline{\Omega}$ oppure
+    \item $h \in \text{Aut}(\Omega)$ e in questo caso $f \in \text{Aut}(\Omega)$.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  Sia $\displaystyle h=\lim_{\nu \rightarrow +\infty} f^{k_{\nu}}$. Poniamo $m_{\nu}=k_{\nu+1}-k_{\nu}$. Possiamo supporre $m_{\nu} \rightarrow +\infty$. Per Montel, a meno di una sottosuccessione possiamo supporre $f^{m_{\nu}} \xrightarrow{\nu \rightarrow +\infty} g \in \text{Hol}(\Omega, \mathbb{C})$.
+  Se $h$ è costante abbiamo finito. Se $h$ non è costante, per il teorema dell'applicazione aperta $h$ è aperta $\implies$ $h(\Omega)$ è aperto in $\Omega$.
+  Se $z \in \Omega$, $\displaystyle g(h(z))=\lim_{\nu \rightarrow +\infty} f^{m_{\nu}}(f^{k_{\nu}}(z))=\lim_{\nu \rightarrow +\infty} f^{k_{\nu+1}}(z)=h(z) \implies g\restrict{h(\Omega) \cap \Omega}=\id_{\Omega}$,
+  ma per il principio di identità questo ci dà $g\restrict{\Omega} \equiv \id_{\Omega}$, dunque per il lemma \ref{pli} abbiamo che $f \in \text{Aut}(\Omega)$. A meno di sottosuccessioni è facile vedere che $f^{-k_{\nu}}=(f^{-1})^{k_{\nu}}$ converge a $h^{-1}$.
+\end{proof}
+
+\begin{prop}
+  Sia $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$, $f(z_0)=z_0, z_0 \in \mathbb{D}$, $f\not\in \text{Aut}(\mathbb{D})$. Allora $f^k \rightarrow z_0$ (costante) uniformemente sui compatti.
+\end{prop}
+
+\begin{proof}
+  A meno di coniugio possiamo supporre $z_0=0$. Per il lemma di Schwarz, $|f(z)|<|z|$ per ogni $z \in \mathbb{D}\setminus\{0\}$. Fissiamo $0<r<1$. In $\overline{\mathbb{D}}_r$, $\left|\dfrac{f(z)}{z}\right|$ ha un massimo $\lambda_r<1$.
+  Per ogni $z \in \overline{\mathbb{D}}_r$, $|f(z)| \le \lambda_r|z| \implies |f^2(z)| \le \lambda_r|f(z)| \le \lambda_r^2|z| \implies |f^k(z)| \le \lambda_r^k|z| \le \lambda_r^kr \rightarrow 0$ per $k \rightarrow +\infty$ $\implies$ $f^k \rightarrow 0$ (costante) uniformemente sui compatti.
+\end{proof}
+
+\begin{thm}
+  (Wolff-Denjoy) Sia $f \in \text{Hol}(\mathbb{D})$ senza punti fissi in $\mathbb{D}$. Allora esiste un unico $\tau_0 \in \partial\mathbb{D}$ t.c. $f^k \rightarrow \tau_0$ (costante) uniformemente sui compatti.
+\end{thm}
