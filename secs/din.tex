@@ -1,0 +1,63 @@
+Vogliamo adesso cercare di studiare qual è la "dinamica" delle funzioni olomorfe. Lo faremo nei casi del disco e del semipiano superiore.
+
+\begin{prop}
+  Sia $\gamma \in \text{Aut}(\mathbb{D}), \gamma \not=\id_{\mathbb{D}}$. Allora o
+  \begin{nlist}
+    \item $\gamma$ ha un unico punto fisso in $\mathbb{D}$ (si parla in questo caso di automorfismo \textit{ellittico}) o
+    \item $\gamma$ non ha punti fissi in $\mathbb{D}$ e ha un unico punto fisso in $\partial\mathbb{D}$ (\textit{parabolico}) o
+    \item $\gamma$ non ha punti fissi in $\mathbb{D}$ e ha due punti fissi distinti in $\partial\mathbb{D}$ (\textit{iperbolico}).
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  $\gamma(z_0)=z_0 \iff e^{i\theta}(z_0-a)=(1-\bar{a}z_0)z_0 \iff \bar{a}z_0^2+(e^{i\theta}-1)z_0-e^{i\theta}a=0$, equazione di secondo grado con radici $z_1, z_2$ (può essere che $z_1=z_2$) t.c.
+  $z_1 \cdot z_2=-e^{i\theta}\dfrac{a}{\bar{a}} \in \partial\mathbb{D} \implies |z_1||z_2|=1$.
+  Se $z_1 \not=z_2$, o $z_1 \in \mathbb{D}$ e $z_2 \in \mathbb{C} \setminus \{\overline{\mathbb{D}}\}$ (caso ellittico) e $z_1, z_2 \in \partial\mathbb{D}$ (caso iperbolico). Se $z_1=z_2$, $|z_1|=|z_2|=1$ (caso iperbolico).
+\end{proof}
+
+\begin{oss}
+  Se $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$ è t.c. $f(z_1)=z_1$ e $f(z_2)=z_2$ con $z_1, z_2 \in \mathbb{D}, z_1 \not=z_2$, allora $f=\id_{\mathbb{D}}$.
+  Infatti, possiamo supporre $z_1=0$ $\implies$ $f(0)=0$ e $f(z_2)=z_2$, quindi siamo nel caso del lemma di Schwarza in cui vale l'uguaglianza, per cui $f(z)=e^{i\theta}z$, ma $f(z_2)=z_2$ $\implies$ $e^{i\theta}=1$.
+\end{oss}
+
+\begin{ex}
+  Esempio di automorfismo ellittico: la rotazione intorno a $0$ $\gamma_{0, \theta}(z)=e^{i\theta}z$. Più in generale, se $a \in \mathbb{D}$, $\gamma_{a, 0}(z)=\dfrac{z-a}{1-\bar{a}z}$, allora $\gamma_{a, 0}^{-1} \circ \gamma_{0, \theta} \circ \gamma_{a, 0}$ è ellittico con punto fisso $a$.
+  Queste sono dette \textit{rotazioni non euclidee} e caratterizzano tutti gli automorfismi ellittici (lo si può vedere coniugando opportunamente con $\gamma_{a, 0}$ o $\gamma_{a, 0}^{-1}$).
+\end{ex}
+
+\begin{defn}
+  Il \textsc{semipiano superiore} è $\mathbb{H}^+=\{w \in \mathbb{C} \mid \mathfrak{Im}w>0\}$. La \textsc{trasformata di Cayley} è $\Psi:\mathbb{D} \rightarrow \mathbb{H}^+$ t.c. $\Psi(z)=i\dfrac{1+z}{1-z}$.
+\end{defn}
+
+Notiamo che possiamo vedere $\mathbb{H}^+ \subset \hat{\mathbb{C}}$ e in questo caso $\partial\mathbb{H}^+=\mathbb{R}\cup\{\infty\}$. $\Psi^{-1}(w)=\dfrac{w-i}{w+i}$. $\Psi(0)=1, \Psi(1)=\infty$. \\
+$\mathfrak{Im}\Psi(z)=\mathfrak{Im}\left(i\dfrac{1+z}{1-z}\right)=\mathfrak{Re}\left(\dfrac{1+z}{1-z}\right)=\dfrac{1}{|1-z|^2}\mathfrak{Re}((1+z)(1-\bar{z}))=\dfrac{1-|z|^2}{|1-z|^2}$ che è $>0$ $\iff$ $z \in \mathbb{D}$ e $=0$ $\iff$ $z \in \partial\mathbb{D}\setminus\{1\}$.
+
+$\Psi$ è un biolomorfismo fra $\mathbb{D}$ e $\mathbb{H}^+$ che si estende continua a $\partial\mathbb{D} \rightarrow \partial\mathbb{H}^+$. Se abbiamo $f: \mathbb{D} \rightarrow \mathbb{D}$, abbiamo anche $F=\Psi \circ f \circ \Psi^{-1}:\mathbb{H}^+ \rightarrow \mathbb{H}^+$ e viceversa.
+
+\begin{cor}
+  $\gamma \in \text{Aut}(\mathbb{H}^+) \iff \gamma(w)=\dfrac{aw+b}{cw+s}$ con $ad-bc=1$ e $a, b, c, d \in \mathbb{R}$. Si ha allora che $\text{Aut}(\mathbb{H}^+) \cong \faktor{SL(2, \mathbb{R})}{\{\pm I_2\}}=PSL(2, \mathbb{R})$ (questo è detto \textit{gruppo speciale lineare proiettivo}).
+\end{cor}
+
+\begin{proof}
+  $\gamma \in \text{Aut}(\mathbb{H}^+) \iff \Psi^{-1} \circ \gamma \circ \Psi \in \text{Aut}(\mathbb{D}) \iff (\Psi^{-1} \circ \gamma \circ \Psi)(z)=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$.
+  Ponendo $\Psi(z)=w$, l'uguaglianza sopra equivale a $\gamma(w)=\Psi\left(e^{i\theta}\dfrac{z-a}{1-\bar{a}z}\right)=\Psi\left(e^{i\theta}\dfrac{\Psi^{-1}(w)-a}{1-\bar{a}\Psi^{-1}(w)}\right)$. Facendo il conto si trova l'enunciato.
+\end{proof}
+
+\begin{exc}
+  $\gamma \in \text{Aut}(\mathbb{H}^+)$ è t.c. $\gamma(i)=i \iff \gamma(w)=\dfrac{w\cos{\theta}-\sin{\theta}}{w\sin{\theta}+\cos{\theta}}$.
+\end{exc}
+
+\begin{ex}
+  Sia $\gamma \in \text{Aut}(\mathbb{H}^+)$, $\gamma(\infty)=\infty \iff \gamma(w)=\alpha w+\beta$ con $\alpha, \beta \in \mathbb{R}, \alpha>0$.
+  Se lo vogliamo parabolico non deve avere altri punti fissi in $\mathbb{C}$ e questo è possibile se e solo se $\alpha w+\beta=w$ non ha altre soluzioni $\iff$ $\alpha=1, \beta \not=0$, cioè $\gamma(w)=w+\beta$.
+  È una traslazione di $\mathbb{H}^+$ parallela al suo bordo.
+\end{ex}
+
+\begin{exc}
+  Sia $\tau \in \partial\mathbb{D}$. Dimostrare che tutti gli automorfismi $\gamma$ parabolici di $\mathbb{D}$ con $\gamma(\tau)=\tau$ sono della forma $\gamma(z)=\sigma_0\dfrac{z+z_0}{1+\bar{z_0}z}$ con $z_0=\dfrac{ic}{2-ic}\tau$ e $\sigma_0=\dfrac{2-ic}{2+ic}$ con $c \in \mathbb{R}$.
+  Hint: a meno di una rotazione, $\tau=1$.
+\end{exc}
+
+\begin{ex}
+  $\gamma \in \text{Aut}(\mathbb{H}^+)$ è iperbolico con $\gamma(\infty)=\infty$ e $\gamma(0)=0$ $\iff$ $\gamma(w)=\alpha w$ con $\alpha>0$.
+\end{ex}
