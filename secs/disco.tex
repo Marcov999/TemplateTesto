@@ -19,7 +19,7 @@ Come abbiamo già visto, il disco unitario (aperto) è definito come $\mathbb{D}
 \end{proof}
 
 \begin{lm} \label{az_gr}
-  Sia $G$ un gruppo che agisce fedelmente su uno spazio $X$, cioè per ogni $g \in G$ è data una biezione $\gamma_g:X \rightarrow X$ t.c. $\gamma_{e}=\id$ e $\gamma_{g_1} \circ \gamma_{g_2} =\gamma_{g_1g_2}$, inoltre $\gamma_{g_1}=\gamma_{g_2} \iff g_1=g_2$.
+  Sia $G$ un gruppo che agisce fedelmente su uno spazio $X$, cioè per ogni $g \in G$ è data una biezione $\gamma_g:X \longrightarrow X$ t.c. $\gamma_{e}=\id$ e $\gamma_{g_1} \circ \gamma_{g_2} =\gamma_{g_1g_2}$, inoltre $\gamma_{g_1}=\gamma_{g_2} \iff g_1=g_2$.
   Sia $G_{x_0}$ il gruppo di isotropia di $x_0 \in X$, cioè $G_{x_0}=\{g \in G \mid \gamma_g(x_0)=x_0\}$. Supponiamo che per ogni $x \in X$ esiste $g_x \in G$ t.c. $\gamma_{g_x}(x)=x_0$ e sia $\Gamma=\{g_x \mid x \in X\}$.
   Allora $G$ è generato da $\Gamma$ e $G_{x_0}$, cioè ogni $g \in G$ è della forma $g=hg_x$ con $x \in X$ e $h \in G_{x_0}$.
 \end{lm}
@@ -76,7 +76,7 @@ Come abbiamo già visto, il disco unitario (aperto) è definito come $\mathbb{D}
 Dal lemma di Schwarz-Pick abbiamo che la quantità $\left|\dfrac{z-w}{1-\bar{w}z}\right|$ è contratta dalle $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$. Vediamo adesso una distanza costruita a partire da questa quantità.
 
 \begin{defn}
-  La \textit{distanza di Poincaré su $\mathbb{D}$} è $\omega: \mathbb{D} \times \mathbb{D} \rightarrow [0, +\infty)$
+  La \textit{distanza di Poincaré su $\mathbb{D}$} è $\omega: \mathbb{D} \times \mathbb{D} \longrightarrow [0, +\infty)$
   data da $\displaystyle \omega(z, w)=\frac{1}{2}\log{\frac{1+\left|\frac{z-w}{1-\bar{w}z}\right|}{1-\left|\frac{z-w}{1-\bar{w}z}\right|}}=\text{arctanh}{\left|\frac{z-w}{1-\bar{w}z}\right|}$.
 \end{defn}
 
@@ -99,7 +99,7 @@ Dal lemma di Schwarz-Pick abbiamo che la quantità $\left|\dfrac{z-w}{1-\bar{w}z
 \end{sol}
 
 \begin{exc}
-  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \rightarrow \mathbb{D}$ t.c. $\omega(\sigma(t_1), \sigma(t_2))=|t_1-t_2|$. Dimostrare che i raggi $t \mapsto \tanh{(t)}\frac{z_0}{|z_0|}$ sono geodetiche.
+  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ t.c. $\omega(\sigma(t_1), \sigma(t_2))=|t_1-t_2|$. Dimostrare che i raggi $t \longmapsto \tanh{(t)}\frac{z_0}{|z_0|}$ sono geodetiche.
 \end{exc}
 
 \begin{cor}

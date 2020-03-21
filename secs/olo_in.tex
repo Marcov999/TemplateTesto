@@ -1,10 +1,10 @@
 Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque come prerequisiti per altri risultati più interessanti che vedremo più avanti nel corso.
 
 \begin{thm}
-  (Weierstrass) Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ t.c. $f_n \rightarrow f \in C^0(\Omega, \mathcal{C})$ uniformemente sui compatti. Allora:
+  (Weierstrass) Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ t.c. $f_n \longrightarrow f \in C^0(\Omega, \mathcal{C})$ uniformemente sui compatti. Allora:
   \begin{nlist}
     \item $f \in \mathcal{O}(\Omega)$;
-    \item $f_n' \rightarrow f'$ uniformemente sui compatti.
+    \item $f_n' \longrightarrow f'$ uniformemente sui compatti.
   \end{nlist}
 \end{thm}
 
@@ -12,10 +12,10 @@ Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque
   \begin{nlist}
     \item Sia $a \in \Omega$, $0<r<d(a, \partial\Omega)$ t.c. $D=D(a, r) \subset \subset \Omega$. $\displaystyle f_n(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$ per ogni $z \in D(a, \rho)$ per ogni $0<\rho<r$.
     Allora $\dfrac{1}{|\zeta-z|} \le \dfrac{1}{r-\rho}$ per ogni $z \in D(a, \rho), \zeta \in \partial{D}$.
-    Per ogni $\displaystyle z \in D(a, \rho), f(z)=\lim_{n \rightarrow +\infty} \frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$.
+    Per ogni $\displaystyle z \in D(a, \rho), f(z)=\lim_{n \longrightarrow +\infty} \frac{1}{2\pi i} \int_{\partial D} \frac{f_n(\zeta)}{\zeta-z} \diff \zeta$.
     Adesso, per uniforme convergenza e uniforme limitatezza si può portare il limite dentro, perciò $\displaystyle f(z)=\frac{1}{2\pi i}\int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff \zeta$, ma questo, per il teorema di Cauchy-Goursat+Morera, implica $f \in \mathcal{O}(\Omega)$.
-    \item $\displaystyle f_n'(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n'(\zeta)}{(\zeta-z)^2}\diff\zeta \rightarrow \frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff\zeta=f'(z)$.
-    $f_n' \rightarrow f'$ uniformemente sui dischi e ogni compatto è coperto da un numero finito di dischi $\implies$ $f_n' \rightarrow f'$ uniformemente sui compatti.
+    \item $\displaystyle f_n'(z)=\frac{1}{2\pi i} \int_{\partial D} \frac{f_n'(\zeta)}{(\zeta-z)^2}\diff\zeta \longrightarrow \frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-z} \diff\zeta=f'(z)$.
+    $f_n' \longrightarrow f'$ uniformemente sui dischi e ogni compatto è coperto da un numero finito di dischi $\implies$ $f_n' \longrightarrow f'$ uniformemente sui compatti.
   \end{nlist}
 \end{proof}
 
@@ -29,8 +29,8 @@ Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque
   Dati $a \in \Omega, 0<r<d(a, \partial \Omega), f \in \mathcal{O}(\Omega)$, sia $c_n(f)=\dfrac{f^{(n)}(a)}{n!}$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(f)(z-a)^n$ in $\overline{D(a, r)}$.
   Inoltre, se $\|f\|_{\overline{D(a, r)}} \le M$, allora per le disuguaglianze di Cauchy $|c_n(f)| \le \dfrac{M}{r^n}$ per ogni $n \ge 0$.
   Sia $\{f_n\} \subseteq \mathcal{F}$. Per ipotesi, esiste $M$ t.c. $\|f_n\|_{\overline{D(a, r)}} \le M$ per ogni $n$ $\implies$ $|c_0(f_n)| \le M$ per ogni $n$ $\implies$ esiste una sottosuccessione $c_0(f_{n_j^{(0)}})$ che tende a $c_0 \in \mathbb{C}$.
-  Per  induzione, da $\{f_{n_j^{(k-1)}}\}$ possiamo estrarre una sottosuccessione $\{f_{n_j^{(k)}}\}$ t.c. $c_k(f_{n_j^{(k)}}) \rightarrow c_k \in \mathbb{C}$. Consideriamo $\{f_{n_j^{(j)}}\}$, allora $c_k(f_{n_j^{(j)}}) \rightarrow c_k \in \mathbb{C}$ per ogni $k$.
-  Sia $f_{\nu_j}=f_{n_j^{(j)}}$. Poniamo $D_a=\overline{D(a, r/2)}$ e sia $z \in D_a$. Vogliamo $\displaystyle f_{\nu_j} \rightarrow f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ in $D_a$. Basta vedere che $f_{\nu_j}$ è di Cauchy uniformemente in $D_a$.
+  Per  induzione, da $\{f_{n_j^{(k-1)}}\}$ possiamo estrarre una sottosuccessione $\{f_{n_j^{(k)}}\}$ t.c. $c_k(f_{n_j^{(k)}}) \longrightarrow c_k \in \mathbb{C}$. Consideriamo $\{f_{n_j^{(j)}}\}$, allora $c_k(f_{n_j^{(j)}}) \longrightarrow c_k \in \mathbb{C}$ per ogni $k$.
+  Sia $f_{\nu_j}=f_{n_j^{(j)}}$. Poniamo $D_a=\overline{D(a, r/2)}$ e sia $z \in D_a$. Vogliamo $\displaystyle f_{\nu_j} \longrightarrow f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ in $D_a$. Basta vedere che $f_{\nu_j}$ è di Cauchy uniformemente in $D_a$.
   $\displaystyle |f_{\nu_h}(z)-f_{\nu_k}(z)| \le \sum_{n=0}^{+\infty} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n=\sum_{n=0}^N |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n+\sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n$.
   Sappiamo che $|c_n(f_{\nu_k})| \le \dfrac{M}{r^n}$ e $z \in D_a \implies |z-a| \le \dfrac{r}{2}$.
   Allora $\displaystyle \sum_{n>N} |c_n(f_{\nu_h})-c_n(f_{\nu_k})||z-a|^n \le \sum_{n>N} \frac{2M}{r^n}\left(\frac{r}{2}\right)^n=\frac{M}{2^{N-1}}$.
@@ -45,12 +45,12 @@ Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque
 \end{proof}
 
 \begin{thm}
-  (Vitali) $\Omega \subseteq \mathbb{C}$ dominio, $A \subseteq \Omega$ con almeno un punto di accumulazione in $\Omega$. Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ uniformemente limitata sui compatti. Supponiamo che, per ogni $a \in A$, $\{f_n(a)\}$ converge (cioe $f_n$ converge puntualmente). Allora esiste $f \in \mathcal{O}(\Omega)$ t.c. $f_n \rightarrow f$ uniformemente sui compatti di $\Omega$.
+  (Vitali) $\Omega \subseteq \mathbb{C}$ dominio, $A \subseteq \Omega$ con almeno un punto di accumulazione in $\Omega$. Sia $\{f_n\} \subset \mathcal{O}(\Omega)$ uniformemente limitata sui compatti. Supponiamo che, per ogni $a \in A$, $\{f_n(a)\}$ converge (cioe $f_n$ converge puntualmente). Allora esiste $f \in \mathcal{O}(\Omega)$ t.c. $f_n \longrightarrow f$ uniformemente sui compatti di $\Omega$.
 \end{thm}
 
 \begin{proof}
-  Facciamola per assurdo. Supponiamo che esistono $K \subset\subset \Omega, \\ \{n_k\}, \{m_k\} \subset \mathbb{N}, \{z_k\} \subset K, \delta>0$ t.c. $|f_{n_k}(z_k)-f_{m_k}(z_k)| \ge \delta$. A meno di sottosuccessioni, $z_k \rightarrow z_0 \in K$.
-  Per il teorema di Montel, a meno di sottosuccessioni $f_{n_k} \rightarrow g_1 \in \Omega$ e $f_{m_k} \rightarrow g_2 \in \Omega$ con $|g_1(z_0)-g_2(z_0)| \ge \delta$ (passando al limite). Per ipotesi,  $g_1(a)=g_2(a)$ per ogni $a \in A$. Per il principio di identità, $g_1 \equiv g_2$, assurdo.
+  Facciamola per assurdo. Supponiamo che esistono $K \subset\subset \Omega, \\ \{n_k\}, \{m_k\} \subset \mathbb{N}, \{z_k\} \subset K, \delta>0$ t.c. $|f_{n_k}(z_k)-f_{m_k}(z_k)| \ge \delta$. A meno di sottosuccessioni, $z_k \longrightarrow z_0 \in K$.
+  Per il teorema di Montel, a meno di sottosuccessioni $f_{n_k} \longrightarrow g_1 \in \Omega$ e $f_{m_k} \longrightarrow g_2 \in \Omega$ con $|g_1(z_0)-g_2(z_0)| \ge \delta$ (passando al limite). Per ipotesi,  $g_1(a)=g_2(a)$ per ogni $a \in A$. Per il principio di identità, $g_1 \equiv g_2$, assurdo.
 \end{proof}
 
 \begin{thm}
@@ -59,11 +59,11 @@ Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque
 \end{thm}
 
 \begin{cor}
-  (Teorema di estensione di Riemann) $f \in \mathcal{O}(\Omega \setminus \{a\})$ si estende olomorficamente ad $a$ $\Leftrightarrow$ $\displaystyle \lim_{z \rightarrow a} (z-a)f(z)=0$.
+  (Teorema di estensione di Riemann) $f \in \mathcal{O}(\Omega \setminus \{a\})$ si estende olomorficamente ad $a$ $\Leftrightarrow$ $\displaystyle \lim_{z \longrightarrow a} (z-a)f(z)=0$.
 \end{cor}
 
 \begin{proof}
-  Per lo sviluppo di Laurent, $\displaystyle (z-a)f(z)=\sum_{n=-\infty}^{+\infty} c_n(z-a)^{n+1} \rightarrow 0 \Leftrightarrow c_n=0$ per ogni $n \le -1$.
+  Per lo sviluppo di Laurent, $\displaystyle (z-a)f(z)=\sum_{n=-\infty}^{+\infty} c_n(z-a)^{n+1} \longrightarrow 0 \Leftrightarrow c_n=0$ per ogni $n \le -1$.
 \end{proof}
 
 \begin{thm} \label{biolo}
@@ -91,11 +91,11 @@ Vediamo ora alcuni risultati e definizioni preliminari, da considerarsi comunque
 \end{proof}
 
 \begin{defn}
-  Se $f: \Omega_1 \rightarrow \Omega_2$ è olomorfa e biettiva (quindi con inversa olomorfa per il teorema \ref{biolo}) si chiama \textsc{biolomorfismo}.
+  Se $f: \Omega_1 \longrightarrow \Omega_2$ è olomorfa e biettiva (quindi con inversa olomorfa per il teorema \ref{biolo}) si chiama \textsc{biolomorfismo}.
 \end{defn}
 
 \begin{defn}
-  $f:\Omega_1 \rightarrow \mathbb{C}$ è un \textsc{biolomorfismo locale} se ogni $a \in \Omega_1$ ha un intorno $U \ni a$ t.c. $f\restrict{U}:U \rightarrow f(U)$ è un biolomorfismo.
+  $f:\Omega_1 \longrightarrow \mathbb{C}$ è un \textsc{biolomorfismo locale} se ogni $a \in \Omega_1$ ha un intorno $U \ni a$ t.c. $f\restrict{U}:U \longrightarrow f(U)$ è un biolomorfismo.
 \end{defn}
 
 Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non si annulla mai.
@@ -128,7 +128,7 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
 \end{proof}
 
 \begin{oss} \label{wn}
-  $\gamma:[0, 1] \rightarrow \mathbb{C}$ chiusa ($\gamma(0)=\gamma(1))$, $a \not\in \gamma([0, 1])$. $p_s: \mathbb{C} \rightarrow \mathbb{C} \setminus \{a\}$, $p_a(z)=a+e^z$ è un rivestimento.
+  $\gamma:[0, 1] \longrightarrow \mathbb{C}$ chiusa ($\gamma(0)=\gamma(1))$, $a \not\in \gamma([0, 1])$. $p_s: \mathbb{C} \longrightarrow \mathbb{C} \setminus \{a\}$, $p_a(z)=a+e^z$ è un rivestimento.
   \begin{center}
     \begin{tikzcd}
             & \mathbb{C} \arrow[d, "p_a"]\\
@@ -147,7 +147,7 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
     \item $n(\gamma, a)$ dipende solo da $a$ e da $\gamma$ e non dal sollevamento scelto;
     \item $n(\gamma, a) \in \mathbb{Z}$;
     \item $\displaystyle n(\gamma, a)=\frac{1}{2\pi i}\int_{\gamma} \frac{1}{z-a} \diff z$;
-    \item $a \mapsto n(\gamma, a)$ è costante sulle componente connesse di $\mathbb{C} \setminus \gamma([0, 1])$. In particolare $n(\gamma, a)=0$ sulla componente connessa illimitata di $\mathbb{C} \setminus \gamma([0, 1])$;
+    \item $a \longmapsto n(\gamma, a)$ è costante sulle componente connesse di $\mathbb{C} \setminus \gamma([0, 1])$. In particolare $n(\gamma, a)=0$ sulla componente connessa illimitata di $\mathbb{C} \setminus \gamma([0, 1])$;
     \item $\gamma(t)=a_0+re^{2\pi i t} \implies n(a, \gamma)=1$ per ogni $a \in D(a_0, r)$;
     \item $\gamma_1$ e $\gamma_2$ chiuse con $\gamma_1(0)=\gamma_2(0)=p_0$ omotope (tramite omotopia che fissa il punto base $p_0$) e $a \not\in \gamma_1([0, 1]) \cup \gamma_2([0, 1])$, se l'omotopia è in $\mathbb{C} \setminus \{a\}$ allora $n(\gamma_1, a)=n(\gamma_2, a)$.
   \end{nlist}
@@ -165,7 +165,7 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
 \begin{prop}
   \begin{nlist}
     \item $f \in \mathcal{O}(\Omega \setminus E)$ è meromorfa $\iff$ localmente è quoziente di due funzioni olomorfe;
-    \item $f \in \mathcal{O}(\Omega \setminus E)$ è meromorfa $\iff$ per ogni $a \in E$ o $|f|$ è limitato vicino ad $a$ o $\displaystyle \lim_{z \rightarrow a} |f(z)|=+\infty$.
+    \item $f \in \mathcal{O}(\Omega \setminus E)$ è meromorfa $\iff$ per ogni $a \in E$ o $|f|$ è limitato vicino ad $a$ o $\displaystyle \lim_{z \longrightarrow a} |f(z)|=+\infty$.
   \end{nlist}
 \end{prop}
 
@@ -175,7 +175,7 @@ Per il teorema \ref{biolo}, $f$ è un biolomorfismo locale se e solo se $f'$ non
     Se $a \in E$, $\displaystyle f(z)=\sum_{n \ge n_0} c_n(z-a)^n=(z-a)^{n_0}(c_{n_0}+h(z))$, $h$ olomorfa vicino ad $a$. Se $n_0<0$, $f(z)=\dfrac{c_{n_0}+h(z)}{(z-a)^{-n_0}}$.
 
     ($\Leftarrow$) Se $\displaystyle f(z)=\frac{h_1(z)}{h_2(z)}=\frac{\sum_{n \ge n_1} b_n(z-a)^n}{\sum_{m \ge n_2} c_m(z-a)^m}=(z-a)^{n_1-n_2}k(z)$, $k$ olomorfa vicino ad $a$.
-    \item Per Casorati-Weierstrass, $a \in E$ è singolarità essenziale $\iff$ $\displaystyle \lim_{z \rightarrow a} |f(z)|$ non esiste. Per lo stesso motivo, è un polo $\iff$ $\displaystyle \lim_{z \rightarrow a} |f(z)|=+\infty$.
+    \item Per Casorati-Weierstrass, $a \in E$ è singolarità essenziale $\iff$ $\displaystyle \lim_{z \longrightarrow a} |f(z)|$ non esiste. Per lo stesso motivo, è un polo $\iff$ $\displaystyle \lim_{z \longrightarrow a} |f(z)|=+\infty$.
   \end{nlist}
 \end{proof}
 
