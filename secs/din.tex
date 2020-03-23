@@ -117,7 +117,7 @@ Vogliamo adesso studiare la dinamica di una $f \in \text{Hol}(\mathbb{D}, \mathb
   Se $z_0 \in \Omega$, $z_0=\id_{\Omega}(z_0)$. Per il primo teorema di Hurwitz, $\id_{\Omega}(z_0) \in f^{k_{\nu}}(\Omega)$ per $\nu \gg 1$, ma $f^{k_{\nu}}(\Omega) \subseteq f(\Omega)$ $\implies$ $f$ è suriettiva.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{lim_aut}
   Sia $\Omega \subset \subset \mathbb{C}$ un dominio limitato, $f \in \text{Hol}(\Omega, \Omega)$. Sia $h \in \text{Hol}(\Omega, \mathbb{C})$ un punto limite di $\{f^k\}$ (che esiste per il teorema di Montel). Allora o
   \begin{nlist}
     \item $h \equiv c \in \overline{\Omega}$ oppure
@@ -127,9 +127,9 @@ Vogliamo adesso studiare la dinamica di una $f \in \text{Hol}(\mathbb{D}, \mathb
 
 \begin{proof}
   Sia $\displaystyle h=\lim_{\nu \longrightarrow +\infty} f^{k_{\nu}}$. Poniamo $m_{\nu}=k_{\nu+1}-k_{\nu}$. Possiamo supporre $m_{\nu} \longrightarrow +\infty$. Per Montel, a meno di una sottosuccessione possiamo supporre $f^{m_{\nu}} \xrightarrow{\nu \longrightarrow +\infty} g \in \text{Hol}(\Omega, \mathbb{C})$.
-  Se $h$ è costante abbiamo finito. Se $h$ non è costante, per il teorema dell'applicazione aperta $h$ è aperta $\implies$ $h(\Omega)$ è aperto in $\Omega$.
-  Se $z \in \Omega$, $\displaystyle g(h(z))=\lim_{\nu \longrightarrow +\infty} f^{m_{\nu}}(f^{k_{\nu}}(z))=\lim_{\nu \longrightarrow +\infty} f^{k_{\nu+1}}(z)=h(z) \implies g\restrict{h(\Omega) \cap \Omega}=\id_{\Omega}$,
-  ma per il principio di identità questo ci dà $g\restrict{\Omega} \equiv \id_{\Omega}$, dunque per il lemma \ref{pli} abbiamo che $f \in \text{Aut}(\Omega)$. A meno di sottosuccessioni è facile vedere che $f^{-k_{\nu}}=(f^{-1})^{k_{\nu}}$ converge a $h^{-1}$.
+  Se $h$ è costante abbiamo finito. Se $h$ non è costante, per il teorema dell'applicazione aperta $h$ è aperta $\implies$ $h(\Omega)$ è aperto e per il primo teorema di Hurwitz è contenuto in $\Omega$.
+  Se $z \in \Omega$, $\displaystyle g(h(z))=\lim_{\nu \longrightarrow +\infty} f^{m_{\nu}}(f^{k_{\nu}}(z))=\lim_{\nu \longrightarrow +\infty} f^{k_{\nu+1}}(z)=h(z) \implies g\restrict{h(\Omega)}=\id_{\Omega}$,
+  ma per il principio di identità questo ci dà $g \equiv \id_{\Omega}$, dunque per il lemma \ref{pli} abbiamo che $f \in \text{Aut}(\Omega)$. A meno di sottosuccessioni è facile vedere che $f^{-k_{\nu}}=(f^{-1})^{k_{\nu}}$ converge a $h^{-1}$.
 \end{proof}
 
 \begin{prop}
@@ -141,6 +141,46 @@ Vogliamo adesso studiare la dinamica di una $f \in \text{Hol}(\mathbb{D}, \mathb
   Per ogni $z \in \overline{\mathbb{D}}_r$, $|f(z)| \le \lambda_r|z| \implies |f^2(z)| \le \lambda_r|f(z)| \le \lambda_r^2|z| \implies |f^k(z)| \le \lambda_r^k|z| \le \lambda_r^kr \longrightarrow 0$ per $k \longrightarrow +\infty$ $\implies$ $f^k \longrightarrow 0$ (costante) uniformemente sui compatti.
 \end{proof}
 
+\begin{defn}
+  Chiamiamo \textit{orociclo} di centro $\tau \in \partial\mathbb{D}$ e raggio $R>0$ l'insieme $E(\tau, R)=\left\{z \in \mathbb{D} \, \bigg| \, \dfrac{|\tau-z|^2}{1-|z|^2}<R \right\}$. Geometricamente, è un disco di raggio $\dfrac{R}{R+1}$ tangente a $\partial \mathbb{D}$ in $\tau$.
+\end{defn}
+
+\begin{exc}
+  $\displaystyle E(\tau, R)=\left\{z \in \mathbb{D} \, \bigg| \, \lim_{w \longrightarrow \tau} [\omega(z, w)-\omega(0, w)]<\frac{1}{2}\log{R}\right\}$.
+\end{exc}
+
+\begin{lm}
+  (Lemma di Wolff) Sia $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$ senza punti fissi. Allora esiste un unico $\tau \in \partial\mathbb{D}$ t.c. per ogni $z \in \mathbb{D}$ $\dfrac{|\tau-f(z)|^2}{1-|f(z)|^2} \le \dfrac{|\tau-z|^2}{1-|z|^2}$ $(\star)$.
+  In altre parole, per ogni $R>0$ $f(E(\tau, R)) \subseteq E(\tau, R)$.
+\end{lm}
+
+\begin{proof}
+  Unicità: se ce ne fossero due, $\tau$ e $\tau_1$, prendiamo un orociclo centrato in $\tau$ e uno centrato in $\tau_1$ tangenti, allora il punto di tangenza verrebbe mandato in sé e sarebbe dunque un punto fisso in $\mathbb{D}$, assurdo.
+
+  Esistenza: prendiamo $\{r_{\nu}\} \subset (0, 1)$ t.c. $r_{\nu} \nearrow 1^{-}$ e poniamo $f_{\nu}=r_{\nu}f$ $\implies$ $f_{\nu}(\mathbb{D}) \subseteq \mathbb{D}_{r_{\nu}} \subset\subset \mathbb{D}$,
+  allora per il teorema di Ritt esiste $w_{\nu} \in \mathbb{D}$ t.c. $f_{\nu}(w_{\nu})=w_{\nu}$. A meno di sottosuccessioni, possiamo suppore $w_{\nu} \longrightarrow \in \overline{\mathbb{D}}$.
+  Se $\tau \in \mathbb{D}$, $\displaystyle f(\tau)=\lim_{\nu \longrightarrow +\infty} f_{\nu}(w_{\nu})=\lim_{\nu \longrightarrow +\infty} w_{\nu}=\tau$, assurdo $\implies$ $\tau \in \partial\mathbb{D}$.
+  Per Schwarz-Pick, $\left|\dfrac{f_{\nu}(z)-w_{\nu}}{1-\bar{w}_{\nu}f_{\nu}(z)}\right|^2 \le \left|\dfrac{z-w_{\nu}}{1-\bar{w}_{\nu}z}\right|^2 \implies 1-\left|\dfrac{f_{\nu}(z)-w_{\nu}}{1-\bar{w}_{\nu}f_{\nu}(z)}\right|^2 \ge 1-\left|\dfrac{z-w_{\nu}}{1-\bar{w}_{\nu}z}\right|^2 \implies \dfrac{|1-\bar{w}_{\nu}f_{\nu}(z)|^2}{1-|f_{\nu}(z)|^2} \le \dfrac{|1-\bar{w}_{\nu}z|^2}{1-|z|^2}$.
+  Mandando $\nu \longrightarrow +\infty$ otteniamo $\dfrac{|1-\bar{\tau}f(z)|^2}{1-|f(z)|^2} \le \dfrac{|1-\bar{\tau}z|^2}{1-|z|^2}$ che moltiplicando per $\tau$ ($\tau\bar{\tau}=1$) dà la tesi.
+\end{proof}
+
+\begin{exc}
+  Si ha l'uguaglianza in $(\star)$ nel lemma di Wolff $\iff$ $f$ è un automorfismo parabolico con punto fisso $\tau$ $\iff$ vale l'uguaglianza in $(\star)$ per ogni $z \in \mathbb{D}$.
+\end{exc}
+
 \begin{thm}
-  (Wolff-Denjoy) Sia $f \in \text{Hol}(\mathbb{D})$ senza punti fissi in $\mathbb{D}$. Allora esiste un unico $\tau_0 \in \partial\mathbb{D}$ t.c. $f^k \longrightarrow \tau_0$ (costante) uniformemente sui compatti.
+  (Wolff-Denjoy) Sia $f \in \text{Hol}(\mathbb{D})$ senza punti fissi in $\mathbb{D}$. Allora esiste un unico $\tau \in \partial\mathbb{D}$ t.c. $f^k \longrightarrow \tau$ (costante) uniformemente sui compatti.
 \end{thm}
+
+\begin{proof}
+  Se $f \in \text{Aut}(\mathbb{D})$ parabolico o iperbolico l'abbiamo già visto. Supponiamo $f \not\in \text{Aut}(\mathbb{D})$. Per Montel, $\{f^k\}$ è relativamente compatta in $\text{Hol}(\mathbb{D}, \mathbb{C})$. Useremo il seguente risultato di topologia che viene lasciato come esercizio.
+
+  \begin{exc} \label{sct}
+    Sia $X$ spazio topologico di Hausdorff. Sia $\{x_k\} \subset X$ con $\overline{\{x_k\}}$ compatta in $X$. Supponiamo che esista un unico $\bar{x} \in X$ t.c. ogni sottosuccessione convergente di $\{x_k\}$ converge a $\bar{x}$. Allora $x_k \longrightarrow \bar{x}$.
+  \end{exc}
+
+  Sia $\tau \in \partial\mathbb{D}$ dato dal lemma di Wolff. Sia $\displaystyle h=\lim_{\nu \longrightarrow +\infty} f^{k_{\nu}}$ un punto limite di $\{f^k\}$ (che esiste per Montel). Per la proposizione \ref{lim_aut}, $h \equiv \sigma \in \overline{\mathbb{D}}$.
+  Se $\sigma \in \mathbb{D}$, $\displaystyle f(\sigma)=\lim_{\nu \longrightarrow +\infty} f(f^{k_{\nu}}(\sigma))=\lim_{\nu \longrightarrow +\infty} f^{k_{\nu}}(f(\sigma))=\sigma$, assurdo. Quindi $h \equiv \sigma \in \partial\mathbb{D}$.
+  Vogliamo $\sigma=\tau$. Per il lemma di Wolff $f^{k_{\nu}}(E(\tau, R)) \subseteq E(\tau, R)$ per ogni $R>0$ $\implies$ $\{\sigma\}=h(E(\tau, R)) \subseteq \overline{E(\tau, R)} \cap \partial\mathbb{D}=\{\tau\}$ $\implies$ $\sigma=\tau$.
+  Si conclude allora per l'esercizio \ref{sct}.
+\end{proof}
