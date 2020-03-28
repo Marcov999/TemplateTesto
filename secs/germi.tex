@@ -30,7 +30,12 @@
 \end{oss}
 
 \begin{defn}
-  $p: \mathcal{O} \longrightarrow \mathbb{C}$ con $p(\mathcal{O}_a)=\{a\}$. Vogliamo rendere $p$ "quasi" un rivestimento (vedremo che, per i soliti esempio stupidi, non può essere un rivestimento).
+  Definiamo $p$ come la \textit{proiezione}
+  \begin{align*}
+    p: \mathcal{O} &\longrightarrow \mathbb{C}\\
+    \underline{f_z} &\longmapsto z
+  \end{align*}
+  Vale che $p(\mathcal{O}_a)=\{a\}$. Vogliamo rendere $p$ "quasi" un rivestimento (vedremo che, per i soliti esempio stupidi, non può essere un rivestimento).
 \end{defn}
 
 Vogliamo definire una topologia su $\mathcal{O}$. Definiamo un sistema fondamentale di intorni.
@@ -86,3 +91,71 @@ Vogliamo definire una topologia su $\mathcal{O}$. Definiamo un sistema fondament
 \begin{ex}
   $a=1, \underline{f_a}=(\mathbb{C}^*, 1/z), \gamma(t)=1-t$. Non esiste alcun sollevamento di $\gamma$ che parte da $\underline{f_a}$.
 \end{ex}
+
+\begin{defn}
+  Sia $\diff:\mathcal{O} \longrightarrow \mathcal{O}$ così definita: dato $\underline{f_a} \in \mathcal{O}_a$, $\diff\underline{f_a}$ è il germe in $a$ rappresentato dalla derivata di un rappresentante di $\underline{f_a}$, cioè se $(U, f) \in \underline{f_a}$, $\diff\underline{f_a}$ è rappresentato da $(U, f')$.
+\end{defn}
+
+\begin{lm} \label{primitiva}
+  Sia $D \subseteq \mathbb{C}$ un disco aperto. Allora ogni $f \in \mathcal{O}(D)$ ha una primitiva in $D$, e due primitive differiscono per una costante additiva.
+\end{lm}
+
+\begin{proof}
+  Se $a \in D$ è il centro, $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$. Una primitiva è data da $\displaystyle F(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$. È chiaro che due primitive differiscono per una costante additiva.
+\end{proof}
+
+\begin{prop}
+  $\diff:\mathcal{O} \longrightarrow \mathcal{O}$ è un rivestimento.
+\end{prop}
+
+\begin{proof}
+  Dati $\underline{f_a} \in \mathcal{O}_a$, $(U, f) \in \underline{f_a}$, $D \subseteq U$ un disco centrato in $a$, poniamo $\mathcal{D}=N(D, f)$, intorno aperto di $\underline{f_a}$. Sia $F$ una primitiva di $f$ su $D$ che esiste per il lemma \ref{primitiva}, per ogni $c \in \mathbb{C}$ poniamo $\mathcal{D}_c=N(D, F+c)$. Vogliamo dimostrare che:
+  \begin{nlist}
+    \item $\displaystyle \diff^{-1}(\mathcal{D})=\bigcup_{c \in \mathbb{C}} \mathcal{D}_c$;
+    \item $\diff\restrict{\mathcal{D}_c}:\mathcal{D}_c \longrightarrow \mathcal{D}$ è un omeomorfismo;
+    \item $c_1\not=c_2 \implies \mathcal{D}_{c_1} \cap \mathbb{D}_{c_2} \emptyset$.
+  \end{nlist}
+  (i), (ii), (iii) $\implies$ $\diff$ è un rivestimento. Procediamo con la dimostrazione.
+  \begin{nlist}
+    \item Sia $z \in D$ e $\underline{f_z} \in \mathcal{D}$. Sia $\underline{g_z} \in \mathcal{O}_z$ t.c. $\diff\underline{g_z}=\underline{f_z}$ $\implies$ esiste $(W, g) \in \underline{g_z}$ t.c. $g'=f$;
+    possiamo supporre che $W \subseteq D$, il disco, quindi sempre per il lemma \ref{primitiva} esiste $c \in \mathbb{C}$ t.c. $g\restrict{W}=F\restrict{W}+c$ $\implies$ $\underline{g_z} \in \mathcal{D}_c$. È banale vedere che $\underline{g_z} \in \mathcal{D}_c \implies \diff\underline{g_z} \in \mathcal{D}$.
+    \item È ovvio che $\diff(\mathcal{D}_c)=\mathcal{D}$ (per definizione di $\diff$ e $\mathcal{D}_c$). Questo più il punto (i) ci danno che $\diff$ è continua e aperta: infatti,\ gli insiemi della forma $\mathcal{D}$ formano un sistema fondamentale di intorni e la loro preimmagine, unione di aperti, è aperta; anche gli insiemi $\mathcal{D}_c$ sono un sistema fondamentale di intorni (ogni funzione olomorfa è la primitiva della sua derivata) e la loro immagine, come abbiamo visto, è un aperto.
+    $\diff\restrict{\mathcal{D}_c}: \mathcal{D}_c \longrightarrow \mathcal{D}$ è, come visto sopra, suriettiva, ma anche iniettiva perché $\displaystyle \mathcal{D}_c=\bigcup_{z \in D} \mathcal{D}_c \cap \mathcal{O}_z, \mathcal{D}=\bigcup_{z \in D} \mathcal{D} \cap \mathcal{O}_z$,
+     ma per ogni $z \in D$, $\mathcal{D}_c\cap \mathcal{O}_z$ e $\mathcal{D}\cap \mathcal{O}_z$ contengono un unico germe e $\diff(\mathcal{O}_z) \subseteq \mathcal{O}_z$, da cui appunto segue l'iniettività ($z\not=z' \implies \mathcal{O}_z\cap\mathcal{O}_{z'}=\emptyset$).
+     \item Se $\underline{F_z} \in \mathcal{D}_{c_1}\cap \mathcal{D}_{c_2}$ $\implies$ $\underline{F_z}$ è rappresentanto sia da $(D, F+c_1)$ che da $(D, F+c_2)$ $\implies$ $F+c_1\equiv F+c_2$ vicino a $z$ $\implies$ $c_1=c_2$.
+  \end{nlist}
+\end{proof}
+
+\begin{thm}
+  Sia $\Omega \subseteq \mathbb{C}$ un aperto semplicemente connesso. Allora ogni $f \in \mathcal{O}(\Omega)$ ammette una primitiva.
+\end{thm}
+
+\begin{proof}
+  Sia $\varphi:\Omega \longrightarrow \mathcal{O}$ la sezione corrispondente a $f$. Sia $\Phi$ un sollevamento di $\varphi$, cioè $d \circ \Phi=\varphi$ (che esiste per la teoria generali dei rivestimenti).
+  \begin{center}
+    \begin{tikzcd}
+      & \mathcal{O} \arrow[d, "\diff"]\\
+      \Omega \arrow[ru, "\Phi"] \arrow[r, "\varphi"] & \mathcal{O}
+    \end{tikzcd}
+  \end{center}
+  Anche $\Phi$ è una sezione di $\mathcal{O}$: infatti, siccome $p \circ \diff=p$, $p \circ \Phi=p\circ\diff\circ\Phi=p\circ\varphi=\id_{\Omega}$ $\implies$ la $F \in \mathcal{O}(\Omega)$ associata a $\Phi$ è una primitiva di $f$.
+\end{proof}
+
+Concludiamo il paragrafo definendo logaritmo e radice $n$-esima su insiemi semplicemente connessi.
+
+\begin{cor}
+  Sia $\Omega \subseteq \mathbb{C}$ aperto semplicemente connesso, $f \in \text{Hol}(\Omega, \mathbb{C}^*)$. Allora esiste $g \in \mathcal{O}(\Omega)$ t.c. $f=\exp(g)$. Inoltre $g$ è unica a meno di costanti additive della forma $2k\pi i$ con $k \in \mathbb{Z}$.
+\end{cor}
+
+\begin{proof}
+  Sia $g_0$ una primitiva di $f'/f$. $\dfrac{\diff}{\diff z}(fe^{-g_0})=f'e^{-g_0}+f(-e^{-g_0}g_0')=f'e^{-g_0}+f(-e^{-g_0}f'/f)=e^{-g_0}(f'-f')=0$ $\implies$ $f \cdot e^{-g_0}=\text{costante diversa da zero}=e^{c_0}$ $\implies$ $f\equiv e^{c_0+g_0}$.
+  Per l'unicità a meno di costanti additive, $\exp(g_1)=\exp(g_2) \implies \exp(g_1-g_2)\equiv 1 \implies$ $g_1-g_2$ è continua a valori in $2\pi i \mathbb{Z}$ discreto $\implies$ $g_1-g_2=2k\pi i$ con $k \in \mathbb{Z}$ costante.
+\end{proof}
+
+\begin{cor}
+  Sia $\Omega \subseteq \mathbb{C}$ aperto semplicemente connesso, $f \in \text{Hol}(\Omega, \mathbb{C}^*)$, $n \in \mathbb{Z}^*$. Allora esiste $h \in \mathcal{O}(\Omega)$ t.c. $f=h^n$. Inoltre $h$ è unica a meno di costanti moltiplicative della forma $e^{2\pi ik/n}$ con $k \in \mathbb{Z}$.
+\end{cor}
+
+\begin{proof}
+  Sia $g \in \mathcal{O}(\Omega)$ t.c. $f=\exp(g)$, allora $h=\exp(g/n)$ soddisfa le condizioni richieste. Poi, $h_1^n=h_2^n \iff (h_1/h_2)^n\equiv 1 \implies h_1=e^{2\pi i k/n}h_2$ con $k \in \mathbb{Z}$ costante.
+\end{proof}

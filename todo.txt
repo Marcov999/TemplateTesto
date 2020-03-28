@@ -6,5 +6,8 @@ Lez 05: ok
 Lez 06: ok
 Lez 07: ok
 Lez 08: ok
+Lez 09: ok
+
+Se non le ripete, aggiungi le ultime cose che ha detto nella Lez 09 sulla dim del teorema
 
 Scrivere un README decente
