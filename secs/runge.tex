@@ -1,0 +1,15 @@
+\begin{lm}
+  Sia $K \subset \subset \mathbb{C}$ compatto, $V \supset K$ un intorno aperto. Allora esiste $g \in C^{\infty}(\mathbb{C})$ t.c. $g\restrict{K}=1$ e $supp(g) \subset V$ ($\implies g\restrict{\mathbb{C}\setminus V}\equiv 0$) [ricordiamo che $supp(g)=\overline{\{z \in \mathbb{C} \mid g(z)\not=0\}}$].
+\end{lm}
+
+\begin{proof}
+  Sia $h: \mathbb{R} \longrightarrow \mathbb{R}$ data da $h(t)=\begin{cases}
+    0 & \mbox{se }t\le 0\\ e^{-1/t} & \mbox{se }t>0
+\end{cases}$, $h \in C^{\infty}(\mathbb{R})$. Sia $\eta: \mathbb{C} \longrightarrow \mathbb{C}$ data da $\eta(z)=\dfrac{h(1-|z|^2)}{h(1-|z|^2)+h(|z|^2-1/4)}$. $\eta \in C^{\infty}(\mathbb{C}), \eta(\mathbb{C})=[0, 1]$.
+$\eta\restrict{D(0, 1/2)}\equiv 1$ e $\eta\restrict{\mathbb{C}\setminus \mathbb{D}} \equiv 0$. Dato $p \in K$, sia $r_p>0$ t.c. $D(p, 2r_p) \subset V$.
+Allora, per compattezza di $K$, esistono $p_1, \dots, p_k \in K$ t.c. $\displaystyle K \subset \bigcup_{j=1}^k D(p_j, r_{p_j}/2) \subset \bigcup_{j=1}^k D(p_j, 2r_{p_j}) \subset V$. Poniamo $\displaystyle W=\bigcup_{j=1}^k D(p_j, r_{p_j})$.
+Sia $g_j:\mathbb{C} \longrightarrow \mathbb{R}$, $g_j=\begin{cases}
+  \eta\left(\dfrac{z-p_j}{r_{p_j}}\right) & \mbox{se }z\in D(p_j, 2r_{p_j})\\ 0 & \mbox{se }z\in\mathbb{C} \setminus \overline{D(p_j, r_{p_j})}
+\end{cases}$, che è ben definita per come è definita $\eta$. $g_j \in C^{\infty}(\mathbb{C})$. Sia $g: \mathbb{C} \longrightarrow \mathbb{R}$, $\displaystyle g(z)=1-\prod_{j=1}^k (1-g_j(z))$. $g \in C^{\infty}(\mathbb{C})$.
+Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implies g(z)=1$. Se $z \not\in \overline{W}$, $z \not\in\overline{D(p_j, r_{p_j})}$ per ogni $j=1, \dots, k$ $\implies$ $g_j(z)=0$ per ogni $j$ $\implies$ $g(z)=0$ $\implies$ $supp(g) \subseteq \overline{W} \subset V$.
+\end{proof}
