@@ -7,6 +7,6 @@ Lez 06: ok
 Lez 07: ok
 Lez 08: ok
 Lez 09: ok
-Lez 10: appena aggiorna il registro
+Lez 10: ok
 
 Scrivere un README decente
