@@ -13,3 +13,62 @@ Sia $g_j:\mathbb{C} \longrightarrow \mathbb{R}$, $g_j=\begin{cases}
 \end{cases}$, che è ben definita per come è definita $\eta$. $g_j \in C^{\infty}(\mathbb{C})$. Sia $g: \mathbb{C} \longrightarrow \mathbb{R}$, $\displaystyle g(z)=1-\prod_{j=1}^k (1-g_j(z))$. $g \in C^{\infty}(\mathbb{C})$.
 Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implies g(z)=1$. Se $z \not\in \overline{W}$, $z \not\in\overline{D(p_j, r_{p_j})}$ per ogni $j=1, \dots, k$ $\implies$ $g_j(z)=0$ per ogni $j$ $\implies$ $g(z)=0$ $\implies$ $supp(g) \subseteq \overline{W} \subset V$.
 \end{proof}
+
+\begin{thm}
+  (Teorema di Cauchy generalizzato) Sia $\Omega \subset \subset \mathbb{C}$ un dominio limitato t.c. $\partial\Omega$ sia un numero finito di curve di Jordan. Sia $u \in C^1(\overline{\Omega}, \mathbb{C})$, cioè esiste $U$ intorno aperto di $\overline{\Omega}$ su cui $u$ si estende di classe $C^1$.
+  Allora per ogni $w \in \Omega$ $\displaystyle u(w)=\int_{\partial \Omega} \dfrac{u(z)}{z-w}\diff z+\dfrac{1}{2\pi i}\int_{\Omega} \dfrac{\partial u/\partial\bar{z}}{z-w}\diff z \wedge \diff \bar{z}$.
+\end{thm}
+
+\begin{proof}
+  Usando la formula di Gauss-Green abbiamo che $\displaystyle \int_{\partial \Omega}(f\diff x+g\diff y)=\int_{\Omega}\left(\dfrac{\partial g}{\partial x}-\dfrac{\partial f}{\partial y}\right)\diff x\diff y$. Sia $v \in C^1(\overline{\Omega}, \mathbb{C}), f=\mathfrak{Re}(v), g=\mathfrak{Im}(v)$.
+  $v=f+ig, \diff z=\diff x+i\diff y \implies v\diff z=(f\diff x-g\diff y)+i(g\diff x+f\diff y)$.
+  Per Gauss-Green, $\displaystyle \int_{\partial \Omega} v\diff z=\int_{\Omega} \left(-\dfrac{\partial g}{\partial x}-\dfrac{\partial f}{\partial y}\right)\diff x\diff y+i\int_{\Omega} \left(\dfrac{\partial f}{\partial x}-\dfrac{\partial g}{\partial y}\right)\diff x\diff y$.
+  $\dfrac{\partial v}{\partial\bar{z}}=\dfrac{1}{2}\left(\dfrac{\partial v}{\partial x}+i\dfrac{\partial v}{\partial y}\right)=\dfrac{1}{2}\left(\dfrac{\partial f}{\partial x}-\dfrac{\partial g}{\partial y}\right)+\dfrac{1}{2}i\left(\dfrac{\partial f}{\partial y}+\dfrac{\partial g}{\partial x}\right)$.
+  $\diff \bar{z}\wedge\diff z=(\diff x-i\diff y)\wedge(\diff x+i\diff y)=2i\diff x\wedge\diff y$.
+  $\dfrac{\partial v}{\partial\bar{z}}\diff\bar{z}\wedge \diff z=\left[-\left(\dfrac{\partial f}{\partial y}+\dfrac{\partial g}{\partial x}\right)+i\left(\dfrac{\partial f}{\partial x}-\dfrac{\partial g}{\partial y}\right)\right]\diff x\wedge\diff y$.
+  Allora $\displaystyle \int_{\partial \Omega}v\diff z=\int_{\Omega} \dfrac{\partial v}{\partial\bar{z}}\diff\bar{z}\wedge\diff z$ $(\star)$.
+  Con il teorema di Stokes, $\displaystyle \int_{\partial \Omega}v\diff z=\int_{\Omega} \diff(v\diff z)=\int_{\Omega} \diff v\wedge\diff z=\int_{\Omega} \left(\dfrac{\partial v}{\partial z}\diff z+\dfrac{\partial v}{\partial\bar{z}}\diff\bar{z}\right)\wedge\diff z=\int_{\Omega} \dfrac{\partial v}{\partial\bar{z}} \diff \bar{z}\wedge\diff z$.
+  Fissato $w \in \Omega$ poniamo $v(z)=\dfrac{u(z)}{z-w}$ su $\Omega_{\epsilon}=\Omega \cap \{|z-w|>\epsilon\}$ dove $\epsilon>0$ è sufficientemente piccolo. $\partial\Omega_{\epsilon}=\partial\Omega\cup\partial D(w, \epsilon)$. $v \in C^1(\overline{\Omega}_{\epsilon})$.
+  Per $(\star)$, $\displaystyle \int_{\partial\Omega_{\epsilon}} \dfrac{u(z)}{z-w}\diff z=\int_{\Omega_{\epsilon}} \dfrac{\partial u/\partial\bar{z}}{z-w}\diff\bar{z}\wedge\diff z$.
+  Parametrizziamo $\partial D(w, \epsilon)$ con $\gamma(t)=w+\epsilon e^{it}, t \in [0, 2\pi]$, abbiamo allora che
+  $\displaystyle \int_{\partial\Omega_{\epsilon}} \dfrac{u(z)}{z-w}\diff z=\int_{\partial\Omega} \dfrac{u(z)}{z-w}\diff z-\int_{\partial D(w, \epsilon)} \dfrac{u(z)}{z-w}\diff z=\int_{\partial\Omega} \dfrac{u(z)}{z_{\epsilon}-w}\diff z-\int_0^{2\pi} u(w+\epsilon e^{it})i\diff t$.
+  Mandando $\epsilon$ a $0$, dato che $u$ è continua, otteniamo $\displaystyle \int_{\partial\Omega} \dfrac{u(z)}{z-w}\diff z-2\pi iu(w)$, mentre $\displaystyle \int_{\Omega_{\epsilon}} \dfrac{\partial u/\partial\bar{z}}{z-w}\diff\bar{z}\wedge\diff z$ tende a $\displaystyle \int_{\Omega} \dfrac{\partial u/\partial\bar{z}}{z-w}\diff\bar{z}\wedge\diff z$ perché $\dfrac{1}{z-w}$ è integrabile sugli aperti limitati di $\mathbb{C}$. Mettendo tutto insieme si ha la tesi.
+\end{proof}
+
+\begin{defn}
+  L'\textit{equazione di Cauchy-Riemann non omogenea} è $\dfrac{\partial u}{\partial\bar{z}}=\varphi$ dove l'incognita è $u$.
+\end{defn}
+
+\begin{lm} \label{misura}
+  Sia $K \subset\subset \mathbb{C}$ compatto e $\mu$ una misura con $supp(\mu)=K$. Allora l'integrale $\displaystyle u(w)=\int \dfrac{1}{w-z}\diff\mu(z)$ definisce una funzione $u \in \mathcal{O}(\mathbb{C}\setminus K)$.
+\end{lm}
+
+\begin{proof}
+  Una misura $\mu$ con $supp(\mu)=K$ è un elemento $\mu \in (C^0(K))^*$ continuo. $\displaystyle \int \dfrac{1}{w-z} \diff\mu(z)=\mu\left(\dfrac{1}{w-\cdot}\right), \dfrac{1}{w-\cdot} \in C^0(K)$ se $w\not\in K$.
+  Sia $a \not\in K$, $r>0$ t.c. $\overline{D(a, r)}\cap K=\emptyset$, $w \in D(a, r)$.
+  $\displaystyle \dfrac{1}{w-z}=\dfrac{1}{(a-z)\left(1-\dfrac{a-w}{a-z}\right)}=\sum_{n \ge 0} \dfrac{(a-w)^n}{(a-z)^{n+1}}$ in quanto $\left|\dfrac{a-w}{a-z}\right|<1$ per ogni $z \in K, w \in D(a, r)$, quindi $\displaystyle \mu\left(\dfrac{1}{w-z}\right)=\sum_{n\ge 0} (a-w)^n\mu\left(\dfrac{1}{(a-z)^{n+1}}\right)$ è una serie di potenze in $w$ che converge in $D(a,r)$ $\implies$ $u \in \mathcal{O}(\mathbb{C}\setminus K)$.
+\end{proof}
+
+\begin{thm}
+  Sia $\varphi \in C^k(\mathbb{C})$ a supporto compatto ($\varphi \in C^k_{\text{\textsc{c}}}(\mathbb{C})$). Allora esiste $u \in C^k(\mathbb{C})$ t.c. $\dfrac{\partial u}{\partial\bar{z}}=\varphi$.
+\end{thm}
+
+\begin{proof}
+  Poniamo $\displaystyle u(w)=\dfrac{1}{2\pi i}\int \dfrac{\varphi(z)}{w-z} \diff\bar{z}\wedge\diff z$. È la $u$ data dal lemma \ref{misura} con $\mu(2\pi i)^{-1}\varphi(\diff\bar{z}\wedge\diff z)=-\dfrac{1}{\pi}\varphi\diff y\diff x$.
+  $u \in \mathcal{O}(\mathbb{C}\setminus K)$. Facciamo un cambiamento di variabile: $\zeta=w-z \implies z=w-\zeta, \diff\zeta=-\diff z, \diff\bar{\zeta}=-\diff\bar{z}$.
+  $u(w)=\dfrac{1}{2\pi i} \int_{\mathbb{C}} \dfrac{\varphi(w-\zeta)}{\zeta}\diff\bar{\zeta}\wedge\diff\zeta$. Siccome $1/\zeta$ è integrabile sui compatti di $\mathbb{C}$ e $\varphi \in C^k_{\text{\textsc{c}}}(\mathbb{C})$ possiamo derivare sotto il segno di integrale e le derivate sono continue, $u \in C^k(\mathbb{C})$.
+  $\displaystyle \dfrac{\partial u}{\partial \bar{w}}(w)=\dfrac{1}{2\pi i}\int_{\mathbb{C}} \dfrac{\frac{\partial \varphi}{\partial \bar{z}}(w-\zeta)}{\zeta} \diff \bar{z}\wedge\diff z=-\dfrac{1}{2\pi i}\int_{\mathbb{C}} \dfrac{\frac{\partial\varphi}{\partial\bar{z}}(z)}{z-w}\diff\bar{z}\wedge\diff z=\dfrac{1}{2\pi i}\int_{\mathbb{C}} \dfrac{\frac{\partial\varphi}{\partial\bar{z}}(z)}{z-w}\diff z\wedge\diff\bar{z}=\dfrac{1}{2\pi i}\int_{\Omega} \dfrac{\frac{\partial\varphi}{\partial\bar{z}}(z)}{z-w}\diff z\wedge\diff\bar{z}$ dove $\Omega \subset \subset \mathbb{C}$ è un disco con $K \subset\subset \Omega$.
+  Quindi $\varphi\restrict{\partial \Omega}\equiv 0$ e il teorema di Cauchy generalizzato ci dà $\dfrac{\partial u}{\partial\bar{w}}(w)=\varphi(w)$ per ogni $w \in K$.
+\end{proof}
+
+\begin{oss}
+  Se $K=supp(\varphi)$, $u \in \mathcal{O}(\mathbb{C} \setminus K)$.
+\end{oss}
+
+\begin{oss}
+  Non è detto che $u$ abbia supporto compatto.
+\end{oss}
+
+\begin{oss}
+  $u$ è unica a meno di funzioni in $\mathcal{O}(\mathbb{C})$.
+\end{oss}
