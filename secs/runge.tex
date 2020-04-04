@@ -72,3 +72,35 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
 \begin{oss}
   $u$ è unica a meno di funzioni in $\mathcal{O}(\mathbb{C})$.
 \end{oss}
+
+\begin{defn}
+  Ricordiamo che se $K \subset\subset \mathbb{C}$ è compatto e $f \in C^0(K)$, allora poniamo $\|f\|_K=\sup_{z \in K}|f(z)|$.
+  Definiamo adesso $\mathcal{O}(K)=\{f \in C^0(K) \mid$ esiste $(U, \tilde{f})$ dove $U \supset K$ è un intorno aperto di $K$, $\tilde{f} \in \mathcal{O}(U)$ e $\tilde{f}\restrict{K}\equiv f\}$.
+\end{defn}
+
+\begin{ex}
+  Se $w \not\in K, f(z)=\dfrac{1}{w-z}$, allora $f \in \mathcal{O}(K)$.
+\end{ex}
+
+\begin{thm}
+  (Primo teorema di Runge) Sia $K \subset\subset \mathbb{C}$ compatto, $\Omega \subseteq \mathbb{C}$ un intorno aperto di $K$. Le seguenti sono equivalenti:
+  \begin{nlist}
+    \item ogni $f \in \mathcal{O}(K)$ può essere approssimata uniformemente su $K$ da funzioni in $\mathcal{O}(\Omega)$;
+    \item $\Omega \setminus K$ non ha componenti connesse relativamente compatte in $\Omega$;
+    \item per ogni $z \in \Omega \setminus K$ esiste $f \in \mathcal{O}(\Omega)$ t.c. $|f(z)|>\|f\|_K$.
+  \end{nlist}
+\end{thm}
+
+\begin{proof}
+  (iii) $\implies$ (ii) Se (ii) è falso, esiste $U$ componente connessa di $\Omega \setminus K$ con $\overline{U} \subset \Omega$ e $\partial U \subseteq K$, dunque per il principio del massimo abbiamo, per ogni $g \in \mathcal{O}(\Omega)$ e per ogni $z \in U$, che $|g(z)|\le \max_{\zeta \in \partial U} |g(\zeta)| \le \|g\|_K$, contro (iii).
+
+  (i) $\implies$ (ii) Se (ii) è falso, esiste $U$ componente connessa di $\Omega \setminus K$ con $\overline{U} \subset \Omega$ e $\partial U \subseteq K$. Sia $w \in U$, $f(z)=\dfrac{1}{w-z}$ e $f \in \mathcal{O}(K)$.
+  Se (i) fosse vera esisterebbe $\{f_n\} \in \mathcal{O}(\Omega)$ t.c. $\|f_n-f\|_K \longrightarrow 0$ $\implies$ $\|f_m-f_n\|_K \longrightarrow 0$ per $m, n \longrightarrow +\infty$.
+  Sempre per il principio del massimo, per ogni $z \in U$ $|g(z)|\le \max_{\zeta \in \partial U} |g(\zeta)| \le \|g\|_K$ $\implies$ $\|f_m-f_n\|_{\overline{U}} \longrightarrow 0$ per $m,n \longrightarrow +\infty$ $\implies$ $\{f_n\}$ è di Cauchy in $C^0(U \cup K)$ $\implies$ converga a una $F \in C^0(U \cup K) \subset C^0(\overline{U})$.
+  Per il teorema di Weierestrass, $F \in \mathcal{O}(U)$. Su $K$ abbiamo che $(w-z)F(z)\equiv 1$. Ma allora applicando il principio del massimo a $(w-z)F(z)-1 \in \mathcal{O}(U) \cap C^0(\overline{U})$ otteniamo $(w-z)F(z)-1 \equiv 0$ su tutto $U$, impossibile (in $w$ fa $-1$).
+
+  (ii) $\implies$ (i) Si vedrà.
+
+  (i)+(ii) $\implies$ (iii) Fissiamo $z_0 \in \Omega \setminus K$. Sia $D \subset \Omega \setminus K$ un disco chiuso di centro $z_0$. Le componenti connesse di $\Omega \setminus (K \cup D)$ sono lo stesse di $\Omega \setminus K$ con una a cui è stato tolto $D$. In particolare $K \cup D$ soddisfa (ii).
+  La funzione $g$ che è $0$ su $K$ e $1$ su $D$ appartiene a $\mathcal{O}(K \cup D)$, dunque per (i) può essere approssimata da funzioni in $\mathcal{O}(\Omega)$ $\implies$ esiste $f \in \mathcal{O}(\Omega)$ t.c. $\|f\|_K<1/2$ e $\|f-1\|_D<1/2$ $\implies$ $|f(z_0)|>1-1/2=1/2$ $\implies$ $\|f\|_K<1/2<|f(z_0)|$.
+\end{proof}

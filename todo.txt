@@ -8,5 +8,6 @@ Lez 07: ok
 Lez 08: ok
 Lez 09: ok
 Lez 10: ok
+Lez 11: ok
 
 Scrivere un README decente
