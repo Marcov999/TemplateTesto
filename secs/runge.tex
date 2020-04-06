@@ -1,4 +1,4 @@
-\begin{lm}
+\begin{lm} \label{taglio}
   Sia $K \subset \subset \mathbb{C}$ compatto, $V \supset K$ un intorno aperto. Allora esiste $g \in C^{\infty}(\mathbb{C})$ t.c. $g\restrict{K}=1$ e $supp(g) \subset V$ ($\implies g\restrict{\mathbb{C}\setminus V}\equiv 0$) [ricordiamo che $supp(g)=\overline{\{z \in \mathbb{C} \mid g(z)\not=0\}}$].
 \end{lm}
 
@@ -99,8 +99,86 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
   Sempre per il principio del massimo, per ogni $z \in U$ $|g(z)|\le \max_{\zeta \in \partial U} |g(\zeta)| \le \|g\|_K$ $\implies$ $\|f_m-f_n\|_{\overline{U}} \longrightarrow 0$ per $m,n \longrightarrow +\infty$ $\implies$ $\{f_n\}$ è di Cauchy in $C^0(U \cup K)$ $\implies$ converga a una $F \in C^0(U \cup K) \subset C^0(\overline{U})$.
   Per il teorema di Weierestrass, $F \in \mathcal{O}(U)$. Su $K$ abbiamo che $(w-z)F(z)\equiv 1$. Ma allora applicando il principio del massimo a $(w-z)F(z)-1 \in \mathcal{O}(U) \cap C^0(\overline{U})$ otteniamo $(w-z)F(z)-1 \equiv 0$ su tutto $U$, impossibile (in $w$ fa $-1$).
 
-  (ii) $\implies$ (i) Si vedrà.
+  (ii) $\implies$ (i) Sia $\mathcal{O}(\Omega)\restrict{K}=\{f\restrict{K} \mid f \in \mathcal{O}(\Omega)\}$. Vogliamo $\mathcal{O}(\Omega)\restrict{K}$ denso in $\mathcal{O}(K)$ rispetto a $\|\cdot\|_K$.
+  Per il teorema di Hahn Banach, se $W$ è un sottospazio vettoriale di $V$ con $W, V$ spazi vettoriali topologici, allora $W$ è denso in $V$ $\iff$ l'unico elemento di $V^*$ che si annulla su $W$ è $0$ $\iff$ per ogni $\mu \in V^*$ t.c. $\mu\restrict{W}\equiv 0$, $\mu \equiv 0$.
+  Per avere la tesi serve quanto segue: se $\mu$ è una misura su $K$ (cioè un elemento del duale di $C^0(K)$) t.c. per ogni $f \in \mathcal{O}(K)\restrict{K}$ $\displaystyle \int f(z)\diff\mu(z)=0$ $(\star)$ allora per ogni $g \in \mathcal{O}(K)$ $\displaystyle \int g(z)\diff\mu(z)=0$.
+  Dato $\mu$ che soddisfa $(\star)$ definiamo $\varphi:\mathbb{C}\setminus K \longrightarrow \mathbb{C}$ ponendo $\displaystyle \varphi(w)=\int_{\mathbb{C}} \frac{1}{z-w}\diff\mu(z)=\int_K \frac{1}{z-w}\diff\mu(z)$.
+  Abbiamo visto che, se $\varphi \in \mathcal{O}(\mathbb{C}\setminus K)$ e $w\not\in\Omega$, $(z-w)^{-1} \in \mathcal{O}(\Omega)$ e per $(\star)$ $\varphi\restrict{\mathbb{C}\setminus \Omega}\equiv 0$ $\implies$ $\varphi \equiv 0$ su ogni componente connessa di $\mathbb{C}\setminus K$ che interseca $\mathbb{C}\setminus\Omega$.
+  Per ogni $n \ge 0$ $z^n \in \mathcal{O}(\Omega)$, dunque per $(\star)$ $\displaystyle \int z^n \diff\mu(z)=0$. Ma $(z-w)^{-1}$ si può sviluppare in una serie di potenze in $z$ che converge uniformemente su $K$ non appena $|w|>\|z\|_K$ $\implies$ $\varphi \equiv 0$ sulla componente connessa illimitata di $\mathbb{C}\setminus K$.
+  Mancano solo le componenti connesse limitate di $\mathbb{C}\setminus K$ con chiusura contenuta in $\Omega$, cioè le componenti connesse di $\Omega\setminus K$ relativamente compatte in $\Omega$. Ma per (ii) non ce ne sono $\implies$ $\varphi\restrict{\mathbb{C}\setminus K}\equiv 0$. Sia $g \in \mathcal{O}(K)$, e sia $U \supset K$ un intorno aperto t.c. $g \in \mathcal{O}(U)$ con $\partial U$ "buono" (per fare l'integrale).
+  Sia $\psi \in C^{\infty}(\mathbb{C})$ t.c. $\psi\restrict{K}\equiv 1$ e $supp(\psi) \subset \subset U$ data dal lemma \ref{taglio}.
+  Abbiamo, per il teorema di Cauchy generalizzato, per ogni $w \in K$ $\displaystyle g(w)=\psi(w)g(w)=\frac{1}{2\pi i}\int_U \frac{g(z)}{z-w}\frac{\partial \psi}{\partial \bar{z}}(z)\diff z\wedge\diff\bar{z}+\frac{1}{2\pi i}\int_{\partial U} \frac{g(z)\psi(z)}{z-w}\diff z$.
+  $\psi \restrict{\partial U}\equiv 0$, dunque il secondo integrale è nullo. Inoltre, $\psi\restrict{K}\equiv 1 \implies \dfrac{\partial \psi}{\partial \bar{z}}\restrict{K}\equiv 0$, quindi possiamo integrare su $U \setminus K$.
+  Il risultato è dunque uguale a $\displaystyle \frac{1}{2\pi i}\int_{U \setminus K} \frac{g(z)}{z-w}\frac{\partial \psi}{\partial\bar{z}}(z)\diff z\wedge\diff\bar{z}$.
+  Allora $\displaystyle \int g(w)\diff\mu(z)=\frac{1}{2\pi i}\int \diff\mu(z)\int_{U\setminus K} \frac{g(z)}{z-w}\frac{\partial \psi}{\partial\bar{z}}(z)\diff z\wedge\diff\bar{z}=-\frac{1}{2\pi i}\int_{U\setminus K} g(z)\frac{\partial \psi}{\partial\bar{z}}(z)\left(\int \frac{1}{w-z} \diff\mu(z)\right)\diff z\wedge\diff\bar{z}=0$ perché $\displaystyle \int \frac{1}{w-z} \diff\mu(z)=\varphi(z)$ e $\varphi\restrict{U \setminus K}\equiv 0$.
 
   (i)+(ii) $\implies$ (iii) Fissiamo $z_0 \in \Omega \setminus K$. Sia $D \subset \Omega \setminus K$ un disco chiuso di centro $z_0$. Le componenti connesse di $\Omega \setminus (K \cup D)$ sono lo stesse di $\Omega \setminus K$ con una a cui è stato tolto $D$. In particolare $K \cup D$ soddisfa (ii).
   La funzione $g$ che è $0$ su $K$ e $1$ su $D$ appartiene a $\mathcal{O}(K \cup D)$, dunque per (i) può essere approssimata da funzioni in $\mathcal{O}(\Omega)$ $\implies$ esiste $f \in \mathcal{O}(\Omega)$ t.c. $\|f\|_K<1/2$ e $\|f-1\|_D<1/2$ $\implies$ $|f(z_0)|>1-1/2=1/2$ $\implies$ $\|f\|_K<1/2<|f(z_0)|$.
+\end{proof}
+
+\begin{oss}
+  Se $U \subset \Omega$ è aperto relativamente compatto in $\Omega$ ($\implies \partial U\subset \Omega$) allora per ogni $f \in \mathcal{O}(\Omega)$ $\|f\|_{\overline{U}}=\|f\|_{\partial U}$ per il principio del massimo.
+\end{oss}
+
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}$ aperto, $K\subset\subset\Omega$ compatto. L'\textsc{inviluppo olomorfo di $K$ in $\Omega$} è $\widehat{K}_{\Omega}=\{z \in \Omega \mid |f(z)|\le\|f\|_K\forall f \in \mathcal{O}(\Omega)\}$.
+\end{defn}
+
+\begin{prop}
+  Sia $\Omega \subseteq \mathbb{C}$ aperto, $K\subset\subset\Omega$ compatto. Allora:
+  \begin{nlist}
+    \item per ogni $f \in \mathcal{O}(\Omega)$ $\|f\|_{\widehat{K}_{\Omega}}=\|f\|_K$;
+    \item $K \subset \widehat{K}_{\Omega}$ e $\widehat{(\widehat{K}_\Omega)}_{\Omega}=\widehat{K}_{\Omega}$;
+    \item $\widehat{K}_{\Omega}=K \iff \mathcal{O}(\Omega)\restrict{K}$ è denso in $\mathcal{O}(K)$;
+    \item $d(w, \widehat{K}_{\Omega})=d(w, K)$ per ogni $w \in \mathbb{C}\setminus\Omega$. In particolare $d(\widehat{K}_{\Omega}, \mathbb{C}\setminus\Omega)=d(K, \mathbb{C}\setminus\Omega)$;
+    \item $\widehat{K}_{\Omega}$ è compatto;
+    \item $\widehat{K}_{\Omega}$ è l'unione di $K$ e delle componenti connesse di $\Omega \setminus K$ relativamente compatte in $\Omega$;
+    \item $\mathbb{C}\setminus \widehat{K}_{\Omega}$ ha solo un numero finito di componenti connesse, nessuna contenuta in $\Omega$.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  \begin{nlist}
+    \item Ovvia.
+    \item Ovvia.
+    \item Viene dal primo teorema di Runge.
+    \item in settimana
+  \end{nlist}
+\end{proof}
+
+\begin{thm}
+  (Secondo teorema di Runge) Siano $\Omega_1 \subset \Omega_2 \subseteq \mathbb{C}$ aperti. Allora sono equivalenti:
+  \begin{nlist}
+    \item ogni $f \in \mathcal{O}(\Omega_1)$ può essere approssimata uniformemente sui compatti da funzioni in $\mathcal{O}(\Omega_2)$ [$(\Omega_1, \Omega_2)$ si dice \textit{coppia di Runghe}];
+    \item nessuna componente connessa di $\Omega_2\setminus\Omega_1$ è compatta;
+    \item per ogni compatto $K \subset \Omega_1$ $\widehat{K}_{\Omega_2}=\widehat{K}_{\Omega_1}$;
+    \item per ogni compatto $K \subset \Omega_1$ $\widehat{K}_{\Omega_2}\cap \Omega_1=\widehat{K}_{\Omega_1}$;
+    \item per ogni compatto $K \subset \Omega_1$ $\widehat{K}_{\Omega_2}\cap \Omega_1$ è compatto.
+  \end{nlist}
+\end{thm}
+
+\begin{proof}
+  (iii) $\implies$ (iv) $\implies$ (v) è ovvio.
+
+  In settimana
+\end{proof}
+
+\begin{cor}
+  Sia $\Omega \subset \mathbb{C}$ aperto. Ogni $f \in \mathcal{O}(\mathbb{C})$ è approssimabile uniformemente sui compatti con polinomi $\iff$ $\mathbb{C}\setminus \Omega$ non ha componenti connesse compatte.
+\end{cor}
+
+\begin{proof}
+  Prendiamo $\Omega_1=\Omega, \Omega_2=\mathbb{C}$.
+
+  ($\Leftarrow$) Il secondo teorema di Runge ci dà l'approssimazione con funzioni in $\mathcal{O}(\mathbb{C})$, che a loro volta si approssimano con polinomi.
+
+  ($\implies$) I polinomi sono funzioni in $\mathcal{O}(\mathbb{C})$, quindi si conclude sempre per il secondo teorema di Runge.
+\end{proof}
+
+\begin{thm}
+  (Terzo teorema di Runge) Sia $\Omega \subset \mathbb{C}$ aperto, $\displaystyle \mathbb{C}\setminus \Omega=\bigcup_{\alpha}C_{\alpha}$ la decomposizione in componenti connesse. Sia $E \subset \mathbb{C}$ discreto con esattamente un punto in ciascuna $C_{\alpha}$ compatta. Allora ogni $f \in \mathcal{O}(\mathbb{C})$ può essere approssimata con funzioni razionali con poli in $E$.
+\end{thm}
+
+\begin{proof}
+  In settimana
 \end{proof}
