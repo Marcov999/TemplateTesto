@@ -142,14 +142,22 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
     \item Ovvia.
     \item Ovvia.
     \item Viene dal primo teorema di Runge.
-    \item in settimana
+    \item $w \not\in \Omega \implies (z-w)^{-1} \in \mathcal{O}(\Omega) \implies$ per ogni $z \in \widehat{K}_{\Omega}$ $\displaystyle \frac{1}{|z-w|}\le \sup_{\zeta \in K} \frac{1}{|\zeta-w|} \implies |z-w| \ge \inf_{\zeta \in K} |\zeta-w|=d(w, K)$.
+    $\displaystyle d(w, \widehat{K}_{\Omega})=\inf_{z \in \widehat{K}_{\Omega}}|z-w| \ge d(w, K)$. La disuguaglianza opposta segue da $K \subseteq \widehat{K}_{\Omega}$.
+    \item Usando $f(z)=z$ otteniamo che $\widehat{K}_{\Omega}$ è limitato. Il punto (iv) ci assicura che $\overline{\widehat{K}_{\Omega}} \subset \Omega$ e infine $\widehat{K}_{\Omega}$ è chiuso (segue dalla definizione).
+    \item Sia $U$ una componente connessa di $\Omega \setminus K$ relativamente compatta in $\Omega$ $\implies$ $\partial U \subseteq K$, dunque per l'osservazione precedente per ogni $f \in \mathcal{O}(\Omega)$ $\|f\|_U \le \|f\|_K \implies U \subset \widehat{K}_{\Omega}$.
+    Sia $K_1=K \cup$ le componenti connesse di $\Omega \setminus K$ relativamente compatte in $\Omega$. Abbiamo $K_1 \subseteq \widehat{K}_{\Omega}$ inoltre $K_1$ è chiuso (in quanto è contenuto in un compatto contenuto in $\Omega$ e $\Omega \setminus K_1$ è l'unione delle rimanenti componenti connesse di $\Omega$, che essendo aperto a componenti connesse aperte). Quindi $K_1$ è compatto e nessuna componente connessa di $\Omega \setminus K_1$ è relativamente compatta in $\Omega$. Per il primo teorema di Runge, $K_1=\widehat{(K_1)}_{\Omega}$.
+    $K \subseteq K_1 \implies \widehat{K}_{\Omega} \subseteq \widehat{(K_1)}_{\Omega} \implies K_1=\widehat{K}_{\Omega}$.
+    \item $\widehat{K}_{\Omega}$ è compatto. Quindi $\mathbb{C} \setminus \widehat{K}_{\Omega}$ ha una sola componente connessa illimitata $U_0$ che contiene il complementare di un disco contenente $\widehat{K}_{\Omega}$. Siano $U_1, U_2, \dots,$ le altre componenti connesse (contenute nella chiusura del disco) di $\mathbb{C}\setminus\widehat{K}_{\Omega}$.
+    Se, per assurdo, $U_j \subset \Omega$, siccome $\partial U_j \subseteq \widehat{K}_{\Omega}$ allora $\overline{U}_j=U_j \cup \partial U_j \subset \subset \Omega$ contro il punto (vi). Supponiamo per assurdo che $\{U_j\}$ siano infinite. Per ogni $j \ge 1$ sia $z_j \in U_j \setminus \Omega$. A meno di sottosuccessioni $z_j \longrightarrow z_0 \in \mathbb{C} \setminus \Omega$.
+    Sia $\rho>0$ t.c. $D(z_0, \rho) \cap \widehat{K}_{\Omega}=\emptyset$. Ma $D(z_0, \rho) \subset \mathbb{C}\setminus\widehat{K}_{\Omega}$ è connesso $\implies$ esiste $j_0$ t.c. $D(z_0, \rho) \subset U_{j_0}$ $\implies$ $U_j$ interseca $U_{j_0}$ per $j>>1$ $\implies$ $U_j=U_{j_0}$, assurdo.
   \end{nlist}
 \end{proof}
 
 \begin{thm}
   (Secondo teorema di Runge) Siano $\Omega_1 \subset \Omega_2 \subseteq \mathbb{C}$ aperti. Allora sono equivalenti:
   \begin{nlist}
-    \item ogni $f \in \mathcal{O}(\Omega_1)$ può essere approssimata uniformemente sui compatti da funzioni in $\mathcal{O}(\Omega_2)$ [$(\Omega_1, \Omega_2)$ si dice \textit{coppia di Runghe}];
+    \item ogni $f \in \mathcal{O}(\Omega_1)$ può essere approssimata uniformemente sui compatti da funzioni in $\mathcal{O}(\Omega_2)$ [$(\Omega_1, \Omega_2)$ si dice \textit{coppia di Runge}];
     \item nessuna componente connessa di $\Omega_2\setminus\Omega_1$ è compatta;
     \item per ogni compatto $K \subset \Omega_1$ $\widehat{K}_{\Omega_2}=\widehat{K}_{\Omega_1}$;
     \item per ogni compatto $K \subset \Omega_1$ $\widehat{K}_{\Omega_2}\cap \Omega_1=\widehat{K}_{\Omega_1}$;
@@ -160,7 +168,11 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
 \begin{proof}
   (iii) $\implies$ (iv) $\implies$ (v) è ovvio.
 
-  In settimana
+  (v) $\implies$ (i) Dato $K \subset \Omega_1$, poniamo $K'=\widehat{K}_{\Omega_2} \cap \Omega_1$ e $K''=\widehat{K}_{\Omega_2} \setminus \Omega_1$. $K' \cap K''=\emptyset, K \subseteq K'$, $K', K''$ sono compatti e $\widehat{K}_{\Omega_2}=K'\cup K''$.
+  Sia ora $f \in \mathcal{O}(\Omega_1), \epsilon>0$. Applichiamo il primo teorema di Runge a $\widehat{K}_{\Omega_2}$ e $\tilde{f}$ t.c. $\tilde{f}\restrict{K'}\equiv f$ e $\tilde{f}\equiv 1$ in un intorno di $K''$ $\implies$ esiste $g \in \mathcal{O}(\Omega_2)$ t.c. $\|g-f\|_K \le \|g-f\|_{K'} \le \|g-f\|_{\widehat{K}_{\Omega_2}}<\epsilon$.
+
+  (v) $\implies$ (iii) Dato $K \subset \Omega_1$, definiamo $K'$ e $K''$ come sopra. Applichiamo il primo teorema di Runge a $f\restrict{K} \equiv 0, f\restrict{K''}\equiv 1$.
+  Se $z_0 \in K''$ esiste $F \in \mathcal{O}(\Omega_2)$ t.c. $\|F\|_K<1/2$ e $\|F-1\|_{K''}<1/2 \implies |F(z_0)|>1/2>\|F\|_K \implies z_0 \not\in \widehat{K}_{\Omega_2}$, assurdo $\implies K''=\emptyset \implies \widehat{K}_{\Omega_2} \subseteq \Omega_1 \implies \widehat{K}_{\Omega_2}=\widehat{K}_{\Omega_1}$.
 \end{proof}
 
 \begin{cor}
