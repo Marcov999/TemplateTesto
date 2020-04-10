@@ -124,7 +124,7 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
   Sia $\Omega \subseteq \mathbb{C}$ aperto, $K\subset\subset\Omega$ compatto. L'\textsc{inviluppo olomorfo di $K$ in $\Omega$} è $\widehat{K}_{\Omega}=\{z \in \Omega \mid |f(z)|\le\|f\|_K\forall f \in \mathcal{O}(\Omega)\}$.
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{inviluppo}
   Sia $\Omega \subseteq \mathbb{C}$ aperto, $K\subset\subset\Omega$ compatto. Allora:
   \begin{nlist}
     \item per ogni $f \in \mathcal{O}(\Omega)$ $\|f\|_{\widehat{K}_{\Omega}}=\|f\|_K$;
@@ -173,6 +173,16 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
 
   (v) $\implies$ (iii) Dato $K \subset \Omega_1$, definiamo $K'$ e $K''$ come sopra. Applichiamo il primo teorema di Runge a $f\restrict{K} \equiv 0, f\restrict{K''}\equiv 1$.
   Se $z_0 \in K''$ esiste $F \in \mathcal{O}(\Omega_2)$ t.c. $\|F\|_K<1/2$ e $\|F-1\|_{K''}<1/2 \implies |F(z_0)|>1/2>\|F\|_K \implies z_0 \not\in \widehat{K}_{\Omega_2}$, assurdo $\implies K''=\emptyset \implies \widehat{K}_{\Omega_2} \subseteq \Omega_1 \implies \widehat{K}_{\Omega_2}=\widehat{K}_{\Omega_1}$.
+
+  (i) $\implies$ (iv) È chiaro che $\widehat{K}_{\Omega_1} \subseteq \widehat{K}_{\Omega_2} \cap \Omega_1$. Sia $z_0 \in \Omega_1 \setminus \widehat{K}_{\Omega_1}$.
+  Allora esistono $f \in \mathcal{O}(\Omega_1)$, $\epsilon>0$ t.c. $|f(z_0)|>\|f\|_K+\epsilon$. Sia $F \in \mathcal{O}(\Omega_2)$ t.c. $\|F-f\|_{K \cup \{z_0\}}<\epsilon/2$.
+  Allora $|F(z_0)|>|f(z_0)|-\epsilon/2>\|f\|_K+\epsilon/2>\|F\|_K \implies z_0 \not\in \widehat{K}_{\Omega_2} \implies$ (iv).
+
+  (ii) $\implies$ (iii) sia $U$ una componente connessa di $\Omega_2 \setminus K$ relativamente compatta in $\Omega_2$. Siccome $\partial U \subseteq K \subset \Omega_1$, $L=U \setminus \Omega_1$ è compatto in $\Omega_2$.
+  Per assurdo, $a \in L$ e sia $C$ la componente connessa di $\Omega_2 \setminus \Omega_1$ che contiene $a$ $\implies$ $U \cup C$ è connesso; ma $U$ è una componente connessa di $\Omega_2 \setminus K \supset \Omega_2 \setminus \Omega_1 \implies U \supseteq C \implies C$ è relativamente compatto in $\Omega_2$ contro (ii), assurdo $\implies$ $L=\emptyset$ $\implies$ $U \subset \Omega_1$.
+  Inoltre $\partial U \subseteq K$ $\implies$ $U$ è una componente connessa relativamente compatta in $\Omega_1$ $\implies$ $U \subseteq \widehat{K}_{\Omega_1}$ $\implies$ $\widehat{K}_{\Omega_2} \subseteq \widehat{K}_{\Omega_1}$ per il punto (vi) della proposizione \ref{inviluppo}. L'altra inclusione è ovvia.
+
+  (iii) $\implies$ (ii) Sia $L$ la componente connessa di $\Omega_2 \setminus \Omega_1$ compatta in $\Omega_2$. Per un lemma topologico, possiamo trovare un intorno $U$ di $L$ relativamente compatto in $\Omega_2$ con $\partial U \subset \Omega_1$. Per il principio del massimo e per (iii), $\Omega_1 \supset \widehat{(\partial U)}_{\Omega_1}=\widehat{(\partial U)}_{\Omega_2} \supseteq U \supseteq L \implies L=\emptyset$.
 \end{proof}
 
 \begin{cor}
@@ -192,5 +202,10 @@ Se $z \in K$, esiste $j$ t.c. $z \in D(p_j, r_{p_j}/2) \implies g_j(z)=1 \implie
 \end{thm}
 
 \begin{proof}
-  In settimana
+  Sia $K \subset \subset \Omega$ compatto e sia $L=\widehat{K}_{\Omega}$. $\mathbb{C}\setminus L$ ha una componente connessa illimitata $U$ e un numero finito di componenti connesse limitate $W_1, \dots, W_p$.
+  Inoltre per ogni $j$ $W_j \not\subset \Omega$, per cui interseca $\mathbb{C}\setminus\Omega$ e quindi contiene una componente connessa $C_{\alpha_j}$ di $\mathbb{C}\setminus \Omega$ $\implies$ $C_{\alpha_j}$ è compatta; sia $\{a_j\}=E\cap C_{\alpha_j}$.
+  Sia $\Omega_0=\mathbb{C}\setminus\{a_1, \dots, a_p\} \supset L$. Le componenti connesse di $\Omega_0 \setminus L$ sono $U$ e $W_j \setminus \{a_j\}$. Nessuna di queste è relativamente compatta in $\Omega_0$.
+  Per il secondo teorema di Runge, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $\epsilon>0$ esiste $F \in \mathcal{O}(\Omega_0)$ t.c. $\|F-f\|_L<\epsilon$. Sia $g_j$ la parte principale dello sviluppo di Laurent di $F$ in $a_j$ $\implies$ $F=h+g_1+\dots+g_p$ con $h=F-g_1-\dots-g_p \in \mathcal{O}(\mathbb{C})$.
+  Sia $P \in \mathbb{C}[z]$ t.c. $\|P-h\|_L<\epsilon/(p+1)$. Se $\displaystyle g_j(z)=\sum_{n=-\infty}^{-1} c_n^{(j)}(z-a_j)^n$ possiamo trovare $N>0$ t.c. $\displaystyle \|g_j-\sum_{n=-N}^{-1} c_n^{(j)}(z-a_j)^n\|_L=\|g_j-g_{j,N}\|_L \le \epsilon/(p+1)$ per ogni $j=1, \dots, p$.
+  Poniamo $G=P+g_{1,N}+\dots+g_{p,N}$. $G$ è razionale e $\displaystyle \|F-G\|_L \le \|h-P\|_L+\sum_{j=1}^p \|g_j-g_{j,N}\|_L<(p+1) \dfrac{\epsilon}{p+1}=\epsilon$.
 \end{proof}
