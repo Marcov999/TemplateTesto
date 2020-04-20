@@ -41,7 +41,7 @@
   Sia $p_a$ la parte principale dello sviluppo di Laurent di $\varphi_a$ in $a$ $\implies$ $p_a \in \mathcal{O}(\mathbb{C}\setminus \{a\})$ e $\varphi_a-p_a$ è olomorfa in un intorno di $a$. Allora basta prendere $f$ data del teorema di Mittag-Leffler perché $f-\varphi_a=(f-p_a)-(\varphi_a-p_a)$.
 \end{proof}
 
-\begin{lm}
+\begin{lm} \label{z-a/z-b}
   Sia $\Omega \subset \mathbb{C}$ aperto, $a, b \in \mathbb{C}\setminus\Omega$ appartenenti alla stessa comoponente connessa di $\mathbb{C}\setminus\Omega$. Allora esiste $f \in \mathcal{O}(\Omega)$ t.c. $e^{f(z)}=\dfrac{z-a}{z-b}$.
 \end{lm}
 
@@ -55,7 +55,14 @@
 \end{thm}
 
 \begin{proof}
-  poi
+  Siccome $f$ non si annulla su $K$, $\displaystyle \delta_0=\min_{z \in K} |f(z)|>0$. Quindi se $\tilde{f} \in \mathcal{O}(\Omega)$ t.c. $\|\tilde{f}-f\|_K<\delta_0/2$ allora $\tilde{f}(z)\not=0$ per ogni $z \in K$.
+  Sappiamo che $\mathbb{C}\setminus K$ ha una componente connessa illimitata $U_0$ e un numero finito di componenti connesse limitate $U_1, \dots, U_p$ con $U_j \not\subset \Omega$; scegliamo per ogni $j=1, \dots, p$ $a_j \in U_j \setminus \Omega$. Possiamo approssimare $f$ con una funzione razionale $\tilde{f}$ con poli fuori da $K$; per l'osservazione fatta all'inizio della dimostrazione possiamo supporre che $\tilde{f}$ non si annulli mai in un intorno di $K$.
+  Quindi $\displaystyle \tilde{f}(z)=c\prod_{\nu=1}^d (z-b_{\nu})^{m_{\nu}}$ con $c \in \mathbb{C}^*, m_{\nu} \in \mathbb{Z}^*, b_{\nu} \in \mathbb{C}\setminus K$. Fissiamo $R>0$ t.c. $K \subset\subset D(0,R)$ e poniamo $a_0=R \in U_0$.
+  Per $j=0, \dots, p$ sia $A_j=\{\nu \mid b_{\nu} \in U_j\}$.
+  Scriviamo $\displaystyle \tilde{f}(z)=cG(z)(z-R)^{n_0} \prod_{j=0}^p \prod_{\nu \in A_j} \left(\frac{z-b_{\nu}}{z-a_j}\right)^{m_{\nu}}$ dove $\displaystyle n_{j}=\sum_{\nu \in A_j} m_{\nu}$ e $\displaystyle G(z)=\prod_{j=1}^p (z-a_j)^{n_j}$.
+  Se $\nu \in A_j$ allora $a_j$ e $b_{\nu}$ appartengono alla stessa componente connessa di $\mathbb{C} \setminus K$, dunque per il lemma \ref{z-a/z-b} esiste $\varphi_{\nu, j} \in \mathcal{O}(K)$ t.c. $\dfrac{z-b_{\nu}}{z-a_j}=e^{\varphi_{\nu, j}(z)}$.
+  Inoltre esiste $\varphi_0 \in \mathcal{O}(D(0, R))$ t.c. $z-R=\exp(\varphi_0(z))$. Quindi esiste $h \in \mathcal{O}(K)$ t.c. $\tilde{f}(z)=cG(z)e^{h(z)}$. Per il primo teorema di Runge, per ogni $\delta>0$ esiste $H \in \mathcal{O}(\Omega)$ t.c. $\|H-h\|_K<\delta$.
+  Poniamo $F=cGe^H \in \mathcal{O}(\Omega)$ e mai nulla su $\Omega$; inoltre $\|\tilde{f}-F\|_K=|c|\|G\|_K\|e^H-e^h\|_K$. A patto di prendere $\delta<<1$ possiamo rendere $\|\tilde{f}-F\|_K$ piccolo quanto vogliamo e quindi $\|f-F\|_K$ piccolo quanto vogliamo.
 \end{proof}
 
 \begin{exc}
