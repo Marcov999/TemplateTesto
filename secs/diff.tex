@@ -1,0 +1,39 @@
+Prima di studiare quali risultati per le funzioni olomorfe in una variabile si mantengono nel caso in più variabili, vediamo prima un po' di differenze semplici da dimostrare ma molto distintive. Cominciamo con il \textit{fenomeno di Hartogs}: l'ultima cosa che abbiamo visto per le funzioni in una variabile è che ogni dominio è dominio di esistenza per una certa funzione olomorfa. Questo è in generale falso per funzioni in più variabili.
+
+\begin{prop}
+  (Hartogs) Sia $D=\mathbb{D}^2\setminus P(0,1/2)$. Ogni $f \in \mathcal{O}(D)$ si estende a una $\tilde{f} \in \mathcal{O}(\mathbb{D}^2)$.
+\end{prop}
+
+\begin{proof}
+  Se $|z|<3/4$ e $1/2<|w|<1$, per Cauchy in una variabile abbiamo che $\displaystyle f(z,w)=\frac{1}{2\pi i}\int_{\partial D(0, 3/4)} \frac{f(\zeta, w)}{\zeta-z}\diff z$. L'integrale è ben definito per $|z|<3/4$ e $|w|<1$ ed è olomofo in $z$ e $w$, dunque estende $f$ a tutto $\mathbb{D}^2$ (che coincida con $f$ anche sui punti di $D$ che non erano stati considerati prima di fare l'integrale discende dal principio di identità).
+\end{proof}
+
+Problema: caratterizzare i domini di esistenza di funzioni olomorfe in più variabili (\textit{domini di olomorfia}). Non vedremo molto in questo senso. Vediamo invece alcune cose per quanto riguarda l'essere biolomorfi. In una variabile, il teorema di uniformizzazione di Riemann ci dava una caratterizzazione dei domini tra loro biolomorfi basata esclusivamente sulla topologia del dominio. Vedremo che questo non è possibile in più variabili. Ci sono problemi tra domini "lisci" (in termini di differenziabilità) e non, ma anche piccolissime variazioni lisce possono causare problemi. Ecco un paio di risultati in questo senso.
+
+\begin{ex}
+  Non vale nulla che assomigli al teorema di uniformizzazione di Riemann poiché $B^n$ non è biolomorfa e $\mathbb{D}^n$ (Poincaré).
+\end{ex}
+
+\begin{ex}
+  (Greene-Krantz) "I foruncoli fanno male": se si prende un dominio liscio, come ad esempio $B^n$, è possibile fare una modifica "minuscola", cioè localizzata in un intorno di un punto, e che mantenga comunque il dominio liscio, tale che quello che si ottiene non è biolomorfo al dominio originale. Vale di più: esiste un'infinità più che numerabile di domini omeomorfi alla palla che a due a due non sono biolomorfi.
+\end{ex}
+
+\begin{ex}
+  Non esistono zeri isolati. Infatti, se $f \in \mathcal{O}(\Omega)$ ha uno zero isolato $z^0$, $1/f$ sarebbe olomorfa in $P(z^0,r) \setminus P(z^0, r/2)$ per $r<<1$, ma non estendibile a $P(z^0, r)$, contro Hartogs, assurdo.
+\end{ex}
+
+Un'altra cosa che cambia sono i domini di convergenza delle serie di potenze: in una variabile sappiamo che sono dischi, in più variabili invece vediamo.
+
+\begin{ex}
+  $\displaystyle \sum_{n \ge 0} (z_1+z_2)^n$ converge in $|z_1+z_2|<1$; \\
+  $\displaystyle \sum_{n \ge 0} (z_1z_2)^n$ converge in $|z_1z_2|<1$, che è un insieme illimitato; \\
+  $\displaystyle \sum_{n \ge 0} z_1^n$ converge in $|z_1|<1$, cioè $\mathbb{D}\times \mathbb{C}$.
+\end{ex}
+
+Un'altra differenza è l'equazione di Cauchy-Riemann non omogenea.
+
+\begin{ex}
+  In una variabile abbiamo risolto $\bar{\partial}u=\psi$ con $\psi \in C^\infty_C(\mathbb{C})$. In generale, però, non c'è una soluzione $u \in C^\infty_C(\mathbb{C})$. Infatti, supponento che esista, $u$ avrebbe supporto compatto, per cui $supp(u) \subset D(0,R)$.
+  Allora $\displaystyle 0=\int_{\partial D(0,r)} u(z)\diff \zeta$, che per Gauss-Green o Stokes è uguale a $\displaystyle \int_{D(0,R)} \dfrac{\partial u}{\partial \bar{\zeta}} \diff\bar{\zeta}\wedge\diff\zeta=2i\int_{\partial D(0,R)} \psi \diff x\wedge\diff y$, che in generale è diverso da $0$. Quindi se $\displaystyle \int_{\mathbb{C}} \psi \diff x \diff y\not=0$ allora $u$ non può avere supporto compatto.
+  Invece, se $n \ge 2$, $\psi_1, \dots, \psi_n \in C^\infty_C(\mathbb{C})$, $\psi=\psi_1\diff z_1+\dots+\psi_n\diff z_n$ con condizioni di compatibilità ($\frac{\partial \psi_h}{\partial \bar{z}_k}=\frac{\partial \psi_k}{\partial \bar{z}_h}$), allora esiste $u \in C^\infty_C(\mathbb{C})$ t.c. $\bar{\partial}u=\psi$.
+\end{ex}

@@ -1,0 +1,23 @@
+$z=(z_1, \dots, z_n) \in \mathbb{C}^n$. Se $\alpha \in \mathbb{N}^n$ è un multi-indice, $z^{\alpha}=z_1^{\alpha_1}\cdot \ldots \cdot z_n^{\alpha_n}$, $|\alpha|=\alpha_1+\dots+\alpha_n$, $\alpha!=\alpha_1!\cdot\ldots\cdot\alpha_n!$.
+$z_j=x_j+iy_j$, $x_j,y_j \in \mathbb{R}$. $\dfrac{\partial}{\partial z_j}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x_j}-i\dfrac{\partial}{\partial y_j}\right)$, $\dfrac{\partial}{\partial\bar{z}_j}=\dfrac{1}{2}\left(\dfrac{\partial}{\partial x_j}+i\dfrac{\partial}{\partial y_j}\right)$.
+$\diff z_j=\diff x_j+i\diff y_j$, $\diff\bar{z}_j=\diff x_j-i\diff y_j$. $\|z\|^2=|z_1|^2+\dots+|z_n|^2$. $\displaystyle \partial f=\sum_{j=1}^n \dfrac{\partial f}{\partial z_j}\diff z_j, \bar{\partial} f=\sum_{j=1}^n \dfrac{\partial f}{\partial \bar{z}_j}\diff \bar{z}_j$.
+
+\begin{exc}
+  $\partial+\bar{\partial}=\diff$, cioè $\displaystyle \partial f+\bar{\partial}f=\sum_{j=1}^n \left(\dfrac{\partial f}{\partial x_j}\diff x_j+\dfrac{\partial f}{\partial y_j}\diff y_j\right)$.
+\end{exc}
+
+$\diff x_1 \wedge \diff y_1 \wedge \dots \wedge \diff x_n \wedge \diff y_n=\left(\dfrac{1}{2i}\right)^n(\diff\bar{z}_1\wedge \diff z_1)\wedge \dots \wedge (\diff\bar{z}_n \wedge \diff z_n)$.
+Dominio=aperto connesso. \textit{Palle aperte}: $B(z^0, r)=\{z \in \mathbb{C}^n \mid \|z-z^0\|<r\}$. $B^n=B(0,1)$.
+\textit{Polidischi di poliraggio $\underline{r}=(r_1,\dots,r_n) \in (\mathbb{R}^+)^n$} ($r=(r, \dots, r) \in (\mathbb{R}^+)^n$): $P(z^0, \underline{r})=\{z \in \mathbb{C}^n \mid |z_j-z_j^0|<r_j\}=D(z_1^0, r_1) \times \dots \times D(z_n^0, r_n)$.
+\textit{Polidisco unitario}: $\displaystyle \mathbb{D}^n=P(0, \underline{1})=\{z \in \mathbb{C}^n \mid \max_j |z_j|<1\}$. $(z_1, \dots, \hat{z}_j,\dots, z_n)=(z_1, \dots, z_{j-1}, z_{j+1}, \dots, z_n)$.
+
+\begin{defn}
+  Sia $\Omega \subset \mathbb{C}^n$ un dominio. $f: \Omega \in \mathbb{C}$ è \textsc{olomorfa} se soddisfa una delle seguenti condizioni equivalenti:
+  \begin{nlist}
+    \item per ogni $j$ e per ogni $(z_1, \dots, \hat{z}_j,\dots, z_n) \in \mathbb{C}^{n-1}$ la funzione che manda $\zeta \longmapsto f(z_1, \dots, z_{j-1}, \zeta, z_{j+1}, \dots, z_n)$ è olomorfa dove definita (\textit{olomorfa separatamente in ciascuna variabile});
+    \item $f$ è $C^1$ in ciascuna variabile e $\dfrac{\partial f}{\partial \bar{z}_j} \equiv 0$ per ogni $j$ ($\bar{\partial} f\equiv 0$; \textit{Cauchy-Riemann});
+    \item per ogni $z^0 \in \Omega$ esiste $r>0$ t.c. $P(z^0, r) \subset \Omega$ dove $\displaystyle f(z)=\sum_{\alpha \in \mathbb{N}^n} a_{\alpha}(z-z_0)^{\alpha}$ e la serie converge assolutamente (\textit{analitica});
+    \item $f$ è $C^0$ in ciascuna variabile, localmente limitata e per ogni $z^0 \in \Omega$ esiste $r>0$ t.c. $P(z^0, r) \subset \Omega$ e
+    $$f(z)=\dfrac{1}{(2\pi i)^n} \int_{|\zeta_1-z_1^0|=r}\dots\int_{|\zeta_n-z_n^0|=r} \frac{f(\zeta_1,\dots,\zeta_n)}{(\zeta_1-z_1)\dots(\zeta_n-z_n)}\diff\zeta_1\dots\diff\zeta_n$$ per ogni $z \in P(z^0, r)$ (\textit{formula di Cauchy}).
+  \end{nlist}
+\end{defn}

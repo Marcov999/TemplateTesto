@@ -89,3 +89,26 @@
 \begin{proof}
   $E=\{$poli di $q\}$. Sia $k:E \longrightarrow \mathbb{Z}$ data da $k(a)=-ord_a(q)$. Allora il teorema di Weierstrass ci fornisce $g \in \mathcal{O}(\Omega)$ t.c. $gq \in \mathcal{O}(\Omega)$ $\implies$ $q=(gq)/g$ come voluto.
 \end{proof}
+
+\begin{defn}
+  $\Omega \subset \mathbb{C}$ è il \textsc{dominio di esistenza} di $f \in \mathcal{O}(\Omega)$ se per ogni $p \in \partial\Omega$ non esiste $D=D(p,r)$ per cui esiste $F \in \mathcal{O}(D)$ t.c. $F\restrict{U}\equiv f\restrict{U}$ dove $U$ è la componente connessa di $D \cap \Omega$ t.c. $p \in \partial U$.
+\end{defn}
+
+\begin{prop}
+  Sia $\Omega \subset \mathbb{C}$ un dominio. Allora $\Omega$ è il dominio di esistenza di una $f \in \mathcal{O}(\Omega)$.
+\end{prop}
+
+\begin{proof}
+  Sia $\{K_{\nu}\}$ data dal lemma \ref{succ_K_nu}. Sia $\{D_n\}$ una successione di dischi aperti t.c.:
+  \begin{enumerate}
+    \item $\overline{D_n} \subset \Omega$;
+    \item $K_1 \subset D_1 \cup \dots \cup D_{n_1}$ e $K_{\nu+1}\setminus\mathop {K_{\nu}}\limits^ \circ \subset D_{n_{\nu}+1}\cup \dots \cup D_{n_{\nu+1}}$;
+    \item se $n \ge n_{\nu+1}+1$ allora $D_n \cap K_{\nu}=\emptyset$;
+    \item il raggio di $D_n$ è minore di $1/\nu$ per $n_{\nu}+1 \le n \le n_{\nu+1}$.
+  \end{enumerate}
+  $\displaystyle \Omega=\bigcup_n D_n$, il raggio di $D_n$ tende a $0$, $\{D_n\}$ è localmente finita, cioè ogni punto ha un intorno che interseca solo un numero finito di $D_n$ ($\mathop {K_{\nu}}\limits^ \circ$). Sia $\{a_n\}$ una successione di punti distinti t.c. $a_n \in D_n$. $\{a_n\}$ è discreto e chiuso in quanto non ha punti di accumulazione in $\Omega$.
+  Per il teorema di Weierstrass, esiste $f \in \mathcal{O}(\Omega)$ i cui zeri sono esattamente $\{a_n\}$ (in particolare $f \not\equiv 0$). Vogliamo mostrare che $\Omega$ è il dominio di esistenza di $f$. Per assurdo, sia $p \in \partial\Omega$, $D=D(p,\rho)$, $U$ la componente connessa di $D \cap \Omega$ con $p \in \partial U$ e sia $F \in \mathcal{O}(D)$ t.c. $F\restrict{U}\equiv f\restrict{U}$.
+  Poniamo $D'=D(p,\rho/2)$. Si ha $p \in \partial \Omega \cap \partial (D' \cap U)$, per cui $D' \cap U$ non è relativamente compatto in $\Omega$ $\implies$ $D'\cap U$ interseca un numero infinito di dischi $D_{n_k}$.
+  Siccome il raggio di $D_{n_k}$ tende a $0$, è definitivamente minore di $\rho/4$ $\implies$ un numero infinito di dischi $D_{n_k}$ sono contenuti in $D$ e intersecano $U$, ma $U$ è una componente connessa di $D \cap \Omega$ e i dischi $D_{n_k}$ sono connessi e stanno in $D \cap \Omega$, quindi infiniti $D_{n_k}$ sono contenuti in $D \cap U$. Più precisamente, $D_{n_k} \subset D(p, 3\rho/4) \cap U$.
+  Quindi $F$ ha infiniti zeri distinti in $D(p, 3\rho/4) \subset \subset D(p,\rho)$ $\implies$ gli zeri di $F$ hanno un punto di accumulazione in $D$ $\implies$ $F \equiv 0$ $\implies$ $f \restrict{U} \equiv 0$ $\implies$ $f \equiv 0$ su $\Omega$, assurdo.
+\end{proof}
