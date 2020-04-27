@@ -18,7 +18,7 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
   $\displaystyle f(z)=f(z^0)+\sum_{j=1}^n \dfrac{\partial f}{\partial z_j}(z^0)(z_j-z_j^0)+o(\|z-z^0\|)$. Il pezzo $\displaystyle f(z^0)+\sum_{j=1}^n \dfrac{\partial f}{\partial z_j}(z^0)(z_j-z_j^0)$ ha ovviamemte $\bar{\partial}(\dots)=0$ perché sono termini costanti o lineari nelle variabili $z_j$, mentre per un $o$-piccolo di termini di ordine $1$ qualunque derivata in $z^0$ vale $0$.
 \end{proof}
 
-\begin{cor}
+\begin{cor} \label{olo_var}
   $f \in \mathcal{O}(\Omega)$ $\implies$ $f$ è olomorfa in ciascuna variabile.
 \end{cor}
 
@@ -37,7 +37,9 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \end{prop}
 
 \begin{proof}
-  Poi
+  Facciamo per semplicità il caso $n=2$, il caso generico è analogo. Se $z_2$ è fissato, $z_1 \longmapsto f(z_1, z_2)$ è olomorfa in $D(z^0_1, r_1)$ per il corollario \ref{olo_var}. Allora Cauchy in una variabile ci dà $\displaystyle f(z_1,z_2)=\frac{1}{2\pi i} \int_{|\zeta_1-z^0_1|=r_1} \frac{f(\zeta_1, z_2)}{\zeta_1-z_1}\diff\zeta_1$.
+  Se $\zeta_1 \in \partial D(z^0_1, r_1)$ è fissato, $z_2 \longmapsto f(\zeta_1,z_2)$ è olomorfa in $D(z^0_2, r_2)$ sempre per il corollario \ref{olo_var}.
+  Allora di nuovo per Cauchy in una variabile abbiamo $\displaystyle f(z_1, z_2)=\frac{1}{(2\pi i)^2} \int_{|\zeta_1-z_1^0|=r_1} \frac{\diff \zeta_1}{\zeta_1-z_1}\int_{|\zeta_2-z_2^0|=r_2} \frac{f(\zeta_1,\zeta_2)}{\zeta_2-z_2}\diff\zeta_2$, da cui la tesi.
 \end{proof}
 
 \begin{oss}
@@ -50,4 +52,51 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 
 \begin{proof}
   Basta derivare la formula di Cauchy.
+\end{proof}
+
+\begin{prop} \label{c->olo_multi}
+  Sia $f: \Omega \longrightarrow \mathbb{C}$ $C^0$ in ciascuna variabile, localmente limitata e t.c. per ogni $z^0 \in \Omega$ esiste $\bar{r}$ t.c. $\overline{P(z^0, \underline{r})} \subset \Omega$ e per ogni $z \in P(z^0, \underline{r})$ $\displaystyle f(z)=\frac{1}{(2\pi i)^n} \int_{|\zeta-z^0|=\underline{r}} \frac{f(\zeta)}{(\zeta-z)}\diff\zeta$. Allora $f \in \mathcal{O}(\Omega)$,
+\end{prop}
+
+\begin{proof}
+  $\displaystyle \frac{1}{\zeta-z}=\sum_{\alpha \in \mathbb{N}^n} \frac{(z-z^0)^\alpha}{(\zeta-z^0)^{\alpha+1}} \implies$\\
+  $\displaystyle \implies f(z)=\sum_{\alpha \in \mathbb{N}^n} \left[\int_{|\zeta-z^0|=\underline{r}} \frac{f(\zeta)}{(\zeta-z)^{\alpha+1}}\diff \zeta\right](z-z^0)^\alpha$.
+\end{proof}
+
+\begin{cor}
+  (Osgood) Se $f:\Omega \longrightarrow \mathbb{C}$ è olomorfa in ciascuna variabile e localmente limitata, $f \in \mathcal{O}(\Omega)$.
+\end{cor}
+
+\begin{proof}
+  Sia $\overline{P(z^0, \underline{r})} \subset \Omega$. $f$ olomorfa in ciascuna variabile $\implies$ $\displaystyle f(z)=\frac{1}{(2\pi i)^n} \int_{|\zeta_1-z_1^0|=r_1} \frac{\diff \zeta_1}{\zeta_1-z_1}\dots\int_{|z_n-z_n^0|=r_n}\frac{f(\zeta)}{\zeta_n-z_n}\diff\zeta_n$, ma essendo $f$ limitata questo ci dice che vale la formula di Cauchy, allora che $f$ è olomorfa segue dalla proposizione \ref{c->olo_multi}.
+\end{proof}
+
+\begin{ftt}
+  Hartogs ha dimostrato che non serve l'ipotesi localmente limitata.
+\end{ftt}
+
+\begin{cor}
+  Se $f \in C^1(\Omega)$ e $\bar{\partial}f\equiv 0$, $f \in \mathcal{O}(\Omega)$.
+\end{cor}
+
+\begin{proof}
+  $f$ è olomorfa in ciascuna variabile.
+\end{proof}
+
+\begin{prop}
+  (Disuguaglianze di Cauchy) $f \in \mathcal{O}(\Omega), \overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n \implies \left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$ dove $\displaystyle M(\underline{r})=\sup_{|\zeta-z^0|=\underline{r}} |f(\zeta)|$.
+\end{prop}
+
+\begin{proof}
+  $\displaystyle \dfrac{\partial f}{\partial z^\alpha}(z^0)=\dfrac{\alpha!}{(2\pi i)^n} \int_0^{2\pi} \dots \int_0^{2\pi} \frac{f(z^0+\underline{r}e^{i\theta})}{(\underline{r}e^{i\theta})^{\alpha+1}}i^n\left(\prod_{j=1}^n r_je^{i\theta_j}\right)\diff\theta_1\dots\diff\theta_n=$\\
+  $\displaystyle =\frac{\alpha!}{(2\pi)^n\underline{r}^\alpha}\int_0^{2\pi} \dots \int_0^{2\pi} \frac{f(z^0+\underline{r}e^{i\theta})}{e^{i(\alpha_1\theta_1+\dots+\alpha_n\theta_n)}}\diff\theta_1\dots\diff\theta_n \implies$ \\
+  $\displaystyle \implies \left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \frac{\alpha!}{(2\pi)^n\underline{r}^\alpha}\int_0^{2\pi} \dots \int_0^{2\pi} |f(z^0+\underline{r}e^{i\theta})|\diff\theta_1\dots\diff\theta_n \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$.
+\end{proof}
+
+\begin{cor}
+  (Liouville) Se $f \in \mathcal{O}(\mathbb{C}^n)$ è limitata, allora è costante.
+\end{cor}
+
+\begin{proof}
+  Per ogni $\alpha \not=0$, $\left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M$ per ogni $\underline{r}$ $\implies$ tutte le derivate di $f$ sono $\equiv 0$.
 \end{proof}
