@@ -1,0 +1,53 @@
+Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni olomorfe in una variabile. Abbiamo già usato uno di questi risultati, il principio di identità, nella sezione precedente. Inizialmente prendiamo come definizione di funzione olomorfa quella di analitica, poi tra le altre cose vedremo l'equivalenza con le altre definizioni date.
+
+\begin{lm}
+  (Abel) Data $\{c_{\alpha}\}_{\alpha \in \mathbb{N}^n} \subset \mathbb{C}$, supponiamo che esistano $\rho_1, \dots, \rho_n>0$ ($\underline{\rho}=(\rho_1, \dots, \rho_n)$), $M>0$ t.c. $|c_{\alpha}|\rho_1^{\alpha_1}\dots\rho_n^{\alpha_n} \le M$ per ogni $\alpha \in \mathbb{N}^n$.
+  Allora $\displaystyle \sum_{\alpha \in \mathbb{N}^n} c_{\alpha}(z-z^0)^{\alpha}$ converge assolutamente in $P(z^0, \underline{\rho})$ e uniformemente in $\overline{P(z^0, \theta\underline{\rho})}$ per ogni $0<\theta<1$.
+  Inoltre, la stessa convergenza vale per $\displaystyle \sum_{\alpha \in \mathbb{N}^n} c_{\alpha} \dfrac{\partial}{\partial z^\beta}(z-z^0)^\alpha$ per ogni $\beta \in \mathbb{N}^n$.
+\end{lm}
+
+\begin{cor} \label{coeff_anal_multi}
+  $\mathcal{O}(\Omega) \subset C^\infty(\Omega)$ e $c_\alpha=\dfrac{1}{\alpha!}\dfrac{\partial f}{\partial z^\alpha}(z_0)$.
+\end{cor}
+
+\begin{cor}
+  $f \in \mathcal{O}(\Omega)$ $\implies$ $\bar{\partial}f \equiv 0$.
+\end{cor}
+
+\begin{proof}
+  $\displaystyle f(z)=f(z^0)+\sum_{j=1}^n \dfrac{\partial f}{\partial z_j}(z^0)(z_j-z_j^0)+o(\|z-z^0\|)$. Il pezzo $\displaystyle f(z^0)+\sum_{j=1}^n \dfrac{\partial f}{\partial z_j}(z^0)(z_j-z_j^0)$ ha ovviamemte $\bar{\partial}(\dots)=0$ perché sono termini costanti o lineari nelle variabili $z_j$, mentre per un $o$-piccolo di termini di ordine $1$ qualunque derivata in $z^0$ vale $0$.
+\end{proof}
+
+\begin{cor}
+  $f \in \mathcal{O}(\Omega)$ $\implies$ $f$ è olomorfa in ciascuna variabile.
+\end{cor}
+
+\begin{prop}
+  (Principio di identità) Sia $\Omega \subseteq \mathbb{C}^n$ un dominio e $f \in \mathcal{O}(\Omega)$. Se $\{z \in \Omega \mid f(z)=0\}$ ha parte interna non vuota, $f \equiv 0$.
+\end{prop}
+
+\begin{proof}
+  Per ogni $\alpha \in \mathbb{N}^n$, sia $E_\alpha=\{z \in \Omega \mid \dfrac{\partial f}{\partial z^\alpha}(z)=0\}$ e $\displaystyle E=\bigcap_{\alpha \in \mathbb{N}^n} E_\alpha$.
+  $E$ è ovviamente chiuso, ma è anche aperto per analiticità e per il corollario \ref{coeff_anal_multi}, ed è non vuoto per ipotesi, dunque essendo $\Omega$ connesso $E=\Omega$.
+\end{proof}
+
+\begin{prop}
+  (Formula di Cauchy) Sia $\Omega \subset \mathbb{C}^n$ un dominio, $f \in \mathcal{O}(\Omega)$, $\overline{P(z^0,\underline{r})} \subset \Omega$. Allora per ogni $z \in P(z^0, \underline{r})$ $\displaystyle f(z)=$\\
+  $\displaystyle =\dfrac{1}{(2\pi i)^n} \int_{|\zeta_1-z_1^0|=r}\dots\int_{|\zeta_n-z_n^0|=r} \frac{f(\zeta_1,\dots,\zeta_n)}{(\zeta_1-z_1)\dots(\zeta_n-z_n)}\diff\zeta_1\dots\diff\zeta_n=: \dfrac{1}{(2\pi i)^n} \int_{|\zeta-z^0|=\underline{r}} \dfrac{f(\zeta)}{(\zeta-z)}\diff \zeta$.
+\end{prop}
+
+\begin{proof}
+  Poi
+\end{proof}
+
+\begin{oss}
+  $\hat{\partial}P:=\{|\zeta-z^0|=\underline{r}\} \subset \partial P(z^0, \underline{r})$, in particolare è strettamente contenuto. È chiamato \textit{bordo di Šilov di $P(z^0, \underline{r})$}.
+\end{oss}
+
+\begin{cor}
+  Sia $f \in \mathcal{O}(\Omega)$, $\overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n$. Allora $\displaystyle \frac{\partial f}{\partial z^\alpha}=\dfrac{\alpha!}{(2\pi i)^n} \int_{|\zeta-z^0|=\underline{r}} \frac{f(\zeta)}{(\zeta-z)^{\alpha+1}}\diff \zeta$ su $P(z^0, \underline{r})$.
+\end{cor}
+
+\begin{proof}
+  Basta derivare la formula di Cauchy.
+\end{proof}
