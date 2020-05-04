@@ -3,11 +3,11 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \begin{lm}
   (Abel) Data $\{c_{\alpha}\}_{\alpha \in \mathbb{N}^n} \subset \mathbb{C}$, supponiamo che esistano $\rho_1, \dots, \rho_n>0$ ($\underline{\rho}=(\rho_1, \dots, \rho_n)$), $M>0$ t.c. $|c_{\alpha}|\rho_1^{\alpha_1}\dots\rho_n^{\alpha_n} \le M$ per ogni $\alpha \in \mathbb{N}^n$.
   Allora $\displaystyle \sum_{\alpha \in \mathbb{N}^n} c_{\alpha}(z-z^0)^{\alpha}$ converge assolutamente in $P(z^0, \underline{\rho})$ e uniformemente in $\overline{P(z^0, \theta\underline{\rho})}$ per ogni $0<\theta<1$.
-  Inoltre, la stessa convergenza vale per $\displaystyle \sum_{\alpha \in \mathbb{N}^n} c_{\alpha} \dfrac{\partial}{\partial z^\beta}(z-z^0)^\alpha$ per ogni $\beta \in \mathbb{N}^n$.
+  Inoltre, la stessa convergenza vale per $\displaystyle \sum_{\alpha \in \mathbb{N}^n} c_{\alpha} \dfrac{\partial^{(\beta)}}{\partial z^\beta}(z-z^0)^\alpha$ per ogni $\beta \in \mathbb{N}^n$.
 \end{lm}
 
 \begin{cor} \label{coeff_anal_multi}
-  $\mathcal{O}(\Omega) \subset C^\infty(\Omega)$ e $c_\alpha=\dfrac{1}{\alpha!}\dfrac{\partial f}{\partial z^\alpha}(z_0)$.
+  $\mathcal{O}(\Omega) \subset C^\infty(\Omega)$ e $c_\alpha=\dfrac{1}{\alpha!}\dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z_0)$.
 \end{cor}
 
 \begin{cor}
@@ -27,7 +27,7 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \end{prop}
 
 \begin{proof}
-  Per ogni $\alpha \in \mathbb{N}^n$, sia $E_\alpha=\{z \in \Omega \mid \dfrac{\partial f}{\partial z^\alpha}(z)=0\}$ e $\displaystyle E=\bigcap_{\alpha \in \mathbb{N}^n} E_\alpha$.
+  Per ogni $\alpha \in \mathbb{N}^n$, sia $E_\alpha=\left\{z \in \Omega \mid \dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z)=0\right\}$ e $\displaystyle E=\bigcap_{\alpha \in \mathbb{N}^n} E_\alpha$.
   $E$ è ovviamente chiuso, ma è anche aperto per analiticità e per il corollario \ref{coeff_anal_multi}, ed è non vuoto per ipotesi, dunque essendo $\Omega$ connesso $E=\Omega$.
 \end{proof}
 
@@ -47,7 +47,7 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \end{oss}
 
 \begin{cor}
-  Sia $f \in \mathcal{O}(\Omega)$, $\overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n$. Allora $\displaystyle \frac{\partial f}{\partial z^\alpha}=\dfrac{\alpha!}{(2\pi i)^n} \int_{|\zeta-z^0|=\underline{r}} \frac{f(\zeta)}{(\zeta-z)^{\alpha+1}}\diff \zeta$ su $P(z^0, \underline{r})$.
+  Sia $f \in \mathcal{O}(\Omega)$, $\overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n$. Allora $\displaystyle \frac{\partial^{(\alpha)} f}{\partial z^\alpha}=\dfrac{\alpha!}{(2\pi i)^n} \int_{|\zeta-z^0|=\underline{r}} \frac{f(\zeta)}{(\zeta-z)^{\alpha+1}}\diff \zeta$ su $P(z^0, \underline{r})$.
 \end{cor}
 
 \begin{proof}
@@ -84,13 +84,13 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \end{proof}
 
 \begin{prop}
-  (Disuguaglianze di Cauchy) $f \in \mathcal{O}(\Omega), \overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n \implies \left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$ dove $\displaystyle M(\underline{r})=\sup_{|\zeta-z^0|=\underline{r}} |f(\zeta)|$.
+  (Disuguaglianze di Cauchy) $f \in \mathcal{O}(\Omega), \overline{P(z^0, \underline{r})} \subset \Omega, \alpha \in \mathbb{N}^n \implies \left|\dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$ dove $\displaystyle M(\underline{r})=\sup_{|\zeta-z^0|=\underline{r}} |f(\zeta)|$.
 \end{prop}
 
 \begin{proof}
-  $\displaystyle \dfrac{\partial f}{\partial z^\alpha}(z^0)=\dfrac{\alpha!}{(2\pi i)^n} \int_0^{2\pi} \dots \int_0^{2\pi} \frac{f(z^0+\underline{r}e^{i\theta})}{(\underline{r}e^{i\theta})^{\alpha+1}}i^n\left(\prod_{j=1}^n r_je^{i\theta_j}\right)\diff\theta_1\dots\diff\theta_n=$\\
+  $\displaystyle \dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z^0)=\dfrac{\alpha!}{(2\pi i)^n} \int_0^{2\pi} \dots \int_0^{2\pi} \frac{f(z^0+\underline{r}e^{i\theta})}{(\underline{r}e^{i\theta})^{\alpha+1}}i^n\left(\prod_{j=1}^n r_je^{i\theta_j}\right)\diff\theta_1\dots\diff\theta_n=$\\
   $\displaystyle =\frac{\alpha!}{(2\pi)^n\underline{r}^\alpha}\int_0^{2\pi} \dots \int_0^{2\pi} \frac{f(z^0+\underline{r}e^{i\theta})}{e^{i(\alpha_1\theta_1+\dots+\alpha_n\theta_n)}}\diff\theta_1\dots\diff\theta_n \implies$ \\
-  $\displaystyle \implies \left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \frac{\alpha!}{(2\pi)^n\underline{r}^\alpha}\int_0^{2\pi} \dots \int_0^{2\pi} |f(z^0+\underline{r}e^{i\theta})|\diff\theta_1\dots\diff\theta_n \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$.
+  $\displaystyle \implies \left|\dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z^0)\right| \le \frac{\alpha!}{(2\pi)^n\underline{r}^\alpha}\int_0^{2\pi} \dots \int_0^{2\pi} |f(z^0+\underline{r}e^{i\theta})|\diff\theta_1\dots\diff\theta_n \le \dfrac{\alpha!}{\underline{r}^\alpha}M(\underline{r})$.
 \end{proof}
 
 \begin{cor}
@@ -98,5 +98,50 @@ Vediamo ora alcuni risultati analoghi a quelli che conosciamo per le funzioni ol
 \end{cor}
 
 \begin{proof}
-  Per ogni $\alpha \not=0$, $\left|\dfrac{\partial f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M$ per ogni $\underline{r}$ $\implies$ tutte le derivate di $f$ sono $\equiv 0$.
+  Per ogni $\alpha \not=0$, $\left|\dfrac{\partial^{(\alpha)} f}{\partial z^\alpha}(z^0)\right| \le \dfrac{\alpha!}{\underline{r}^\alpha}M$ per ogni $\underline{r}$ $\implies$ tutte le derivate di $f$ sono $\equiv 0$.
 \end{proof}
+
+\begin{thm}
+  (Applicazione aperta) $f \in \mathcal{O}(\Omega)$ non costante $\implies$ $f$ è aperta.
+\end{thm}
+
+\begin{proof}
+  Basta far vedere che $f(\Omega)$ è aperto. Sia $z^0 \in \Omega$ e sia $U \subset \Omega$ un intorno convesso di $z^0$. Siccome $f$ non è costante, $f\restrict{U} \not\equiv f(z^0)$ (nel senso che non è costantemente uguale, altrimenti sarebbe costante per il principio di identità).
+  Sia allora $\tilde{z}^0 \in U$ con $f(\tilde{z}^0)\not=f(z^0)$ e $D=\{\zeta \in \mathbb{C} \mid z^0+\zeta(\tilde{z}^0-z^0) \in U\} \subset \mathbb{C}$ aperto.
+  Definiamo $g(\zeta)=f(z^0+\zeta(\tilde{z}^0-z^0))$; abbiamo $g \in \mathcal{O}(D)$ e non costante perché $g(0)\not=g(1)$, quindi $g(D)$ è aperto in $\mathbb{C}$ per il principio di identità e contiene $g(0)=f(z^0)$. Quindi $f(\Omega) \supseteq g(D)$, che è un intorno di $f(z^0)$.
+\end{proof}
+
+\begin{thm}
+  (Principio del massimo) Sia $\Omega \subset\subset \mathbb{C}^n$ dominio limitato, $f \in \mathcal{O}(\Omega)$ non costante. Sia $\displaystyle M=\sup_{x \in \partial \Omega} \limsup_{z \longrightarrow x, z \in \Omega} |f(z)|$. Allora $|f(z)|<M$ per ogni $z \in \Omega$.
+\end{thm}
+
+\begin{proof}
+  Se $M=+\infty$ è ovvio. Supponiamo $M<+\infty$. Sia $\varphi: \overline{\Omega} \longrightarrow \mathbb{R}^+\cup\{0\}$ data da $\varphi(x)=\begin{cases}
+    |f(x)| & \mbox{se }x\in\Omega \\ \limsup_{z \longrightarrow x, z \in \Omega} |f(z)| & \mbox{se }x \in \partial\Omega
+\end{cases}$. $\varphi$ è semicontinua superiormente su $\overline{\Omega}$ che è compatto $\implies$ $\varphi$ è limitata (in particolare, assume massimo).
+Sia $D=f(\Omega) \subset \mathbb{C}$. $D$ è un aperto (connesso) limitato (perche $\varphi$ è limitata) di $\mathbb{C}$. Sia $\tau \in \partial D$, esiste $\{\zeta_{\nu}\} \subset D$ t.c. $\sigma_{\nu} \longrightarrow \tau$. Esiste $z_{\nu} \in \Omega$ t.c. $f(z_{\nu})=\zeta_{\nu}$.
+A meno di sottosuccessioni, $z_{\nu} \longrightarrow z^0 \in \overline{\Omega}$. Se avessimo $z^0 \in \Omega$, allora $f(z^0) \in D$, ma $f(z^0)=\tau \in \partial D$, assurdo.
+Quindi $z^0 \in \partial\Omega \implies |\tau| \le M \implies \partial D \subset \overline{D(0,M)} \implies \overline{D} \subset \overline{D(0,M)}$. Siccome $D$ è aperto, $D \subseteq D(0,M)$, che è la tesi.
+\end{proof}
+
+\begin{cor}
+  Sia $f \in \mathcal{O}(\Omega)$. Se esiste $z^0 \in \Omega$ dominio t.c. $|f(z)| \le |f(z^0)|$ per ogni $z$ in un intorno di $z^0$, allora $f$ è costante.
+\end{cor}
+
+\begin{proof}
+  Se $f$ non è costante, si applica il principio del massimo a un intorno di $z^0$ e si ottiene un assurdo.
+\end{proof}
+
+Dei seguenti tre teoremi non riportiamo le dimostrazioni, in quanto analoghe a quelle in una variabile.
+
+\begin{thm}
+  (Weierstrass) Sia $\{f_{\nu}\} \subseteq \mathcal{O}(\Omega)$ che converge uniformemente sui compatti a $f \in C^0(\Omega)$. Allora $f \in \mathcal{O}(\Omega)$ e per ogni $\alpha \in \mathbb{N}^n$ $\dfrac{\partial^{(\alpha)}f_{\nu}}{\partial z^\alpha} \longrightarrow \dfrac{\partial^{(\alpha)}f}{\partial z^\alpha}$.
+\end{thm}
+
+\begin{thm}
+  (Montel) $\mathcal{F} \subset \mathcal{O}(\Omega)$ è relativamente compatta in $\mathcal{O}(\Omega)$ se (e solo se) è uniformemente limitata sui compatti, cioè per ogni $K \subset\subset \Omega$ compatto esiste $M_K$ t.c. $\|f\|_K<M_K$ per ogni $f \in \mathcal{F}$.
+\end{thm}
+
+\begin{thm}
+  (Vitali) Sia $\{f_{\nu}\} \subset \mathcal{O}(\Omega)$ uniformemente limitata sui compatti e sia $A \subseteq \Omega$ un insieme con parte interna non vuota t.c. $\{f_{\nu}(z^0)\}$ converge in $\mathbb{C}$ per ogni $z^0 \in A$. Allora esiste $f \in \mathcal{O}(\Omega)$ t.c. $f_{\nu} \longrightarrow f$ uniformemente sui compatti.
+\end{thm}

@@ -1,0 +1,65 @@
+\begin{defn}
+  Sia $\displaystyle \sum_{\alpha} a_{\alpha}z^{\alpha}$ una serie di potenze in $\mathbb{C}^n$. Il \textsc{dominio di convergenza di $F$} è $\displaystyle \mathcal{C}=int\{z \in \mathbb{C}^n \mid \sum_{\alpha} |a_{\alpha}||z^{\alpha}|<+\infty\}$ ($int$=parte interna).
+\end{defn}
+
+\begin{oss}
+  Per il lemma di Abel, $\displaystyle \mathcal{C}=int\{z \in \mathbb{C}^n \mid \sup_{\alpha} |a_{\alpha}||z^{\alpha}|<+\infty\}$.
+\end{oss}
+
+\begin{defn}
+  Un insieme $S \subseteq \mathbb{C}^n$ è \textit{circolare} se per ogni $\theta \in \mathbb{R}$ $z \in S \implies e^{i\theta} \in S$.
+  È \textsc{di Reinhardt} se per ogni $\theta_1, \dots, \theta_n \in \mathbb{R}$ $z \in S \implies (e^{i\theta_1}z_1, \dots, e^{i\theta_n}z_n) \in S$.
+  È \textsc{circolare completo} se per ogni $\zeta_1, \dots, \zeta_n \in \overline{\mathbb{D}}$ $z \in S \implies (\zeta_1z_1,\dots,\zeta_nz_n) \in S$.
+\end{defn}
+
+\begin{oss}
+  $S$ circolare completo $\implies$ $0 \in S$. Circolare completo $\implies$ di Reinhardt $\implies$ circolare. In una variabile, circolare $\implies$ di Reinhardt.
+\end{oss}
+
+\begin{oss}
+  Un dominio di convergenza di una serie di potenze è circolare completo.
+\end{oss}
+
+\begin{defn}
+  Sia $S \subseteq \mathbb{C}^n$. L'\textit{immagine logaritmica di $S$} è $\displaystyle \log{|S|}=\{(\log{|z_1|}, \dots, \log{|z_n|}) \mid z=(z_1, \dots, z_n) \in S \setminus \bigcup_{j=1}^n \{z_j=0\} \} \subseteq \mathbb{R}^n$.
+\end{defn}
+
+\begin{defn}
+  $S$ è \textsc{logaritmicamente convesso} se $\log{|S|}$ è convesso.
+\end{defn}
+
+\begin{prop}
+  Il dominio di convergenza $\mathcal{C}$ di una serie di potenze $F$ è logaritmicamente convesso.
+\end{prop}
+
+\begin{proof}
+  Siano $w, w' \in \mathcal{C}$ e sia $\epsilon>0$ t.c. $P(0, |w|+\epsilon), P(0, |w'|+\epsilon) \subset \mathcal{C}$ ($|w|+\epsilon=(|w_1|+\epsilon, \dots, |w_n|+\epsilon)$). La condizione di logaritmica convessità di $\mathcal{C}$ segue se dimostriamo che per ogni $\lambda \in [0,1]$ $\lambda\log{|w|}+(1-\lambda)\log{|w'|} \in \log{|\mathcal{C}|}$.
+  Questo equivale a: per ogni $\lambda \in [0,1]$ $(\log{(|w_1|^{\lambda}|w_1'|^{1-\lambda})},\dots,\log{(|w_n|^{\lambda}|w_n'|^{1-\lambda})}) \in \log{|\mathcal{C}|}$, che a sua volta è come dire che per ogni $\lambda \in [0,1]$ $(|w_1|^{\lambda}|w_1'|^{1-\lambda},\dots,|w_n|^{\lambda}|w_n'|^{1-\lambda}) \in \mathcal{C}$.
+  Scriviamo $\displaystyle F=\sum_{\alpha} a_{\alpha}z^{\alpha}$. Per le disuguaglianze di Cauchy, $|a_{\alpha}| \le \dfrac{c}{\max\{(|w|+\epsilon)^{\alpha},(|w'|+\epsilon)^{\alpha}\}}$ per un certo $c$ che dipende da $|w|+\epsilon$ e $|w'|+\epsilon$.
+  Poiché la funzione $t \longmapsto a^tb^{1-t}$ su $[0,1]$ è convessa per ogni $a, b>0$, per ogni $\lambda \in [0,1]$ e per ogni $j=1,\dots,n$ si ha $\max\{|w_j|+\epsilon, |w_j'|+\epsilon\} \ge (|w_j|+\epsilon)^{\lambda}(|w_j'|+\epsilon)^{1-\lambda} \ge |w_j|^{\lambda}|w_j'|^{1-\lambda}+\epsilon'$ per qualche $0<\epsilon'\le\epsilon$ perché la funzione $(a+\epsilon)^{\lambda}(b+\epsilon)^{1-\lambda}-a^{\lambda}b^{1-\lambda}$ è continua e $>0$ su $[0,1]$ compatto, dunque ammette minimo $>0$.
+  Quindi per ogni $\alpha_j$ $\max\{(|w_j|+\epsilon)^{\alpha_j},(|w_j'|+\epsilon)^{\alpha_j}\} \ge (|w_j|^{\lambda}|w_j'|^{1-\lambda}+\epsilon')^{\alpha_j} \ge (|w_j|^{\lambda}|w_j'|^{1-\lambda})^{\alpha_j} \implies |a_{\alpha}| \le \dfrac{c}{\prod_j (|w_j|^{\lambda}|w_j'|^{1-\lambda})^{\alpha_j}} \implies (|w_1|^{\lambda}|w_1'|^{1-\lambda}, \dots, |w_n|^{\lambda}|w_n'|^{1-\lambda}) \in \mathcal{C}$.
+\end{proof}
+
+\begin{ftt}
+  Viceversa, ogni dominio circolare completo logaritmicamente convesso è il dominio di convergenza di una serie di potenze.
+\end{ftt}
+
+\begin{defn}
+  Sia $S \subseteq \mathbb{C}^n$ di Reinhardt, indichiamo con $\hat{C} \subset \mathbb{R}^n$ l'\textit{inviluppo convesso di $\log{|S|}$}, cioè il più piccolo convesso che contiene $\log{|S|}$, che equivale all'intersezione di tutti i convessi che contengono $\log{|S|}$.
+\end{defn}
+
+\begin{oss}
+  $S$ aperto $\implies$ $\log{|S|}$ aperto $\implies$ $\hat{C}$ aperto.
+\end{oss}
+
+\begin{defn}
+  Sia $\hat{S} \subseteq \mathbb{C}^n$ l'unico insieme di Reinhardt t.c. $\log{|\hat{S}|}=\hat{C}$. $\hat{S}$ è l'\textsc{inviluppo logaritmico di $S$}.
+\end{defn}
+
+\begin{prop}
+  Sia $\Omega \subseteq \mathbb{C}^n$ dominio di Reinhardt con $0 \in \Omega$ e $f \in \mathcal{O}(\Omega)$. Allora lo sviluppo in serie di $f$ in $0$ converge in $\hat{\Omega}$.
+\end{prop}
+
+\begin{proof}
+  aaa
+\end{proof}
