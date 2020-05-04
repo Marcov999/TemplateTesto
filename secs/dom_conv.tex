@@ -61,5 +61,7 @@
 \end{prop}
 
 \begin{proof}
-  aaa
+  Per ogni $j \ge 1$ sia $\Omega_j$ la componente connesse di $\{z \in \Omega \mid d(z,\partial\Omega)>\|z\|/j\}$ contenente $0$. Fissiamo $j, z \in \Omega_j$.
+  Allora $(\zeta_1, \dots, \zeta_n) \longmapsto f(\zeta_1z_1,\dots,\zeta_nz_n)$ è ben definita per $|z_1|=\dots=|\zeta_n|=1+1/j$ poiché $\Omega$ è di Reinhardt, dunque $\displaystyle f_z(w)=\frac{1}{(2\pi i)^n} \int_{|\zeta|=1+1/j} \frac{f(\zeta_1z_1, \dots, \zeta_nz_n)}{(\zeta_1-w_1)\dots(\zeta_n-w_n)}\diff \zeta$ $(\star)$ è olomorfa in $P(0, 1+1/j)$.
+  Quando $\|z\|<<1$, siccome $\Omega$ è aperto e di Reinhardt e $0 \in \Omega$, abbiamo che $(\zeta_1z_1,\dots,\zeta_nz_n) \in \overline{P(0,1+1/j)}$ per ogni $\zeta$ (rivedere da qui)
 \end{proof}
