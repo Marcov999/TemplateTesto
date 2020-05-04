@@ -13,4 +13,5 @@ Lez 12: ok
 Lez 13: ok
 Lez 14: ok
 Lez 15: ok
+Lez 16: appena aggiorna il registro
 Scrivere un README decente
