@@ -1,0 +1,104 @@
+\begin{defn}
+  Sia $\Omega \subset \mathbb{C}^n$ un dominio. $P \in \partial \Omega$ è \textit{essenziale} se esiste $u \in \mathcal{O}(\Omega)$ t.c. per ogni intorno aperto connesso $\Omega_2$ di $P$ e per ogni aperto connesso $\Omega_1 \subseteq \Omega \cap \Omega_2$ con $\Omega_1\not=\emptyset,\Omega$ non esiste $u_2 \in \mathcal{O}(\Omega)$ con $u_2\restrict{\Omega_1}=u\restrict{\Omega_1}$.
+  Diremo che $\Omega$ è un \textsc{dominio di olomorfia} se ogni $P \in \partial D$ è essenziale.
+\end{defn}
+
+\begin{defn}
+  Un \textsc{funzionale di Minkovski} è una funzione $\mu:\mathbb{C}^n \longrightarrow \mathbb{R}^+\cup\{0\}$ continua t.c.
+  \begin{nlist}
+    \item $\mu(z)=0 \iff z=0$;
+    \item $\mu(\zeta z)=|\zeta|\mu(z)$ per ogni $z \in \mathbb{C}^n$ e per ogni $\zeta \in \mathbb{C}$.
+  \end{nlist}
+\end{defn}
+
+\begin{ex}
+  $\mu(z)=\|z\|_p=(|z_1|^p+\dots+|z_n|^p)^{1/p}$ con $p>0$ e $\mu(z)=\|z\|_{\infty}=\max\{|z_1|,\dots,|z_n|\}$ sono funzionali di Minkovski.
+\end{ex}
+
+\begin{exc}
+  Se $\mu$ è un funzionale di Minkovski, allora $B_{\mu}=\{z \in \mathbb{C}^n \mid \mu(z)<1\}$ è circolare completo.
+\end{exc}
+
+Se $\Omega \subset \mathbb{C}^n$ è un dominio poniamo $\displaystyle \mu_\Omega(z)=\inf_{w \in \mathbb{C}^n\setminus\Omega} \mu(z-w)=$"$\mu$-distanza da $\partial\Omega$". Se $X \subseteq \Omega$ poniamo $\displaystyle \mu_\Omega(X)=\inf_{z \in X} \mu_\Omega(z)$.
+
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio, $\mathcal{F}$ una famiglia di funzioni su $\Omega$. Sia $K \subset \Omega$. Il \textsc{$\mathcal{F}$-inviluppo di $K$ in $\Omega$} è $\hat{K}_{\mathcal{F}}=\{z \in \Omega \mid |f(z)| \le \|f\|_K \text{ per ogni } f \in \mathcal{F}\}$.
+  Se $\mathcal{F}=\mathcal{O}(\Omega)$, $\hat{K}_{\mathcal{F}}=\hat{K}_{\Omega}$ è \textit{inviluppo olomorfo di $K$}, che abbiamo già incontrato in una variabile.
+\end{defn}
+
+Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K \subset \subset \Omega$ compatto anche $\hat{K}_{\mathcal{F}} \subset \subset \Omega$. Se $\mathcal{F}=\mathcal{O}(\Omega)$, diremo che $\Omega$ è \textsc{olomorficamente convesso}.
+
+\begin{oss}
+  Ogni aperto di $\mathbb{C}$ è olomorficamente convesso.
+\end{oss}
+
+\begin{exc}
+  Siano $\Omega=P^2(0,1)\setminus\overline{P^2(0,1/2)}, K=\{(0,3e^{i\theta}/4) \mid \theta \in \mathbb{R}\}$. Dimostrare che $\hat{K}_\Omega=\{0, te^{i\theta} \mid \theta \in \mathbb{R}, 1/2 < t \le 3/4\}$.
+\end{exc}
+
+\begin{exc}
+  Se $\Omega \subseteq \mathbb{R}^n$, $\mathcal{F}=\text{funzioni lineari su }\Omega$, allora $\hat{K}_{\mathcal{F}}=\text{inviluppo convesso di }K$, e $\Omega$ è $\mathcal{F}$-convesso $\iff$ è convesso (nella disuguaglianza che definisce gli insiemi in $\mathbb{R}$ c'è una differenza: non si prende il modulo [notare quindi che anche al posto della norma infinito c'è un $\sup$]).
+\end{exc}
+
+\begin{lm}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio, $K \subset \Omega$ limitato $\implies$ $\hat{K}_{\Omega}$ è limitato.
+\end{lm}
+
+\begin{proof}
+  $K$ è limitato $\iff$ per ogni $j=1,\dots,n$ esiste $M_j$ t.c. $|z_j| \le M_j$ per ogni $z \in K$. Dato che le proiezioni alle singole coordinate sono funzioni olomorfe, otteniamo che per ogni $z \in \hat{K}_\Omega$ $|z_j| \le M_j$ $\implies$ $\hat{K}_\Omega$ limitato.
+\end{proof}
+
+\begin{oss}
+  Se $\mathcal{F} \subset C^0(\Omega)$, allora $\hat{K}_{\mathcal{F}}$ è chiuso in $\Omega$.
+\end{oss}
+
+\begin{lm}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio, $K \subset \Omega$ $\implies$ $\hat{K}_\Omega$ è contenuto nella chiusura dell'inviluppo convesso di $K$.
+\end{lm}
+
+\begin{proof}
+  $\mathcal{O}(\Omega)$ contiene le funzioni $e^{L(z)}$ con $L: \mathbb{C}^n \longrightarrow \mathbb{C}$ lineare. $|e^{L(z)}|=e^{\mathfrak{Re}L(z)}$. $|e^{L(z)}| \le \|e^L\|_K$ $\iff$ $\displaystyle \mathfrak{Re}L(z) \le \sup_{w \in K} \mathfrak{Re}L(w)$.
+  Ogni $l: \mathbb{C}^n \longrightarrow \mathbb{R}$ $\mathbb{R}$-lineare è la parte reale di $L:\mathbb{C}^n \longrightarrow \mathbb{C}$ $\mathbb{C}$-lineare.
+\end{proof}
+
+\begin{thm}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sono equivalenti:
+  \begin{nlist}
+    \item esiste $h \in \mathcal{O}(\Omega)$ che non può essere estesa olomorficamente a un qualsiasi aperto $\Omega' \supsetneq \Omega$;
+    \item $\Omega$ è un dominio di olomorfia;
+    \item $\Omega$ è olomorficamente convesso;
+    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
+    \item per ogni $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
+    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$;
+    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
+    \item esiste $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
+    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$.
+  \end{nlist}
+\end{thm}
+
+\begin{proof}
+  (i) $\implies$ (ii) è ovvia (basta prendere $h$ per tutti i $p \in \partial\Omega$). (iv) $\implies$ (vii) è ovvia. (vii) $\implies$ (ix) è ovvia (basta dividere $f$ per $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}$). (ix) $\implies$ (vii) è ovvia (basta prendere $f \equiv 1$). (iv) $\implies$ (vi) $\implies$ (v) sono analoghe a (vii) $\implies$ (xi) $\implies$ (viii).
+  (v) $\implies$ (viii) è ovvia. Per concludere mostriamo che (ii) $\implies$ (viii) $\implies$ (iii) $\implies$ (i).
+
+  (ii) $\implies$ (viii) aaa
+\end{proof}
+
+\begin{cor} \label{conv->dom_olo}
+  $\Omega$ convesso $\implies$ $\Omega$ dominio di olomorfia.
+\end{cor}
+
+\begin{proof}
+  Sia $P \in \partial \Omega$. Essendo $\Omega$ convesso, esiste $L: \mathbb{C}^n \longrightarrow \mathbb{C}$ $\mathbb{C}$-lineare t.c. $\mathfrak{Re}L(z) < \mathfrak{Re}L(P)$ per ogni $z \in \Omega$. Sia $f(z)=\dfrac{1}{L(z)-L(P)}$. Allora $f \in \mathcal{O}(\Omega)$ e non si estende oltre $P$ $\implies$ $P$ è essenziale.
+\end{proof}
+
+\begin{defn}
+  $P \in \partial\Omega$ è un \textit{punto di picco} se esiste $f \in \mathcal{O}(\Omega) \cap C^0(\overline{\Omega})$ t.c. $f(P)=1$ ma $\|f\|_\Omega<1$.
+\end{defn}
+
+\begin{ex}
+  Nel caso del corollario \ref{conv->dom_olo}, $f(z)=e^{L(z)-L(P)}$.
+\end{ex}
+
+\begin{exc}
+  Se ogni punto di $\partial\Omega$ è di picco, allora $\Omega$ è dominio di olomorfia.
+\end{exc}
