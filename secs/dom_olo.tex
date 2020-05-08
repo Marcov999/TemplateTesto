@@ -26,7 +26,7 @@ Se $\Omega \subset \mathbb{C}^n$ è un dominio poniamo $\displaystyle \mu_\Omega
   Se $\mathcal{F}=\mathcal{O}(\Omega)$, $\hat{K}_{\mathcal{F}}=\hat{K}_{\Omega}$ è \textit{inviluppo olomorfo di $K$}, che abbiamo già incontrato in una variabile.
 \end{defn}
 
-Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K \subset \subset \Omega$ compatto anche $\hat{K}_{\mathcal{F}} \subset \subset \Omega$. Se $\mathcal{F}=\mathcal{O}(\Omega)$, diremo che $\Omega$ è \textsc{olomorficamente convesso}.
+Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K \subset \subset \Omega$ compatto anche $\hat{K}_{\mathcal{F}} \subset \subset \Omega$ compatto. Se $\mathcal{F}=\mathcal{O}(\Omega)$, diremo che $\Omega$ è \textsc{olomorficamente convesso}.
 
 \begin{oss}
   Ogni aperto di $\mathbb{C}$ è olomorficamente convesso.
@@ -67,20 +67,35 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
     \item esiste $h \in \mathcal{O}(\Omega)$ che non può essere estesa olomorficamente a un qualsiasi aperto $\Omega' \supsetneq \Omega$;
     \item $\Omega$ è un dominio di olomorfia;
     \item $\Omega$ è olomorficamente convesso;
-    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
-    \item per ogni $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
-    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$;
-    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
-    \item esiste $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
-    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$.
+    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$ compatto, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
+    \item per ogni $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$ compatto, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
+    \item per ogni $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$ compatto, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$;
+    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$ compatto, $|f| \le \mu_{\Omega}$ su $K$ $\implies$ $|f| \le \mu_\Omega$ su $\hat{K}_\Omega$;
+    \item esiste $\mu$ funzionale di Minkovski e per ogni $K \subset\subset \Omega$ compatto, $\mu_{\Omega}(\hat{K}_\Omega)=\mu_\Omega(K)$;
+    \item esiste $\mu$ funzionale di Minkovski, per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $K \subset\subset \Omega$ compatto, $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}=\sup_{z\in\hat{K}_\Omega} \frac{|f(z)|}{\mu_\Omega(z)}$.
   \end{nlist}
 \end{thm}
 
 \begin{proof}
   (i) $\implies$ (ii) è ovvia (basta prendere $h$ per tutti i $p \in \partial\Omega$). (iv) $\implies$ (vii) è ovvia. (vii) $\implies$ (ix) è ovvia (basta dividere $f$ per $\displaystyle \sup_{z \in K} \frac{|f(z)|}{\mu_\Omega(z)}$). (ix) $\implies$ (vii) è ovvia (basta prendere $f \equiv 1$). (iv) $\implies$ (vi) $\implies$ (v) sono analoghe a (vii) $\implies$ (xi) $\implies$ (viii).
-  (v) $\implies$ (viii) è ovvia. Per concludere mostriamo che (ii) $\implies$ (viii) $\implies$ (iii) $\implies$ (i).
+  (v) $\implies$ (viii) è ovvia. Per concludere mostriamo che (ii) $\implies$ (viii) $\implies$ (iii) $\implies$ (i) $\implies$ (iv).
 
-  (ii) $\implies$ (viii) aaa
+  (ii) $\implies$ (viii) Poniamo $\mu=\|\cdot\|_{\infty}$. Supponiamo, per assurdo, che (viii) non valga: allora esiste $K \subset\subset \Omega$ compatto t.c. $\mu_{\Omega}(\hat{K}_\Omega)<\mu_\Omega(K)$. Scegliamo $\mu_\Omega(\hat{K}_\Omega)< \delta_1<\delta_2<\mu_\Omega(K)$.
+  Sia $z^0 \in \hat{K}_\Omega$ t.c. $\mu_\Omega(z^0)<\delta_1$.
+  Poniamo $\displaystyle K_{\delta_2}=\bigcup_{z \in K} \overline{P(z, \delta_2)}=\{w \in \mathbb{C}^n \mid \min_{z \in K} \|z-w\|_\infty \le \delta_2\}$ chiuso e $\subset\subset \Omega$.
+  Dalle disuguaglianze di Cauchy otteniamo che per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $\alpha \in \mathbb{N}^n$ vale $\left|\dfrac{\partial^{(\alpha)}f}{\partial z^\alpha}(z)\right| \le \dfrac{\alpha!}{\delta_2^{|\alpha|}}\|f\|_{K_{\delta_2}}$ $(*)$ per ogni $z \in K$.
+  Ma allora lo sviluppo in serie di $f$ in $z^0$ converge in $P(z^0, (\delta_1+\delta_2)/2)$ perché $\delta_1<(\delta_1+\delta_2)/2<\delta_2$ $\implies$ $f$ si estende olomorficamente a tutto $P(z^0, (\delta_1+\delta_2)/2)$, ma $P(z^0, (\delta_1+\delta_2)/2) \cap \partial\Omega\not=\emptyset$, assurdo.
+
+  (viii) $\implies$ (iii) $K \subset\subset \Omega$ compatto $\iff$ $K$ è chiuso, limitato e $\mu_\Omega(K)>0$. Se $K \subset\subset \Omega$ compatto, allora $\hat{K}_\Omega$ è chiuso, limitato e, per (viii), $\mu_\Omega(\hat{K}_\Omega)=\mu_\Omega(K)>0$ $\implies$ $\hat{K}_\Omega \subset\subset \Omega$ compatto.
+
+  (iii) $\implies$ (i) Sia $\{w_k\}_{j \in \mathbb{N}^*} \subset \Omega$ una successione ovunque densa e che ripete ogni punto infinite volte. Per ogni $j$ sia $P_j=P(w_j,r_j)$ il polidisco di centro $w_j$ più grande contenuto in $\Omega$ ($\iff$ $P(w_j,r_j) \subset \Omega$ ma $\overline{P(w_j,r_j)}\cap\partial\Omega\not=\emptyset$). In particolare, $P_j$ non è $\subset\subset\Omega$.
+  Sia $\{K_j\}$ una successione di compatti che invade $\Omega$, cioè $K_j \subset\subset \Omega$ compatto, $K_j \subset \mathop {K_{j+1}}\limits^ \circ$ e $\displaystyle \bigcup_j K_j=\Omega$.
+  (iii) $\implies$ $\widehat{(K_j)}_\Omega \subset\subset \Omega$ $\implies$ esiste $z_j \in P_j\setminus\widehat{(K_j)}_\Omega$ $\implies$ esiste $h_j \in \mathcal{O}(\Omega)$ t.c. $|h_j(z_j)|>\|h_j\|_{K_j}$. Possiamo suppore $h_j(z_j)=1$ e (a meno di sostituire $h_j^{M_j}$ con $M_j>>1$) possiamo supporre $\|h_j\|_{K_j}<2^{-j}$.
+  Poniamo $\displaystyle h(z)=\prod_{j=1}^{+\infty} (1-h_j(z))^j$. $h \in \mathcal{O}(\Omega)$ perché $\displaystyle \sum_j \frac{j}{2^j}<+\infty$. Inoltre $h \not\equiv 0$ perché non lo è su $K_1$. Ogni $P_j$ contiene infiniti $z_l$ che si accumulano a $z_j^0 \in \overline{P_j}$.
+  $h$ si annulla di ordine almeno $l$ in $z_l$ (segue dalla definizione). Se $z_j^0 \in \Omega$ allora $h$ dovrebbe annullarsi di ordine $\infty$ in $z_j^0$ $\implies$ $h \equiv 0$, assurdo $\implies$ $z_j^0 \in \partial\Omega$.
+  Gli $\{z_j^0\}$ sono densi in $\partial\Omega$; se non lo fossero, esisterebbe $w_{j_0}$ t.c. $\overline{P(w_{j_0},r_{j_0})} \cap \partial\Omega$ non contiene alcun $z_j^0$, assurdo. Se $h$ si estendesse a $\Omega' \supsetneq \Omega$ allora si dovrebbe estendere a un intorno di qualche $z_j^0$ $\implies$ $h \equiv 0$, assurdo.
+
+  (i) $\implies$ (iv) poi
 \end{proof}
 
 \begin{cor} \label{conv->dom_olo}
