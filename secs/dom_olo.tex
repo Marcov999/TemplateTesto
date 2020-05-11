@@ -61,7 +61,7 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
   Ogni $l: \mathbb{C}^n \longrightarrow \mathbb{R}$ $\mathbb{R}$-lineare è la parte reale di $L:\mathbb{C}^n \longrightarrow \mathbb{C}$ $\mathbb{C}$-lineare.
 \end{proof}
 
-\begin{thm}
+\begin{thm} \label{car_dom_olo}
   Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sono equivalenti:
   \begin{nlist}
     \item esiste $h \in \mathcal{O}(\Omega)$ che non può essere estesa olomorficamente a un qualsiasi aperto $\Omega' \supsetneq \Omega$;
@@ -108,7 +108,10 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
   \end{proof}
   Usiamo il fatto \ref{2.5.13} per dimostrare che vale (iv) per $\mu^{\underline{r}}$.
   Per assurdo, se esiste $w \in \hat{K}_\Omega$ t.c. $|f(w)|>\mu_\Omega^{\underline{r}}(w)$ allora $P(w,|f(w)|\underline{r}) \cap \partial \Omega \not=\emptyset$, dunque per il fatto \ref{2.5.13} ogni $g \in \mathcal{O}(\Omega)$ si estende olomorficamente in $P(w,|f(w)|\underline{r})$ contro (i), assurdo.
-  Sia adesso $\mu$ un funzionale di Minkovski qualunque.
+  Sia adesso $\mu$ un funzionale di Minkovski qualsiasi. Dato $v \in \mathbb{C}^n$ poniamo $S^v_\Omega(z)=\sup\{r>0 \mid z+\zeta v \in \Omega \forall |\zeta|<r\}$. Allora $\displaystyle \mu_\Omega(z)=\inf_{\mu(v)=1} S_\Omega^v(z)$ (la dimostrazione è lasciata come esercizio per il lettore). Quindi basta mostrare che (iv) vale per $S^v_\Omega$. Chiaramente, possiamo assumere $v=e_1$.
+  Dato $k \in \mathbb{N}^*$ poniamo $\underline{r}^k=(1,1/k,\dots,1/k)$. $\underline{r}^\infty=(1,0,\dots,0)=e_1$. Ora $S^{e_1}_\Omega=\mu_\Omega^{\underline{r}^\infty}$ e $\mu_\Omega^{\underline{r}^k} \uparrow S_\Omega^{e_1}$ (la dimostrazione è lasciata come esercizio per il lettore).
+  Sia $K \subset\subset \Omega$ compatto. Per il lemma del Dini, $\mu_\Omega^{\underline{r}^k} \uparrow S_\Omega^{e_1}$ uniformemente su $K$. Sia $f \in \mathcal{O}(\Omega)$ t.c. $|f| \le S_\Omega^{e_1}$ su $K$.
+  Fissiamo $\epsilon>0$. Per ogni $k \ge k_0(\epsilon)$ $S_\Omega^{e_1} \le (1+\epsilon)\mu_\Omega^{\underline{r}^k}$ su $K$ $\implies$ $|f| \le (1+\epsilon)\mu_\Omega^{\underline{r}^k}$ su $K$, ma (iv) vale per i funzionali di quella forma, dunque $|f| \le (1+\epsilon)\mu_\Omega^{\underline{r}^k} \le (1+\epsilon)S_\Omega^{e_1}$ su $\hat{K}_\Omega$. Mandando $\epsilon$ a $0$ otteniamo la tesi.
 \end{proof}
 
 \begin{cor} \label{conv->dom_olo}
@@ -130,3 +133,25 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
 \begin{exc}
   Se ogni punto di $\partial\Omega$ è di picco, allora $\Omega$ è dominio di olomorfia.
 \end{exc}
+
+\begin{prop} \label{cclc->do}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio circolare completo logaritmicamente convesso con $0 \in \Omega$. Allora $\Omega$ è dominio di olomorfia.
+\end{prop}
+
+\begin{proof}
+  Sia $K \subset\subset \Omega$ compatto. Vogliamo mostrare che $\hat{K}_\Omega \subset\subset \Omega$ e allora la tesi seguirà dal teorema \ref{car_dom_olo}. Per ogni $w \in K$ esiste un intorno $w \in U_w \subset \Omega$ e $\zeta^w \in \Omega$ t.c. $|z_j| \le |\zeta_j^w|$ per ogni $z \in U_w$.
+  $K$ compatto $\implies$ esistono $\zeta^1, \dots, \zeta^k \in \Omega$ t.c. $\displaystyle K \subset \bigcup_{l=1}^k \{|z_j| \le |\zeta_j^l| \forall j\}=W \subset\subset \Omega$. Possiamo asumere $\zeta_j^l \not=0$ per ogni $l,j$. Sia $z \in \hat{K}_\Omega$, vogliamo $z \in W$.
+  A meno di permutare le coordinate possiamo supporre $z_1= \dots, z_m \not=0, z_{m+1}=\dots=z_n=0$ per qualche $1 \le m \le n$ (ovviamente $0 \in W$).
+  Per definizione di $\hat{K}_\Omega$ si ha che $\displaystyle |z_1^{\alpha_1}\dots z_m^{\alpha_m}| \le \sup_{w \in K} |w_1^{\alpha_1}\dots w_m^{\alpha_m}| \le \max_{1 \le l \le k} |(\zeta_1^l)^{\alpha_1}\dots(\zeta_m^l)^{\alpha_m}|$ $(*)$.
+  Poniamo $\nu_j=\alpha_j/|\alpha|$. $\nu_j \in \mathbb{Q}^+\cup\{0\}$ con $\displaystyle \sum_{j=1}^n \nu_j=1$. Prendendo il logaritmo e dividendo per $|\alpha|$ a entrambi i membri di $(*)$ otteniamo $\displaystyle \sum_{j=1}^m \nu_j\log{|z_j|} \le \max_l \sum_{j=1}^m \nu_j\log{|\zeta_j^l|}$ $(**)$.
+  Per continuità questo vale per ogni $\nu_j \in \mathbb{R}^+\cup\{0\}$ t.c. $\displaystyle \sum_j \nu_j=1$.
+  $(**)$ ci dice che $(\log{|z_1|},\dots,\log{|z_m|})$ è nell'inviluppo convesso $Z$ di $\displaystyle \bigcup_l \{(t_1,\dots,t_m) \in \mathbb{R}^n \mid -\infty<t_j \le \log{|\zeta_j^l|}\forall j\}$ che è ben contenuto in $\log{|\Omega|}$ $\implies$ $\displaystyle z \in \widehat{\bigcup_{l=1}^k \{|z_j| \le |\zeta_j^l|\}}=\hat{W}$ che è il dominio circolare completo $\subset\subset \Omega$ che ha come immagine logaritimica $Z$.
+\end{proof}
+
+\begin{cor}
+  Se $\Omega \subseteq \mathbb{C}^n$ è un dominio circolare completo logaritmicamente convesso con $0 \in \Omega$, allora $\Omega$ è il dominio di convergenza di una serie di potenze.
+\end{cor}
+
+\begin{proof}
+  Per la proposizione \ref{cclc->do} abbiamo che $\Omega$ è un dominio di olomorfia, dunque esiste $h \in \mathcal{O}(\Omega)$ che non si può estendere ad aperti più grandi, Prendiamo l'espansione in serie di $h$ in $0$. Abbiamo visto che tale espansione converge in $\Omega$ e non può convergere in alcunché di più grande.
+\end{proof}

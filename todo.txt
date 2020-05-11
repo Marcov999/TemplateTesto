@@ -15,4 +15,5 @@ Lez 14: ok
 Lez 15: ok
 Lez 16: ok
 Lez 17: ok
+Lez 18: ok
 Scrivere un README decente
