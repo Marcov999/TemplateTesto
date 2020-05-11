@@ -16,7 +16,7 @@
 \end{ex}
 
 \begin{exc}
-  Se $\mu$ è un funzionale di Minkovski, allora $B_{\mu}=\{z \in \mathbb{C}^n \mid \mu(z)<1\}$ è circolare completo.
+  $\Omega \subseteq \mathbb{C}^n$ dominio con $0 \in \Omega$ è circolare e stellato rispetto a $0$ (cioè per ogni $\zeta \in \mathbb{D}, z \in \Omega$ anche $\zeta z \in \Omega$) $\iff$ esiste $\mu$ funzionale di Minkovski t.c. $\Omega=\{z \in \mathbb{C}^n \mid \mu(z)<1\}$. Hint: una freccia è ovvia, per l'altra si consideri $\mu(z)=\inf\{r>0 \mid z/r \in \Omega \}$.
 \end{exc}
 
 Se $\Omega \subset \mathbb{C}^n$ è un dominio poniamo $\displaystyle \mu_\Omega(z)=\inf_{w \in \mathbb{C}^n\setminus\Omega} \mu(z-w)=$"$\mu$-distanza da $\partial\Omega$". Se $X \subseteq \Omega$ poniamo $\displaystyle \mu_\Omega(X)=\inf_{z \in X} \mu_\Omega(z)$.
@@ -83,7 +83,7 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
   (ii) $\implies$ (viii) Poniamo $\mu=\|\cdot\|_{\infty}$. Supponiamo, per assurdo, che (viii) non valga: allora esiste $K \subset\subset \Omega$ compatto t.c. $\mu_{\Omega}(\hat{K}_\Omega)<\mu_\Omega(K)$. Scegliamo $\mu_\Omega(\hat{K}_\Omega)< \delta_1<\delta_2<\mu_\Omega(K)$.
   Sia $z^0 \in \hat{K}_\Omega$ t.c. $\mu_\Omega(z^0)<\delta_1$.
   Poniamo $\displaystyle K_{\delta_2}=\bigcup_{z \in K} \overline{P(z, \delta_2)}=\{w \in \mathbb{C}^n \mid \min_{z \in K} \|z-w\|_\infty \le \delta_2\}$ chiuso e $\subset\subset \Omega$.
-  Dalle disuguaglianze di Cauchy otteniamo che per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $\alpha \in \mathbb{N}^n$ vale $\left|\dfrac{\partial^{(\alpha)}f}{\partial z^\alpha}(z)\right| \le \dfrac{\alpha!}{\delta_2^{|\alpha|}}\|f\|_{K_{\delta_2}}$ $(*)$ per ogni $z \in K$.
+  Dalle disuguaglianze di Cauchy otteniamo che per ogni $f \in \mathcal{O}(\Omega)$ e per ogni $\alpha \in \mathbb{N}^n$ vale $\left|\dfrac{\partial^{|\alpha|}f}{\partial z^\alpha}(z)\right| \le \dfrac{\alpha!}{\delta_2^{|\alpha|}}\|f\|_{K_{\delta_2}}$ $(*)$ per ogni $z \in K$.
   Ma allora lo sviluppo in serie di $f$ in $z^0$ converge in $P(z^0, (\delta_1+\delta_2)/2)$ perché $\delta_1<(\delta_1+\delta_2)/2<\delta_2$ $\implies$ $f$ si estende olomorficamente a tutto $P(z^0, (\delta_1+\delta_2)/2)$, ma $P(z^0, (\delta_1+\delta_2)/2) \cap \partial\Omega\not=\emptyset$, assurdo.
 
   (viii) $\implies$ (iii) $K \subset\subset \Omega$ compatto $\iff$ $K$ è chiuso, limitato e $\mu_\Omega(K)>0$. Se $K \subset\subset \Omega$ compatto, allora $\hat{K}_\Omega$ è chiuso, limitato e, per (viii), $\mu_\Omega(\hat{K}_\Omega)=\mu_\Omega(K)>0$ $\implies$ $\hat{K}_\Omega \subset\subset \Omega$ compatto.
@@ -95,7 +95,20 @@ Diremo che $\Omega$ è \textit{$\mathcal{F}$-convesso} se e solo se per ogni $K 
   $h$ si annulla di ordine almeno $l$ in $z_l$ (segue dalla definizione). Se $z_j^0 \in \Omega$ allora $h$ dovrebbe annullarsi di ordine $\infty$ in $z_j^0$ $\implies$ $h \equiv 0$, assurdo $\implies$ $z_j^0 \in \partial\Omega$.
   Gli $\{z_j^0\}$ sono densi in $\partial\Omega$; se non lo fossero, esisterebbe $w_{j_0}$ t.c. $\overline{P(w_{j_0},r_{j_0})} \cap \partial\Omega$ non contiene alcun $z_j^0$, assurdo. Se $h$ si estendesse a $\Omega' \supsetneq \Omega$ allora si dovrebbe estendere a un intorno di qualche $z_j^0$ $\implies$ $h \equiv 0$, assurdo.
 
-  (i) $\implies$ (iv) poi
+  (i) $\implies$ (iv) Fissiamo $\underline{r}=(r_1,\dots,r_n) \in (\mathbb{R}^+)^n$ e poniamo $\mu^{\underline{r}}(z)=\max\left\{\dfrac{|z_j|}{r_j}\right\}$.
+  Vogliamo dimostrare che vale (iv) per $\mu^{\underline{r}}$. Siano $f \in \mathcal{O}(\Omega)$ e $K\subset\subset\Omega$ compatto t.c. $|f(z)| \le \mu_{\Omega}^{\underline{r}}(z)$ per ogni $z \in K$.
+  \begin{ftt} \label{2.5.13}
+    Data $f$ come sopra, per ogni $g \in \mathcal{O}(\Omega)$ e $w \in \hat{K}_\Omega$ $g$ ha un'espansione in serie di potenze centrata in $w$ e convergente in $P(w, |f(w)|\underline{r})=\{z \in \mathbb{C}^n \mid \mu^{\underline{r}}(z-w)<|f(w)|\}$.
+  \end{ftt}
+  \begin{proof}
+    Fissiamo $0<t<1$, $\displaystyle W_t=\bigcup_{z \in K} P(z, |f(z)|t\underline{r})$. Siccome $t|f(z)|<u_\Omega^{\underline{r}}(z)$ per ogni $z \in K$ $\implies$ $W_t \subset\subset \Omega$. Sia $g \in \mathcal{O}(\Omega)$. Esiste $M>0$ t.c. $\|g\|_{W_t} \le M$.
+    Per le disuguaglianze di Cauchy, per ogni $z \in K$ si ha $\left|\dfrac{\partial^{|\alpha|}g}{\partial z^\alpha}(z)\right| \le \dfrac{\alpha!M}{t^{|\alpha|}|f(z)|^{|\alpha|}\underline{r}^\alpha} \iff \left|f(z)^{|\alpha|}\dfrac{\partial^{|\alpha|}g}{\partial z^\alpha}(z)\right| \le \dfrac{\alpha!M}{t^{|\alpha|}\underline{r}^\alpha} \implies$
+    per ogni $w \in \hat{K}_\Omega$ si ha $\left|f(w)^{|\alpha|}\dfrac{\partial^{|\alpha|}g}{\partial z^\alpha}(w)\right| \le \dfrac{\alpha!M}{t^{|\alpha|}\underline{r}^\alpha} \implies \left|\dfrac{\partial^{|\alpha|}g}{\partial z^\alpha}(w)\right| \le \dfrac{\alpha!M}{t^{|\alpha|}|f(w)|^{|\alpha|}\underline{r}^\alpha}$ $\implies$
+    lo sviluppo in serie di $g$ in $w$ converge in $P(w,|f(w)|t\underline{r})$. Mandando $t$ a $1$ si ottiene quanto voluto.
+  \end{proof}
+  Usiamo il fatto \ref{2.5.13} per dimostrare che vale (iv) per $\mu^{\underline{r}}$.
+  Per assurdo, se esiste $w \in \hat{K}_\Omega$ t.c. $|f(w)|>\mu_\Omega^{\underline{r}}(w)$ allora $P(w,|f(w)|\underline{r}) \cap \partial \Omega \not=\emptyset$, dunque per il fatto \ref{2.5.13} ogni $g \in \mathcal{O}(\Omega)$ si estende olomorficamente in $P(w,|f(w)|\underline{r})$ contro (i), assurdo.
+  Sia adesso $\mu$ un funzionale di Minkovski qualunque.
 \end{proof}
 
 \begin{cor} \label{conv->dom_olo}

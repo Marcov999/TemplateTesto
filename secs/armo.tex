@@ -1,0 +1,80 @@
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}$, $u \in C^2(\Omega)$. Il \textit{laplaciano di $u$} è $\Delta u=\dfrac{\partial^2 u}{\partial x^2}+\dfrac{\partial^2 u}{\partial y^2}=4\dfrac{\partial^2 u}{\partial z\partial\bar{z}}$.
+  Diremo che $u$ è \textsc{armonica} se $\Delta u \equiv 0$ e scriveremo $u \in \mathcal{H}(\Omega)$.
+\end{defn}
+
+\begin{oss}
+  $u$ armonica $\implies$ $\mathfrak{Re}u, \mathfrak{Im}u \in \mathcal{H}(\Omega)$.
+\end{oss}
+
+\begin{oss}
+  $f \in \mathcal{O}(\Omega) \implies f, \mathfrak{Re}f, \mathfrak{Im}f \in \mathcal{H}(\Omega)$.
+\end{oss}
+
+\begin{prop}
+  Sia $\Omega \subseteq \mathbb{C}$, $u \in C^2(\Omega)$ a valori reali t.c. $\Delta u \ge 0$ su $\Omega$. Allora $u$ soddisfa il principio del massimo: per ogni $K \subset\subset \Omega$, per ogni $z \in K$ $\displaystyle u(z) \le \sup_{w \in \partial K} u(w)$.
+\end{prop}
+
+\begin{proof}
+  Supponiamo prima che $\Delta u>0$. Per assurdo esistono $K\subset\subset\Omega$ e $w_0 \in K$ t.c. $\displaystyle u(w_0)>\sup_{w \in \partial K}$ $\implies$ esiste $z_0 \in \mathop K\limits^ \circ$ t.c. $\displaystyle u(z_0)=\sup_{z \in K} u(z)$.
+  Quindi $z_0$ è un massimo locale per $u$ $\implies$ $\dfrac{\partial^2 u}{\partial x^2}(z_0), \dfrac{\partial^2 u}{\partial y^2}(z_0) \le 0$ $\implies$ $\Delta u(z_0) \le 0$, assurdo.
+  Supponiamo che $\Delta u \ge 0$ e dato $\epsilon>0$ poniamo $u_\epsilon(z)=u(z)+\epsilon|z|^2$. Allora $\Delta u_\epsilon=\Delta u +4\epsilon>0$. Quindi per $u_\epsilon$ vale il principio del massimo e per ogni $z \in K$ $\displaystyle u(z)=\lim_{\epsilon \longrightarrow 0} u_\epsilon(z) \le \lim_{\epsilon \longrightarrow 0} \sup_{w \in \partial K} u_\epsilon(w)=\sup_{w \in \partial K} u(w)$.
+\end{proof}
+
+\begin{cor} \label{id_armo}
+  Siano $\Omega \subseteq \mathbb{C}, u \in \mathcal{H}(\Omega)$. Se $K \subset\subset \Omega$ è t.c. $u\restrict{\partial K} \equiv 0$, allora $u\restrict{K} \equiv 0$. Da questo segue un analogo del principio di identità.
+\end{cor}
+
+\begin{proof}
+  Si applica il principio del massimo a $u$ e $-u$.
+\end{proof}
+
+\begin{defn}
+  Dati $a \in \mathbb{C}, \rho>0$, il \textit{nucleo di Poisson} $P_{a,\rho}:D(a,\rho)\times\partial D(a,\rho) \longrightarrow \mathbb{R}$ è $P_{a,\rho}(z, \zeta)=\dfrac{1}{2\pi}\mathfrak{Re}\left(\dfrac{(\zeta-a)+(z-a)}{(\zeta-a)-(z-a)}\right)$.
+\end{defn}
+
+\begin{oss} \label{P01}
+  $P_{0,1}(z,\zeta)=\dfrac{1}{2\pi}\mathfrak{Re}\left(\dfrac{\zeta+z}{\zeta-z}\right)=\dfrac{1}{2\pi}\mathfrak{Re}\left(\dfrac{(\zeta+z)(\bar{\zeta}-\bar{z})}{|\zeta-z|^2}\right)=\dfrac{1}{2\pi}\dfrac{1-|z|^2}{|\zeta-z|^2}$.
+  $P_{a,\rho}(z,\zeta)=P_{0,1}((z-a)/\rho,(\zeta-a)/\rho)$.
+\end{oss}
+
+\begin{prop} \label{prop_nuc}
+  $P_{a, \rho} \ge 0$, per ogni $z \in \partial D(a, \rho)$ $P_{a, \rho}(\cdot,\zeta) \in \mathcal{H}(D(a,\rho))$.
+  Inoltre per ogni $h \in C^0(\partial D(a,\rho))$ e per ogni $\zeta_0 \in \partial D(a,\rho)$ $\displaystyle \lim_{z \longrightarrow \zeta_0} \int_0^{2\pi} P_{a,\rho}(z,a+\rho e^{i\theta})h(a+\rho e^{i\theta})\diff\theta=h(\zeta_0)$.
+\end{prop}
+
+\begin{proof}
+  Per l'osservazione \ref{P01} possiamo supporre $a=0,\rho=1$. Allora $P_{0,1}(z,\zeta)=\dfrac{1}{2\pi}\dfrac{1-|z|^2}{|\zeta-z|^2}>0$. $P_{0,1}(\cdot,\zeta)$ è la parte reale di una funzione olomorfa $\implies$ è armonica.
+  $\displaystyle P_{0,1}(z, \zeta)=\dfrac{1}{2\pi}\mathfrak{Re}\left(\dfrac{1+\bar{\zeta}z}{1-\bar{\zeta}z}\right)=\dfrac{1}{2\pi}\mathfrak{Re}\left(1+\dfrac{2z\bar{z}}{1-z\bar{\zeta}}\right)=\dfrac{1}{2\pi}\mathfrak{Re}\left(1+2\sum_{n \ge 1} z^n\zeta^{-n}\right)$.
+  $\displaystyle \int_0^{2\pi} P_{0,1}(z,e^{i\theta})\diff\theta=\dfrac{1}{2\pi}\mathfrak{Re}\left(2\pi+\sum_{n \ge 1} \left(\int_0^{2\pi} e^{-in\theta}\diff\theta \right)z^n\right)$.
+  Poiché $n \ge 1$, $\displaystyle \int_0^{2\pi} e^{-in\theta}\diff\theta=0$, per cui $\displaystyle  \int_0^{2\pi} P_{0,1}(z,e^{i\theta})\diff\theta=1$.
+  Sia $h \in C^0(\partial \mathbb{D})$, poniamo $\displaystyle T(z)=\int_0^{2\pi} P_{0,1}(z,e^{i\theta})h(e^{i\theta})\diff\theta-h(\zeta_0)=\int_0^{2\pi} P_{0,1}(z,e^{i\theta})(h(e^{i\theta})-h(e^{i\theta_0}))\diff\theta$.
+  Fissiamo $\epsilon>0$; per uniforme continuità esiste $\delta>0$ t.c. $|h(e^{i\theta_1})-h(e^{i\theta_2})|<\epsilon$ se $|e^{i\theta_1}-e^{i\theta_2}|<\delta$. Sia $\displaystyle M=\sup_{\zeta \in \partial \mathbb{D}} |h(\zeta)|$.
+  Allora $\displaystyle |T(z)|=\left|\int_{|e^{i\theta}-e^{i\theta_0}|<\delta} P_{0,1}(z,e^{i\theta})(h(e^{i\theta})-h(e^{i\theta_0}))\diff\theta+\int_{|e^{i\theta}-e^{i\theta_0}|\ge\delta} P_{0,1}(z,e^{i\theta})(h(e^{i\theta})-h(e^{i\theta_0}))\diff\theta\right| \le \epsilon\int_{|e^{i\theta}-e^{i\theta_0}|<\delta} P_{0,1}(z,e^{i\theta})\diff\theta+2M\int_{|e^{i\theta}-e^{i\theta_0}|\ge\delta} P_{0,1}(z,e^{i\theta})\diff\theta \le$ \\
+  $\displaystyle \epsilon+2M\int_{|e^{i\theta}-e^{i\theta_0}|\ge\delta} P_{0,1}(z,e^{i\theta})\diff\theta$.
+  Da $P_{0,1}(z,\zeta)=\dfrac{1}{2\pi}\dfrac{1-|z|^2}{|\zeta-z|^2}$ otteniamo che il secondo integrale tende a $0$ quando $z \longrightarrow e^{i\theta_0}$, per cui $\displaystyle \lim_{z \longrightarrow \zeta_0} |T(z)| \le \epsilon$ per ogni $\epsilon$.
+\end{proof}
+
+\begin{cor}
+  (Formula di Poisson) Sia $\Omega \subseteq \mathbb{C}, u \in \mathcal{H}(\Omega), D(a, \rho) \subset\subset \Omega$. Allora per ogni $z \in D(a,\rho)$ $\displaystyle u(z)=\int_0^{2\pi} P_{a,\rho}(z,a+\rho e^{i\theta})u(a+\rho e^{i\theta})\diff\theta$.
+\end{cor}
+
+\begin{proof}
+  Chiamiamo $u_1$ il membro destro dato dall'integrale. $u_1 \in \mathcal{H}(D(a,\rho))$ e per la proposizione \ref{prop_nuc} $(u-u_1)\restrict{\partial D(a, \rho)} \equiv 0$, dunque per il corollario \ref{id_armo} $u \equiv u_1$ su $D(a, \rho)$.
+\end{proof}
+
+\begin{cor}
+  Ogni funzione armonica a valori reali è localmente la parte reale di una funzione olomorfa e quindi è analitica reale.
+\end{cor}
+
+\begin{proof}
+  Il nucleo di Poisson lo è.
+\end{proof}
+
+\begin{cor}
+  (Problema di Dirichlet) Data $f \in C^0(\partial D(a,\rho))$ esiste un unica $u \in C^0(\overline{D(a,\rho)}) \cap \mathcal{H}(D(a,\rho))$ t.c. $u\restrict{\partial D(a,\rho)} \equiv f$.
+\end{cor}
+
+\begin{proof}
+  Una soluzione è data da $\displaystyle u(z)=\int_0^{2\pi} P_{a,\rho}(z,a+\rho e^{i\theta})f(a+\rho e^{i\theta})\diff\theta$. L'unicità segue sempre dal corollario \ref{id_armo}.
+\end{proof}
