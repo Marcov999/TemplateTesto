@@ -78,3 +78,37 @@
 \begin{proof}
   Una soluzione è data da $\displaystyle u(z)=\int_0^{2\pi} P_{a,\rho}(z,a+\rho e^{i\theta})f(a+\rho e^{i\theta})\diff\theta$. L'unicità segue sempre dal corollario \ref{id_armo}.
 \end{proof}
+
+\begin{defn}
+  $u: \Omega \longrightarrow \mathbb{R}$ ha la \textit{proprietà della media} se per ogni $z_0 \in \Omega$ e per ogni $r>0$ t.c. $\overline{D(z_0,r)} \subset \Omega$ $\displaystyle u(z_0)=\frac{1}{2\pi} \int_0^{2\pi} u(z_0+re^{i\theta})\diff\theta$.
+\end{defn}
+
+\begin{prop}
+  $u:\Omega \longrightarrow \mathbb{R}$ continua ha la proprietà della media se e solo se è armonica.
+\end{prop}
+
+\begin{proof}
+  ($\Leftarrow$) $u$ è la parte reale di una funzione olomorfa, perciò la tesi segue dalla formula integrale di Cauchy (la verifica è lasciata per esercizio).
+
+  ($\implies$) Fissiamo $z_0 \in \Omega, r>0$ t.c. $\overline{D(z_0,r)} \subset \Omega$. Poniamo $f=u\restrict{\partial D(z_0,r)}$ e sia $F \in C^0(\overline{D(z_0,r)}) \cap \mathcal{H}(D(z_0,r))$ l'estensione armonica t.c. $F\restrict{\partial D(z_0,r)} \equiv f$. Allora $F-u$ ha la proprietà della media e $(F-u)\restrict{\partial D(z_0,r)} \equiv 0$.
+  Supponiamo per assurdo $(F-u)\restrict{\partial D(z_0mr)} \not\equiv 0$. Ponendo $g=\pm(F-u)$ (dove il segno è scelto opportunamente), possiamo assumere senza perdita di generalità che esiste $\tilde{z} \in D(z_0,r)$ t.c. $g(\tilde{z})>0$. Possiamo anche supporre che $\displaystyle g(\tilde{z})=\max_{z \in \overline{D(z_0,r)}} g(z)$.
+  Per $0 \le \rho <<1$ poniamo $\displaystyle M(\rho)=\sup_{\theta} g(\tilde{z}+\rho e^{i\theta})$. Per ipotesi $M(\rho) \le g(\tilde{z})$; per la proprietà della media $g(\tilde{z}) \le M(\rho) \implies M(\rho)=g(\tilde{z})$ per ogni $\rho<<1$.
+  Ma allora $g(\tilde{z})-g(\tilde{z}+\rho e^{i\theta}) \ge 0$ e ha media nulla su $S^1 \ni e^{i\theta} \implies g(\tilde{z})-g(\tilde{z}+\rho e^{i\theta}) \equiv 0$, cioè $g\restrict{D(\tilde{z},\rho)} \equiv g(\tilde{z})$ per ogni $\rho <<1$.
+  Allora l'insieme $\{z \in D(z_0,r) \mid g(z)=g(\tilde{z})\}$ è aperto e chiuso in $D(z_0,r)$ $\implies$ $g \equiv g(\tilde{z})>0$ in $D(z_0,r)$, contro l'ipotesi che $g\restrict{\partial D(z_0,r)} \equiv 0$, assurdo.
+\end{proof}
+
+\begin{oss}
+  Si possono definire le funzioni armoniche in $\mathbb{R}^n$ con $\Delta u\equiv 0$.
+\end{oss}
+
+\begin{defn}
+  Una funzione $u: \Omega \longrightarrow \mathbb{R}$ con $\Omega \subseteq \mathbb{C}^n$ è \textit{pluriarmonica} se per ogni $a \in \Omega$ e per ogni $v \in \mathbb{C}^n$ la funzione $\zeta \longmapsto u(a+\zeta v)$ è armonica dove definita.
+\end{defn}
+
+\begin{oss}
+  Pluriarmonica $\implies$ armonica.
+\end{oss}
+
+\begin{ftt}
+  $u$ è pluriarmonica $\iff$ $u$ è localmente la parte reale di una funzione olomorfa.
+\end{ftt}
