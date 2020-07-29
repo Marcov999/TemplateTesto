@@ -1,0 +1,150 @@
+\begin{defn}
+  Sia $\Omega \subseteq \mathbb{C}^n$ aperto, $u:\Omega \longrightarrow \mathbb{R}\cup\{-\infty\}$ scs è \textsc{plurisubarmonica} se per ogni $z \in \Omega$ e per ogni $v \in \mathbb{C}^n$ l'applicazione $\zeta \longmapsto u(z+\zeta v)$ è subarmonica dove definita. Scriviamo $u \in PSH(\Omega)$.
+\end{defn}
+
+\begin{prop}
+  $u \in C^2(\Omega)$ è plurisubarmonica $\iff$ per ogni $z \in \Omega$ e per ogni $v \in \mathbb{C}^n$ vale $\displaystyle \sum_{j,k=1}^n \frac{\partial^2 u}{\partial z_j\partial\bar{z}_k}(z)v_j\bar{v}_k \ge 0$.
+\end{prop}
+
+\begin{proof}
+  Poniamo $v(\zeta)=u(z+\zeta v)$. $\displaystyle \frac{\partial v}{\partial\zeta}(\zeta)=\sum_{j=1}^n \frac{\partial u}{\partial z_j}(z+\zeta v) \cdot \frac{\partial}{\partial\zeta}(z_j+\zeta v_j)+\sum_{j=1}^n\frac{\partial u}{\partial\bar{z}_j}(z+\zeta v)\cdot \frac{\partial}{\partial\zeta}(\bar{z_j}+\bar{\zeta}\bar{v}_j)$.
+  Osserviamo che $\dfrac{\partial}{\partial\zeta}(\bar{z_j}+\bar{\zeta}\bar{v}_j)=0$, perciò otteniamo $\displaystyle \Delta v(\zeta)=4\frac{\partial^2}{\partial\zeta\partial\bar{\zeta}}(\zeta)=4\sum_{j,k=1}^n \frac{\partial^2 u}{\partial z_j\partial\bar{z}_k}(z+\zeta v)v_j\bar{v}_k$.
+\end{proof}
+
+\begin{defn}
+  Sia $u \in C^2(\Omega)$. La \textsc{forma di Levi di $u$ in $z \in \Omega$} è $L_{u,z}=\left(\frac{\partial^2 u}{\partial z_j\partial\bar{z}_k}(z)\right)$ (è una matrice hermitiana).
+\end{defn}
+
+\begin{oss}
+  $u \in PSH(\Omega) \cap C^2(\Omega) \iff L_{u,z} \ge 0$ (cioè è semidefinita positiva) per ogni $z \in \Omega$.
+\end{oss}
+
+\begin{defn}
+  $u \in C^2(\Omega)$ è \textit{strettamente plurisubarmonica} se $L_{u,z}>0$ per ogni $z \in \Omega$.
+\end{defn}
+
+\begin{oss}
+  Se $\rho \in C^0(\mathbb{C}^n,\mathbb{R})$ allora $\Omega=\{z \in \mathbb{C}^n \mid \rho(z)<0\}$ è un aperto.
+\end{oss}
+
+\begin{defn}
+  Un \textsc{dominio di classe $C^k$} (o \textit{con bordo di classe $C^k$}), $k in \mathbb{N}^*\cup\{\infty, \omega\}$ è $\Omega=\{z \in \mathbb{C}^n \mid \rho(z)<0\}$ con $\rho \in C^k(\mathbb{C}^n)$ (con $C^{\omega}$ si intendono le funzioni analitiche), detta \textit{funzione di definizione},
+  t.c. $\vec{\nabla}\rho$ non si annulla mai su $\partial\Omega=\{z \in \mathbb{C}^n \mid \rho(z)=0\}$ ($\implies$ $\partial\Omega$ è una ipersuperficie reale di classe $C^k$).
+\end{defn}
+
+\begin{ex}
+  $\mathbb{B}^n=\{\|z\|^2-1<0\}$, $\rho(z)=\|z\|^2-1$.
+\end{ex}
+
+\begin{oss}
+  Sia $\Omega$ di classe $C^k$, $x_0 \in \partial\Omega$. Lo spazio tangente reale a $\partial\Omega$ in $x_0$, detto $T_{x_0}^{\mathbb{R}}\partial\Omega$, è l'ortogonale di $\vec{\nabla}\rho(x_0)$ rispetto al prodotto scalare canonico di $\mathbb{R}^{2n}$.
+\end{oss}
+
+\begin{exc}
+  $\displaystyle T_{x_0}^{\mathbb{R}}\partial\Omega=\left\{v \in \mathbb{C}^n \mid \mathfrak{Re}\left(\sum_{j=1}^n \frac{\partial\rho}{\partial z_j}(x_0)v_j\right)=0\right\}$.
+\end{exc}
+
+\begin{defn}
+  Sia $\Omega$ di classe $C^k$, $x_0 \in \partial\Omega$. Lo \textit{spazio tangente complesso a $\partial\Omega$ in $x_0$} è $\displaystyle T_{x_0}^{\mathbb{C}}\partial\Omega=\left\{v \in \mathbb{C}^n \mid \sum_{j=1}^n \frac{\partial\rho}{\partial z_j}(x_0)v_j=0\right\}$ sottospazio complesso di $\mathbb{C}^n$ di dimensione $\dim=n-1$.
+\end{defn}
+
+\begin{defn}
+  Sia $\Omega=\{\rho<0\}$ un dominio di classe $C^2$. Diremo che $\Omega$ è \textsc{(Levi) pseudoconvesso} se $L_{\rho,x} \ge 0$ su $T_x^{\mathbb{C}}\partial\Omega$ per ogni $x \in \partial\Omega$; diremo che è \textit{strettamente pseudoconvesso} se $L_{\rho,x} > 0$ su $T_x^{\mathbb{C}}\partial\Omega$ per ogni $x \in \partial\Omega$.
+\end{defn}
+
+\begin{oss}
+  Se $\rho_1$ e $\rho_2$ sono funzioni di definizione di $\Omega=\{\rho_1<0\}=\{\rho_2<0\}$ allora $\{\rho_1=0\}=\{\rho_2=0\}$ e questo implica (esercizio) che esiste $h>0$ t.c. $\rho_2=h\rho_1$ vicino a $\partial\Omega$ $\implies$
+  $\dfrac{\partial\rho_2}{\partial z_j}=\dfrac{\partial h}{\partial z_j}\rho_1+h\dfrac{\partial\rho_1}{\partial z_j} \implies \dfrac{\partial^2\rho_2}{\partial z_j\partial\bar{z}_k}=\dfrac{\partial^2h}{\partial z_j\partial\bar{z}_k}\rho_1+\dfrac{\partial h}{\partial z_j}\dfrac{\partial\rho_1}{\partial\bar{z}_k}+\dfrac{\partial h}{\partial\bar{z}_k}\dfrac{\partial\rho_1}{\partial z_j}+h\dfrac{\partial^2\rho_1}{\partial z_j\partial\bar{z}_k}$.
+  Se $x_0 \in \partial\Omega$, $\rho_1(x_0)=0$. Se $v \in T_{x_0}^{\mathbb{C}}\partial\Omega$ allora $\displaystyle \sum_j \frac{\partial\rho_j}{\partial z_j}(x_0)v_j=0=\overline{\sum_k\frac{\partial\rho_j}{\partial z_h}(x_0)v_k}=\sum_k\frac{\partial\rho_j}{\partial\bar{z}_k}(x_0)\bar{v}_k$.
+  Se $x_0 \in \partial\Omega, v \in T_{x_0}^{\mathbb{C}}\partial\Omega$, allora $\displaystyle \sum_{j,k=1}^n \frac{\partial^2\rho_2}{\partial z_j\partial\bar{z}_k}(x_0)v_j\bar{v}_k=h(x_0)\sum_{j,k=1}^n \frac{\partial^2\rho_1}{\partial z_j\partial\bar{z}_k}(x_0)v_j\bar{v}_k$.
+  Quindi la definizione di Levi pseudoconvesso non dipende dalla funzione di definizione.
+\end{oss}
+
+\begin{ftt}
+  Se $\Omega$ è di classe $C^2$ allora $\delta_{\Omega}(z)=\begin{cases} -d(z,\partial\Omega) & \mbox{se }z \in \Omega \\ d(z, \partial\Omega) & \mbox{se }z \not\in \Omega \end{cases}$ è di classe $C^2$ in un intorno di $\partial\Omega$ con $\vec{\nabla}\not=0$ su $\partial\Omega$.
+\end{ftt}
+
+\begin{ftt}
+  Se $\Omega$ è strettamente pseudoconvesso allora esiste una funzione di definizione $\rho$ di $\Omega$ t.c. $L_{\rho,x}>0$ su tutto $\mathbb{C}^n$ per ogni $x \in \partial\Omega$.
+\end{ftt}
+
+\begin{ftt}
+  (Narasimhan) Sia $\Omega$ un dominio $C^2$ strettamente pseudoconvesso e $x_0 \in \partial\Omega$. Allora esistono $U \ni x_0$ intorno e $\varphi:U \longrightarrow \mathbb{C}^n$ biolomorfismo con l'immagine t.c. $\varphi(U \cap \Omega)$ è strettamente convesso.
+\end{ftt}
+
+\begin{ex}
+  $\Omega=\{(z,w) \in \mathbb{C}^2 \mid |z|^2+|w|^2+|w|^{-2}<3\}$ è strettamente pseudoconvesso ma topologicamente è isomorfo a $\mathbb{D} \times \text{Anello}$.
+\end{ex}
+
+\begin{defn}
+  $\Omega \subseteq \mathbb{C}^n$ dominio è \textsc{Hartogs pseudoconvesso} se $-\log{\mu_{\Omega}} \in PSH(\Omega)$ per qualche $\mu$ funzionale di Minkowski.
+\end{defn}
+
+\begin{thm}
+  Sia $\Omega \subset\subset \mathbb{C}^n$ di classe $C^2$. Allora sono equivalenti:
+  \begin{nlist}
+    \item $\Omega$ è Levi pseudoconvesso;
+    \item $\Omega$ è Hartogs pseudoconvesso;
+    \item $\Omega$ è $PSH(\Omega)$-convesso (cioè l'inviluppo olomorfo di un compatto in $\Omega$ rispetto a $PSH(\Omega)$ è ancora compatto in $\Omega$).
+  \end{nlist}
+  Inoltre, l'equivalenze tra (ii) e (iii) vale per $\Omega$ dominio qualsiasi.
+\end{thm}
+
+\begin{cor} \label{domolo->pscvx}
+  Dominio di olomorfia $\implies$ pseudoconvesso.
+\end{cor}
+
+\begin{proof}
+  (Del corollario) Se $f \in \mathcal{O}(\Omega)$, allora $|f| \in PSH(\Omega) \implies \widehat{K}_{PSH(\Omega)} \subseteq \widehat{K}_{\Omega}$.
+\end{proof}
+
+Il corollario \ref{domolo->pscvx} spiega l'importanza dei domini pseudoconvessi e il motivo per cui li stiamo studiando, inoltre fa sorgere un dubbio abbastanza importante da avere un nome suo, il cosiddetto \textit{problema di Levi}: pseudoconvesso $\implies$ dominio di olomorfia?
+
+\begin{defn}
+  Un \textsc{disco analitico} è $\varphi:\mathbb{D} \longrightarrow \mathbb{C}^n$ olomorfa. Un disco analitico è \textit{chiuso} se $\varphi$ si estende con continuità a $\partial\mathbb{D}$. Se $\varphi:\overline{\mathbb{D}} \longrightarrow \mathbb{C}^n$ è un disco analitico chiuso porremo $d=\varphi(\overline{\mathbb{D}}), \partial d=\varphi(\partial\mathbb{D})$ e $\mathop {d}\limits^ \circ=\varphi(\mathbb{D})$.
+\end{defn}
+
+\begin{lm}
+  Se $d \subset \Omega$ è un disco analitico chiuso allora $d \subseteq \widehat{\partial d}_{\Omega}$.
+\end{lm}
+
+\begin{proof}
+  Se $f \in \mathcal{O}(\Omega)$ e $d=\varphi(\overline{\mathbb{D}})$ allora $f \circ \varphi \in \mathcal{O}(\mathbb{D}) \cap C^0(\overline{\mathbb{D}}) \implies$ (principio del massimo) per ogni $\zeta \in \overline{\mathbb{D}}$ vale $\displaystyle |(f\circ \varphi)(\zeta)| \le \max_{\zeta \in \partial\mathbb{D}} |f(\varphi(\zeta))| \implies$
+  per ogni $\zeta \in \overline{\mathbb{D}}$ vale $\varphi(\zeta) \in \widehat{\partial d}_{\Omega}$.
+\end{proof}
+
+\begin{lm}
+  Se $u \in PSH(\Omega)$ e $\varphi:\mathbb{D} \longrightarrow \Omega$ è olomorfa, allora $u \circ \varphi \in SH(\mathbb{D})$.
+\end{lm}
+
+\begin{proof}
+  (Idea) Supponiamo $u \in PSH(\Omega)\cap C^2(\Omega)$.
+  Allora $\displaystyle \frac{\partial(u\circ\varphi)}{\partial\zeta}=\sum_h \left(\frac{\partial u}{\partial z_h}\right)\cdot\frac{\partial\varphi_h}{\partial\zeta}, \dfrac{\partial^2(u\circ\varphi)}{\partial\zeta\partial\bar{\zeta}}=\sum_{h,k} \left(\frac{\partial^2 u}{\partial z_h\partial\bar{z}_k}\circ\varphi\right)\frac{\partial\varphi_h}{\partial\zeta}\overline{\left(\frac{\partial\varphi_h}{\partial\zeta}\right)} \ge 0$ perché $u \in PSH(\Omega)$.
+  \begin{ftt}
+    $u \in PSH(\Omega)$ $\implies$ esistono $u_j \in PSH(\Omega) \cap C^{\infty}(\Omega)$ t.c. $u_j \downarrow u$ per $j \longrightarrow+\infty$.
+  \end{ftt}
+
+  Se $u \in PSH(\Omega)$, possiamo usare questo fatto e la prima parte della dimostrazione per dire che $u_j \circ \varphi \in SH(\mathbb{D})$ con $u_j \circ \varphi \downarrow u \circ \varphi \implies u \circ \varphi \in SH(\mathbb{D})$.
+\end{proof}
+
+\begin{thm}
+  Sia $\Omega \subseteq \mathbb{C}^n$ un dominio. Sono equivalenti:
+  \begin{nlist}
+    \item per ogni famiglia $\{d_{\alpha}\}$ di dischi analitici chiusi contenuti in $\Omega$ se $\displaystyle \bigcup_{\alpha} \partial d_{\alpha} \subset\subset \Omega$ allora $\displaystyle \bigcup_{\alpha} d_{\alpha} \subset\subset \Omega$ (\textit{Kontinuitätsatz});
+    \item per ogni $\mu$ funzionale di Minkowski e per ogni $d$ disco analitico chiuso in $\Omega$ vale che $\mu_{\Omega}(\partial d)=\mu_{\Omega}(d)$;
+    \item esiste $\mu$ funzionale di Minkowski t.c. per ogni $d$ disco analitico chiuso in $\Omega$ vale che $\mu_{\Omega}(\partial d)=\mu_{\Omega}(d)$;
+    \item esiste $\Phi \in PSH(\Omega) \cap C^0(\Omega)$ t.c. per ogni $c \in \mathbb{R}$ si ha che $\Omega_c=\{z \in \Omega \mid \Phi(z)<c\} \subset\subset \Omega$
+    ($\Phi \in C^0(\Omega)$ t.c. $\Omega_c \subset\subset \Omega$ per ogni $c \in \mathbb{R}$ è detta \textit{esaustione}; quella che abbiamo appena definito al punto (iv) è detta \textit{esaustione plurisubarmonica});
+    \item esiste un'esaustione $C^{\infty}$ strettamente plurisubarmonica;
+    \item $\Omega$ è Hartogs pseudoconvesso: esiste $\mu$ funzionale di Minkowski t.c. $-\log{\mu_{\Omega}} \in PSH(\Omega)$;
+    \item per ogni $\mu$ funzionale di Minkowski $-\log{\mu_{\Omega}} \in PSH(\Omega)$;
+    \item (solo se $\Omega \subset\subset \mathbb{C}^n$ è di classe $C^2$) $\Omega$ è Levi pseudoconvesso;
+    \item $\Omega$ ammette un'esaustione con sottodomini Hartogs pseudoconvessi, cioè esistono $\{\Omega_j\}$ dominio Hartogs pseudoconvessi t.c. $\Omega_j \subset \Omega_{j+1}$, $\displaystyle \Omega=\bigcup_j \Omega_j$ e $\Omega_j \subset\subset \mathbb{C}^n$;
+    \item $\Omega$ ammette un'esaustione con sottodomini di classe $C^{\infty}$ strettamente pseudoconvessi;
+    \item $\Omega$ è $PSH(\Omega)$-convesso.
+  \end{nlist}
+\end{thm}
+
+\begin{proof}
+  Ooookkkk....
+\end{proof}
