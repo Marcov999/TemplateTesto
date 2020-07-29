@@ -113,7 +113,7 @@ Il corollario \ref{domolo->pscvx} spiega l'importanza dei domini pseudoconvessi 
   per ogni $\zeta \in \overline{\mathbb{D}}$ vale $\varphi(\zeta) \in \widehat{\partial d}_{\Omega}$.
 \end{proof}
 
-\begin{lm}
+\begin{lm} \label{uphish}
   Se $u \in PSH(\Omega)$ e $\varphi:\mathbb{D} \longrightarrow \Omega$ è olomorfa, allora $u \circ \varphi \in SH(\mathbb{D})$.
 \end{lm}
 
@@ -146,5 +146,66 @@ Il corollario \ref{domolo->pscvx} spiega l'importanza dei domini pseudoconvessi 
 \end{thm}
 
 \begin{proof}
-  Ooookkkk....
+  (v) $\implies$ (10) Sia $\Phi$ un'esaustione $C^{\infty}$ strettamente plurisubarmonica e $\Omega_j=\{\Phi<j\}, j \in \mathbb{N}$, allora gli $\Omega_j$ sono strettamente pseudoconvessi e sono un'esaustione di $\Omega$. Per averli $C^{\infty}$ si sfrutta il teorema di Sard: se $\Phi \in C^{\infty}(\Omega)$ con $\Omega \subseteq \mathbb{R}^n$ dominio, allora l'insieme dei valori critici di $\Phi$ ha misura zero in $\mathbb{R}$;
+  a questo punto basta prendere dei valori che si scostano leggermente da $j$.
+
+  (x) $\implies$ (ix) Segue da strettamente pseudoconvesso $\implies$ Hartogs pseudoconvesso che seguirà da (viii) $\implies$ (iv) $\implies$ (v) $\implies$ (xi) $\implies$ (i) $\implies$ (ii) $\implies$ (vii) $\implies$ (vi).
+
+  (ix) $\implies$ (vi) Sia $\mu=\|\cdot\|$. Da (vi) $\implies$ (iv) $\implies$ (v) $\implies$ (xi) $\implies$ (i) $\implies$ (ii) $\implies$ (vii) abbiamo che $-\log{\mu_{\Omega_j}} \in PSH(\Omega_j)$ per ogni $j$.
+  $\Omega_j \subset \Omega_{j+1} \implies \mu_{\Omega_j} \le \mu_{\Omega_{j+1}} \implies -\log{\mu_{\Omega_j}} \ge -\log{\mu_{\Omega_{j+1}}} \ge \dots \ge -\log{\mu_{\Omega}} \implies -\log{\mu_{\Omega_j}}$
+  è una successione di funzioni plurisubarmoniche che decresce verso $-\log{\mu_{\Omega}}$ (che il limite sia proprio quello segue dal fatto che $\Omega_j$ è un'esaustione) $\implies -\log{\mu_{\Omega}} \in PSH$ per il teorema \ref{car_subarmo}.
+
+  (vi) $\implies$ (iv) Sia $\Phi(z)=-\log{\mu_{\Omega}(z)}+\|z\|^2$. $\Phi \in PSH(\Omega)\cap C^0(\Omega)$ ed è un'esaustione perché $\Phi \ge -\log{\mu_{\Omega}(z)} \implies \mu_{\Omega} \ge e^{-\Phi} \implies \overline{\{\Phi<j\}}=\overline{\{\mu_{\Omega} \ge e^{-j}>0\}} \subset \Omega$
+  e il termine $\|z\|^2$ ci dà la limitatezza, perciò $\{\Phi<j\} \subset\subset \mathbb{C}^n$.
+
+  (iv) $\implies$ (v) Non svolta in quanto tecnica.
+
+  (i) $\implies$ (ii) Per assurdo esiste $d$ t.c. $\mu_{\Omega}\left(\mathop {d}\limits^ \circ\right)<\mu_{\Omega}(\partial d)$. Sia $p_0 \in \mathop {d}\limits^ \circ$ t.c. $\mu_{\Omega}\left(\mathop {d}\limits^ \circ\right)=\mu_{\omega}(d)=\mu_{\Omega}(p_0)$.
+  Sia $x_0 \in \partial\Omega$ t.c. $\mu_{\Omega}(p_0)=\mu(p_0-x_0)$. Poniamo $d_j=d+(1-1/j)(x_0-p_0)$ (sono traslazioni del disco analitico $d$).
+  Abbiamo $\displaystyle \bigcup_j \partial d_j \subset\subset \Omega$ perché $\mu_{\Omega}(\partial d)>\mu(x_0-p_0)$, ma $\displaystyle \bigcup_j d_j \supseteq \{p_0+(1-1/j)(x_0-p_0)\}$ e $p_0+(1-1/j)(x_0-p_0) \longrightarrow x_0 \in \partial\Omega$, dunque $\displaystyle \bigcup_j d_j$ non è relativamente compatto dentro $\Omega$ contro (i), assurdo.
+
+  (ii) $\implies$ (iii) è ovvio.
+
+  (iii) $\implies$ (i) Per assurdo, se (i) fosse falsa esisterebbe $d_j$ con $\mu_{\Omega}(\partial d_j) \ge \delta_0>0$ ma $\mu_{\Omega}(d_j) \longrightarrow 0$ contro (iii), assurdo.
+
+  (ii) $\implies$ (vii) Fissiamo $\mu$ funzionale di Minkowski, $z_0 \in \Omega$, $v_0 \in \mathbb{C}^n$. Vogliamo $\psi(\zeta)=-\log{\mu_{\Omega}(z_0+\zeta v_0)}$ subarmonica. Prendendo $\|v_0\| << 1$, possiamo supporre $\psi \in C^0(\overline{\mathbb{D}})$.
+  Per l'arbitratietà di $z_0$ e $v_0$ basta dimostrare che $\displaystyle \psi(0) \le \frac{1}{2\pi} \int_0^{2\pi} \psi(e^{i\theta})\diff\theta$ e poi concludere con il teorema \ref{car_subarmo}.
+  Sia $h \in \mathcal{H}(\mathbb{D}) \cap C^0(\overline{D})$ l'estensione armonica di $\psi$ e sia $f \in \mathcal{O}(\Omega) \cap C^0(\overline{D})$ t.c. $h=\mathfrak{Re}f$.
+  Fissiamo $\epsilon>0$ e poniamo $f_{\epsilon}=f+\epsilon/2, h_{\epsilon}=\mathfrak{Re}f_{\epsilon} \implies \psi<h_{\epsilon}<\psi+\epsilon$ su $\partial\mathbb{D}$. Sia $v \in \mathbb{C}^n$ con $\mu(v)=1$ e sia $d$ il disco analitico dato dall'applicazione $\zeta \mapsto z_0+\zeta v_0+e^{-f_{\epsilon}(\zeta)}v$.
+  Vogliamo $d \subset \Omega$. Su $\partial d$ abbiamo che $\mu((z_0+\zeta v_0)-(z_0+\zeta v_0+e^{-f_{\epsilon}(\zeta)}v))=\mu(e^{-f_{\epsilon}(\zeta)}v)=|e^{-f_{\epsilon}(\zeta)}|\mu(v)=e^{-h_{\epsilon}(\zeta)}$.
+  Dato che siamo su $\partial d$, si ha $\zeta \in \partial\mathbb{D}$, perciò la quantità appena trovata è strettamente minore di $e^{-\psi(\zeta)}=\mu_{\Omega}(z_0+\zeta v_0) \implies z_0+\zeta v_0+e^{-f_{\epsilon}(\zeta)}v \in \Omega \implies \partial d \subset \Omega$ e questo per (ii) ci dà $d \subset \Omega$ (di questo non sono sicuro perché mi pare che serva $d \subset \Omega$ per usare (ii); purtroppo a quella lezione non c'ero, cercherò di rimediare).
+  In particolare $z_0+e^{-f_{\epsilon}(0)}v \in \Omega$ per ogni $v$ t.c. $\mu(v)=1$ $\implies$ $\mu_{\Omega}(z_0) \ge |e^{-f_{\epsilon}(0)}|=e^{-h_{\epsilon}(0)} \implies \psi(0)=-\log{\mu_{\Omega}(z_0)} \le h_{\epsilon}(0)=\displaystyle \frac{1}{2\pi} \int_0^{2\pi} h_{\epsilon}(e^{i\theta})\diff\theta \le \frac{1}{2\pi} \int_0^{2\pi} \psi(e^{i\theta})\diff\theta+\epsilon$.
+  A questo punto basta mandare $\epsilon$ a $0$ per ottenere quanto voluto.
+
+  (vii) $\implies$ (vi) è ovvio.
+
+  (v) $\implies$ (xi) Sia $K \subset\subset \Omega$ compatto, $\Phi \in C^{\infty}$ esaustione strettamente plurisubarmonica. Esiste $c>0$ t.c. $K \subset \Omega_c=\{\Phi<c\} \implies \widehat{K}_{PSH(\Omega)} \subset \Omega_c \subset\subset \Omega$.
+
+  (xi) $\implies$ (i) Sia $d=\varphi(\overline{\mathbb{D}}) \subset \Omega$ disco analitico chiuso, $u \in PSH(\Omega)$.
+  Per il lemma \ref{uphish} $u\circ\varphi \in SH(\mathbb{D})$ $\implies$ per ogni $\zeta \in \overline{\mathbb{D}}$ si ha $\displaystyle |u\circ\varphi(\zeta)| \le \max_{\zeta \in \partial\mathbb{D}}|(u\circ\varphi)(\zeta)| \implies d \subseteq \widehat{\partial d}_{PSH(\Omega)} \implies \bigcup_{\alpha} d_{\alpha} \subseteq \bigcup_{\alpha} \widehat{(\partial d_{\alpha})}_{PSH(\Omega)} \subseteq \widehat{\left(\bigcup_{\alpha} \partial d_{\alpha}\right)}_{PSH(\Omega)} \subset\subset \Omega$ dove l'ultimo contenimento segue da (xi).
+
+  (vii) $\implies$ (viii) Sia $\mu=\|\cdot\|$. $\mu_{\Omega}=d(\cdot,\partial\Omega)$ è di classe $C^2$ vicino a $\partial\Omega$. Inoltre $\rho(z)=\begin{cases}
+    -\mu_{\Omega}(z) & \mbox{se }z \in \overline{\Omega} \\
+    d(z,\partial\Omega) & \mbox{se } z \not\in \Omega
+  \end{cases}$ è una funzione di definizione per $\Omega$. Per (vii) $\varphi=-\log{\mu_{\Omega}} \in PSH(\Omega)$.
+  $\displaystyle L_{\varphi,z}(v)=\sum_{j,k} \left(-\frac{1}{\mu_{\Omega}(z)}\frac{\partial^2 \mu_{\Omega}}{\partial z_j\partial\bar{z}_k}(z)+\frac{1}{\mu_{\Omega}(z)^2}\frac{\partial\mu_{\Omega}}{\partial z_j}(z)\frac{\partial\mu_{\Omega}}{\partial\bar{z}_k}(z)\right)v_j\bar{v}_k \ge 0$ se $v \in \mathbb{C}^n$ e $z \in \Omega$ abbastanza vicino a $\partial\Omega$ in modo che $\mu_{\Omega}$ sia $C^2$ in $z$.
+  Moltiplichiamo per $\mu_{\Omega}$ e restringiamoci a $\displaystyle \left\{v \mid \sum_j \frac{\partial \mu_{\Omega}}{\partial z_j}(z)v_j=0\right\}$. Per questi $v$ abbiamo $\displaystyle \sum_{j,k} \frac{\partial^2(-\mu_{\Omega})}{\partial z_j\partial\bar{z}_k}(z)v_j\bar{v}_k \ge 0$.
+  Mandando $z \longrightarrow x \in \partial\Omega$ allora $T_z^{\mathbb{C}}(\partial\Omega) \longrightarrow T_x^{\mathbb{C}}(\partial\Omega)$ e $\displaystyle \sum_{j,k} \frac{\partial^2\rho}{\partial z_j\partial\bar{z}_k}(z)v_j\bar{v}_k \ge 0$ per ogni $v \in T_x^{\mathbb{C}}(\partial\Omega)$.
+
+  (viii) $\implies$ (iv) Sia $\mu=\|\cdot\|$, $\rho=-\mu_{\Omega}$ la funzione di definizione e $u=-\log{\mu_{\Omega}}$. Essendo $\Omega$ limitato, $u$ è un'esaustione. Per assurdo, supponiamo che $u$ non sia plurisubarmonica. Possiamo assumere che non lo sia vicino a $\partial\Omega$, dove è $C^2$. Deve esistere $z_0 \in \Omega$ t.c. $L_{u,z}$ non sia semidefinita positiva, cioè esiste $v_0 \in \mathbb{C}^n$ t.c.
+  $\displaystyle 0>L_{u,z}(v)=\sum_{j,k} \frac{\partial^2 u}{\partial z_j\partial\bar{z}_k}(z)v_{0j}\bar{v}_{0k}=\frac{\partial^2}{\partial\zeta\partial\bar{\zeta}}(-\log{\mu_{\Omega}(z_0+\zeta v_0)})\restrict{\zeta=0}=-\lambda, \lambda>0$.
+  Poniamo $\varphi(\zeta)=\log{\mu_{\Omega}}(z_0+\zeta v_0)$. Lo sviluppo di Taylor in $\zeta=0$ è il seguente:
+  $\displaystyle \log{\mu_{\Omega}(z_0+\zeta v_0)}=\varphi(\zeta)=\varphi(0)+\mathfrak{Re}\left(\frac{\partial\varphi}{\partial\zeta}(0)\zeta+\frac{1}{2}\frac{\partial^2\varphi}{\partial\zeta^2}(0)\zeta^2\right)+\frac{\partial^2\varphi}{\partial\zeta\partial\bar{\zeta}}(0)|\zeta|^2+o(|\zeta|^2)=\log{\mu_{\Omega}(z_0)}+\mathfrak{Re}(A\zeta+B\zeta^2)+\lambda|\zeta|^2+o(|\zeta|^2)$.
+  Sia $x_0 \in \partial\Omega$ t.c. $\mu_{\Omega}(z_0)=\|x_0-z_0\|$ e poniamo $w_0=x_0-z_0$; $z_0+w_0 \in \partial\Omega$ e $\|w_0\|=\mu_{\Omega}(z_0)$. Poniamo $\psi)\zeta)=z_0+\zeta v_0+\exp(A\zeta+B\zeta^2)$.
+  $\psi(0)=z_0+w_0 \in \partial\Omega$, ma $\mu_{\Omega}(\psi(\zeta)) \ge \mu_{\Omega}(z_0+\zeta v_0)-\|w_0\||\exp(A\zeta+B\zeta^2)|=\mu_{\Omega}(z_0)|\exp(A\zeta+B\zeta^2)|\exp(\lambda|\zeta|^2+o(|\zeta|^2))-\|w_0\||\exp(A\zeta+B\zeta^2)|=\mu_{\Omega}(z_0)|\exp(A\zeta+B\zeta^2)|(\exp(\lambda|\zeta|^2+o(|\zeta|^2))-1)$.
+  Se $0\not=|\zeta|<<1$, di modo che $\psi(\zeta) \in \Omega$, abbiamo che la quantità appena trovata è maggiore o ugale di $\mu_{\Omega}(z_0)|\exp(A\zeta+B\zeta^2)|(\exp(\lambda/2|\zeta|^2)-1)>0$.
+  In particolare, $\mu_{\Omega}\circ\psi$ ha un minimo locale in $\zeta=0 \implies \displaystyle 0=\frac{\partial(\mu_{\Omega}\circ\psi)}{\partial\zeta}(0)=\sum_j \frac{\partial\mu_{\Omega}}{\partial z_j}(\psi(0))\frac{\partial\psi_j}{\partial\zeta}(0)$
+  e dato che $\psi(0)=x_0$ questo ci dice che $\dfrac{\partial\psi}{\partial\zeta}(0) \in T_{x_0}^\mathbb{C}(\partial\Omega)$. Guardiamo ora lo sviluppo di Taylor di $\mu_{\Omega}\circ\psi$:
+  $\displaystyle (\mu_{\Omega}\circ\psi)(\zeta)=\mathfrak{Re}\left(\frac{\partial^2(\mu_{\Omega}\circ\psi)}{\partial\zeta^2}(0)\zeta^2\right)+\frac{\partial^2(\mu_{\Omega}\circ\psi)}{\partial\zeta\partial\bar{\zeta}}(0)|\zeta|^2+o(|\zeta|^2)>0$ per $0<|\zeta|<<1$.
+  Il termine tra parentesi tonde non ha segno costante e il termine $o$ piccolo è trascurabile per $\zeta$ piccolo, dunque dev'essere $\displaystyle 0<\frac{\partial^2(\mu_{\Omega}\circ\psi)}{\partial\zeta\partial\bar{\zeta}}(0)=\sum_{j,k} \frac{\partial^2 \mu_{\Omega}}{\partial z_j\partial\bar{z}_k}(x_0)\frac{\partial\psi_j}{\partial\zeta}(0)\overline{\left(\frac{\partial\psi_k}{\partial\zeta}\right)}(0)=-L_{-\mu_{\Omega},x_0}\left(\frac{\partial\psi}{\partial\zeta}(0)\right)$
+  contro l'ipotesi che $L_{-\mu_{\Omega}, x_0}$ fosse $ \ge 0$ su $T_{x_0}^{\mathbb{C}}(\partial\Omega)$.
 \end{proof}
+
+\begin{oss}
+  In generale, per vedere se $\Omega$ è pseudoconvesso basta controllare cosa succede ``vicino'' a $\partial\Omega$, cioè in $\Omega \setminus K$ dove $K \subset\subset \Omega$ è un compatto qualsiasi.
+\end{oss}
