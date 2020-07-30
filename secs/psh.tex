@@ -209,3 +209,34 @@ Il corollario \ref{domolo->pscvx} spiega l'importanza dei domini pseudoconvessi 
 \begin{oss}
   In generale, per vedere se $\Omega$ è pseudoconvesso basta controllare cosa succede ``vicino'' a $\partial\Omega$, cioè in $\Omega \setminus K$ dove $K \subset\subset \Omega$ è un compatto qualsiasi.
 \end{oss}
+
+Adesso torniamo ad occuparci del problema di Levi iniziando da un teorema di cui non è riportata la dimostrazione.
+
+\begin{thm}
+  (Hörmander) Sia $\Omega \subseteq \mathbb{C}^n$ pseudoconvesso e siano $f_1,\dots,f_n \in C^{\infty}(\Omega)$ con la condizione di compatibilità $\dfrac{\partial f_j}{\partial\bar{z}_k}=\dfrac{\partial f_k}{\partial\bar{z}_j}$ per ogni $j,k$. Poniamo $\displaystyle f=\sum_j f_j\diff\bar{z}_j$ (valgono le condizioni di compatibilità $\iff$ $\bar{\partial}f=0$).
+  Allora esiste $u \in C^{\infty}(\Omega)$ unica a meno di funzioni olomorfe t.c. $\bar{\partial}u=f$ ($\iff$ $\dfrac{\partial u}{\partial\bar{z}_j}=f_j$ per ogni $j$).
+\end{thm}
+
+\begin{thm} \label{hormanderino}
+  Sia $\Omega \subseteq \mathbb{C}^n$ pseudoconvesso. Sia $\Omega_n=\Omega \cap \{z_n=0\}$ e $\tilde{\Omega}_n=\{z' \in \mathbb{C}^{n-1} \mid (z',0) \in \Omega\}$. Sia $f \in \mathcal{O}(\tilde{\Omega}_n)$.
+  Allora esiste $F \in \mathcal{O}(\Omega)$ t.c. $F(z',0)=f(z')$ per ogni $z' \in \tilde{\Omega}_n$.
+\end{thm}
+
+\begin{proof}
+  Sia $\pi:\mathbb{C}^n \longrightarrow \mathbb{C}^{n-1}$ la proiezione $\pi(z',z)=z'$, $z'=(z_1,\dots,z_{n-1})$. Sia $B=\Omega\setminus \pi^{-1}(\tilde{\Omega}_n)=\{z \in \Omega \mid \pi(z) \in \tilde{\Omega}_n\}$ chiuso in $\Omega$, inoltre anche $\Omega_n$ è chiuso in $\Omega$ e $B\cap\Omega_n=\emptyset$.
+  Quindi hanno intorni aperti (in $\Omega$) disgiunti; ci basta un intorno di $\Omega_n$ contenuto in $\pi^{-1}(\tilde{\Omega}_n)$ disgiunto da un intorno di $B$. Sia $\Psi \in C^{\infty}(\Omega)$ con $\Psi \equiv 1$ in un intorno di $\Omega_n$ e $\Psi \equiv 0$ su $B$ e $0 \le \Psi \le 1$.
+  Poniamo $F(z)=\Psi(z)f(\pi(z))+z_nu(z)$ per qualche $u \in C^{\infty}(\Omega)$. Se $z' \in \tilde{\Omega}_n$, $F(z',0)=1\cdot f(z')+0=f(z')$ $\implies$ $F$ è un'estensione di $f$.
+  Vogliamo $u$ in modo che $F$ sia olomorfa $\iff 0=\bar{\partial}F=f(\pi(z))\bar{\partial}\Psi+z_n\bar{\partial}u \iff \bar{\partial}u=-\dfrac{f(\pi(z))\bar{\partial}\Psi}{z_n}$.
+  Ma $\bar{\partial}\Psi \equiv 0$ in un intorno di $\Omega_n=\{z_n=0\} \cap \Omega \implies -\dfrac{(f\circ\pi)\bar{\partial}\Psi}{z_n} \in C^{\infty}(\Omega)$ e soddisfa $\bar{\partial}\left(-\dfrac{(f\circ\pi)\bar{\partial}\Psi}{z_n}\right) \equiv 0$ (per Schwarz).
+  Hörmander $\implies$ l'esistenza di una $u$ siffatta.
+\end{proof}
+
+\begin{cor}
+  $\Omega \subseteq \mathbb{C}^n$ pseudoconvesso è un dominio di olomorfia.
+\end{cor}
+
+\begin{proof}
+  Per induzione su $n$. Per $n=1$ ok (tutti i domini di $\mathbb{C}$ sono di olomorfia). Sia vero per $n-1$, prendiamo $x \in \partial\Omega$; vogliamo $F \in \mathcal{O}(\Omega)$ che non si estende oltre $x$. A meno di traslazione $x=0$. Sia $H \subset \mathbb{C}^n$ iperpiano con $0 \in H$ e t.c. $0 \in \partial(H\cap\Omega)$; a meno di rotazione $H=\{z_n=0\}$.
+  Poniamo $\Omega_n=H\cap\Omega$ e $\tilde{\Omega}_n=\{z' \in \mathbb{C}^{n-1} \mid (z',0) \in \Omega\}$. $\tilde{\Omega}_n$ è pseudoconvesso (per esempio perché un'esaustione plurisubarmonica di $\Omega$ fornisce un'esaustione plurisubarmonica di $\tilde{\Omega}_n$). Per ipotesi induttiva è dominio di olomorfia $\implies$ esiste $f \in \mathcal{O}(\tilde{\Omega}_n)$ che non si estende oltre $0' \in \partial\tilde{\Omega}_n$.
+  Per il teorema \ref{hormanderino} esiste $F \in \mathcal{O}(\Omega)$ t.c. $F(z',0)=f(z')$ per ogni $z' \in \tilde{\Omega}_n$ e quindi $F$ non si estende olte $0=x$.
+\end{proof}

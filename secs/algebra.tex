@@ -1,0 +1,38 @@
+\begin{defn}
+  Sia $f:\mathbb{C}^n \longrightarrow \mathbb{C}$ olomorfa, $V=\{z \in \mathbb{C}^n \mid f(z)=0\}$ è uno \textit{spazio analitico}. Se $f \in \mathbb{C}[z_1,\dots,z_n]$ (cioè è un polinomio), $V$ è detta \textit{varietà algebrica}.
+\end{defn}
+
+Idea: associare a $V \subset \mathbb{C}^n$ l'insieme $I(V)=\{g \in \mathcal{O}(\mathbb{C}^n) \mid g\restrict{V} \equiv 0\}$ che è un ideale dell'anello $\mathcal{O}(\mathbb{C}^n)$. Alle proprietà geometriche di $V$ corrisponderanno le proprietà algebriche di $I(V)$.
+
+Sia $\mathcal{O}_0=\mathbb{C}\{z_1,\dots,z_n\}$ lo spazio dei germi in $0 \in \mathbb{C}^n$ do funzioni olomorfe (spazio delle serie di potenze convergenti in $0$).
+
+\begin{prop}
+  $\mathcal{O}_0$ è un anello \textit{locale} (cioè ha un unico ideale massimale).
+\end{prop}
+
+\begin{proof}
+  $\mathfrak{m}_0=\{\underline{f} \in \mathcal{O}_0 \mid \underline{f}(0)=0\}$ è un ideale.
+  Se $\underline{g} \not\in \mathfrak{m}_0$, $\underline{g}(0)\not=0 \implies 1/\underline{g} \in \mathcal{O}_0 \implies \underline{g}$ è un'unità (elemento invertibile) di $\mathcal{O}_0$. Quindi nessun ideale proprio può contenere elementi di $\mathcal{=}_0\setminus\mathfrak{m}_0$ $\implies$ $\mathfrak{m}_0$ è l'unico ideale massimale.
+\end{proof}
+
+\begin{defn}
+  Sia $\displaystyle \underline{f}=\sum_{\alpha \in \mathbb{N}^n} a_{\alpha}z^{\alpha} \in \mathcal{O}_0$. L'\textsc{ordine} di $\underline{f}$ è $ord{\underline{f}}=\min\{|\alpha| \mid a_{\alpha}\not=0\}$.
+\end{defn}
+
+Chiaramente $\underline{f}$ è un'unità $\iff$ $ord{\underline{f}}=0$. Diremo che $\underline{f}$ è normalizzata (rispetto a $z_n$) se $a_{(0,\dots,0,ord{\underline{f}})}=1$, cioè se $\displaystyle \underline{f}=\sum_{|\alpha|=ord{\underline{f}}}a_{\alpha}z^{\alpha}+O(|\|z\|^{ord{\underline{f}}+1})=z_n^{ord{\underline{f}}}+O(z_1,\dots,z_{n-1})+O(|\|z\|^{ord{\underline{f}}+1})$.
+
+\begin{exc}
+  Per ogni $\underline{f} \in \mathcal{O}_0$ esiste $A \in GL(n,\mathbb{C})$ t.c. $\underline{f}\circ A$ sia normalizzata rispetto a $z_n$.
+\end{exc}
+
+\begin{defn}
+  Sia $z=(z',z_n) \in \mathbb{C}^n$ con $z'=(z_1,\dots,z_{n-1})$, $\mathcal{O}_0'=\mathbb{C}\{z_1,\dots,z_{n-1}\}$. Un \textsc{polinomio di Weierstrass} è un polinomio monico $W \in \mathcal{O}_0'[z_n]$ della forma $W(z_n)=z_n^k+a_{k-1}(z')z_n^{k-1}+\dots+a_0(z')$ con $a_{k-1}(0')=\dots=a_0(0')=0$.
+\end{defn}
+
+\begin{thm}
+  (di preparazione di Weierstrass) Sia $\underline{f} \in \mathcal{O}_0$ normalizzata di ordine $k \ge 0$. Allora esistono unici un'unità $\underline{u} \in \mathcal{O}_0\setminus\mathfrak{m}_0$ e un polinomio di Weierstrass $W$ di grado $k$ t.c. $\underline{f}=\underline{u}W$.
+\end{thm}
+
+\begin{proof}
+  Oggi pomeriggio.
+\end{proof}
