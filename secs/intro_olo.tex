@@ -21,7 +21,7 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
 \begin{prop}
   Sia $\{c_n\} \in \mathbb{C}$. Allora:
   \begin{nlist}
-    \item esiste $R \in [0, +\infty]$ t.c. $\displaystyle \sum_{n=0}^{+\infty} c_nz^n$ converge per $|z|<R$ e diverge per $|z|>R$. $R$ è detto \textit{raggio di convergenza}. La convergenza +è uniforme su $\Delta_r=\{|z| \le r\}, r<R$. $\displaystyle \limsup_{n \longrightarrow +\infty} |c_n|^{1/n}=\frac{1}{R}$;
+    \item esiste $R \in [0, +\infty]$ t.c. $\displaystyle \sum_{n=0}^{+\infty} c_nz^n$ converge per $|z|<R$ e diverge per $|z|>R$. $R$ è detto \textit{raggio di convergenza}. La convergenza è uniforme su $\Delta_r=\{|z| \le r\}, r<R$. $\displaystyle \limsup_{n \longrightarrow +\infty} |c_n|^{1/n}=\frac{1}{R}$;
     \item $\displaystyle \sum_{n=0}^{+\infty} nc_nz^{n-1}$ ha lo stesso raggio di convergenza;
     \item se $\displaystyle f(z)=\sum_{n=0}^{+\infty} c_n(z-a)^n$ allora $f'(z)=\sum_{n=0}^{+\infty} nc_n(z-a)^{n-1}$;
     \item se $f \in \mathcal{O}(\Omega)$ e $a \in \Omega$, allora $\displaystyle f(z)=\sum_{n=0}^{+\infty} \frac{1}{n!}f^{(n)}(a)(z-a)^n$. Questa formula è valida nel più grande disco aperto centrato in $a$ e contenuto in $\Omega$, cioè di raggio minore o uguale di $d(a, \partial \Omega)$.
@@ -29,7 +29,7 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
 \end{prop}
 
 \begin{thm}
-  (Formula di Cauchy) Sia $\Omega$ aperto, $f \in \mathcal{O}(\Omega), D \subseteq \Omega$ disco/rettangolo chiuso. Per ogni $\displaystyle a \in D, f(a)=\frac{1}{2\pi i} \int_{\partial D} \frac{\zeta}{\zeta-a} \diff\zeta$.
+  (Formula di Cauchy) Sia $\Omega$ aperto, $f \in \mathcal{O}(\Omega), D \subseteq \Omega$ disco/rettangolo chiuso. Per ogni $\displaystyle a \in D, f(a)=\frac{1}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{\zeta-a} \diff\zeta$.
   Si ha che $\displaystyle f^{(n)}(a)=\frac{n!}{2\pi i} \int_{\partial D} \frac{f(\zeta)}{(\zeta-a)^{n+1}}\diff \zeta$.
 \end{thm}
 
@@ -57,9 +57,9 @@ La seguente proposizione è anch'essa un risultato che dovrebbe essere noto agli
 \begin{thm} \label{pr_max}
   (Principio del massimo) $\Omega \subseteq \mathbb{C}$ dominio, $f \in \mathcal{O}(\Omega)$. Allora:
   \begin{nlist}
-    \item se $U$ è aperto e $U \subset \subset \Omega$ (si legge "$U$ relativamente compatto in $\Omega$" e si intende $\overline{U} \subset \Omega$ e $\overline{U}$ compatto) allora $\displaystyle \sup_{z \in U} |f(z)| \le \sup_{z \in \partial D} |f(z)|$. Inoltre, se $|f|$ ha un massimo locale in $U$, allora $f$ è costante in $\Omega$;
+    \item se $U$ è aperto e $U \subset \subset \Omega$ (si legge "$U$ relativamente compatto in $\Omega$" e si intende $\overline{U} \subset \Omega$ e $\overline{U}$ compatto) allora $\displaystyle \sup_{z \in U} |f(z)| \le \sup_{z \in \partial U} |f(z)|$. Inoltre, se $|f|$ ha un massimo locale in $U$, allora $f$ è costante in $\Omega$;
     \item la stessa affermazione vale per $\mathfrak{Re} f$ e $\mathfrak{Im} f$;
-    \item se $\Omega$ è limitato poniamo $\displaystyle M=\sup_{x \in \partial D} \limsup_{z \longrightarrow x} |f(z)| \in [0, +\infty]$. Allora per ogni $z \in \Omega$ $|f(z)| \le M$ con uguaglianza in un punto se e solo se $f$ è costante.
+    \item se $\Omega$ è limitato poniamo $\displaystyle M=\sup_{x \in \partial\Omega} \limsup_{z \longrightarrow x} |f(z)| \in [0, +\infty]$. Allora per ogni $z \in \Omega$ $|f(z)| \le M$ con uguaglianza in un punto se e solo se $f$ è costante.
   \end{nlist}
 \end{thm}
 
