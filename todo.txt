@@ -1,19 +1,1 @@
-Lez 01: ok
-Lez 02: ok
-Lez 03: ok
-Lez 04: ok
-Lez 05: ok
-Lez 06: ok
-Lez 07: ok
-Lez 08: ok
-Lez 09: ok
-Lez 10: ok
-Lez 11: ok
-Lez 12: ok
-Lez 13: ok
-Lez 14: ok
-Lez 15: ok
-Lez 16: ok
-Lez 17: ok
-Lez 18: ok
 Scrivere un README decente
