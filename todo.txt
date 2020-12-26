@@ -1,9 +1,15 @@
 Scrivere un README decente
 
+Scrivere pezzo iniziale, da zero fino a Schwarz-Pick.
+
+Sistemare quello che manca di un paio di dimostrazioni.
+
+Inserire il disegno.
+
 Risolvere i problemi, con gli o-piccoli, con z-1 e |z|-1, e altri dettagli.
 
-C'è da farsi tutto il Beardon-Minda fino a Golusin.
-
-Alla fine, scrivere l'introduzione.
+Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
 
 Tutte le correzioni e modifiche del caso che ti dirà Abate.
+
+Decidere un titolo.

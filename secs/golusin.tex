@@ -1,4 +1,78 @@
-\marginpar{c'è da farsi tutto il BM per arrivare a questa}
+\marginpar{Serve la subsection in cui arriviamo da zero fino al lemma di Schwarz-Pick}
+
+\begin{defn}
+  Dati $z, w \in \mathbb{D}$ poniamo
+  $$[z,w]:=\frac{z-w}{1-\bar{w}z}, \qquad p(z,w):=|[z,w]|, \qquad d(z,w):=\log\left(\frac{1+p(z,w)}{1-p(z,w)}\right).$$
+\end{defn}
+
+\begin{defn}
+  Data una funzione $f: \mathbb{D} \longrightarrow \mathbb{D}$, poniamo
+  $$f^*(z,w):=\frac{[f(z),f(w)]}{[z,w]}$$
+  e
+  $$f^h(z):=|f^*(z,z)|:=\left|\lim_{w \longrightarrow z} f^*(z,w)\right|=\left|\lim_{w \longrightarrow z} \frac{[f(z),f(w)]}{[z,w]}\right|=\frac{|f'(z)|(1-|z|^2)}{1-|f(z)|^2}.$$
+\end{defn}
+
+\begin{oss}
+  \begin{nlist}
+    \item la disuguaglianza del lemma di Schwarz-Pick può essere riscritta come $|f^*(z,w)| \le 1$;
+    \item  un altro modo di scrivere la disuguaglianza del lemma di Schwarz-Pick è $p(f(z),f(w)) \le p(z,w)$;
+    \item per definizione, $|f^*(z,w)|=|f^*(w,z)|$ e $f^h(z)$ è reale non negativo.
+  \end{nlist}
+  Questi risultati verranno usati nelle varie dimostrazioni e verranno esplicitati solo quando ciò che ne segue non è immediato.
+\end{oss}
+
+\begin{prop} \label{24}
+  Siano $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo, $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
+\end{prop}
+
+\begin{proof}
+  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$, ma abbiamo visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,w)| \le 1$, inoltre vale l'uguale in qualche punto solo se $f$ è un automorfismo, dunque con le ipotesi su $f$ abbiamo che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
+\end{proof}
+
+\begin{thm} \label{31}
+  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v \in \mathbb{D}$ vale
+  \begin{equation} \label{3.1}
+    d(f^*(z,v),f^*(w,v)) \le d(z,w).
+  \end{equation}
+\end{thm}
+
+\marginpar{sistemare dimostrazione, mancano un po' di dettagli}
+
+\begin{proof}
+  Poiché $f$ non è un automorfismo, per la proposizione \ref{24} la mappa $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé, perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la disuguaglianza stessa segue applicando il lemma di Schwarz-Pick (c'è quella cosa che tanh è convessa, scrivere i dettagli, comprese le uguaglianze che legano $p$ e $d$).
+\end{proof}
+
+\begin{cor} \label{32}
+  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v \in \mathbb{D}$ vale
+  \begin{equation}
+    d(0, f^*(z,v)) \le d(0,f^*(w,v))+d(z,w).
+  \end{equation}
+\end{cor}
+
+\begin{proof}
+  \begin{align*}
+    d(0,f^*(z,v)) & \le d(0,f^*(w,v))+d(f^*(w,v),f^*(z,v)) \\
+    & \le d(0,f^*(w,v))+d(z,w),
+  \end{align*}
+  dove la prima è la disuguaglianza triangolare per la distanza $d$ e la seconda segue dal teorema \ref{31}.
+\end{proof}
+
+\begin{cor} \label{33}
+  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v, u \in \mathbb{D}$ vale
+  \begin{equation}
+    d(0, f^*(z,v)) \le d(0, f^*(u,w))+d(z,w)+d(v,u).
+  \end{equation}
+\end{cor}
+
+\begin{proof}
+  \begin{align*}
+    d(0,f^*(z,v)) & \le d(0,f^*(w,v))+d(z,w) \\
+    & =d(0,f^*(v,w))+d(z,w) \\
+    & \le d(0,f^*(u,w))+d(z,w)+d(v,u),
+  \end{align*}
+  dove le due disuguaglianze seguono dal corollario \ref{32}.
+\end{proof}
+
 \begin{cor} \label{quasigolusin}
   Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w \in \mathbb{D}$ vale
   \begin{equation} \label{quasigol}
@@ -6,10 +80,16 @@
   \end{equation}
 \end{cor}
 
-\marginpar{ricordati di definire $f^h$, con la notazione di BKR, quindi occhio quando scrivi tutti i risultati e le dimostrazioni in BM}
-
 \begin{proof}
-  Da scrivere.
+  Siano $z, w \in \mathbb{D}$, senza perdita di generalità possiamo supporre $f^h(z) \ge f^h(w)$. Allora
+  \begin{align*}
+    d(f^h(z), f^h(w)) & =\log\left(\frac{1+\frac{f^h(z)-f^h(w)}{1-f^h(w)f^h(z)}}{1-\frac{f^h(z)-f^h(w)}{1-f^h(w)f^h(z)}}\right) \\
+    & =\log\left(\frac{1-f^h(w)f^h(z)+f^h(z)-f^h(w)}{1-f^h(w)f^h(z)+f^h(w)-f^h(z)}\right) \\
+    & =\log\left(\frac{1+f^h(z)}{1-f^h(z)}\cdot\frac{1-f^h(w)}{1+f^h(w)}\right) \\
+    & =\log\left(\frac{1+f^h(z)}{1-f^h(z)}\right)-\log\left(\frac{1+f^h(w)}{1-f^h(w)}\right) \\
+    & =d(0,f^h(z))-d(0,f^h(w)) \le 2d(z,w).
+  \end{align*}
+  dove la disuguaglianza finale segue dal corollario \ref{33} ponendo $u=w, v=z$.
 \end{proof}
 
 Ponendo $w=0$ in \eqref{quasigol} otteniamo la disuguaglianza di Golusin, che ci servirà per dimostrare il risultato a cui puntiamo.
