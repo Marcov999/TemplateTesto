@@ -13,6 +13,10 @@
 \end{prop}
 
 \begin{proof}
+  \begin{center}
+    Inserisci il disegno alla vecchia maniera esportando in pdf, perché con tikz è un casino
+  \end{center}
+
   Sia $S$ un settore (cono? non conosco il termine tecnico in italiano) di vertice $1$ e angolo d'apertura $2\alpha$, e $S'$ uno un po' più grande di vertice $1$ e angolo $2\beta$, $\beta>\alpha$. Per $z \in S$, sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}(z, \partial S')$ (la distanza di $z$ dal bordo di $S'$). Allora per la formula integrale di Cauchy
   \begin{align*}
     f'(z) & =\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)}{(w-z)^2}\diff w \\
@@ -23,9 +27,14 @@
   Dato $\epsilon>0$ fissato, per ipotesi esiste $\delta>0$ tale che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in S'$ con $|w-1|<\delta$. Per questi $w$ vale che
   \marginpar{Mettere un disegno. Qualche spiegazione in più?}
   \begin{align*}
-    |I(z)| \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \le \\
-    \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3= \\
-    =\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \le \epsilon r(z)^2(1+\csc(\beta-\alpha))^3 \le \epsilon |z-1|^2(1+\csc(\beta-\alpha))^3,
+    |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
+    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
+    & =\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3 \\
+    & =\frac{\epsilon}{r(z)}(r(z)+|z-1|)^3 \\
+    & =\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
+    & =\epsilon r(z)^2(1+\csc\gamma)^3 \\
+    & \le \epsilon r(z)^2(1+\csc(\beta-\alpha))^3 \\
+    & \le \epsilon |z-1|^2(1+\csc(\beta-\alpha))^3,
   \end{align*}
   da cui otteniamo $f'(z)=1+o((z-1)^2)$ per $z \longrightarrow 1$ non tangenzialmente. Inoltre, per ipotesi
   \marginpar{Ok, bisogna chiarire questa cosa di $z-1$ e $|z|-1$, il claim è che non tangenzialmente hanno gli stessi $o$-piccoli}

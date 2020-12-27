@@ -1,0 +1,22 @@
+\marginpar{Non so quanta di questa roba vada effettivamente messa}
+
+\begin{defn}
+  Sia $\Omega \subset \mathbb{C}$ un aperto. Una funzione $f:\Omega \longrightarrow \mathbb{C}$ si dice \textit{olomorfa} se è derivabile in senso complesso.
+\end{defn}
+
+\begin{oss}
+  Se $f: \Omega \longrightarrow \Omega$ olomorfa è biettiva, allora si può dimostrare che anche $f^{-1}$ è olomorfa. In tal caso $f$ è detta \textit{automorfismo} (in senso olomorfo di $\Omega$).
+\end{oss}
+
+Com'è noto, la condizione di olomorfia per funzioni a valori complessi è molto più forte della derivabilità in senso reale (in particolare, è equivalente all'analiticità). Fra i vari risultati che si possono dimostrare per le funzioni olomorfe, ci interessa studiare il lemma di Schwarz-Pick.
+
+\begin{lm}
+  (Schwarz) Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa t.c. $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguale nella prima per $z \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z, \theta \in \mathbb{R}$.
+\end{lm}
+
+\begin{lm}
+  (Schwarz-Pick) Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa.
+  Allora per ogni $z, w \in \mathbb{D}$
+  $$\left|\frac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\right| \le \left|\frac{z-w}{1-\bar{w}z}\right|, \qquad \frac{|f'(z)|}{1-|f(z)|^2} \le \frac{1}{1-|z|^2}.$$
+  Inoltre se vale l'uguale nella prima per $z_0, w_0$ con $z_0 \not=w_0$ o nella seconda per $z_0$ allora $f$ è un automorfismo e vale l'uguale sempre.
+\end{lm}

@@ -1,7 +1,3 @@
-Scrivere un README decente
-
-Scrivere pezzo iniziale, da zero fino a Schwarz-Pick.
-
 Sistemare quello che manca di un paio di dimostrazioni.
 
 Inserire il disegno.

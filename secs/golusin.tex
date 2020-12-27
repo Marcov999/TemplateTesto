@@ -1,9 +1,11 @@
-\marginpar{Serve la subsection in cui arriviamo da zero fino al lemma di Schwarz-Pick}
+Il lemma di Schwarz-Pick può essere riformulato usando due distanze sul disco. Con la notazione data da queste distanze, dimostreremo una serie di disuguaglianze che ci permetteranno di dimostrare la disuguaglianza di Golusin, dalla quale seguirà poi la versione al bordo del lemma.
 
 \begin{defn}
   Dati $z, w \in \mathbb{D}$ poniamo
   $$[z,w]:=\frac{z-w}{1-\bar{w}z}, \qquad p(z,w):=|[z,w]|, \qquad d(z,w):=\log\left(\frac{1+p(z,w)}{1-p(z,w)}\right).$$
 \end{defn}
+
+Scrivere qui \marginpar{Devi dimostrare che $d$ è una distanza}
 
 \begin{defn}
   Data una funzione $f: \mathbb{D} \longrightarrow \mathbb{D}$, poniamo
@@ -39,7 +41,7 @@
 \marginpar{sistemare dimostrazione, mancano un po' di dettagli}
 
 \begin{proof}
-  Poiché $f$ non è un automorfismo, per la proposizione \ref{24} la mappa $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé, perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la disuguaglianza stessa segue applicando il lemma di Schwarz-Pick (c'è quella cosa che tanh è convessa, scrivere i dettagli, comprese le uguaglianze che legano $p$ e $d$).
+  Poiché $f$ non è un automorfismo, per la proposizione \ref{24} la mappa $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé, perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la disuguaglianza stessa segue applicando il lemma di Schwarz-Pick (c'è quella cosa che tanh è convessa/crescente, scrivere i dettagli, comprese le uguaglianze che legano $p$ e $d$).
 \end{proof}
 
 \begin{cor} \label{32}
