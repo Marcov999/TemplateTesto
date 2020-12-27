@@ -1,6 +1,6 @@
-Sistemare quello che manca di un paio di dimostrazioni.
+Distanza di Poincaré: c'è un problema con la dim che è effettivamente una distanza
 
-Inserire il disegno.
+Proposizione 2.2.1, sistemare un paio di cose
 
 Risolvere i problemi, con gli o-piccoli, con z-1 e |z|-1, e altri dettagli.
 
