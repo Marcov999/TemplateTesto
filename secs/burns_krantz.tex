@@ -1,4 +1,4 @@
-\marginpar{Magari dire qualcosa sull'utilità di questa proposizione, che forse verrà spostata nei prerequisiti}
+Per poter dimostrare il risultato finale sfruttando la versione al bordo del lemma di Schwarz-Pick, serve poter tradurre informazioni sull'andamento di $f$ vicino a $1$ in informazioni sull'andamento di $f^h$. La seguente proposizione ci permette proprio di fare queato passaggio.
 
 \begin{prop} \label{o^3->o^2}
   Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione tale che
@@ -54,13 +54,13 @@
       \begin{scriptsize}
         \draw[color=ffqqqq] (0.84,-0.09) node {$\beta$};
         \fill [color=black] (0.5,0.37) circle (1.5pt);
-        \draw[color=black] (0.45,0.33) node {$z$};
+        \draw[color=black] (0.48,0.32) node {$z$};
         \draw[color=black] (0.18,0.14) node {$C(z)$};
-        \draw[color=black] (0.62,0.365) node {$r(z)$};
+        \draw[color=black] (0.54,0.465) node {$r(z)$};
         \fill [color=black] (1,0) circle (1.5pt);
         \draw[color=black] (1.04,0.05) node {$1$};
-        \fill [color=black] (0.27,0.54) circle (1.5pt);
-        \draw[color=black] (0.21,0.58) node {$A$};
+        \fill [color=black] (0.26,0.545) circle (1.5pt);
+        \draw[color=black] (0.20,0.58) node {$A$};
         \fill [color=black] (1,0) circle (1.5pt);
         \draw[color=qqqqff] (0.92,-0.03) node {$\alpha$};
         \draw[color=qqffqq] (0.83,0.16) node {$\gamma$};
@@ -69,12 +69,14 @@
   \end{center}
 
   Dato $\epsilon>0$ fissato, per ipotesi esiste $\delta>0$ tale che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in S'$ con $|w-1|<\delta$. Per questi $w$ vale che
-  \marginpar{Qualche spiegazione in più (sfruttando il disegno)?}
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
-    & =\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3 \\
-    & =\frac{\epsilon}{r(z)}(r(z)+|z-1|)^3 \\
+    & =\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
+  \end{align*}
+  Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la retta passante per $z$ e $1$ e la circonferenza $C(z)$ (il punto $A$ in figura), perciò
+  \begin{align*}
+    |I(z)| & \le \frac{\epsilon}{r(z)}(r(z)+|z-1|)^3 \\
     & =\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
     & =\epsilon r(z)^2(1+\csc\gamma)^3 \\
     & \le \epsilon r(z)^2(1+\csc(\beta-\alpha))^3 \\
