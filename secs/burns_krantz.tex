@@ -14,7 +14,7 @@ Per poter dimostrare il risultato finale sfruttando la versione al bordo del lem
 
 \begin{proof}
 
-  Sia $S$ un settore (cono? non conosco il termine tecnico in italiano) di vertice $1$ e angolo d'apertura $2\alpha$, e $S'$ uno un po' più grande di vertice $1$ e angolo $2\beta$, $\beta>\alpha$. Per $z \in S$, sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}(z, \partial S')$ (la distanza di $z$ dal bordo di $S'$). Allora per la formula integrale di Cauchy
+  Sia $S$ un settore di vertice $1$ e angolo d'apertura $2\alpha$, e $S'$ uno un po' più grande di vertice $1$ e angolo $2\beta$, $\beta>\alpha$. Per $z \in S$, sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}(z, \partial S')$ (la distanza di $z$ dal bordo di $S'$). Allora per la formula integrale di Cauchy
   \begin{align*}
     f'(z) & =\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)}{(w-z)^2}\diff w \\
     & =\frac{1}{2\pi i} \int_{C(z)} \frac{w-1+(f(w)-w)}{(w-z)^2}\diff w \\
@@ -68,7 +68,7 @@ Per poter dimostrare il risultato finale sfruttando la versione al bordo del lem
     \end{tikzpicture}
   \end{center}
 
-  Dato $\epsilon>0$ fissato, per ipotesi esiste $\delta>0$ tale che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in S'$ con $|w-1|<\delta$. Per questi $w$ vale che
+  Dato $\epsilon>0$ fissato, per ipotesi esiste $\delta>0$ tale che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in S'$ con $|w-1|<\delta$. Se $|z-1|<\delta/2$, $r(z)<|z-1|<\delta/2$, dunque per ogni $w \in C(z)$ abbiamo effettivamente $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
@@ -83,13 +83,14 @@ Per poter dimostrare il risultato finale sfruttando la versione al bordo del lem
     & \le \epsilon |z-1|^2(1+\csc(\beta-\alpha))^3,
   \end{align*}
   da cui otteniamo $f'(z)=1+o((z-1)^2)$ per $z \longrightarrow 1$ non tangenzialmente. Inoltre, per ipotesi
-  \marginpar{Ok, bisogna chiarire questa cosa di $z-1$ e $|z|-1$, il claim è che non tangenzialmente hanno gli stessi $o$-piccoli}
+  \marginpar{$|z-1|$ e $1-|z|$ non tangenzialmente hanno gli stessi $o$-piccoli (chiedere conferma ad Abate): devo scrivere la dimostrazione?}
   $$\frac{1-|f(z)|}{1-|z|}=\frac{1-|z|+o((z-1)^3)}{1-|z|}=1+o((z-1)^2)$$
-  per $z \longrightarrow 1$ non tangenzialmente. \\
+  per $z \longrightarrow 1$ non tangenzialmente (perché in tal caso $|z-1|$ e $1-|z|$ hanno gli stessi $o$-piccoli). \\
+  %Accenno della dim: 1-|z| \le |z-1| segue dalla disuguaglianza triangolare, |z-1| \le (1-|z|)*costante si fa scrivendo |z-1|=r(z)*(|z-1|/r(z)), ripetere la dim di sopra per far apparire la costante csc(beta-alpha) e osservando che r(z) \le 1-|z| perché C(z) sta dentro \mathbb{D}
   Possiamo quindi concludere che
   $$f^h(z)=|f'(z)|\frac{1-|z|^2}{1-|f(z)|^2}=1+o((z-1)^2)$$
   per $z \longrightarrow 1$ non tangenzialmente.
-  \marginpar{gli ultimi passaggi mi sono un po' oscuri, per via degli $o$-piccoli}
+  \marginpar{Gli ultimi passaggi con $o$-piccoli: devo spiegarli meglio? Forse non sono così ovvi}
 \end{proof}
 
 Siamo ora pronti a dimostrare il teorema 2.1 di \cite{BK}.
@@ -102,10 +103,11 @@ Siamo ora pronti a dimostrare il teorema 2.1 di \cite{BK}.
   per $z \longrightarrow 1$. Allora $f$ è l'identità sul disco.
 \end{thm}
 
-\marginpar{È comprensibile? E siamo sicuri che valgono le ipotesi di \ref{boundary_schwarz_pick}? (c'era quel discorso di $(z-1)^2$ e $(|z|-1)^2$)}
-
 \begin{proof}
-  Chiaramente, se vale \eqref{O^4} per $z \longrightarrow 1$ vale anche \eqref{o^3}, in particolare per $z \longrightarrow 1$ non tangenzialmente. Dalla proposizione \ref{o^3->o^2} segue che anche \eqref{o^2} vale per $z \longrightarrow 1$ non tangenzialmente, quindi esiste una successione $z_n$ che soddisfa le ipotesi del teorema \ref{boundary_schwarz_pick}, da cui la tesi.
+  \marginpar{È comprensibile?}
+
+  Chiaramente, se vale \eqref{O^4} per $z \longrightarrow 1$ vale anche \eqref{o^3}, in particolare per $z \longrightarrow 1$ non tangenzialmente.
+  Dalla proposizione \ref{o^3->o^2} segue che anche \eqref{o^2} vale per $z \longrightarrow 1$ non tangenzialmente, quindi esiste una successione $z_n$ che soddisfa le ipotesi del teorema \ref{boundary_schwarz_pick} (usiamo di nuovo che, non tangenzialmente, $|z-1|$ e $1-|z|$ hanno gli stessi $o$-piccoli), da cui la tesi.
 \end{proof}
 
 Aggiungere controesempio

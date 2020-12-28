@@ -1,7 +1,5 @@
 Distanza di Poincaré: c'è un problema con la dim che è effettivamente una distanza
 
-Risolvere i problemi, con gli o-piccoli, con z-1 e |z|-1, e altri dettagli.
-
 Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
 
 Tutte le correzioni e modifiche del caso che ti dirà Abate.
