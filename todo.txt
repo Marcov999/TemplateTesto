@@ -1,4 +1,7 @@
-Distanza di Poincaré: c'è un problema con la dim che è effettivamente una distanza
+Scrivere una mail ad Abate chiedendo:
+- il controesempio;
+- chiarimenti sulla distanza di Poincaré (sii dettagliato nello spiegare i problemi);
+- chiarimenti sugli o-piccoli non tangenzialmente (sii dettagliato nello spiegare i problemi).
 
 Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
 
