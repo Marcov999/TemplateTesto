@@ -1,7 +1,10 @@
-Scrivere una mail ad Abate chiedendo:
-- il controesempio;
-- chiarimenti sulla distanza di Poincaré (sii dettagliato nello spiegare i problemi);
-- chiarimenti sugli o-piccoli non tangenzialmente (sii dettagliato nello spiegare i problemi).
+Aggiungere, alle cose note, tutte le cose che hai usato implicitamente dandole per buone/scontate.
+
+Distanza iperbolica: Abate dice che non è strettamente necessario mettere la dim che è una distanza, ma ti ha comunque dato una traccia. Prova a scriverla, se ha senso lasciarla bene.
+
+o-piccoli: due possibili strade. In ogni caso devi mettere la definizione di limite non tangenziale. Se lo fai con le regioni di Stolz, non serve la dim che gli o-piccoli sono gli stessi (però forse bisogna aggiustare la dim della proposizione?). Se lo fai con gli angoli, allora sì, va messa la dim sugli o-piccoli. Nota: da quello che dice, la versione con Stolz sembra più adatta (leggasi: più figa).
+
+Rileggere tutto e riscrivere le cose imprecise o fatte alla buona.
 
 Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
 
