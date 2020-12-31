@@ -1,3 +1,5 @@
+Adesso possiamo procedere a dimostrare una serie di disuguaglianze, che coinvolgono la distanza iperbolica $d$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse ha come corollario la disuguaglianza di Golusin.
+
 \begin{prop} \label{24}
   Siano $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo, $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
 \end{prop}
@@ -48,6 +50,8 @@
 \begin{proof}
   \begin{align*}
     d(0,f^*(z,v)) & \le d(0,f^*(w,v))+d(z,w) \\
+    & =d(0,|f^*(w,v)|)+d(z,w) \\
+    & =d(0,|f^*(v,w)|)+d(z,w) \\
     & =d(0,f^*(v,w))+d(z,w) \\
     & \le d(0,f^*(u,w))+d(z,w)+d(v,u),
   \end{align*}

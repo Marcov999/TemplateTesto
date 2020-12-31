@@ -1,10 +1,8 @@
-Aggiungere, alle cose note, tutte le cose che hai usato implicitamente dandole per buone/scontate.
-
 Distanza iperbolica: Abate dice che non è strettamente necessario mettere la dim che è una distanza, ma ti ha comunque dato una traccia. Prova a scriverla, se ha senso lasciarla bene.
 
-o-piccoli: due possibili strade. In ogni caso devi mettere la definizione di limite non tangenziale. Se lo fai con le regioni di Stolz, non serve la dim che gli o-piccoli sono gli stessi (però forse bisogna aggiustare la dim della proposizione?). Se lo fai con gli angoli, allora sì, va messa la dim sugli o-piccoli. Nota: da quello che dice, la versione con Stolz sembra più adatta (leggasi: più figa).
+Settori o regioni di Stolz: preferirei le regioni di Stolz, ma bisogna aggiustare la dim della proposizione che passa da f a f^h.
 
-Rileggere tutto e riscrivere le cose imprecise o fatte alla buona.
+Rileggere tutto e riscrivere le cose imprecise o fatte alla buona, verificando anche se manca qualcosa da aggiungere che magari dai per scontato o cose così (rilettura molto attenta, dalle cui modifiche nascerà la prima bozza).
 
 Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
 
