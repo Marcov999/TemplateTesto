@@ -1,11 +1,13 @@
-Distanza iperbolica: Abate dice che non è strettamente necessario mettere la dim che è una distanza, ma ti ha comunque dato una traccia. Prova a scriverla, se ha senso lasciarla bene.
+Rileggere tutto e riscrivere le cose imprecise o fatte alla buona, verificando anche se manca qualcosa da aggiungere che magari dai per scontato o se ci sono ripetizioni, insomma cose così (rilettura molto attenta, dalle cui modifiche nascerà la prima bozza).
 
-Settori o regioni di Stolz: preferirei le regioni di Stolz, ma bisogna aggiustare la dim della proposizione che passa da f a f^h.
-
-Rileggere tutto e riscrivere le cose imprecise o fatte alla buona, verificando anche se manca qualcosa da aggiungere che magari dai per scontato o cose così (rilettura molto attenta, dalle cui modifiche nascerà la prima bozza).
-
-Alla fine, scrivere l'introduzione (e ringraziamenti, direi).
+Cose di cui parlare con Abate:
+- settori o regioni di Stolz: preferirei le regioni di Stolz, ma bisogna aggiustare la dim della proposizione che passa dall'andamento di f a quello di f^h;
+- titolo, copertina, cose così (poco importante);
+- bibliografia: mi pare un po' corta;
+- in generale, va bene? (quindi, un sacco di cose di cui parlare)
 
 Tutte le correzioni e modifiche del caso che ti dirà Abate.
 
 Decidere un titolo.
+
+Scrivere i ringraziamenti.

@@ -41,14 +41,22 @@ che è vera perché $z, w \in \mathbb{D}$.
 \end{prop}
 
 \begin{proof}
-  Mostriamo preliminarmente che $p$ è una distanza. In entrambi i casi, l'unica cosa non ovvia da controllare è la disuguaglianza triangolare. Perciò, dati $z_0, z_1, z_2 \in \mathbb{D}$, vogliamo $p(z_1,z_2) \le p(z_1,z_0)+p(z_0,z_2)$. Osserviamo che, per il lemma di Schwarz-Pick, $p$ è invariante applicando automorfismi, perciò supponiamo senza perdita di generalità $z_1=0$ (possiamo farlo perché il gruppo degli automorfismidi $\mathbb{D}$ è transitivo). A questo punto la disuguaglianza da dimostrare diventa
-  \marginpar{Come si dimostra? Qui c'è una dim, ma ponendo $z_0=0$: https://mathoverflow.net/questions/21604/nice-proof-of-the-triangle-inequality-for-the-metric-of-the-hyperbolic-plane}
+  L'unica cosa non ovvia da dimostrare è la disuguaglianza triangolare. Osserviamo che $d(z,w)=2\,\text{arctanh}\,(p(z,w))$. Dati $z_0, z_1, z_2 \in \mathbb{D}$, utilizzando l'uguaglianza $\text{tanh}\,(a+b)=\frac{\text{tanh}\,(a)+\text{tanh}\,(b)}{1+\text{tanh}\,(a)\,\text{tanh}\,(b)}$ possiamo scrivere la disuguaglianza triangolare per $d$ in una forma equivalente:
   \begin{align*}
-    |z_2| \le |z_0|+\frac{|z_0-z_2|}{|1-\bar{z}_2z_0|}.
+    d(z_1, z_2) \le d(z_1, z_0)+d(z_0,z_2) \\
+    \text{tanh}\,\left(\frac{1}{2}d(z_1,z_2)\right) \le \text{tanh}\,\left(\frac{1}{2}d(z_1, z_0)+\frac{1}{2}d(z_0,z_2)\right) \\
+    \text{tanh}\,\left(\frac{1}{2}d(z_1,z_2)\right) \le \frac{\text{tanh}\,(\frac{1}{2}d(z_1, z_0))+\text{tanh}\,(\frac{1}{2}d(z_0,z_2))}{1+\text{tanh}\,(\frac{1}{2}d(z_1, z_0))\,\text{tanh}\,(\frac{1}{2}d(z_0,z_2))} \\
+    p(z_1,z_2) \le \frac{p(z_1,z_0)+p(z_0,z_2)}{1+p(z_1,z_0)p(z_0,z_2)}.
   \end{align*}
-  (c'è da fare la dimostrazione) \\
-  A questo punto, possiamo osservare che $d(z,w) =2\,\text{arctanh}\,(p(z,w))$, perciò... ACHTUNG: LA DIM DEGLI APPUNTI DI ECA SEMBRA ESSERE FALLACE, ARCTANH NON È SUBADDITIVA SUI POSITIVI
-  %Altrimenti, si può brutalmente espandere il conto e ricondursi a una disuguaglianza la cui dimostrazione si trova qui: https://www.math3ma.com/blog/the-pseudo-hyperbolic-metric-and-lindelofs-inequality
+  Osserviamo che il lemma di Schwarz-Pick implica che $p$ è invariante sotto l'azione degli automorfismi olomorfi di $\mathbb{D}$ e, essendo questi transitivi, possiamo dunque supporre senza perdita di generalità che $z_0=0$. Osservando che $p(0,z)=|z|$, otteniamo che la disuguaglianza triangolare per $d$ è equivalente a
+  \begin{gather*}
+    \frac{|z_1-z_2|}{|1-\bar{z}_2z_1|} \le \frac{|z_1|+|z_2|}{1+|z_1||z_2|} \\
+    1-\frac{|z_1-z_2|^2}{|1-\bar{z}_2z_1|^2} \ge 1-\left(\frac{|z_1|+|z_2|}{1+|z_1||z_2|}\right)^2 \\
+    \frac{(1-\bar{z}_2z_1)(1-z_2\bar{z}_1)-(z_1-z_2)(\bar{z}_1-\bar{z}_2)}{|1-\bar{z}_2z_1|^2} \ge \frac{(1+|z_1||z_2|)^2-(|z_1|+|z_2|)^2}{(1+|z_1||z_2|)^2} \\
+    \frac{1+|z_2|^2|z_1|^2-|z_1|^2-|z_2|^2}{|1-\bar{z}_2z_1|^2} \ge \frac{1+|z_1|^2|z_2|^2-|z_1|^2-|z_2|^2}{(1+|z_1||z_2|)^2} \\
+    |1-\bar{z}_2z_1| \le 1+|z_1||z_2|,
+  \end{gather*}
+  che è ovviamente vera.
 \end{proof}
 
 \begin{defn}
@@ -68,7 +76,7 @@ che è vera perché $z, w \in \mathbb{D}$.
   Questi risultati verranno usati nelle varie dimostrazioni e verranno esplicitati solo quando ciò che ne segue non è immediato.
 \end{oss}
 
-Seguono alcuni risultati noti di analisi complessa noti che verranno usati nelle dimostrazioni.
+Seguono alcuni risultati noti di analisi complessa che verranno usati nelle dimostrazioni.
 
 \begin{thm}
   (formula integrale di Cauchy) Sia $f$ olomorfa sull'aperto $\Omega$ e $D$ un disco chiuso di centro $a$ contenuto in $\Omega$. Allora
@@ -79,4 +87,9 @@ Seguono alcuni risultati noti di analisi complessa noti che verranno usati nelle
 
 \begin{prop}
   Sia $f$ olomorfa sull'aperto $\Omega \setminus\{z_0\}$, con $z_0 \in \Omega$. Allora $f$ si estende a una funzione olomorfa $g$ definita su tutto $\Omega$ se e solo se è limitata in un intorno di $z_0$. In tal caso, $z_0$ è detta \textit{singolarità rimovibile}.
+\end{prop}
+
+\begin{prop} \label{aut}
+  $f:\mathbb{D} \longrightarrow \mathbb{D}$ olomorfa è un automorfismo se e solo se esistono $\theta \in \mathbb{R}, a \in \mathbb{D}$ tali che
+  $$f(z)=e^{i\theta}[z,a].$$
 \end{prop}

@@ -1,5 +1,3 @@
-Siamo ora pronti a dimostrare il teorema 2.1 di \cite{BK}.
-
 \begin{thm} \label{burns_krantz}
   (Burns-Krantz, 1994) Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa dal disco in sé tale che
   \begin{equation} \label{O^4}
@@ -10,10 +8,10 @@ Siamo ora pronti a dimostrare il teorema 2.1 di \cite{BK}.
 
 \begin{proof}
   Chiaramente, se vale \eqref{O^4} per $z \longrightarrow 1$ vale anche \eqref{o^3}, in particolare per $z \longrightarrow 1$ non tangenzialmente.
-  Dalla proposizione \ref{o^3->o^2} segue che anche \eqref{o^2} vale per $z \longrightarrow 1$ non tangenzialmente, quindi esiste una successione $z_n$ che soddisfa le ipotesi del teorema \ref{boundary_schwarz_pick} (usiamo di nuovo che, non tangenzialmente, $|z-1|$ e $1-|z|$ hanno gli stessi $o$-piccoli), da cui la tesi.
+  Dalla proposizione \ref{o^3->o^2} segue che anche \eqref{o^2} vale per $z \longrightarrow 1$ non tangenzialmente, quindi esiste una successione $z_n$ che soddisfa le ipotesi del teorema \ref{boundary_schwarz_pick} (usiamo di nuovo che, non tangenzialmente, $|z-1|$ e $1-|z|$ hanno gli stessi $o$-piccoli), dunque $f$ è un automorfismo.
+  Allora per la proposizione \ref{aut} esistono $\theta \in \mathbb{R}, a \in \mathbb{D}$ tali che $f(z)=e^{i\theta}[z,a]$. Poiché vale \eqref{O^4}, dev'essere $f''(1)=0$. Un semplice conto mostra che $f''(z)=\dfrac{e^{i\theta}\bar{a}(1-|a|^2)}{(1-\bar{a}z)^3}$.
+  Siccome $e^{i\theta}\not=0, |a|<1$, deve necessariamente essere $\bar{a}=0$, perciò $f(z)=e^{i\theta}z$. Il fatto che $f(z)=z$ segue da, sempre per \eqref{O^4}, $\displaystyle \lim_{z \longrightarrow 1} f(z)=1$.
 \end{proof}
-
-Il termine $\mathcal{O}((z-1)^4)$ non è migliorabile, come mostra il seguente controesempio.
 
 \begin{ex}
   $f(z)=\dfrac{1+3z^2}{3+z^2}$. Osserviamo che $f$ è una funzione olomorfa su $\mathbb{C} \setminus \{\pm i\sqrt{3}\}$, quindi in particolare è ben definita su $\mathbb{D}$. Verifichiamo che l'immagine è contenuta in $\mathbb{D}$:
@@ -31,5 +29,5 @@ Il termine $\mathcal{O}((z-1)^4)$ non è migliorabile, come mostra il seguente c
     & =\frac{1+3z^2-3z-z^3}{3+z^2} \\
     & =\frac{(1-z)^3}{3+z^2}=:g(z).
   \end{align*}
-  Poiché $\displaystyle \lim_{z \longrightarrow 1} g(z)/(z-1)^3=-1/4$, $g(z)$ è $\mathcal{O}((z-1)^3)$ ma non $\mathcal{O}((z-1)^4)$ per $z \longrightarrow 1$.
+  Poiché $\displaystyle \lim_{z \longrightarrow 1} g(z)/(z-1)^3=-1/4$, $g(z)$ è $\mathcal{O}((z-1)^3)$ ma non $\mathcal{O}((z-1)^4)$ per $z \longrightarrow 1$. Dunque il termine $\mathcal{O}((z-1)^4)$ nel teorema \ref{burns_krantz} non è migliorabile.
 \end{ex}
