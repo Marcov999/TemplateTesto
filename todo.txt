@@ -1,13 +1,5 @@
-Rileggere tutto e riscrivere le cose imprecise o fatte alla buona, verificando anche se manca qualcosa da aggiungere che magari dai per scontato o se ci sono ripetizioni, insomma cose così (rilettura molto attenta, dalle cui modifiche nascerà la prima bozza).
-
-Cose di cui parlare con Abate:
-- settori o regioni di Stolz: preferirei le regioni di Stolz, ma bisogna aggiustare la dim della proposizione che passa dall'andamento di f a quello di f^h;
-- titolo, copertina, cose così (poco importante);
-- bibliografia: mi pare un po' corta;
-- in generale, va bene? (quindi, un sacco di cose di cui parlare)
-
-Tutte le correzioni e modifiche del caso che ti dirà Abate.
-
-Decidere un titolo.
+Tutte le correzioni e modifiche del caso che ti ha detto Abate
+- intro: la cosa su pseudometriche e distanza iperbolica non è ben chiara, da rivedere
+- noti: le dim di Schwarz, Schwarz-Pick e altri risultati lì vicino; definizione di distanza iperbolica e dimostrazioni collegate; citazioni a bibliografia varia (da aggiungere) per le cose più note
 
 Scrivere i ringraziamenti.

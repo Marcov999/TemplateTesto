@@ -24,8 +24,6 @@
 {\medskip}
 \newenvironment{block*}[1][] {\par\medskip\noindent\textbf{#1}} {\medskip}
 
-\setlength{\parindent}{0pt}
-
 \newcommand{\vect}{\overrightarrow}
 \renewcommand{\implies}{\Rightarrow}
 \renewcommand{\epsilon}{\varepsilon}
@@ -59,11 +57,11 @@
 \newcommand{\warningsign}{\tikz[baseline=-.75ex] \node[shape=regular polygon,
 regular polygon sides=3, inner sep=0pt, draw, thick] {\textbf{!}};}
 
-\newenvironment{thm}{\begin{block}[Teorema]}{\end{block}}
-\newenvironment{lm}{\begin{block}[Lemma]}{\end{block}}
+\newenvironment{thm}{\begin{block}[Teorema]\begin{itshape}}{\end{itshape}\end{block}}
+\newenvironment{lm}{\begin{block}[Lemma]\begin{itshape}}{\end{itshape}\end{block}}
 \newenvironment{defn}{\begin{block}[Definizione]}{\end{block}}
-\newenvironment{prop}{\begin{block}[Proposizione]}{\end{block}}
-\newenvironment{cor}{\begin{block}[Corollario]}{\end{block}}
+\newenvironment{prop}{\begin{block}[Proposizione]\begin{itshape}}{\end{itshape}\end{block}}
+\newenvironment{cor}{\begin{block}[Corollario]\begin{itshape}}{\end{itshape}\end{block}}
 \newenvironment{ex}{\begin{block}[Esempio]}{\end{block}}
 \newenvironment{exc}{\begin{block}[Esercizio]}{\end{block}}
 \newenvironment{sol}{\begin{block*}[Soluzione]}{\end{block*}}

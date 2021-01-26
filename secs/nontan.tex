@@ -1,6 +1,5 @@
 \begin{defn}
-  Chiamiamo \textit{settore di vertice $1$ e angolo d'apertura $2\alpha$} l'insieme $S \subset \mathbb{D}$ tale che per ogni $z \in S$ l'angolo compreso tra l'asse reale e la retta congiungente $1$ e $z$ è minore di $\alpha$. \\
-  Quando scriviamo $z \longrightarrow 1$ \textit{non tangenzialmente}, s'intende che stiamo considerando i punti appartenenti a un settore $S$ fissato.
+  Dati $\alpha \in (0,\pi/2)$ e $\sigma \in \partial\mathbb{D}$, chiamiamo \textit{settore di vertice $\sigma$ e angolo $2\alpha$} l'insieme $S(\sigma,\alpha) \subset \mathbb{D}$ tale che per ogni $z \in S(\sigma,\alpha)$ l'angolo compreso tra la retta congiungente $\sigma$ e $0$ e la retta congiungente $\sigma$ e $z$ è minore di $\alpha$.
   \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.5cm,y=2.5cm]
       \draw[->,color=black] (-1.13,0) -- (1.15,0);
@@ -19,8 +18,12 @@
       \tikzfillbetween[of=C and D]{blue, opacity=0.25};
     \end{tikzpicture}
 
-    In blu, il settore di angolo d'apertura $\frac{2}{3}\pi$
+    In blu, $S(1,2\pi/3)$
   \end{center}
+\end{defn}
+
+\begin{defn}
+  INSERIRE DEFINIZIONE DI LIMITE NON-TANGENZIALE
 \end{defn}
 
 La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzialmente, un certo andamento di $f$ può essere tradotto nell'andamento di $f^h$. È questo che ci permetterà di dimostrare il teorema 2.1 di \cite{BK} passando per la versione al bordo del lemma di Schwarz-Pick.
