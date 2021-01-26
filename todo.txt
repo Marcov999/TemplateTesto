@@ -1,5 +1,5 @@
 Tutte le correzioni e modifiche del caso che ti ha detto Abate
-- intro: la cosa su pseudometriche e distanza iperbolica non è ben chiara, da rivedere
-- noti: le dim di Schwarz, Schwarz-Pick e altri risultati lì vicino; definizione di distanza iperbolica e dimostrazioni collegate; citazioni a bibliografia varia (da aggiungere) per le cose più note
+
+Nei pezzi che non hai ancora controllato mancano anche le verifiche stilistiche: parentesi, maiuscole, d che diventano omega, parole tra formule e non iniziare il discorso con formule, ecc.
 
 Scrivere i ringraziamenti.

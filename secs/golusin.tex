@@ -1,80 +1,76 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza iperbolica $d$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse, come già detto, ha come corollario la disuguaglianza di Golusin.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza iperbolica $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse, come già detto, ha come corollario la disuguaglianza di Golusin.
 
 \begin{prop} \label{24}
-  Siano $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo, $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
+  Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
 \end{prop}
 
 \begin{proof}
-  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$, ma abbiamo visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,w)| \le 1$, inoltre vale l'uguale in qualche punto solo se $f$ è un automorfismo, dunque con le ipotesi su $f$ abbiamo che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
+  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$; abbiamo però visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,w)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
 \end{proof}
 
 \begin{thm} \label{31}
-  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v \in \mathbb{D}$ vale
+  (Beardon-Minda 2004, \cite{BM}) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation} \label{3.1}
-    d(f^*(z,v),f^*(w,v)) \le d(z,w).
+    \omega\bigl(f^*(z,v),f^*(w,v)\bigr) \le \omega(z,w).
   \end{equation}
 \end{thm}
 
 \begin{proof}
-  Poiché $f$ non è un automorfismo, per la proposizione \ref{24} la mappa $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé, perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito. Per quanto riguarda la disuguaglianza,
-  \begin{align*}
-    p(f^*(z,v), f^*(w,v)) \le p(z,w) \\
-    2\,\text{arctanh}\,(p(f^*(z,v), f^*(w,v))) \le 2\,\text{arctanh}\,(p(z,w)) \\
-    d(f^*(z,v), f^*(w,v)) \le d(z,w),
-  \end{align*}
-  dove la prima riga segue dal lemma di Schwarz-Pick applicato alla funzione di cui sopra, il passaggio dalla prima alla seconda è perché $\text{arctanh}$ è crescente e dalla seconda all'ultima è la definizione di $d$.
+  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'Osservazione \ref{oss1}, punto (ii).
 \end{proof}
 
 \begin{cor} \label{32}
-  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v \in \mathbb{D}$ vale
+  Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation}
-    d(0, f^*(z,v)) \le d(0,f^*(w,v))+d(z,w).
+    \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{equation}
 \end{cor}
 
 \begin{proof}
   \begin{align*}
-    d(0,f^*(z,v)) & \le d(0,f^*(w,v))+d(f^*(w,v),f^*(z,v)) \\
-    & \le d(0,f^*(w,v))+d(z,w),
+    \omega\bigl(0,f^*(z,v)\bigr) & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega\bigl(f^*(w,v),f^*(z,v)\bigr) \\
+    & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w),
   \end{align*}
-  dove la prima è la disuguaglianza triangolare per la distanza $d$ e la seconda segue dal teorema \ref{31}.
+  dove la prima è la disuguaglianza triangolare per la distanza $\omega$ e la seconda segue dal Teorema \ref{31}.
 \end{proof}
 
 \begin{cor} \label{33}
-  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w, v, u \in \mathbb{D}$ vale
+  Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v, u \in \mathbb{D}$ vale
   \begin{equation}
-    d(0, f^*(z,v)) \le d(0, f^*(u,w))+d(z,w)+d(v,u).
+    \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0, f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).
   \end{equation}
 \end{cor}
 
 \begin{proof}
+  Si ha
   \begin{align*}
-    d(0,f^*(z,v)) & \le d(0,f^*(w,v))+d(z,w) \\
-    & =d(0,|f^*(w,v)|)+d(z,w) \\
-    & =d(0,|f^*(v,w)|)+d(z,w) \\
-    & =d(0,f^*(v,w))+d(z,w) \\
-    & \le d(0,f^*(u,w))+d(z,w)+d(v,u),
+    \omega\bigl(0,f^*(z,v)\bigr) & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w) \\
+    & =\omega\bigl(0,|f^*(w,v)|\bigr)+\omega(z,w) \\
+    & =\omega\bigl(0,|f^*(v,w)|\bigr)+\omega(z,w) \\
+    & =\omega\bigl(0,f^*(v,w)\bigr)+\omega(z,w) \\
+    & \le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u),
   \end{align*}
-  dove le due disuguaglianze seguono dal corollario \ref{32}.
+  dove le due disuguaglianze seguono dal Corollario \ref{32}.
 \end{proof}
 
 \begin{cor} \label{quasigolusin}
-  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa che non è un automorfismo. Allora per ogni $z, w \in \mathbb{D}$ vale
+  Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w \in \mathbb{D}$ vale
   \begin{equation} \label{quasigol}
-    d(f^h(z), f^h(w)) \le 2d(z,w).
+    \omega\bigl(|f^h(z)|, |f^h(w)|\bigr) \le 2\omega(z,w).
   \end{equation}
 \end{cor}
 
 \begin{proof}
-  Siano $z, w \in \mathbb{D}$, senza perdita di generalità possiamo supporre $f^h(z) \ge f^h(w)$. Allora
+  Siano $z, w \in \mathbb{D}$, senza perdita di generalità possiamo supporre $|f^h(z)| \ge |f^h(w)|$. Allora
   \begin{align*}
-    d(f^h(z), f^h(w)) & =\log\left(\frac{1+\frac{f^h(z)-f^h(w)}{1-f^h(w)f^h(z)}}{1-\frac{f^h(z)-f^h(w)}{1-f^h(w)f^h(z)}}\right) \\
-    & =\log\left(\frac{1-f^h(w)f^h(z)+f^h(z)-f^h(w)}{1-f^h(w)f^h(z)+f^h(w)-f^h(z)}\right) \\
-    & =\log\left(\frac{1+f^h(z)}{1-f^h(z)}\cdot\frac{1-f^h(w)}{1+f^h(w)}\right) \\
-    & =\log\left(\frac{1+f^h(z)}{1-f^h(z)}\right)-\log\left(\frac{1+f^h(w)}{1-f^h(w)}\right) \\
-    & =d(0,f^h(z))-d(0,f^h(w)) \le 2d(z,w).
+    \omega\bigl(|f^h(z)|, |f^h(w)|\bigr) & =\frac{1}{2}\log\left(\frac{1+\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}{1-\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}\right) \\
+    & =\frac{1}{2}\log\left(\frac{1-|f^h(w)||f^h(z)|+|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|+|f^h(w)|-|f^h(z)|}\right) \\
+    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(w)|}{1+|f^h(w)|}\right) \\
+    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\right)-\frac{1}{2}\log\left(\frac{1+|f^h(w)|}{1-|f^h(w)|}\right) \\
+    & =\omega\bigl(0,|f^h(z)|\bigr)-\omega\bigl(0,|f^h(w)|\bigr) \\
+    & =\omega\bigl(0,f^h(z)\bigr)-\omega\bigl(0,f^h(w)\bigr) \le 2\omega(z,w),
   \end{align*}
-  dove la disuguaglianza finale segue dal corollario \ref{33} ponendo $u=w, v=z$.
+  dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
 \end{proof}
 
 Ponendo $w=0$ in \eqref{quasigol} otteniamo la disuguaglianza di Golusin.
