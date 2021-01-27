@@ -1,4 +1,4 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza iperbolica $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse, come già detto, ha come corollario la disuguaglianza di Golusin.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse, come già detto, ha come corollario la disuguaglianza di Golusin.
 
 \begin{prop} \label{24}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
@@ -9,14 +9,14 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
 \end{proof}
 
 \begin{thm} \label{31}
-  (Beardon-Minda 2004, \cite{BM}) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
+  (Beardon-Minda, 2004) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation} \label{3.1}
     \omega\bigl(f^*(z,v),f^*(w,v)\bigr) \le \omega(z,w).
   \end{equation}
 \end{thm}
 
 \begin{proof}
-  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'Osservazione \ref{oss1}, punto (ii).
+  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'osservazione \ref{oss1}, punto (ii).
 \end{proof}
 
 \begin{cor} \label{32}
@@ -87,10 +87,10 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
     \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right).
   \end{gather*}
   Prendendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
-  \begin{align*}
-    \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right) \\
-    \frac{1+|f^h(z)|}{1-|f^h(z)|} \le \frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2.
-  \end{align*}
+  \begin{align}
+    \nonumber \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right) \\
+    \frac{1+|f^h(z)|}{1-|f^h(z)|} \le \frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2. \label{golprimo}
+  \end{align}
   Adesso, dalla Proposizione \ref{24} sappiamo che $f^h(z),f^h(0) \in \mathbb{D}$, in particolare $|f^h(z)|,|f^h(0)|<1$, perciò è giustificato il seguente passaggio:
   \begin{align*}
     |f^h(z)| & \le \frac{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2-1}{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2+1} \\

@@ -1,31 +1,26 @@
-Dalla disuguaglianza di Golusin possiamo dimostrare una versione al bordo del lemma di Schwarz-Pick, seguendo la traccia data nel remark 5.6 di \cite{BKR}.
+Dalla disuguaglianza di Golusin possiamo dimostrare una risultato di rigidità al Bordo, seguendo la traccia data nel Remark 5.6 di \cite{BKR}.
 
 \begin{thm} \label{boundary_schwarz_pick}
-  (lemma di Schwarz-Pick al bordo) Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa dal disco in sé tale che
+  (Bracci-Kraus-Roth, 2020) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che
   \begin{equation} \label{n_o^2}
-    f^h(z_n)=1+o((|z_n|-1)^2)
+    |f^h(z_n)|=1+o\bigl((|z_n|-1)^2\bigr)
   \end{equation}
-  per qualche successione $\{z_n\}_{n \in \mathbb{N}} \subset \mathbb{D}$ con $|z_n| \longrightarrow 1$. Allora $f$ è un automorfismo.
+  per qualche successione $\{z_n\}_{n \in \mathbb{N}} \subset \mathbb{D}$ con $|z_n| \longrightarrow 1$. Allora $f \in \text{\normalfont{Aut}}(\mathbb{D})$.
 \end{thm}
 
 \begin{proof}
-  Supponiamo per assurdo che $f$ non sia un automorfismo. Allora possiamo applicare il corollario \ref{quasigolusin}, che per $w=0$ ci dà
+  Supponiamo per assurdo che $f \not\in \text{Aut}(\mathbb{D})$. Per il lemma di Schwarz-Pick $|f^h(z)| \le 1$, per ogni $z \in \mathbb{D}$. Inoltre, se valesse $|f^h(0)|=1$ avremmo che $f \in \text{Aut}(\mathbb{D})$, contraddizione.
+  Perciò dev'essere $|f^h(0)|<1$, ma $\displaystyle \lim_{n \longrightarrow +\infty} |f^h(z_n)|=1$, quindi definitivamente si ha che $|f^h(z_n)|-|f^h(0)|>0$ e $1-|f^h(z_n)f^h(0)|>0$. Poiché $f \not\in \text{Aut}(\mathbb{D})$, possiamo applicare la disuguaglianza di Golusin \ref{golusin}. La applichiamo nella forma \eqref{golprimo}, che riscriviamo come
   \begin{align*}
-    d(f^h(z), f^h(0)) \le 2d(z,0) \\
-    \log{\left(\frac{1+\left|\frac{f^h(z)-f^h(0)}{1-f^h(z)f^h(0)}\right|}{1-\left|\frac{f^h(z)-f^h(0)}{1-f^h(z)f^h(0)}\right|}\right)} \le 2\log{\left(\frac{1+|z|}{1-|z|}\right)} \\
-    \frac{|1-f^h(z)f^h(0)|+|f^h(z)-f^h(0)|}{|1-f^h(z)f^h(0)|-|f^h(z)-f^h(0)|} \le \frac{(1+|z|)^2}{(1-|z|)^2}.
-  \end{align*}
-  Ricordiamo che per definizione $f^h(z) \ge 0$ e inoltre per il lemma di Schwarz-Pick $f^h(z) \le 1$, per ogni $z \in \mathbb{D}$. Sempre per il lemma originale, se valesse $f^h(0)=1$ avremmo che $f$ è un automorfismo, contraddizione. Perciò dev'essere $f^h(0)<1$, ma $\displaystyle \lim_{n \longrightarrow +\infty} f^h(z_n)=1$, quindi definitivamente $f^h(z_n)-f^h(0)>0$ e $1-f^h(z_n)f^h(0)>0$, da cui
-  \begin{align*}
-    \frac{(1-f^h(0))(1+f^h(z_n))}{(1-f^h(z_n))(1+f^h(0))} \le \frac{(1+|z_n|)^2}{(1-|z_n|)^2} \\
-    \frac{1+f^h(0)}{(1-f^h(0))(1+f^h(z_n))}(1-f^h(z_n)) \ge \frac{(1-|z_n|)^2}{(1+|z_n|)^2}.
+    \frac{\bigl(1-|f^h(0)|\bigr)\bigl(1+|f^h(z_n)|\bigr)}{\bigl(1-|f^h(z_n)|\bigr)\bigl(1+|f^h(0)|\bigr)} \le \frac{(1+|z_n|)^2}{(1-|z_n|)^2} \\
+    \frac{1+|f^h(0)|}{\bigl(1-|f^h(0)|\bigr)\bigl(1+|f^h(z_n)|\bigr)}\bigl(1-|f^h(z_n)|\bigr) \ge \frac{(1-|z_n|)^2}{(1+|z_n|)^2}.
   \end{align*}
   Per ipotesi vale \eqref{n_o^2}, dunque
   \begin{align*}
-    \frac{1+f^h(0)}{(1-f^h(0))(1+f^h(z_n))}o((|z_n|-1)^2) \ge \frac{(1-|z_n|)^2}{(1+|z_n|)^2} \\
-    \frac{(1+f^h(0))(1+|z_n|)^2}{(1-f^h(0))(1+f^h(z_n))}o(1) \ge 1.
+    \frac{1+|f^h(0)|}{\bigl(1-|f^h(0)|\bigr)\bigl(1+|f^h(z_n)|\bigr)}o\bigl((|z_n|-1)^2\bigr) \ge \frac{(1-|z_n|)^2}{(1+|z_n|)^2} \\
+    \frac{\bigl(1+|f^h(0)|\bigr)(1+|z_n|)^2}{\bigl(1-|f^h(0)|\bigr)\bigl(1+|f^h(z_n)|\bigr)}o(1) \ge 1.
   \end{align*}
-  Poiché $\displaystyle \lim_{n \longrightarrow +\infty} \frac{(1+f^h(0))(1+|z_n|)^2}{(1-f^h(0))(1+f^h(z_n))}=\frac{2(1+f^h(0))}{1-f^h(0)} < +\infty$, otteniamo di nuovo una contraddizione.
+  Poiché $\displaystyle \lim_{n \longrightarrow +\infty} \frac{\bigl(1+|f^h(0)|\bigr)(1+|z_n|)^2}{\bigl(1-|f^h(0)|\bigr)\bigl(1+|f^h(z_n)|\bigr)}=\frac{2\bigl(1+|f^h(0)|\bigr)}{1-|f^h(0)|} < +\infty$, otteniamo di nuovo una contraddizione.
 \end{proof}
 
-Siamo ora pronti a dimostrare il teorema 2.1 di \cite{BK}.
+Siamo ora pronti a dimostrare il Theorem 2.1 di \cite{BK}.
