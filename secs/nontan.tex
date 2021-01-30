@@ -29,18 +29,28 @@
 La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzialmente, un certo andamento di $f$ può essere tradotto nell'andamento di $f^h$. È questo che ci permetterà di dimostrare il teorema 2.1 di \cite{BK} passando per la versione al bordo del lemma di Schwarz-Pick.
 
 \begin{prop} \label{o^3->o^2}
-  Sia $f:\mathbb{D} \longrightarrow \mathbb{D}$ una funzione olomorfa tale che
+  Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ e $\sigma \in \partial\mathbb{D}$ tali che
   \begin{equation} \label{o^3}
-    f(z)=1+(z-1)+o((z-1)^3)
+    f(z)=1+(z-\sigma)+o\bigl((z-\sigma)^3\bigr)
   \end{equation}
-  per $z \longrightarrow 1$ non tangenzialmente. Allora
+  per $z \longrightarrow \sigma$ non tangenzialmente. Allora
   \begin{equation} \label{o^2}
-    f^h(z)=1+o((z-1)^2)
+    f^h(z)=1+o\bigl((z-\sigma)^2\bigr)
   \end{equation}
-  per $z \longrightarrow 1$ non tangenzialmente.
+  per $z \longrightarrow \sigma$ non tangenzialmente.
 \end{prop}
 
 \begin{proof}
+  A meno di considerare $g(z)=f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Se inoltre avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, poiché vale
+  \begin{align*}
+    |g^h(z)| & =|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2} \\
+    & =|\sigma f'(\sigma z)|\frac{1-|z|^2}{1-|f(\sigma z)|^2} \\
+    & =|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2} \\
+    & =|f^h(\sigma z)|
+  \end{align*}
+  e mediante la sostituzione $\zeta=\sigma z$ si ha
+  $$o\bigl((z-1)^2\bigr)=o\bigl(\sigma^{-2}(\zeta-\sigma)^2\bigr)=o\bigl((\zeta-\sigma)^2\bigr)$$
+  e ovviamente $|f^h(\sigma z)|=|f^h(\zeta)|$, troviamo l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
 
   Sia $S$ un settore di vertice $1$ e angolo d'apertura $2\alpha$, e $S'$ uno un po' più grande di vertice $1$ e angolo $2\beta$, $\beta>\alpha$. Per $z \in S$, sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}(z, \partial S')$ (la distanza di $z$ dal bordo di $S'$). Allora per la formula integrale di Cauchy
   \begin{align*}
