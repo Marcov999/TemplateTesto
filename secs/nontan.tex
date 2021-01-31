@@ -18,12 +18,83 @@
       \tikzfillbetween[of=C and D]{blue, opacity=0.25};
     \end{tikzpicture}
 
-    In blu, $S(1,2\pi/3)$
+    In blu, il settore $S(1,2\pi/3)$
   \end{center}
 \end{defn}
 
 \begin{defn}
-  INSERIRE DEFINIZIONE DI LIMITE NON-TANGENZIALE
+  Dati $\sigma \in \partial \mathbb{D}$ e $M>1$, chiamiamo \textit{regione di Stolz $K(\sigma,M)$} l'insieme $\left\{z \in \mathbb{D} \mid \dfrac{|\sigma-z|}{1-|z|} < M\right\}$.
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.5cm,y=2.5cm]
+      \draw[->,color=black] (-1.16,0) -- (1.18,0);
+      \foreach \x in {-1,1}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+      \draw[->,color=black] (0,-1.13) -- (0,1.15);
+      \foreach \y in {-1,1}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+      \clip(-1.16,-1.13) rectangle (1.18,1.15);
+      \draw(0,0) circle (2.5cm);
+      \draw[name path=A, smooth,samples=100,domain=-0.1715705740864879:1] plot(\x,{sqrt(7-4*sqrt(3-2*(\x))-2*(\x)-(\x)^2)});
+      \draw[name path=B, smooth,samples=100,domain=-0.1715705740864879:1] plot(\x,{0-sqrt(7-4*sqrt(3-2*(\x))-2*(\x)-(\x)^2)});
+      \tikzfillbetween[of=A and B]{red, opacity=0.25};
+    \end{tikzpicture}
+
+    In rosso, la regione di Stolz $K(1,2)$
+  \end{center}
+\end{defn}
+
+\begin{prop}
+  Dato $M>1$, sia $\alpha=\text{\normalfont{arctan}}\sqrt{M^2-1} \in (0,\pi/2)$. Per ogni $\alpha'<\alpha$ esiste $\epsilon>0$ tale che, detto $B(\sigma,\epsilon)=\{z \in \mathbb{C} \mid |\sigma-z|<\epsilon\}$, si ha
+  $$S(\sigma,\alpha')\cap B(\sigma,\epsilon) \subset K(\sigma,M) \subset S(\sigma,\alpha).$$
+\end{prop}
+
+\begin{proof}
+  Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<\tan{\alpha}\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$.
+
+  Mostriamo la seconda inclusione. Poiché $1>|z|>\mathfrak{Re}(z)$, abbiamo
+  \begin{gather*}
+    M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)} \\
+    M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
+    M^2-1 > \frac{(1-z)(1-\bar{z})}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
+    M^2-1 > \frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
+    M^2-1 > \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2} \\
+    \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.
+  \end{gather*}
+
+  Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esiste $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M \implies \dfrac{1-|z|}{|1-z|} \le \dfrac{1}{M}\, (\star)$ e
+  \begin{gather*}
+    \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\tan{\alpha'} \\
+    \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1 \\
+    \frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}<\tan^2{\alpha'}+1 \\
+    \frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M' \, (\star\star)
+  \end{gather*}
+  dove $\alpha'<\alpha \implies \tan{\alpha'}<\tan{\alpha} \implies M'<M$. Moltiplicando tra loro le disuguaglianze $(\star)$ e $(\star\star)$ troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
+  Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scrivendo $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$ e supponendo senza perdita di generalità $y>0$, la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
+  \begin{align*}
+    \frac{1-|z|}{1-\mathfrak{Re}(z)} &=\frac{1-\sqrt{x^2+y^2}}{1-x} \\
+    & =1-\frac{\sqrt{x^2+y^2}-x}{1-x}.
+  \end{align*}
+  Notiamo che $\dfrac{\sqrt{x^2+y^2}-x}{1-x}>0$, dunque per mostrare che tende a $0$ ci basta osservare che
+  \begin{align*}
+    \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\frac{\sqrt{x^2+y^2}-x}{y} \\
+    & <\tan{\alpha'}\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
+    & <\tan{\alpha'}{y^2}{y(\sqrt{x^2+y^2}+x)} \\
+    & =\tan{\alpha'}\frac{y}{\sqrt{x^2+y^2}+x}
+  \end{align*}
+  e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
+\end{proof}
+
+Diamo ora una definizione in due modi diversi, che per quanto appena mostrato sono equivalenti. Ci torneranno utili entrambi nella prossima dimostrazione.
+
+\begin{defn}
+  Diciamo che una funzione $f:\mathbb{D} \longrightarrow \mathbb{C}$ ha \textit{limite non-tangenziale} $L \in \mathbb{C}$ in $\sigma \in \partial\mathbb{D}$, e scriviamo
+  $$\substack{\text{nt--lim} \\ z \longrightarrow \sigma} \, f(z)=L$$
+  se per ogni $\alpha \in (0,\pi/2)$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in S(\sigma,\alpha)}} f(z)=L$ oppure se per ogni $M>1$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in K(\sigma,M)}} f(z)=L$.
+\end{defn}
+
+\begin{defn}
+  Date tre funzioni $f,g,h: \mathbb{D} \longrightarrow \mathbb{C}$ e $\sigma \in \partial \mathbb{D}$, scriviamo che $f(z)=g(z)+o\bigl(h(z)\bigr)$ per $z \longrightarrow \sigma$ \textit{non tangenzialmente} se
+  $$\substack{\text{nt--lim} \\ z \longrightarrow \sigma} \, \frac{f(z)-g(z)}{h(z)}=0.$$
 \end{defn}
 
 La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzialmente, un certo andamento di $f$ può essere tradotto nell'andamento di $f^h$. È questo che ci permetterà di dimostrare il teorema 2.1 di \cite{BK} passando per la versione al bordo del lemma di Schwarz-Pick.
