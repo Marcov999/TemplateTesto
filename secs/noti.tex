@@ -21,9 +21,24 @@ Notazione: indichiamo il disco unitario con $\mathbb{D}:=\{z \in \mathbb{C} \mid
   (teorema di estensione di Riemann, Theorem 2, Chapter 1.5 \cite{NN}) Sia $f \in \mathcal{O}(\Omega \setminus\{z_0\})$ con $z_0 \in \Omega$. Allora $f$ si estende a qualche $g \in \mathcal{O}(\Omega)$ se e solo se è limitata in un intorno di $z_0$. In tal caso, $z_0$ è detta \normalfont{singolarità rimovibile}.
 \end{prop}
 
+\begin{prop}
+  (principio del massimo per funzioni olomorfe, Corollary of Theorem 3 e Theorem 5, Chapter 1.3 \cite{NN}) Siano $\Omega \subset \mathbb{C}$ un aperto e $f \in \mathcal{O}(\Omega)$. Sia inoltre $U$ un aperto relativamente compatto in $\Omega$, cioè $\overline{U} \subset \Omega$ e $\overline{U}$ compatto. Allora per ogni $z \in U$ si ha
+  $$|f(z)| \le \sup_{w \in \partial U} |f(w)|$$
+  e vale l'uguale per qualche $z \in U$ solo se $f$ è costante sulla componente connessa di $U$ contenente $z$.
+\end{prop}
+
+Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
+
 \begin{lm}
-  (lemma di Schwarz, Theorem 1, Chapter 7.1 \cite{NN}) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0 \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per $\theta \in \mathbb{R}$.
+  (lemma di Schwarz) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0 \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per $\theta \in \mathbb{R}$.
 \end{lm}
+
+\begin{proof}
+  Poiché $f(0)=0$, possiamo costruire $g \in \mathcal{O}(\mathbb{D})$ con $g(z)=\dfrac{f(z)}{z}$ estendendola per continuità in $0$ come $g(0)=f'(0)$. Fissiamo $0<r<1$.
+  Per ogni $z \in \mathbb{D}$ tale che $|z| \le r$, per il principio del massimo per funzioni olomorfe si ha $\displaystyle |g(z)| \le \max_{|w|=r} |g(w)|=\max_{|w|=r} \frac{|f(w)|}{r} \le \frac{1}{r}$. Mandando $r$ a $1$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|g(z)| \le 1$, da cui $|f(z)|\le |z|$ e $|f'(0)| \le 1$.
+
+  Se vale uno dei due uguali sopra, allora esiste $z_0 \in \mathbb{D}$ tale che $|g(z_0)|=1$. Dunque, sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$ in ogni disco di centro l'origine e raggio $|z_0|<r<1$, quindi su $\mathbb{D}$. Perciò $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$ da cui $f(z)=e^{i\theta}z$.
+\end{proof}
 
 \begin{cor} \label{cor_schw}
   Se $f \in \text{\normalfont{Aut}}(\mathbb{D})$ è tale che $f(0)=0$, allora $f(z)=e^{i\theta}z$.
