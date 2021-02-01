@@ -43,7 +43,7 @@
   \end{center}
 \end{defn}
 
-\begin{prop}
+\begin{prop} \label{settori-stolz}
   Dato $M>1$, sia $\alpha=\text{\normalfont{arctan}}\sqrt{M^2-1} \in (0,\pi/2)$. Per ogni $\alpha'<\alpha$ esiste $\epsilon>0$ tale che, detto $B(\sigma,\epsilon)=\{z \in \mathbb{C} \mid |\sigma-z|<\epsilon\}$, si ha
   $$S(\sigma,\alpha')\cap B(\sigma,\epsilon) \subset K(\sigma,M) \subset S(\sigma,\alpha).$$
 \end{prop}
@@ -84,12 +84,10 @@
   e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
 \end{proof}
 
-Diamo ora una definizione in due modi diversi, che per quanto appena mostrato sono equivalenti. Ci torneranno utili entrambi nella prossima dimostrazione.
-
 \begin{defn}
   Diciamo che una funzione $f:\mathbb{D} \longrightarrow \mathbb{C}$ ha \textit{limite non-tangenziale} $L \in \mathbb{C}$ in $\sigma \in \partial\mathbb{D}$, e scriviamo
   $$\substack{\text{nt--lim} \\ z \longrightarrow \sigma} \, f(z)=L$$
-  se per ogni $\alpha \in (0,\pi/2)$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in S(\sigma,\alpha)}} f(z)=L$ oppure se per ogni $M>1$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in K(\sigma,M)}} f(z)=L$.
+  se  per ogni $M>1$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in K(\sigma,M)}} f(z)=L$.
 \end{defn}
 
 \begin{defn}
@@ -123,7 +121,8 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   $$o\bigl((z-1)^2\bigr)=o\bigl(\sigma^{-2}(\zeta-\sigma)^2\bigr)=o\bigl((\zeta-\sigma)^2\bigr)$$
   e ovviamente $|f^h(\sigma z)|=|f^h(\zeta)|$, troviamo l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
 
-  Sia $S$ un settore di vertice $1$ e angolo d'apertura $2\alpha$, e $S'$ uno un po' più grande di vertice $1$ e angolo $2\beta$, $\beta>\alpha$. Per $z \in S$, sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}(z, \partial S')$ (la distanza di $z$ dal bordo di $S'$). Allora per la formula integrale di Cauchy
+  Sia $M>1$ e consideriamo $z \in K(1,M)$. Allora per la Proposizione \ref{settori-stolz} si ha $z \in S(1,\alpha)$ dove $\alpha=\text{arctan}\sqrt{M^2-1}$.
+  Sia inoltre $\beta \in (0,\pi/2)$ con $\beta>\alpha$ e sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}\bigl(z, \partial S(1,\beta)\bigr)$, la distanza euclidea di $z$ dal bordo di $S(1,\beta)$. Allora per la formula integrale di Cauchy
   \begin{align*}
     f'(z) & =\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)}{(w-z)^2}\diff w \\
     & =\frac{1}{2\pi i} \int_{C(z)} \frac{w-1+(f(w)-w)}{(w-z)^2}\diff w \\
@@ -177,7 +176,9 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
     \end{tikzpicture}
   \end{center}
 
-  Dato $\epsilon>0$ fissato, per ipotesi esiste $\delta>0$ tale che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in S'$ con $|w-1|<\delta$. $B(z,r(z)) \subset \mathbb{D} \implies r(z) \le 1-|z|$. Se $|z-1|<\delta/2$, $r(z) \le 1-|z|=|z-1-z|-|z| \le |z-1|+|z|-|z|=|z-1|<\delta/2$, dunque per ogni $w \in C(z)$ abbiamo $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
+  Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\tan^2\beta+1$.
+  Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi si ha che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
+  $B(z,r(z)) \subset \mathbb{D} \implies r(z) \le 1-|z|$. Se $|z-1|<\delta/2$, $r(z) \le 1-|z|=|z-1-z|-|z| \le |z-1|+|z|-|z|=|z-1|<\delta/2$, dunque per ogni $w \in C(z)$ abbiamo $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
