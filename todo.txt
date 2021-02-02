@@ -1,5 +1,7 @@
 Tutte le correzioni e modifiche del caso che ti ha detto Abate
 
+Rivedere la modifica con sigma al posto di 1
+
 Nei pezzi che non hai ancora controllato mancano anche le verifiche stilistiche: parentesi, maiuscole, d che diventano omega, parole tra formule e non iniziare il discorso con formule, ecc.
 
 Scrivere i ringraziamenti.
