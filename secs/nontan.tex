@@ -66,7 +66,8 @@
     \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\tan{\alpha'} \\
     \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1 \\
     \frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}<\tan^2{\alpha'}+1 \\
-    \frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M' \, (\star\star)
+    \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}<\tan^2{\alpha'}+1 \\
+    \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M' \, (\star\star)
   \end{gather*}
   dove $\alpha'<\alpha \implies \tan{\alpha'}<\tan{\alpha} \implies M'<M$. Moltiplicando tra loro le disuguaglianze $(\star)$ e $(\star\star)$ troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
   Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scrivendo $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$ e supponendo senza perdita di generalità $y>0$, la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
@@ -76,26 +77,24 @@
   \end{align*}
   Notiamo che $\dfrac{\sqrt{x^2+y^2}-x}{1-x}>0$, dunque per mostrare che tende a $0$ ci basta osservare che
   \begin{align*}
-    \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\frac{\sqrt{x^2+y^2}-x}{y} \\
-    & <\tan{\alpha'}\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
-    & <\tan{\alpha'}{y^2}{y(\sqrt{x^2+y^2}+x)} \\
-    & =\tan{\alpha'}\frac{y}{\sqrt{x^2+y^2}+x}
+    \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y} \\
+    & <\tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
+    & <\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)} \\
+    & =\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x}
   \end{align*}
   e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
 \end{proof}
 
 \begin{defn}
-  Diciamo che una funzione $f:\mathbb{D} \longrightarrow \mathbb{C}$ ha \textit{limite non-tangenziale} $L \in \mathbb{C}$ in $\sigma \in \partial\mathbb{D}$, e scriviamo
+  Diciamo che una funzione $f:\mathbb{D} \longrightarrow \mathbb{C}$ ha \textit{limite non-tangenziale} $L \in \mathbb{C}$ in $\sigma \in \partial\mathbb{D}$ e scriviamo
   $$\substack{\text{nt--lim} \\ z \longrightarrow \sigma} \, f(z)=L$$
   se  per ogni $M>1$ si ha $\displaystyle \lim_{\substack{z \longrightarrow \sigma, \\ z \in K(\sigma,M)}} f(z)=L$.
-\end{defn}
 
-\begin{defn}
-  Date tre funzioni $f,g,h: \mathbb{D} \longrightarrow \mathbb{C}$ e $\sigma \in \partial \mathbb{D}$, scriviamo che $f(z)=g(z)+o\bigl(h(z)\bigr)$ per $z \longrightarrow \sigma$ \textit{non tangenzialmente} se
+  Date altre due funzioni $g,h: \mathbb{D} \longrightarrow \mathbb{C}$ scriviamo che $f(z)=g(z)+o\bigl(h(z)\bigr)$ per $z \longrightarrow \sigma$ \textit{non tangenzialmente} se
   $$\substack{\text{nt--lim} \\ z \longrightarrow \sigma} \, \frac{f(z)-g(z)}{h(z)}=0.$$
 \end{defn}
 
-La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzialmente, un certo andamento di $f$ può essere tradotto nell'andamento di $f^h$. È questo che ci permetterà di dimostrare il teorema 2.1 di \cite{BK} passando per la versione al bordo del lemma di Schwarz-Pick.
+La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzialmente, un certo andamento di $f$ può essere tradotto nell'andamento di $|f^h|$. È questo che ci permetterà di dimostrare il teorema 2.1 di \cite{BK} passando per la versione al bordo del lemma di Schwarz-Pick.
 
 \begin{prop} \label{o^3->o^2}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ e $\sigma \in \partial\mathbb{D}$ tali che
@@ -104,7 +103,7 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   \end{equation}
   per $z \longrightarrow \sigma$ non tangenzialmente. Allora
   \begin{equation} \label{o^2}
-    f^h(z)=1+o\bigl((z-\sigma)^2\bigr)
+    |f^h(z)|=1+o\bigl((z-\sigma)^2\bigr)
   \end{equation}
   per $z \longrightarrow \sigma$ non tangenzialmente.
 \end{prop}
@@ -177,14 +176,14 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   \end{center}
 
   Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\tan^2\beta+1$.
-  Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi si ha che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
-  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Per la disuguaglianza triangolare si ha $1-|z| \le |1-z|$, dunque prendendo $z$ tale che $|z-1|<\delta/2$ abbiamo $r(z) \le |z-1|<\delta/2$. Di conseguenza per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
+  Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
+  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$, quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
     & =\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
   \end{align*}
-  Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $A$ in figura). Perciò, detto $\gamma$ l'angolo tra $\partial S(1,\beta)$ (per essere precisi, la retta contenente il tratto affine più vicino a $z$, che è effettivamente il tratto di bordo più vicino a $z$ se lo si prende sufficientemente vicino a $1$) e la retta congiungente $1$ e $z$, si ha
+  Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $A$ in figura). Perciò, detto $\gamma$ l'angolo tra la retta congiungente $1$ e $z$ e il tratto affine di $\partial S(1,\beta)$ più vicino a $z$ (che è effettivamente il tratto di bordo più vicino a $z$ se lo si prende sufficientemente vicino a $1$), si ha
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3 \\
     & =\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
@@ -197,6 +196,6 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   Notiamo che all'interno della regione di Stolz $K(1,M)$ si ha $1 \le \dfrac{|z-1|}{1-|z|} \le M$, il che ci  permette di usare indipendentemente $z-1$ o $1-|z|$ negli $o$-piccoli per $z \longrightarrow 1$ non tangenzialmente. Per ipotesi
   $$\frac{1-|f(z)|}{1-|z|}=\frac{1-|z|+o\bigl((z-1)^3\bigr)}{1-|z|}=1+o\bigl((z-1)^2\bigr)$$
   per $z \longrightarrow 1$ non tangenzialmente. Possiamo quindi concludere che
-  $$f^h(z)=|f'(z)|\frac{1-|z|^2}{1-|f(z)|^2}=1+o\bigl((z-1)^2\bigr)$$
+  $$|f^h(z)|=|f'(z)|\frac{1-|z|^2}{1-|f(z)|^2}=1+o\bigl((z-1)^2\bigr)$$
   per $z \longrightarrow 1$ non tangenzialmente.
 \end{proof}
