@@ -22,7 +22,7 @@ Notazione: indichiamo il disco unitario con $\mathbb{D}:=\{z \in \mathbb{C} \mid
 \end{prop}
 
 \begin{prop}
-  (principio del massimo per funzioni olomorfe, Corollary of Theorem 3 e Theorem 5, Chapter 1.3 \cite{NN}) Siano $\Omega \subset \mathbb{C}$ un aperto e $f \in \mathcal{O}(\Omega)$. Sia inoltre $U$ un aperto relativamente compatto in $\Omega$, cioè $\overline{U} \subset \Omega$ e $\overline{U}$ compatto. Allora per ogni $z \in U$ si ha
+  (principio del massimo per funzioni olomorfe, Corollary of Theorem 3 e Theorem 5, Chapter 1.3 \cite{NN}) Sia $\Omega \subset \mathbb{C}$ un aperto e sia $f \in \mathcal{O}(\Omega)$. Sia inoltre $U$ un aperto relativamente compatto in $\Omega$, cioè $\overline{U} \subset \Omega$ e $\overline{U}$ compatto. Allora per ogni $z \in U$ si ha
   $$|f(z)| \le \sup_{w \in \partial U} |f(w)|$$
   e vale l'uguale per qualche $z \in U$ solo se $f$ è costante sulla componente connessa di $U$ contenente $z$.
 \end{prop}
@@ -30,14 +30,16 @@ Notazione: indichiamo il disco unitario con $\mathbb{D}:=\{z \in \mathbb{C} \mid
 Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 
 \begin{lm}
-  (lemma di Schwarz) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0 \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per $\theta \in \mathbb{R}$.
+  (lemma di Schwarz) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Allora per ogni $z \in \mathbb{D}$ si ha $|f(z)| \le |z|$ e $|f'(0)| \le 1$; inoltre, se vale l'uguaglianza nella prima per $z_0 \not=0$ oppure nella seconda allora $f(z)=e^{i\theta}z$ per qualche $\theta \in \mathbb{R}$.
 \end{lm}
 
 \begin{proof}
-  Poiché $f(0)=0$, possiamo costruire $g \in \mathcal{O}(\mathbb{D})$ con $g(z)=\dfrac{f(z)}{z}$ estendendola per continuità in $0$ come $g(0)=f'(0)$. Fissiamo $0<r<1$.
-  Per ogni $z \in \mathbb{D}$ tale che $|z| \le r$, per il principio del massimo per funzioni olomorfe si ha $\displaystyle |g(z)| \le \max_{|w|=r} |g(w)|=\max_{|w|=r} \frac{|f(w)|}{r} \le \frac{1}{r}$. Mandando $r$ a $1$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|g(z)| \le 1$, da cui $|f(z)|\le |z|$ e $|f'(0)| \le 1$.
+  Poiché $f(0)=0$, possiamo costruire $g \in \mathcal{O}(\mathbb{D})$ con $g(z)=\frac{f(z)}{z}$ estendendola per continuità in $0$ come $g(0)=f'(0)$. Fissiamo $0<r<1$.
+  Per ogni $z \in \mathbb{D}$ tale che $|z| \le r$, per il principio del massimo per funzioni olomorfe si ha
+  $$|g(z)| \le \max_{|w|=r} |g(w)|=\max_{|w|=r} \frac{|f(w)|}{r} \le \frac{1}{r}.$$
+  Mandando $r$ a $1$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|g(z)| \le 1$, da cui $|f(z)|\le |z|$ e $|f'(0)| \le 1$.
 
-  Se vale uno dei due uguali sopra, allora esiste $z_0 \in \mathbb{D}$ tale che $|g(z_0)|=1$. Dunque, sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$ in ogni disco di centro l'origine e raggio $|z_0|<r<1$, quindi su $\mathbb{D}$. Perciò $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$ da cui $f(z)=e^{i\theta}z$.
+  Se vale una delle due ugaglianze, allora esiste $z_0 \in \mathbb{D}$ tale che $|g(z_0)|=1$. Dunque, sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$ in ogni disco di centro l'origine e raggio $|z_0|<r<1$, quindi su $\mathbb{D}$. Perciò $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$ da cui $f(z)=e^{i\theta}z$.
 \end{proof}
 
 \begin{cor} \label{cor_schw}
@@ -45,7 +47,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \end{cor}
 
 \begin{proof}
-  $f^{-1} \in \text{Aut}(\mathbb{D})$. $(f^{-1})'(0)=\dfrac{1}{f'(0)}$. Per il lemma di Schwarz, $|f'(0)| \le 1$ e $|(f^{-1})'(0)| \le 1$ $\implies$ $|f'(0)|=1$, da cui la tesi sempre per il lemma di Schwarz.
+  Se $f \in \text{Aut}(\mathbb{D})$ anche $f^{-1} \in \text{Aut}(\mathbb{D})$, inoltre $(f^{-1})'(0)=\dfrac{1}{f'(0)}$. Per il lemma di Schwarz, $|f'(0)| \le 1$ e $|(f^{-1})'(0)| \le 1$ $\implies$ $|f'(0)|=1$, da cui la tesi sempre per il lemma di Schwarz.
 \end{proof}
 
 \begin{lm} \label{az_gr}
@@ -60,7 +62,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \end{proof}
 
 \begin{prop} \label{aut}
-  $f \in \text{\normalfont{Aut}}(\mathbb{D})$ $\iff$ esistono $\theta \in \mathbb{R}$ e $a \in \mathbb{D}$ tali che $f(z)=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$.
+  Si ha che $f \in \text{\normalfont{Aut}}(\mathbb{D})$ se e solo se esistono $\theta \in \mathbb{R}$ e $a \in \mathbb{D}$ tali che $f(z)=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$.
 \end{prop}
 
 \begin{proof}
@@ -69,14 +71,14 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
     1-\left|\frac{z-w}{1-\bar{w}z}\right|^2=\frac{(1-|w|^2)(1-|z|^2)}{|1-\bar{w}z|^2}
   \end{equation}
   da cui segue che se $a, z \in \mathbb{D}$ allora
-  \begin{align*}
+  \begin{gather*}
     1-|f(z)|^2=\frac{(1-|a|^2)(1-|z|^2)}{|1-\bar{a}z|^2}>0 \\
     |f(z)|<1
-  \end{align*}
+  \end{gather*}
   e quindi $f(z) \in \mathbb{D}$, mentre se $a \in \mathbb{D}$ e $z \in \partial\mathbb{D}$ allora $|f(z)|=1$, cioè $f(z) \in \partial\mathbb{D}$. L'inversa è $f^{-1}(z)=e^{-i\theta}\dfrac{z+ae^{i\theta}}{z+\bar{a}e^{-i\theta}z}$, della stessa forma. Si noti che $f(a)=0$.
 
   ($\implies$) Scriviamo per semplicità $f_{a, \theta}=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$. Vediamo $\text{Aut}(\mathbb{D})$ come gruppo che agisce su $\mathbb{D}$. $\text{Aut}(\mathbb{D})_0$ è, per il Corollario \ref{cor_schw}, $\{f_{0, \theta} \mid \theta \in \mathbb{R}\}$,
-  mentre $\Gamma=\{f_{a, 0} \mid a \in \mathbb{D}\}$ ($f_{a, 0}(a)=0$).
+  mentre possiamo prendere $\Gamma=\{f_{a, 0} \mid a \in \mathbb{D}\}$ poiché $f_{a, 0}(a)=0$.
   Per il lemma \ref{az_gr}, $\text{Aut}(\mathbb{D})$ è generato da $\text{Aut}(\mathbb{D})_0$ e $\Gamma$, cioè ogni $\gamma \in \text{Aut}(\mathbb{D})$ è della forma $\gamma=f_{0, \theta} \circ f_{a, 0}=f_{a, \theta}$.
 \end{proof}
 
@@ -92,7 +94,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \end{lm}
 
 \begin{proof}
-  Fissato $w \in \mathbb{D}$ siano $\gamma_1(z)=\dfrac{z+w}{1+\bar{w}z}$ e $\gamma_2(z)=\dfrac{z-f(w)}{1-\overline{f(w)}z}$. Si ha $\gamma_1, \gamma_2 \in \text{Aut}(\mathbb{D})$. Si ha anche che $\gamma_1(0)=w$ e $\gamma_2(f(w))=0$, inoltre $\gamma_1^{-1}(z)=\dfrac{z-w}{1-\bar{w}z}$.
+  Fissato $w \in \mathbb{D}$ siano $\gamma_1(z)=\dfrac{z+w}{1+\bar{w}z}$ e $\gamma_2(z)=\dfrac{z-f(w)}{1-\overline{f(w)}z}$. Si ha $\gamma_1, \gamma_2 \in \text{Aut}(\mathbb{D})$. Si ha anche che $\gamma_1(0)=w$ e $\gamma_2\bigl(f(w)\bigr)=0$, inoltre $\gamma_1^{-1}(z)=\dfrac{z-w}{1-\bar{w}z}$.
   Per il lemma di Schwarz applicato a $\gamma_2 \circ f \circ \gamma_1$ abbiamo che per ogni $\zeta \in \mathbb{D}$ $|(\gamma_2 \circ f \circ \gamma_1)(\zeta)| \le |\zeta|$, da cui prendendo $\zeta=\gamma_1^{-1}(z)$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|(\gamma_2 \circ f)(z)| \le |\gamma_1^{-1}(z)|$, che è la prima disuguaglianza.
   Abbiamo poi $|(\gamma_2 \circ f \circ \gamma_1)'(0)| \le 1$ $\implies$ $|\gamma_2'\bigl(f(w)\bigr)f'(w)\gamma_1'(0)| \le 1$. Valgono le seguenti uguaglianze:
   \begin{gather*}
@@ -103,9 +105,11 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
   Per l'uguaglianza, nel primo caso avremmo $|(\gamma_2 \circ f \circ \gamma_1)(\zeta)|=|\zeta|$, mentre nel secondo $|(\gamma_2\circ f\circ\gamma_1)'(0)|=1$. In entrambi i casi, per il lemma di Schwarz $\gamma_2 \circ f \circ \gamma_1=g \in \text{Aut}(\mathbb{D})$ da cui $f=\gamma_2^{-1}\circ g \circ \gamma_1^{-1} \in \text{Aut}(\mathbb{D})$.
 \end{proof}
 
-Dal lemma di Schwarz-Pick abbiamo che la quantità $\left|\frac{z-w}{1-\bar{w}z}\right|$ è contratta da $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$. Vediamo adesso una distanza costruita a partire da questa quantità, con la quale dimostreremo una serie di disuguaglianze che ci permetteranno di dimostrare la disuguaglianza di Golusin, dalla quale seguirà la versione al bordo del lemma.
+Notazione: scriviamo $[z,w]:=f_{w,0}(z)$ e $p(z,w):=|[z,w]|$.
 
-Notazione: per brevità, a volte useremo $[z,w]:=\frac{z-w}{1-\bar{w}z}$ e $p(z,w):=|[z,w]|$. Consideriamo $\omega(z,w):=\text{arctanh}\bigl(p(z,w)\bigr)=\frac{1}{2}\log\left(\dfrac{1+p(z,w)}{1-p(z,w)}\right)$.
+Dal lemma di Schwarz-Pick abbiamo che la quantità $p(z,w)$ è contratta da $f \in \text{Hol}(\mathbb{D}, \mathbb{D})$. Vediamo adesso una distanza costruita a partire da questa quantità, con la quale dimostreremo una serie di disuguaglianze che ci permetteranno di dimostrare la disuguaglianza di Golusin, dalla quale seguirà la versione al bordo del lemma.
+
+ Consideriamo $\omega(z,w):=\text{arctanh}\bigl(p(z,w)\bigr)=\frac{1}{2}\log\left(\dfrac{1+p(z,w)}{1-p(z,w)}\right)$.
 
 \begin{prop}
   La funzione $\omega: \mathbb{D}\times \mathbb{D} \longrightarrow [0,+\infty)$ è ben definita ed è effettivamente una distanza.
@@ -137,7 +141,7 @@ Notazione: per brevità, a volte useremo $[z,w]:=\frac{z-w}{1-\bar{w}z}$ e $p(z,
 
 \begin{defn}
   Data $f \in \text{Hol}(\mathbb{D},\mathbb{D})$, la \textit{derivata iperbolica} è definita come
-  $$f^h(w):=\lim_{z \longrightarrow w} \frac{[f(z),f(w)]}{[z,w]}=\frac{f'(w)(1-|w|^2)}{1-|f(w)|^2}.$$
+  $$f^h(w):=\lim_{z \longrightarrow w} \frac{[f(z),f(w)]}{[z,w]}=\frac{f'(w)(1-|w|^2)}{1-|f(w)|^2},$$
   mentre il \textit{rapporto iperbolico} è definito come
   $$f^*(z,w):=\begin{cases}
     \frac{[f(z),f(w)]}{[z,w]} & \mbox{per }z\not=w \\
@@ -149,8 +153,8 @@ Notiamo che, poiché il limite di $f^*(z,w)$ per $z \longrightarrow w$ è ben de
 
 \begin{oss} \label{oss1}
   \begin{nlist}
-    \item le disuguaglianze del lemma di Schwarz-Pick possono essere riscritte come $|f^*(z,w)| \le 1$ con uguaglianza se e solo se $f \in \text{Aut}(\mathbb{D})$;
-    \item  un altro modo di scrivere la disuguaglianza del lemma di Schwarz-Pick è $p\bigl(f(z),f(w)\bigr) \le p(z,w) \implies \omega\bigl(f(z),f(w)\bigr) \le \omega(z,w)$ in quanto $\text{arctanh}$ è strettamente crescente;
+    \item le disuguaglianze del lemma di Schwarz-Pick possono essere riscritte come $|f^*(z,w)| \le 1$, con uguaglianza se e solo se $f \in \text{Aut}(\mathbb{D})$;
+    \item  un altro modo di scrivere le disuguaglianze del lemma di Schwarz-Pick è $p\bigl(f(z),f(w)\bigr) \le p(z,w)$ che è equivalente a $\omega\bigl(f(z),f(w)\bigr) \le \omega(z,w)$, in quanto $\text{arctanh}$ è strettamente crescente;
     \item $p(z,0)=|z| \implies \omega(z,0)=\omega(|z|,0)$ e analogamente $\omega(0,z)=\omega(0,|z|)$;
     \item per definizione, $|f^*(z,w)|=|f^*(w,z)|$.
   \end{nlist}

@@ -1,6 +1,4 @@
-Rivedere la modifica con sigma al posto di 1: forse non funziona e va fatta l'altra. In caso, modificare anche la tesi del teorema finale.
-
-Il finale del secondo paragrafo dell'intro ancora non mi convince.
+Intro: se aggiungi altro dal BM, c'è un commento alla fine di intro.tex che ti ricorda di ampliare l'introduzione
 
 Scrivere i ringraziamenti.
 
