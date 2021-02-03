@@ -1,5 +1,7 @@
 Rivedere la modifica con sigma al posto di 1: forse non funziona e va fatta l'altra. In caso, modificare anche la tesi del teorema finale.
 
+Il finale del secondo paragrafo dell'intro ancora non mi convince.
+
 Scrivere i ringraziamenti.
 
 Aggiungere la dedica.

@@ -100,7 +100,7 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 \begin{prop} \label{o^3->o^2}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ e $\sigma \in \partial\mathbb{D}$ tali che
   \begin{equation} \label{o^3}
-    f(z)=1+(z-\sigma)+o\bigl((z-\sigma)^3\bigr)
+    f(z)=\sigma+(z-\sigma)+o\bigl((z-\sigma)^3\bigr)
   \end{equation}
   per $z \longrightarrow \sigma$ non tangenzialmente. Allora
   \begin{equation} \label{o^2}
@@ -110,10 +110,10 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 \end{prop}
 
 \begin{proof}
-  A meno di considerare $g(z)=f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Se inoltre avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, poiché vale
+  A meno di considerare $g(z)=\sigma^{-1}f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Se inoltre avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, poiché vale
   \begin{align*}
     |g^h(z)| & =|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2} \\
-    & =|\sigma f'(\sigma z)|\frac{1-|z|^2}{1-|f(\sigma z)|^2} \\
+    & =|f'(\sigma z)|\frac{1-|z|^2}{1-|\sigma^{-1}f(\sigma z)|^2} \\
     & =|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2} \\
     & =|f^h(\sigma z)|
   \end{align*}
