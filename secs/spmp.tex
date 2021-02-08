@@ -1,4 +1,4 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. L'ultima di esse, come già detto, ha come corollario la disuguaglianza di Golusin.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi.
 
 \begin{prop} \label{24}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
@@ -72,30 +72,4 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
     & =\omega\bigl(0,f^h(z)\bigr)-\omega\bigl(0,f^h(w)\bigr) \le 2\omega(z,w),
   \end{align*}
   dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
-\end{proof}
-
-\begin{thm} \label{golusin}
-  (disuguaglianza di Golusin) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale
-  \begin{equation} \label{gol}
-    |f^h(z)| \le \frac{|f^h(0)|+\frac{2|z|}{1+|z|^2}}{1+|f^h(0)|\frac{2|z|}{1+|z|^2}}.
-  \end{equation}
-\end{thm}
-
-\begin{proof}
-  Con passaggi analoghi a quelli della dimostrazione precedente abbiamo che valgono le seguenti uguaglianze:
-  \begin{gather*}
-    \omega\bigl(|f^h(z)|,|f^h(0)|\bigr)=\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right)\\
-    \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right).
-  \end{gather*}
-  Prendendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
-  \begin{align}
-    \nonumber \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right) \\
-    \frac{1+|f^h(z)|}{1-|f^h(z)|} \le \frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2. \label{golprimo}
-  \end{align}
-  Adesso, dalla Proposizione \ref{24} sappiamo che $f^h(z),f^h(0) \in \mathbb{D}$, in particolare $|f^h(z)|,|f^h(0)|<1$, perciò è giustificato il seguente passaggio:
-  \begin{align*}
-    |f^h(z)| & \le \frac{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2-1}{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2+1} \\
-    & =\frac{(1+|f^h(0)|)(1+2|z|+|z|^2)-(1-|f^h(0)|)(1-2|z|+|z|^2)}{(1+|f^h(0)|)(1+2|z|+|z|^2)+(1-|f^h(0)|)(1-2|z|+|z|^2)} \\
-    & =\frac{2|f^h(0)|+2|f^h(0)||z|^2+4|z|}{2+2|z|^2+4|f^h(0)||z|}=\frac{|f^h(0)|+\frac{2|z|}{1+|z|^2}}{1+|f^h(0)|\frac{2|z|}{1+|z|^2}}.
-  \end{align*}
 \end{proof}
