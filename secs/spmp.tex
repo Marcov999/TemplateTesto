@@ -54,6 +54,27 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   dove le due disuguaglianze seguono dal Corollario \ref{32}.
 \end{proof}
 
+\marginpar{Se avanza tempo, inserire Corollary 3.5 di BM (serve dare la definizione di geodetica, da decidere come imbastirla)}
+
+\begin{cor} \label{36}
+  Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ tale che $f(0)=0$. Allora
+  \begin{equation}
+    \omega\bigl(f^h(0),f^h(z)\bigr) \le 2\omega(0,z).
+  \end{equation}
+\end{cor}
+
+\begin{proof}
+  Notiamo che $f(0)=0 \implies f^*(z,0)=f^*(0,z)$, dunque si ha
+  \begin{align*}
+    \omega\bigl(f^h(0),f^h(z)\bigr) & = \omega\bigl(f^*(0,0),f^*(z,z)\bigr) \\
+    & \le \omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr) \\
+    & \le 2\omega(0,z)
+  \end{align*}
+  dove la prima è la disuguaglianza triangolare per $\omega$ e la seconda segue applicando il Teorema \ref{31}.
+\end{proof}
+
+\marginpar{caso di uguaglianza in \ref{36}: se aggiungi Corollary 3.5 di BM, riprova ad aggiungerlo. C'erano problemi di impaginazione}
+
 \begin{cor} \label{quasigolusin}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w \in \mathbb{D}$ vale
   \begin{equation} \label{quasigol}
@@ -73,3 +94,26 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   \end{align*}
   dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
 \end{proof}
+
+Concludiamo la sezione con due lemmi sulle funzioni in $\text{Hol}(\mathbb{D},\mathbb{D})$, per i quali l'approccio dal punto di vista dell'articolo di Beardon e Minda semplifica le dimostrazioni.
+
+\marginpar{aggiungere delle reference}
+
+Notazione: dati $E \subset \mathbb{D}$ e $z \in \mathbb{D}$, scriviamo $zE=\{zw \mid w \in E\}$. Inoltre, dati $\gamma \subset \mathbb{D}$ e $r>0$, scriviamo $\Sigma(\gamma,r)=\{w \mid \omega(z,w)<r, z \in \gamma\}$.
+
+\begin{lm}
+  (lemma di Rogosinski) Sia $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})\setminus\normalfont{\text{Aut}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e $f'(0) \in \mathbb{R}$. Allora per ogni $z \in \mathbb{D}$ si ha $f(z) \in z\Sigma\bigl((-1,1),\omega(0,z)\bigr)$.
+\end{lm}
+
+\begin{proof}
+  Sia $g$ definita come nella dimostrazione del lemma di Schwarz, il quale ci dice anche che $g \in \text{Hol}(\mathbb{D},\mathbb{D})$. La tesi è vera per $z=0$, supponiamo dunque $z\not=0$. Per il lemma di Schwarz-Pick si ha
+  \begin{gather*}
+    \omega\bigl(g(0),g(z)\bigr) \le \omega(0,z) \\
+    \omega\bigl(f'(0),f(z)/z\bigr) \le \omega(0,z).
+  \end{gather*}
+  Per il lemma di Schwarz dev'essere $f'(0) \in (-1,1)$. Abbiamo quindi che $f(z)/z \in \Sigma\bigl((-1,1),\omega(0,z)\bigr) \implies f(z) \in z\Sigma\bigl((-1,1),\omega(0,z)\bigr)$, come voluto.
+\end{proof}
+
+\begin{lm}
+  (lemma di Dieudonné)
+\end{lm}
