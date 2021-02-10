@@ -1,4 +1,50 @@
-aaa
+Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
+
+\begin{thm} \label{distortion}
+  Dato $b \in [0,1)$, scriviamo $F_b(z)=\dfrac{z(z+b)}{1+b z}$. Consideriamo $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Se $f'(0)=b$, allora per ogni $z \in \mathbb{D}$ si ha
+  \begin{equation}
+    \left|\frac{b-f^h(z)}{1-b f^h(z)}\right| \le \frac{2|z|}{1+|z|^2}
+  \end{equation}
+  e
+  \begin{equation}
+    F_b^h(-|z|) \le \mathfrak{Re}f^h(z) \le |f^h(z)| \le F_b^h(|z|).
+  \end{equation}
+\end{thm}
+
+\begin{proof}
+  Poiché $|f'(0)|<1$, per il lemma di Schwarz si ha $f \not\in \text{Aut}(\mathbb{D})$. Inoltre $f(0)=0$, perciò possiamo applicare il Corollario \ref{36}; si ha dunque
+  \begin{align*}
+    \omega\bigl(f^h(0),f^h(z)\bigr) \le 2\omega(0,z) \\
+    \omega\bigl(b,f^h(z)\bigr) \le 2\omega(0,z) \\
+    p\bigl(b,f^h(z)\bigr) \le \frac{2p(0,z)}{1+p^2(0,z)} \\
+    \left|\frac{b-f^h(z)}{1-b f^h(z)}\right| \le \frac{2|z|}{1+|z|^2},
+  \end{align*}
+  dove abbiamo usato il fatto che $\tanh$ è strettamente crescente e l'uguaglianza $\tanh(2x)=\frac{2\tanh{x}}{1+\tanh^2{x}}$.
+
+  Per dimostrare la seconda disuguaglianza, ripetiamo i passaggi svolti nella dimostrazione del lemma di Dieudonné prendendo $a=f^h(z)$ e $r=\frac{2|z|}{1+|z|^2}$. Otteniamo la disuguaglianza $|f^h(z)-\alpha| \le R$, dove si ha $\alpha=\dfrac{b(1-r^2)}{1-r^2b^2}$ e $R^2=\dfrac{r^2-b^2}{1-r^2b^2}+b^2\left(\dfrac{1-r^2}{1-r^2b^2}\right)^2$. Sostituendo troviamo
+  $$\alpha=\frac{b(1-|z|^2)^2}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)},$$
+  $$R=\frac{2|z|(|z|^2+1)(1-b^2)}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)}.$$
+  Consideriamo adesso $F_b^h(z)=\dfrac{bz^2+2z+b}{|z|^2+2b\mathfrak{Re}z+1}\left(\dfrac{|1+b z|}{1+b z}\right)^2$. Si ha
+  $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2|z|+1}, \quad F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2|z|+1}.$$
+  Notiamo che $\alpha=\bigl(F_b^h(|z|)+F_b^h(-|z|)\bigr)/2$ e $R=\bigl(F_b^h(|z|)-F_b^h(-|z|)\bigr)/2$, perciò la disuguaglianza $|f^h(z)-\alpha| \le R$ ci dice che $f^h(z)$ appartiene al cerchio con diametro sull'asse reale passante per i punti $F_b^h(|z|)$ e $F_b^h(-|z|)$. La seconda disuguaglianza segue allora da semplici considerazioni geometriche.
+\end{proof}
+
+\begin{oss}
+  Sapendo solo che $|f'(0)|=b$, si può dimostrare che
+  $$F_b^h(-|z|) \le |f^h(z)| \le F_b^h(|z|).$$
+  Basta infatti considerare la funzione $bf(z)/f'(0)$.
+\end{oss}
+
+\begin{cor} \label{distorto}
+  Sia $f$ come nel Teorema \ref{distortion}. Allora $\mathfrak{Re}f'(z)>0$ per $|z|<b/(1+\sqrt{1-b^2})$.
+\end{cor}
+
+\marginpar{valutare come inserire il discorso sul fatto che il raggio non è migliorabile e, eventualmente, iniettività}
+
+\begin{proof}
+  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in (1-\sqrt{1-b^2}, 1+\sqrt{1-b^2})$, zero agli estremi e maggiore di $0$ altrove. Poiché l'estremo destro è maggiore di $1$, è da scartare.
+  Per il teorema \ref{distortion} abbiamo dunque che $\mathfrak{Re}f'(z) \ge F_b^h(-|z|)>0$ per gli $z$ tali che $|z|<1-\sqrt{1-b^2}=b/(1+\sqrt{1-b^2})$.
+\end{proof}
 
 \begin{thm} \label{golusin}
   (disuguaglianza di Golusin) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale
