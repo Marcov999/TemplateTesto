@@ -1,4 +1,8 @@
-Intro: se aggiungi altro dal BM, c'è un commento alla fine di intro.tex che ti ricorda di ampliare l'introduzione
+Da sistemare: esempio raggio migliore e iniettività nel corollario del distorsion theorem
+
+Da aggiungere, se non ancora fatto: reference per Rogosinski, Dieudonné, distorsion e Pick-Nevanlinna.
+
+Rileggere, riscrivere, aggiungere, riformulare ogni discorso per rendere il tutto più coerente e organico.
 
 Scrivere i ringraziamenti.
 
