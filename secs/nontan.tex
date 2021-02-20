@@ -61,7 +61,7 @@
     \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.
   \end{gather*}
 
-  Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esiste $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M \implies \dfrac{1-|z|}{|1-z|} \le \dfrac{1}{M}\, (\star)$ e
+  Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esista $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M \implies \dfrac{1-|z|}{|1-z|} \overset{(\star)}{\le} \dfrac{1}{M}$ e
   \begin{gather*}
     \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\tan{\alpha'} \\
     \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1 \\
@@ -78,8 +78,8 @@
   Notiamo che $\dfrac{\sqrt{x^2+y^2}-x}{1-x}>0$, dunque per mostrare che tende a $0$ ci basta osservare che
   \begin{align*}
     \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y} \\
-    & <\tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
-    & <\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)} \\
+    & =\tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
+    & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)} \\
     & =\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x}
   \end{align*}
   e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
@@ -175,7 +175,7 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
     \end{tikzpicture}
   \end{center}
 
-  Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\tan^2\beta+1$.
+  Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\sqrt{\tan^2\beta+1}$.
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
   Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$, quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
   \begin{align*}

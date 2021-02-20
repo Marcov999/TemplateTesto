@@ -24,8 +24,8 @@ Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
   Per dimostrare la seconda disuguaglianza, ripetiamo i passaggi svolti nella dimostrazione del lemma di Dieudonné prendendo $a=f^h(z)$ e $r=\frac{2|z|}{1+|z|^2}$. Otteniamo la disuguaglianza $|f^h(z)-\alpha| \le R$, dove si ha $\alpha=\dfrac{b(1-r^2)}{1-r^2b^2}$ e $R^2=\dfrac{r^2-b^2}{1-r^2b^2}+b^2\left(\dfrac{1-r^2}{1-r^2b^2}\right)^2$. Sostituendo troviamo
   $$\alpha=\frac{b(1-|z|^2)^2}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)},$$
   $$R=\frac{2|z|(|z|^2+1)(1-b^2)}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)}.$$
-  Consideriamo adesso $F_b^h(z)=\dfrac{bz^2+2z+b}{|z|^2+2b\mathfrak{Re}z+1}\left(\dfrac{|1+b z|}{1+b z}\right)^2$. Si ha
-  $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2|z|+1}, \quad F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2|z|+1}.$$
+  Consideriamo adesso $F_b^h(z)=\dfrac{bz^2+2z+b}{|z|^2+2b\,\mathfrak{Re}z+1}\left(\dfrac{|1+b z|}{1+b z}\right)^2$. Si ha
+  $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2b|z|+1}, \quad F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2b|z|+1}.$$
   Notiamo che $\alpha=\bigl(F_b^h(|z|)+F_b^h(-|z|)\bigr)/2$ e $R=\bigl(F_b^h(|z|)-F_b^h(-|z|)\bigr)/2$, perciò la disuguaglianza $|f^h(z)-\alpha| \le R$ ci dice che $f^h(z)$ appartiene al cerchio con diametro sull'asse reale passante per i punti $F_b^h(|z|)$ e $F_b^h(-|z|)$. La seconda disuguaglianza segue allora da semplici considerazioni geometriche.
 \end{proof}
 
@@ -91,10 +91,10 @@ Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con un
    $$\omega\bigl(h(w_i),h(w_j)\bigr) \le \omega\bigl(g(z_i),g(z_j)\bigr)$$
    per $i,j=1,2,3$ con $i\not=j$ e
    $$\omega\left(\frac{h(w_2)}{g(z_2)},\frac{h(w_3)}{g(z_3)}\right) \le \omega\bigl(g(z_2),g(z_3)\bigr).$$
-   Poiché $p$, e di conseguenza $\omega$, è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo e sostituendo $h(z)=[z,w_1], g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
+   Poiché $p$, e di conseguenza $\omega$, è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo, sostituendo $h(z)=[z,w_1]$ e $g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
 \end{proof}
 
-Concludiamo la sezione con il risultato che, come già anticipato, ci permetterà di dimostrare i teoremi successivi. L'enunciato originale si trova in \cite{GMG}, ma vedremo una formulazione che ci tornerà più utile in seguito, in particolare perché coinvolge la funzione $f^h$.
+Concludiamo la sezione con il risultato che, come già anticipato, ci permetterà di dimostrare i teoremi successivi. L'enunciato originale si trova in \cite{GMG}, ma vedremo una formulazione che ci tornerà più utile, in particolare perché coinvolge la funzione $f^h$.
 
 \begin{thm} \label{golusin}
   (disuguaglianza di Golusin, 1945) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale

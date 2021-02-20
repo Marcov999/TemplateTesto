@@ -5,7 +5,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
 \end{prop}
 
 \begin{proof}
-  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$; abbiamo però visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,w)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
+  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$; abbiamo però visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,v)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
 \end{proof}
 
 \begin{thm} \label{31}
@@ -16,7 +16,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
 \end{thm}
 
 \begin{proof}
-  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è olomorfa dal disco unitario in sé; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'osservazione \ref{oss1}, punto (ii).
+  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è in $\text{Aut}(\mathbb{D})$; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'osservazione \ref{oss1}, punto (ii).
 \end{proof}
 
 \begin{cor} \label{32}
@@ -54,7 +54,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   dove le due disuguaglianze seguono dal Corollario \ref{32}.
 \end{proof}
 
-I due enunciati seguenti non ci serviranno nel seguito, ma vengono riportati per completezza. Prima di enunciare il primo, è necessario dare una definizione.
+Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza. Prima di enunciarlo, è però necessario dare una definizione.
 
 \begin{defn}
   Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
@@ -68,7 +68,7 @@ I due enunciati seguenti non ci serviranno nel seguito, ma vengono riportati per
 \end{cor}
 
 \begin{proof}
-  Osserviamo che se $f \in \text{Aut}(\mathbb{D})$, allora per il lemma di Schwarz-Pick $|f^h(w)|=1$ e il membro destro della disuguaglianza \eqref{geod} è esattamente $2\omega(z,v)$. In questo caso, per il lemma di Schwarz-Pick si ha proprio l'uguaglianza.
+  Osserviamo che se $f \in \text{Aut}(\mathbb{D})$, allora per il lemma di Schwarz-Pick $|f^h(w)|=1$ e il membro destro della disuguaglianza \eqref{geod} è esattamente $2\omega(z,v)$. In questo caso, per il lemma di Schwarz-Pick si ha l'uguaglianza.
 
   Supponiamo ora $f \not\in \text{Aut}(\mathbb{D})$, allora possiamo applicare il Corollario \ref{33} con $u=v$ per ottenere
   \begin{gather*}
@@ -134,7 +134,7 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
   dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
 \end{proof}
 
-La sezione si conclude con due lemmi sulle funzioni olomorfe dal disco in sé, per i quali l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni. Il primo è un risultato dovuto a Rogosinski, si veda \cite{R}.
+Concludiamo la sezione con due lemmi sulle funzioni olomorfe dal disco in sé, per i quali l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni. Il primo è un risultato dovuto a Rogosinski, si veda \cite{R}.
 
 Notazione: dati $E \subset \mathbb{D}$ e $z \in \mathbb{D}$, scriviamo $zE=\{zw \mid w \in E\}$. Inoltre, dati $\gamma \subset \mathbb{D}$ e $r>0$, scriviamo $\Sigma(\gamma,r)=\{w \mid \omega(z,w)<r, z \in \gamma\}$.
 
