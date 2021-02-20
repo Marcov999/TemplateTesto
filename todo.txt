@@ -1,8 +1,11 @@
-Da sistemare: esempio raggio migliore e iniettività nel corollario del distorsion theorem
-
-Da aggiungere, se non ancora fatto: reference per Rogosinski, Dieudonné, distorsion e Pick-Nevanlinna.
+Esempio raggio migliore e iniettività nel corollario del distorsion theorem: ho deciso di non metterli, se Abate dice di aggiungere qualcosa fai di conseguenza
 
 Rileggere, riscrivere, aggiungere, riformulare ogni discorso per rendere il tutto più coerente e organico.
+
+Cose da dire ad Abate:
+- alcuni articoli non si trovano su mathscinet;
+- incertezza su come citare gli articoli (a malapena so il francese, il tedesco proprio zero... e poi Golusin è russo!);
+- per Pick-Nevanlinna ho preso il risultato più affidabile che ho trovato
 
 Scrivere i ringraziamenti.
 

@@ -39,17 +39,15 @@ Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
   Sia $f$ come nel Teorema \ref{distortion}. Allora $\mathfrak{Re}f'(z)>0$ per $|z|<b/(1+\sqrt{1-b^2})$.
 \end{cor}
 
-\marginpar{valutare come inserire il discorso sul fatto che il raggio non è migliorabile e, eventualmente, iniettività}
-
 \begin{proof}
-  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in (1-\sqrt{1-b^2}, 1+\sqrt{1-b^2})$, zero agli estremi e maggiore di $0$ altrove. Poiché l'estremo destro è maggiore di $1$, è da scartare.
-  Per il teorema \ref{distortion} abbiamo dunque che $\mathfrak{Re}f'(z) \ge F_b^h(-|z|)>0$ per gli $z$ tali che $|z|<1-\sqrt{1-b^2}=b/(1+\sqrt{1-b^2})$.
+  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in \bigl((1-\sqrt{1-b^2})/b, (1+\sqrt{1-b^2})/b\bigr)$, zero agli estremi e maggiore di $0$ altrove. Poiché l'estremo destro è maggiore di $1$, è da scartare.
+  Per il teorema \ref{distortion} abbiamo dunque che $\mathfrak{Re}f'(z) \ge F_b^h(-|z|)>0$ per gli $z$ tali che $|z|<(1-\sqrt{1-b^2})/b=b/(1+\sqrt{1-b^2})$.
 \end{proof}
 
-Del prossimo enunciato dimostreremo solo un paio di casi particolari.
+Del prossimo enunciato, dimostrato indipendentemente da Pick nel 1916 e Nevanlinna nel 1919, vedremo nel dettaglio solo un paio di casi particolari.
 
 \begin{thm}
-  (Pick-Nevanlinna) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, z_n \in \mathbb{D}$. Per $k=1, \dots, n$, sia $A_k$ la matrice $k \times k$ data da $A_k(i,j)=\dfrac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}$.
+  (Pick-Nevanlinna, Theorem 2.2, Chapter 1 \cite{JBG}) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Per $k=1, \dots, n$, sia $A_k$ la matrice $k \times k$ data da $A_k(i,j)=\dfrac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}$.
   Allora esiste una funzione $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(z_i)=w_i$ per $j=1, \dots, n$ se e solo se $\det{A_k} \ge 0$ per ogni $k=1, \dots, n$.
 \end{thm}
 
@@ -96,10 +94,10 @@ Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con un
    Poiché $p$, e di conseguenza $\omega$, è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo e sostituendo $h(z)=[z,w_1], g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
 \end{proof}
 
-Concludiamo la sezione con il risultato che, come già anticipato, ci permetterà di dimostrare i teoremi successivi.
+Concludiamo la sezione con il risultato che, come già anticipato, ci permetterà di dimostrare i teoremi successivi. L'enunciato originale si trova in \cite{GMG}, ma vedremo una formulazione che ci tornerà più utile in seguito, in particolare perché coinvolge la funzione $f^h$.
 
 \begin{thm} \label{golusin}
-  (disuguaglianza di Golusin) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale
+  (disuguaglianza di Golusin, 1945) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale
   \begin{equation} \label{gol}
     |f^h(z)| \le \frac{|f^h(0)|+\frac{2|z|}{1+|z|^2}}{1+|f^h(0)|\frac{2|z|}{1+|z|^2}}.
   \end{equation}
