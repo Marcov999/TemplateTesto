@@ -1,5 +1,5 @@
-\begin{defn}
-  Dati $\alpha \in (0,\pi/2)$ e $\sigma \in \partial\mathbb{D}$, chiamiamo \textit{settore di vertice $\sigma$ e angolo $2\alpha$} l'insieme $S(\sigma,\alpha) \subset \mathbb{D}$ tale che per ogni $z \in S(\sigma,\alpha)$ l'angolo compreso tra la retta congiungente $\sigma$ e $0$ e la retta congiungente $\sigma$ e $z$ è minore di $\alpha$.
+\begin{defn} \marginpar{si usa "modulo minore di" con gli angoli? Non sapevo}
+  Dati $\alpha \in (0,\pi/2)$ e $\sigma \in \partial\mathbb{D}$, chiamiamo \textit{settore di vertice $\sigma$ e angolo $2\alpha$} l'insieme $S(\sigma,\alpha) \subset \mathbb{D}$ tale che per ogni $z \in S(\sigma,\alpha)$ l'angolo compreso tra la retta congiungente $\sigma$ e $0$ e la retta congiungente $\sigma$ e $z$ ha modulo minore di $\alpha$.
   \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.5cm,y=2.5cm]
       \draw[->,color=black] (-1.13,0) -- (1.15,0);
@@ -49,17 +49,14 @@
 \end{prop}
 
 \begin{proof}
-  Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<\tan{\alpha}\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$.
+  Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<\tan(\alpha)\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$. \marginpar{così o proprio tutto tanalpha tra parentesi?}
 
   Mostriamo la seconda inclusione. Poiché $1>|z|>\mathfrak{Re}(z)$, abbiamo
-  \begin{gather*}
-    M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)} \\
-    M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
-    M^2-1 > \frac{(1-z)(1-\bar{z})}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
-    M^2-1 > \frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1 \\
-    M^2-1 > \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2} \\
-    \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.
-  \end{gather*}
+  $$M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)},$$
+  da cui
+  $$M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2},$$
+  perciò
+  $$\frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.$$
 
   Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esista $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M \implies \dfrac{1-|z|}{|1-z|} \overset{(\star)}{\le} \dfrac{1}{M}$ e
   \begin{gather*}
