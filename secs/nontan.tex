@@ -170,18 +170,15 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 
   Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\sqrt{\tan^2\beta+1}$.
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
-  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$, quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
+  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
   \begin{align*}
     |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
-    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3 \\
-    & =\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
+    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
   \end{align*}
   Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $A$ in figura). Perciò, detto $\gamma$ l'angolo tra la retta congiungente $1$ e $z$ e il tratto affine di $\partial S(1,\beta)$ più vicino a $z$ (che è effettivamente il tratto di bordo più vicino a $z$ se lo si prende sufficientemente vicino a $1$), si ha
   \begin{align*}
-    |I(z)| & \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3 \\
-    & =\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
-    & =\epsilon r(z)^2(1+\csc\gamma)^3 \\
-    & \le \epsilon r(z)^2\bigl(1+\csc(\beta-\alpha)\bigr)^3 \\
+    |I(z)| & \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3=\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
+    & =\epsilon r(z)^2(1+\csc\gamma)^3 \le \epsilon r(z)^2\bigl(1+\csc(\beta-\alpha)\bigr)^3 \\
     & \le \epsilon |z-1|^2\bigl(1+\csc(\beta-\alpha)\bigr)^3.
   \end{align*}
   La penultima disuguaglianza segue da $\gamma \ge \beta-\alpha$ e dal fatto che $\csc$ è decrescente sui positivi, mentre l'ultima segue da quanto visto sopra. Otteniamo dunque $f'(z)=1+o\bigl((z-1)^2\bigr)$ per $z \longrightarrow 1$ non tangenzialmente.

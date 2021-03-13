@@ -82,7 +82,7 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
     \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)} \le |f^h(w)|\cdot \frac{2p(z,v)}{1-p^2(z,v)}.
   \end{gather*}
   Adesso usiamo le seguenti uguaglianze:
-  $$\frac{1+p^2}{1-p^2}=\cosh(2\omega), \quad \frac{2p}{1-p^2}=\sinh(2\omega).$$
+  $$\frac{1+p^2}{1-p^2}=\cosh(2\omega) \text{ e } \frac{2p}{1-p^2}=\sinh(2\omega).$$
   Sommando appunto la quantità $\dfrac{1+p^2(z,v)}{1-p^2(z,v)}$ all'ultima disuguaglianza ottenuta, il membro destro diventa $\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)$. Ci basta dunque mostrare che il membro sinistro è uguale a $\exp\Bigl(2\omega\bigl(f(z),f(v)\bigr)\Bigr)$, cioè $\dfrac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}$. Si ha infatti
   \marginpar{da capire come vuole che le allinei}
   \begin{align*}
@@ -137,8 +137,7 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
 \end{proof}
 
 Concludiamo la sezione con il lemma di Dieudonné (\cite{D} pagina 351), per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
-
-Notazione: dati $E \subset \mathbb{D}$ e $z \in \mathbb{D}$, scriviamo $zE=\{zw \mid w \in E\}$. Inoltre, dati $\gamma \subset \mathbb{D}$ e $r>0$, scriviamo $\Sigma(\gamma,r)=\{w \mid \omega(z,w)<r, z \in \gamma\}$.
+\marginpar{da vedere come impostare la citazione}
 
 \begin{lm}
   (lemma di Dieudonné) Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e sia $z_0 \in \mathbb{D}$ con $|f(z_0)| \le |z_0|$. Allora
@@ -156,7 +155,7 @@ Notazione: dati $E \subset \mathbb{D}$ e $z \in \mathbb{D}$, scriviamo $zE=\{zw 
   dove l'equivalenza fra le due disuguaglianze segue dal fatto che $\text{arctanh}$ è strettamente crescente. Per semplificare, scriviamo $f^h(z_0)=a, f^*(0,z_0)=b, |z_0|=r$. Vogliamo portare la disuguaglianza in forma euclidea. Abbiamo
   $$\left|\frac{a-b}{1-\bar{b}a}\right|=p(a,b) \le r,$$
   che si riscrive come
-  \marginpar{spero così basti, non vedo come si possano semplificare ulteriormente}
+  \marginpar{trova un modo più leggibile di fare tutta 'sta roba}
   \begin{align*}
     (a-b)(\bar{a}-\bar{b}) & \le r^2(1-\bar{b}a)(1-b\bar{a}) \\
     & \iff |a|^2-a\bar{b}-\bar{a}b+|b|^2 \le r^2-r^2a\bar{b}-r^2\bar{a}b+r^2|b|^2|a|^2 \\

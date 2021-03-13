@@ -14,7 +14,7 @@ Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
 \begin{proof}
   Poiché $|f'(0)|<1$, per il lemma di Schwarz si ha $f \not\in \text{Aut}(\mathbb{D})$. Inoltre $f(0)=0$, perciò possiamo applicare il Corollario \ref{36}; si ha dunque
   $$\omega\bigl(f^h(0),f^h(z)\bigr) \le 2\omega(0,z).$$
-  Applicando $\tanh$, sfruttando l'uguaglianza $\tanh(2x)=\frac{2\tanh{x}}{1+\tanh^2{x}}$ e ricordando la definizione di $\omega$ si ha
+  Applicando la tangente iperbolica, sfruttando l'uguaglianza $\tanh(2x)=\frac{2\tanh{x}}{1+\tanh^2{x}}$ e ricordando la definizione di $\omega$ si ha
   $$p\bigl(f^h(0),f^h(z)\bigr) \le \frac{2p(0,z)}{1+p^2(0,z)},$$
   da cui
   $$\left|\frac{f^h(0)-f^h(z)}{1-f^h(0)f^h(z)}\right| \le \frac{2|z|}{1+|z|^2}.$$
@@ -23,7 +23,7 @@ Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
   $$\alpha=\frac{b(1-|z|^2)^2}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)},$$
   $$R=\frac{2|z|(|z|^2+1)(1-b^2)}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)}.$$
   Consideriamo adesso $F_b^h(z)=\dfrac{bz^2+2z+b}{|z|^2+2b\,\mathfrak{Re}z+1}\left(\dfrac{|1+b z|}{1+b z}\right)^2$. Si ha
-  $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2b|z|+1}, \quad F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2b|z|+1}.$$
+  $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2b|z|+1} \text{ e } F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2b|z|+1}.$$
   Notiamo che $\alpha=\bigl(F_b^h(|z|)+F_b^h(-|z|)\bigr)/2$ e $R=\bigl(F_b^h(|z|)-F_b^h(-|z|)\bigr)/2$, perciò la disuguaglianza $|f^h(z)-\alpha| \le R$ ci dice che $f^h(z)$ appartiene al cerchio con diametro sull'asse reale passante per i punti $F_b^h(|z|)$ e $F_b^h(-|z|)$. Con semplici considerazioni geometriche otteniamo la seguente disuguaglianza:
   $$F_b^h(-|z|) \le \mathfrak{Re}f^h(z) \le |f^h(z)| \le F_b^h(|z|),$$
   la quale, ricordando che $b=f^h(0)$, ci dà
@@ -36,7 +36,7 @@ Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
 \end{cor}
 
 \begin{proof}
-  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in \bigl((1-\sqrt{1-b^2})/b, (1+\sqrt{1-b^2})/b\bigr)$, zero agli estremi e maggiore di $0$ altrove.
+  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque abbiamo che il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in \bigl((1-\sqrt{1-b^2})/b, (1+\sqrt{1-b^2})/b\bigr)$, zero agli estremi e maggiore di $0$ altrove.
   Prendendo $b=f'(0)=f^h(0)$, nella dimostrazione del Teorema \ref{distortion} abbiamo visto che $\mathfrak{Re}f^h(z) \ge F_{f^h(0)}^h(-|z|)$; per gli $z$ tali che $|z|<\Bigl(1-\sqrt{1-\bigl(f^h(0)\bigr)^2}\Bigr)/f^h(0)=f^h(0)/\Bigl(1+\sqrt{1-\bigl(f^h(0)\bigr)^2}\Bigr)$ si ha quindi $\mathfrak{Re}f^h(z)>0$.
   Ricordando che $f^h(z)=\frac{f'(z)(1-|z|^2)}{1-|f(z)|^2}$ e $f \in \text{Hol}(\mathbb{D},\mathbb{D})$, per tali $z$ si ha anche $\mathfrak{Re}f'(z)>0$.
 \end{proof}

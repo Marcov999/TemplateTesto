@@ -1,63 +1,11 @@
-- p.4, r. 2: aggiungerei una virgola prima di “e scriviamo”.
-- p.4, r. 12: cancellerei “alternativa”
 - p.4, Teorema 1.1.3: invece di “Theorem 9 e 10, Chapter 1.3 [NN]” usualmente si scrive “[NN, Chapter 1.3, Theorems 9 and 10]”, che
 si ottiene con il comando \cite[Chapter 1.3, Theorems 9 and 10]{NN}. La stessa modifica va fatta tutte le volte che citi un punto specifico dentro una referenza; non sto a ripetere l’osservazione, ma già in questa pagina si applica altre due volte.
-- p.4, Teorema 1.1.3: dopo “Allora” metterei “per ogni $n\in\mathbb{N}$ si ha"
-- p.4, Proposizione 1.1.4: metterei “una” al posto di “qualche” (“qualche” fa sembrare che ce ne possano essere più di una, mentre chiaramente l’estensione è unica)
-- p.5, r. 13: metterei un “;” e non una virgola fra “$\Aut(\mathbb{D})$” e “inoltre”.
 - p.5, r.14: nel testo non usare mai le frecce (\Rightarrow o simili) per indicare implicazioni; usa le parole. Ne abbiamo tante: per cui, quindi, dunque, pertanto, di conseguenza… non corri il rischio di doverle ripetere. Analogamente, la doppia implicazione nel testo dev’essere espressa a parole: se e solo se, è equivalente a, e così via. In generale, nel testo i quantificatori e le connessioni logiche devono sempre essere indicate a parole, e mai con simboli, in modo da rendere la lettura più agevole. Dovrai correggere in molti punti della tesina (solo in questa pagina ce ne sono almeno altre quattro);
 anche stavolta non te lo ripeto ulteriormente.
-- p. 5, lemma 1.1.8: e’ sempre meglio evitare di mettere definizioni all’interno dell’enunciato di un teorema (o di un lemma, come in questo caso). Estrai quindi le definizioni di azione fedele di un gruppo su uno spazio, e di gruppo di isotropia, dall’enunciato e sistemale prima dell’enunciato del lemma.
 - p.5, dimostrazione lemma 1.1.8: a cosa serve la frase che comincia con "Partendo da $g^{-1}$”? A me sembra che la dimostrazione sia già finita… o mi sbaglio?
 - p.5, r. -1: tu hai la tendenza a mettere in fila una sopra l’altra tante formule senza alcuna parola di spiegazione; in alcuni casi è inevitabile, ma in generale è meglio evitare. Per esempio, conviene separare le due formule in fondo a questa pagina inserendo le parole “per cui” (o simili). In alcune osservazioni successive ti darò dei suggerimenti su come intervenire per evitare le cataste di formule, ma facci caso e inizia a trovare strategie alternative anche da solo.
-- p.6, r. 5: “Lemma” e non “lemma” (la convenzione è usare la maiuscola quando si cita numericamente il risultato, come nel caso Lemma 1.1.8, e la minuscola quando si cita il risultato per nome, come nel caso lemma di Schwarz).
-- p.6, Fatto 1.1.10: la parola “Fatto” si usa per citare qualcosa che non si dimostra, mentre non è questo il caso (lo dimostri). In questo caso puoi trasformarlo in un corollario oppure, se non vuoi darvi particolare importanza, in una Osservazione (Remark in inglese).
-- p.6, r.12: dopo “$z$, $w\in\mathbb{D}$” conviene aggiungere “si ha” o simili, in modo da separare con delle parole le due formule.
-- p.6, r.13: separerei le due formule con una “e” e non con una virgola, dato che ne stai elencando solo due.
-- p.6, r. -15: metterei un punto e virgola prima di “inoltre”
 - p.6, r. -13: di nuovo ci sono due formule non separate da parole. Quindi dovresti inserire “si ha” o qualcosa del genere dopo “$\zeta\in\mathbb{D}$”. Controlla tutta la tesina in modo da risolvere tutti i problemi di questo tipo.
-- p.6, r. -8: c’e’ un errore di stampa: nella prima frazione a numeratore il secondo “-“ dev’essere un “+”.
 - p.6, r. -3: trattandosi di notazioni che userai spesso evidenziale meglio, mettendole in una definizione. Inoltre se vuoi puoi divertirti a dimostrare che p è una distanza (non completa) sul disco, usualmente chiamata “distanza di Möbius”.
-- p.7, r. 13: qui hai una tipica successione di formule che conviene (e può) essere rappresentata in altro modo. Ci sono almeno due cose che puoi fare.
-Puoi introdurre fra una riga e l’altra la descrizione a parole di cosa stai facendo (per esempio, fra la prima e la seconda puoi scrivere “applicando la tangente iperbolica a entrambi i membri otteniamo” o qualcosa del genere”. Poi, quando passi da una riga a un’altra sostituendo un membro di un’equazione con qualcosa di uguale, non hai bisogno di scriverlo in due righe diverse ma metti il passaggio nella stessa riga usando (appunto) l’uguale. Per esempio, le ultime tre righe in questa sequenza possono riassumersi in una sola riga:
-
-\[
-p(z_1,z_2)=\tanh\bigl(\omega(z_1,z_2)\bigr) \le tanh della somma dei due omega = formula con la frazione e i tanh di omega = \frac{p(z_1,z_0)+p(z_0,z_2)}{1+p(z_1,z_0)p(z_0,z_2)}
-\]
-
-Se preferisci, in questo caso specifico puoi ridurlo a due righe invece di una, con una costruzione di questo tipo:
-
-\[
-\tanh\bigl(\omega(z_1,z_2)\bigr) \le tanh della somma dei due omega = formula con la frazione e i tanh di omega
-\]
-e quindi, ricordando la definizione di p, la disuguaglianza triangolare per $\omega$ \`e equivalente a
-\begin{equation}
-p(z_1,z_2) \le \frac{p(z_1,z_0)+p(z_0,z_2)}{1+p(z_1,z_0)p(z_0,z_2)}
-\label{eq:star}
-\end{equation}
-
-Diventa tutto molto più leggibile, e tipograficamente più elegante. Può darsi che in questo modo tu ottenga formule troppo lunghe per una riga,
-ma abbiamo già discusso l’ultima volta quali sono gli accorgimenti da usare per spezzare una formula su più righe.
-- p. 7, r. 18: il fatto 1.1.10 è  diventato un corollario oppure un’osservazione.
-- p. 7, r. 21: manca un quadrato a esponente del primo valore assoluto. Inoltre le prime tre righe di questa formula possono essere ridotte a due
-(non credo ci stiano su una sola) non andando a capo fra la seconda e la terza. Il risultato è più leggibile e occupa meno spazio.
-- p. 7, r. 24: fra questa formula e quella precedente conviene inserire una frase tipo “da cui segue che” e togliere la freccia.
-- p.7, r. 25: quando devi citare una formula, usa un numero di equazione assegnato alla riga in cui appare la formula, non un simbolo ad hoc messo piccolino in mezzo alla formula (che non si vede o se lo si vede non si capisce cosa voglia dire). Per questo ho inserito una label nella costruzione precedente, in modo che tu possa usare quella come riferimento e non una star qualsiasi.
-- p.8, r. 7: “Le disuguaglianze” e non “le disuguaglianze”.
-- p.8, r. 19: “ha modulo minore” al posto di “è minore”.
-- p.9, r.7: io metterei \tan\alpha tra parentesi, per far capire che \tan si applica solo ad \alpha e non a quello che segue.
-- p.9, r.9: altra sequenza pesante di equazioni affastellate… fra la prima e la seconda si può aggiungere “da cui segue che”; la seconda, la terza, la quarta e la quinta possono essere riassunte in una sola in quanto non stai facendo altro che sostituire il secondo membro con qualcosa di uguale,
-e prima dell’ultima si può mettere qualcosa tipo “e quindi”. Tra parentesi, la formula del modulo quadro della somma
-\[
-|a+b|^2 = |a|^2 + 2\Re(a\bar{b}) + |b|^2
-\]
-la puoi dare per nota (o citarla la prima volta che la usi) senza bisogno di fare tutti i passaggi ogni volta…
-- p. 10: in questa pagina hai delle frecce da togliere, dei numeri di equazione da mettere al posto di strane stelline, affastellamenti di formule che possono essere presentate in modo più compatto e leggibile… insomma, applica tutte le indicazioni che ti ho dato sopra.
-- p. 11, r, - 7: questa sequenza di uguaglianze può essere messa su una-due righe, quattro sono proprio troppe…
-- p.12: in questa pagina invece gli a capi nelle formule vanno bene. Un suggerimento per la prima sequenza di formule: se vuoi farla più breve,
-puoi notare che f’(z)-1 e’ la derivata di f(z)-z, per cui puoi passare dalla prima alla quarta riga con un’applicazione diretta della formula di Cauchy
-per la derivata, senza bisogno dei passaggi intermedi.
-- p.12, r. -7: metterei un punto e virgola dopo “|1-z|”.
 - p. 14, sezione 2.1: questa sezione ha due problemi di esposizione. Il primo è che nei vari enunciati ti conviene aggiungere la caratterizzazione dei casi
 di uguaglianza; senza rimangono un po’ incompleti come generalizzazioni di Schwarz-Pick. Il secondo problema è che questa sezione sembra una lista della spesa: un elenco di risultati senza nulla che li metta in contesto, che ne spieghi la rilevanza, che dica perché sono interessanti. Qui ti conviene fare un lavoro di lettura delle referenze citate in [BM], e in particolare degli articoli di Beardon (che usualmente racconta bene il contesto dei suoi risultati);
 esiste anche un survey di Beardon-Minda posteriore a [BM] in cui puoi trovare molti commenti. Descrivere il contesto, spiegare la rilevanza dei risultati, evidenziare le idee euristiche e raccontare i ragionamenti che hanno portato a sviluppare la teoria in un modo e non in un altro in un articolo di matematica sono altrettanto importanti (e a volte anche più importanti) di enunciati e dimostrazioni, e fa parte del mestiere imparare a scriverle.
@@ -68,31 +16,13 @@ lineare?
 - p.16, r. 7-8: devi togliere “=“ dal fondo della riga 7, e allineare l’”=“ della riga 8 con il “+” della riga 7. Se così la riga diventa troppo lunga,
 invece di allineare in un punto preciso le prime due righe sposti la prima il più a sinistra possibile (precedendola però con un \qquad) e la seconda
 il più a destra possibile (mettendoci in fondo un \qquad), e poi allinei all’”=“ le righe successive.
-- p.16, r.-12: c’e’ un \Rightaarrow da trasformare in parole… anche se non lo ripeto ricordati di fare dappertutto gli interventi generali che ti sto descrivendo.
-- p.17, Lemma 2.1.9: "\Aut(\mathbb{D},\mathbb{D})” dev’essere "\Aut(\mathbb{D})”. Tra parentesi, il lemma di Rogosinski non dipende in alcun modo
-dai lemmi di Schwarz-Pick multipunto a cui è dedicata questa sezione, per cui si potrebbe anche togliere…
-- p. 17, r.-10: metterei un punto e virgola dopo “z=0”.
-- p. 17, Lemma 2.1.10: lo so che questo è l’enunciato classico, ma secondo me è inutilmente complicato. Non c’e’ bisogno di introdurre w_0 come
-un punto a se stante, in quanto non lo è: non è un punto qualsiasi, è uguale a f(z_0). Quindi ti consiglio di togliere w_0 dall’enunciato, e di sostituirlo con f(z_0) nella formula (11). In questo modo diventa anche più trasparente il significato di quella stima: indica l’errore che si fa nell’approssimare f’(z)
-con f(z)/z sapendo che coincidono quando z=0.
 - p. 18: o quante belle sequence di formule da compattare e presentare meglio…
-- p. 18, Teorema 2.2.1: in questo enunciato farei due modifiche per renderlo più espressivo. La prima modifica consiste nel non limitarsi al caso
-in cui f’(0) sia reale, usando l’idea indicata nell’osservazione 2.2.2. Poi nelle formule (12) e (13) decisamente occorre sostituire b con f’(0), o anche
-con f^h(0) visto che i due coincidono avendosi f(0)=0. Infatti altrimenti a una prima occhiata sembra che b sia un parametro indipendente, mentre
-proprio non lo è.
-- p. 19, Corollario 2.2.3: scrivere “sia f come nel Teorema …” è voler fare del male al lettore, costringendolo a tornare indietro… metti esplicitamente tutte le ipotesi che ti servono, scrivendo mi raccomando f’(0) (o quello che serve) al posto di b.
 - p. 20: il teorema di interpolazione di Nevanlinna-Pick è troppo carino per abbandonarlo così… ti conviene fare almeno tre cose, dedicandogli una sezione a parte:
 - dare una dimostrazione completa del teorema;
 - notare (è quello che fai ma non lo dici esplicitamente) che nel caso n=2 la condizione diventa equivalente al lemma di Schwarz-Pick;
 - notare che anche il caso n=3 può essere espresso in termini di lemma di Schwarz-Pick applicato alla funzione e al suo rapporto iperbolico.
 Tra parentesi, se l’argomento ti interessa c’e’ un articolo di Baribeau e altri che prosegue l’analogia per n>3 usando i rapporti
 iperbolici iterati.
-- p. 23, r. 11: puoi tranquillamente cancellare la prima disuguaglianza, la seconda è già una riscrittura di (15).
-- p. 23, Teorema 3.2.1: riporta l’enunciato completo, senza costringere il lettore ad andarsi a vedere cos’era (3); inoltre rimetti l’ipotesi di convergenza
-non-tangenziale: l’enunciato senza è più debole di quello vero!
-- p. 23, r. -2: cancella la frase “Chiaramente […] non tangenzialmente.” e riporta qui la (4).
-- p. 24: solite operazioni sulle sequenze di formule…
-- p.25: puoi togliere ovunque la parola “Volume”: è sottintesa.
 
 Scrivere i ringraziamenti.
 

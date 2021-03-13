@@ -123,9 +123,7 @@ Dal lemma di Schwarz-Pick abbiamo che la quantità $p(z,w)$ è contratta da $f \
 \begin{proof}
   Notiamo che per $z,w \in \mathbb{D}$ l'equazione \eqref{formuletta} ci dà immediatamente $p(z,w)<1$, per cui $\omega$ è ben definita e resta solo da mostrare che è una distanza.
 
-  L'unica cosa non ovvia da dimostrare è la disuguaglianza triangolare. Dati $z_0, z_1, z_2 \in \mathbb{D}$, possiamo utilizzare il fatto che $\tanh$ è strettamente crescente e l'uguaglianza $\text{tanh}\,(a+b)=\frac{\text{tanh}\,(a)+\text{tanh}\,(b)}{1+\text{tanh}\,(a)\,\text{tanh}\,(b)}$ per scrivere la disuguaglianza triangolare per $\omega$ in una forma equivalente. Abbiamo
-  $$\omega(z_1, z_2) \le \omega(z_1, z_0)+\omega(z_0,z_2);$$
-  applicando la tangente iperbolica a entrambi i membri e sfruttando l'uguaglianza sopracitata si ha
+  L'unica cosa non ovvia da dimostrare è la disuguaglianza triangolare. Applicando la tangente iperbolica a entrambi i membri della disuguaglianza triangolare per $\omega$ e sfruttando l'uguaglianza $\text{tanh}\,(a+b)=\frac{\text{tanh}\,(a)+\text{tanh}\,(b)}{1+\text{tanh}\,(a)\,\text{tanh}\,(b)}$ si ha
   \begin{align*}
     \text{tanh}\bigl(\omega(z_1,z_2)\bigr) & \le \text{tanh}\bigl(\omega(z_1, z_0)+\omega(z_0,z_2)\bigr) \\
     &=\frac{\text{tanh}\bigl(\omega(z_1, z_0)\bigr)+\text{tanh}\bigl(\omega(z_0,z_2)\bigr)}{1+\text{tanh}\bigl(\omega(z_1, z_0)\bigr)\text{tanh}\bigl(\omega(z_0,z_2)\bigr)};

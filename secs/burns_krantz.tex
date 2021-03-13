@@ -1,5 +1,5 @@
 \begin{thm} \label{burns_krantz}
-  (Burns-Krantz, 1994) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che vale
+  (Burns-Krantz, 1994) Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ e $\sigma \in \partial\mathbb{D}$ tali che
   \begin{equation} \label{o^3bis}
     f(z)=\sigma+(z-\sigma)+o\bigl((z-\sigma)^3\bigr)
   \end{equation}
@@ -8,7 +8,7 @@
 
 \begin{proof}
   Come già visto nella dimostrazione della Proposizione \ref{o^3->o^2}, a meno di considerare $\sigma^{-1}f(\sigma z)$ possiamo supporre senza perdita di generalità $\sigma=1$.
-  Dalla Proposizione \ref{o^3->o^2} segue che vale anche
+  Dalla Proposizione \ref{o^3->o^2} segue anche che vale
   $$|f^h(z)|=1+o\bigl((z-1)^2\bigr)$$
   per $z \longrightarrow 1$ non tangenzialmente, quindi esiste una successione $z_n$ che soddisfa le ipotesi del Teorema \ref{boundary_schwarz_pick} (usiamo di nuovo che, non tangenzialmente, $|z-1|$ e $1-|z|$ possono essere scambiati negli $o$-piccoli); dunque $f$ è un automorfismo.
   Allora per la Proposizione \ref{aut} esistono $\theta \in \mathbb{R}, a \in \mathbb{D}$ tali che $f(z)=e^{i\theta}\dfrac{z-a}{1-\bar{a}z}$. Poiché vale \eqref{o^3bis}, dev'essere $f''(1)=0$. Si ha $f''(z)=\dfrac{e^{i\theta}\bar{a}(1-|a|^2)}{(1-\bar{a}z)^3}$;
