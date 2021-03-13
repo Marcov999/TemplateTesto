@@ -41,17 +41,16 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
     \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0, f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).
   \end{equation}
 \end{cor}
-
+\marginpar{sia qui che in generale dove uso uno di quei fattarelli, devo citare l'osservazione \ref{oss1}?}
 \begin{proof}
-  Si ha
+  Applicando il Corollario \ref{32} si ha
   \begin{align*}
-    \omega\bigl(0,f^*(z,v)\bigr) & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w) \\
-    & =\omega\bigl(0,|f^*(w,v)|\bigr)+\omega(z,w) \\
-    & =\omega\bigl(0,|f^*(v,w)|\bigr)+\omega(z,w) \\
-    & =\omega\bigl(0,f^*(v,w)\bigr)+\omega(z,w) \\
-    & \le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u),
+    \omega\bigl(0,f^*(z,v)\bigr) & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w) =\omega\bigl(0,|f^*(w,v)|\bigr)+\omega(z,w) \\
+    & =\omega\bigl(0,|f^*(v,w)|\bigr)+\omega(z,w)=\omega\bigl(0,f^*(v,w)\bigr)+\omega(z,w).
   \end{align*}
-  dove le due disuguaglianze seguono dal Corollario \ref{32}.
+  Sempre per il Corollario \ref{32} abbiamo
+  $$\le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).$$
+  Concatenando le due disuguaglianze otteniamo la tesi.
 \end{proof}
 
 Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza. Prima di enunciarlo, è però necessario dare una definizione.
@@ -66,7 +65,7 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
     2\omega\bigl(f(z),f(v)\bigr) \le \log\Bigl(\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)\Bigr).
   \end{equation}
 \end{cor}
-
+\marginpar{da rivedere}
 \begin{proof}
   Osserviamo che se $f \in \text{Aut}(\mathbb{D})$, allora per il lemma di Schwarz-Pick $|f^h(w)|=1$ e il membro destro della disuguaglianza \eqref{geod} è esattamente $2\omega(z,v)$. In questo caso, per il lemma di Schwarz-Pick si ha l'uguaglianza.
 
@@ -85,10 +84,11 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   Adesso usiamo le seguenti uguaglianze:
   $$\frac{1+p^2}{1-p^2}=\cosh(2\omega), \quad \frac{2p}{1-p^2}=\sinh(2\omega).$$
   Sommando appunto la quantità $\dfrac{1+p^2(z,v)}{1-p^2(z,v)}$ all'ultima disuguaglianza ottenuta, il membro destro diventa $\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)$. Ci basta dunque mostrare che il membro sinistro è uguale a $\exp\Bigl(2\omega\bigl(f(z),f(v)\bigr)\Bigr)$, cioè $\dfrac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}$. Si ha infatti
+  \marginpar{da capire come vuole che le allinei}
   \begin{align*}
-    & \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}+\frac{1+p^2(z,v)}{1-p^2(z,v)}= \\
-    & = \frac{p\bigl(f(z),f(v)\bigr)-p^2(z,v)+1-p^2(z,v)p\bigl(f(z),f(v)\bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)} \\
-    & = \frac{\bigl(1-p^2(z,v)\bigr)\Bigl(1+p\bigl(f(z),f(v)\bigr)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}=\frac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}.
+    \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}+\frac{1+p^2(z,v)}{1-p^2(z,v)} \\
+    = \frac{p\bigl(f(z),f(v)\bigr)-p^2(z,v)+1-p^2(z,v)p\bigl(f(z),f(v)\bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)} \\
+    = \frac{\bigl(1-p^2(z,v)\bigr)\Bigl(1+p\bigl(f(z),f(v)\bigr)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}=\frac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}.
   \end{align*}
 \end{proof}
 
@@ -101,11 +101,10 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
 \end{cor}
 
 \begin{proof}
-  Notiamo che $f(0)=0 \implies f^*(z,0)=f^*(0,z)$, dunque si ha
+  Notiamo che $f(0)=0$ e dunque $f^*(z,0)=f^*(0,z)$, quindi si ha
   \begin{align*}
     \omega\bigl(f^h(0),f^h(z)\bigr) & = \omega\bigl(f^*(0,0),f^*(z,z)\bigr) \\
-    & \le \omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr) \\
-    & \le 2\omega(0,z)
+    & \le \omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr)\le 2\omega(0,z)
   \end{align*}
   dove la prima è la disuguaglianza triangolare per $\omega$ e la seconda segue applicando il Teorema \ref{31}.
 
@@ -122,41 +121,29 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
 \end{cor}
 
 \begin{proof}
-  Siano $z, w \in \mathbb{D}$; senza perdita di generalità possiamo supporre $|f^h(z)| \ge |f^h(w)|$. Allora
+  Siano $z, w \in \mathbb{D}$; senza perdita di generalità possiamo supporre $|f^h(z)| \ge |f^h(w)|$. Allora dalla definizione di $\omega$ abbiamo
   \begin{align*}
     \omega\bigl(|f^h(z)|, |f^h(w)|\bigr) & =\frac{1}{2}\log\left(\frac{1+\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}{1-\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}\right) \\
     & =\frac{1}{2}\log\left(\frac{1-|f^h(w)||f^h(z)|+|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|+|f^h(w)|-|f^h(z)|}\right) \\
     & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(w)|}{1+|f^h(w)|}\right) \\
-    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\right)-\frac{1}{2}\log\left(\frac{1+|f^h(w)|}{1-|f^h(w)|}\right) \\
-    & =\omega\bigl(0,|f^h(z)|\bigr)-\omega\bigl(0,|f^h(w)|\bigr) \\
+    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\right)-\frac{1}{2}\log\left(\frac{1+|f^h(w)|}{1-|f^h(w)|}\right)
+  \end{align*}
+  Usando di nuovo la definizione di $\omega$ otteniamo dunque
+  \begin{align*}
+    \omega\bigl(|f^h(z)|, |f^h(w)|\bigr)&=\omega\bigl(0,|f^h(z)|\bigr)-\omega\bigl(0,|f^h(w)|\bigr) \\
     & =\omega\bigl(0,f^h(z)\bigr)-\omega\bigl(0,f^h(w)\bigr) \le 2\omega(z,w),
   \end{align*}
   dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
 \end{proof}
 
-Concludiamo la sezione con due lemmi sulle funzioni olomorfe dal disco in sé, per i quali l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni. Il primo è un risultato dovuto a Rogosinski, si veda \cite{R}.
+Concludiamo la sezione con il lemma di Dieudonné (\cite{D} pagina 351), per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
 
 Notazione: dati $E \subset \mathbb{D}$ e $z \in \mathbb{D}$, scriviamo $zE=\{zw \mid w \in E\}$. Inoltre, dati $\gamma \subset \mathbb{D}$ e $r>0$, scriviamo $\Sigma(\gamma,r)=\{w \mid \omega(z,w)<r, z \in \gamma\}$.
 
 \begin{lm}
-  (lemma di Rogosinski) Sia $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})\setminus\normalfont{\text{Aut}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e $f'(0) \in \mathbb{R}$. Allora per ogni $z \in \mathbb{D}$ si ha $f(z) \in z\Sigma\bigl((-1,1),\omega(0,z)\bigr)$.
-\end{lm}
-
-\begin{proof}
-  Sia $g$ definita come nella dimostrazione del lemma di Schwarz, il quale ci dice anche che $g \in \text{Hol}(\mathbb{D},\mathbb{D})$. La tesi è vera per $z=0$, supponiamo dunque $z\not=0$. Per il lemma di Schwarz-Pick si ha
-  \begin{gather*}
-    \omega\bigl(g(0),g(z)\bigr) \le \omega(0,z) \\
-    \omega\bigl(f'(0),f(z)/z\bigr) \le \omega(0,z).
-  \end{gather*}
-  Per il lemma di Schwarz dev'essere $f'(0) \in (-1,1)$. Abbiamo quindi che $f(z)/z \in \Sigma\bigl((-1,1),\omega(0,z)\bigr) \implies f(z) \in z\Sigma\bigl((-1,1),\omega(0,z)\bigr)$, come voluto.
-\end{proof}
-
-Il secondo risultato è dovuto a Dieudonné, si veda \cite{D} pagina 351.
-
-\begin{lm}
-  (lemma di Dieudonné) Siano $z_0,w_0 \in \mathbb{D}$ con $|w_0| \le |z_0|$ e sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e $f(z_0)=w_0$. Allora
+  (lemma di Dieudonné) Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e sia $z_0 \in \mathbb{D}$ con $|f(z_0)| \le |z_0|$. Allora
   \begin{equation}
-    |f'(z_0)-w_0/z_0| \le \frac{|z_0|^2-|w_0|^2}{|z_0|(1-|z_0|^2)}.
+    |f'(z_0)-f(z_0)/z_0| \le \frac{|z_0|^2-|f(z_0)|^2}{|z_0|(1-|z_0|^2)}.
   \end{equation}
 \end{lm}
 
@@ -167,19 +154,22 @@ Il secondo risultato è dovuto a Dieudonné, si veda \cite{D} pagina 351.
     \iff p\bigl(f^h(z_0),f^*(0,z_0)\bigr) & \le p(0,z_0)=|z_0|,
   \end{align*}
   dove l'equivalenza fra le due disuguaglianze segue dal fatto che $\text{arctanh}$ è strettamente crescente. Per semplificare, scriviamo $f^h(z_0)=a, f^*(0,z_0)=b, |z_0|=r$. Vogliamo portare la disuguaglianza in forma euclidea. Abbiamo
+  $$\left|\frac{a-b}{1-\bar{b}a}\right|=p(a,b) \le r,$$
+  che si riscrive come
+  \marginpar{spero così basti, non vedo come si possano semplificare ulteriormente}
   \begin{align*}
-    p(a,b) & \le r \\
-    & \iff \left|\frac{a-b}{1-\bar{b}a}\right| \le r \\
-    & \iff (a-b)(\bar{a}-\bar{b}) \le r^2(1-\bar{b}a)(1-b\bar{a}) \\
+    (a-b)(\bar{a}-\bar{b}) & \le r^2(1-\bar{b}a)(1-b\bar{a}) \\
     & \iff |a|^2-a\bar{b}-\bar{a}b+|b|^2 \le r^2-r^2a\bar{b}-r^2\bar{a}b+r^2|b|^2|a|^2 \\
     & \iff |a|^2(1-r^2|b|^2)-a\bar{b}(1-r^2)-\bar{a}b(1-r^2) \le r^2-|b|^2 \\
-    & \iff |a|^2-a\cdot\frac{\bar{b}(1-r^2)}{1-r^2|b|^2}-\bar{a}\cdot\frac{b(1-r^2)}{1-r^2|b|^2} \le \frac{r^2-|b|^2}{1-r^2|b|^2} \\
-    & \iff (a-\alpha)(\bar{a}-\bar{\alpha}) \le R^2 \\
-    & \iff |a-\alpha| \le R,
+    & \iff |a|^2-a\cdot\frac{\bar{b}(1-r^2)}{1-r^2|b|^2}-\bar{a}\cdot\frac{b(1-r^2)}{1-r^2|b|^2} \le \frac{r^2-|b|^2}{1-r^2|b|^2};
   \end{align*}
-  dove $\alpha=\dfrac{b(1-r^2)}{1-r^2|b|^2}$ e $R^2=\dfrac{r^2-|b|^2}{1-r^2|b|^2}+|b|^2\left(\dfrac{1-r^2}{1-r^2|b|^2}\right)^2$.
-  Ricordando che $r=|z_0|$ e osservando che $b=f^*(0,z_0)=\frac{[f(0),f(z_0)]}{[0,z_0]}=\frac{[0,w_0]}{[0,z_0]}=\frac{w_0}{z_0}$, troviamo $\alpha=\dfrac{w_0(1-|z_0|^2)}{z_0(1-|w_0|^2)}$ e $R=\dfrac{|z_0|^2-|w_0|^2}{|z_0|(1-|w_0|^2)}$.
-  Riprendendo infine la definizione di $a$, cioè $a=f^h(z_0)=\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}=\frac{f'(z_0)(1-|z_0|^2)}{1-|w_0|^2}$, otteniamo che
-  $$\left|\frac{f'(z_0)(1-|z_0|^2)}{1-|w_0|^2}-\frac{w_0(1-|z_0|^2)}{z_0(1-|w_0|^2)}\right| \le \frac{|z_0|^2-|w_0|^2}{|z_0|(1-|w_0|^2)},$$
-  che è equivalente alla tesi moltiplicando entrambi i membri per $\frac{1-|w_0|^2}{1-|z_0|^2}$.
+  ponendo $\alpha=\dfrac{b(1-r^2)}{1-r^2|b|^2}$ e $R^2=\dfrac{r^2-|b|^2}{1-r^2|b|^2}+|b|^2\left(\dfrac{1-r^2}{1-r^2|b|^2}\right)^2$ si ha
+  \begin{align*}
+    |a|^2-a\bar{\alpha}-\bar{a}\alpha & \le R^2-|\alpha|^2 \\
+    & \iff (a-\alpha)(\bar{a}-\bar{\alpha}) \le R^2\iff |a-\alpha| \le R,
+  \end{align*}
+  Ricordando che $r=|z_0|$ e osservando che $b=f^*(0,z_0)=\frac{[f(0),f(z_0)]}{[0,z_0]}=\frac{f(z_0)}{z_0}$, troviamo $\alpha=\dfrac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}$ e $R=\dfrac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)}$.
+  Riprendendo infine la definizione di $a$, cioè $a=f^h(z_0)=\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}$, otteniamo che
+  $$\left|\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}-\frac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}\right| \le \frac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)},$$
+  che è equivalente alla tesi moltiplicando entrambi i membri per $\frac{1-|f(z_0)|^2}{1-|z_0|^2}$.
 \end{proof}

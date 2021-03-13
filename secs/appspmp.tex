@@ -1,53 +1,50 @@
 Vediamo ora alcune applicazioni dei risultati visti nella sezione precedente.
 
 \begin{thm} \label{distortion}
-  Dato $b \in [0,1)$, scriviamo $F_b(z)=\dfrac{z(z+b)}{1+b z}$. Consideriamo $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Se $f'(0)=b$, allora per ogni $z \in \mathbb{D}$ si ha
+  Dato $b \in [0,1)$, scriviamo $F_b(z)=\dfrac{z(z+b)}{1+b z}$. Consideriamo $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$. Se $|f'(0)|<1$, allora per ogni $z \in \mathbb{D}$ si ha
   \begin{equation}
-    \left|\frac{b-f^h(z)}{1-b f^h(z)}\right| \le \frac{2|z|}{1+|z|^2}
+    \left|\frac{f^h(0)-f^h(z)}{1-f^h(0)f^h(z)}\right| \le \frac{2|z|}{1+|z|^2}
   \end{equation}
   e
   \begin{equation}
-    F_b^h(-|z|) \le \mathfrak{Re}f^h(z) \le |f^h(z)| \le F_b^h(|z|).
+    F_{|f^h(0)|}^h(-|z|) \le |f^h(z)| \le F_{|f^h(0)|}^h(|z|).
   \end{equation}
 \end{thm}
 
 \begin{proof}
   Poiché $|f'(0)|<1$, per il lemma di Schwarz si ha $f \not\in \text{Aut}(\mathbb{D})$. Inoltre $f(0)=0$, perciò possiamo applicare il Corollario \ref{36}; si ha dunque
-  \begin{align*}
-    \omega\bigl(f^h(0),f^h(z)\bigr) \le 2\omega(0,z) \\
-    \omega\bigl(b,f^h(z)\bigr) \le 2\omega(0,z) \\
-    p\bigl(b,f^h(z)\bigr) \le \frac{2p(0,z)}{1+p^2(0,z)} \\
-    \left|\frac{b-f^h(z)}{1-b f^h(z)}\right| \le \frac{2|z|}{1+|z|^2},
-  \end{align*}
-  dove abbiamo usato il fatto che $\tanh$ è strettamente crescente e l'uguaglianza $\tanh(2x)=\frac{2\tanh{x}}{1+\tanh^2{x}}$.
+  $$\omega\bigl(f^h(0),f^h(z)\bigr) \le 2\omega(0,z).$$
+  Applicando $\tanh$, sfruttando l'uguaglianza $\tanh(2x)=\frac{2\tanh{x}}{1+\tanh^2{x}}$ e ricordando la definizione di $\omega$ si ha
+  $$p\bigl(f^h(0),f^h(z)\bigr) \le \frac{2p(0,z)}{1+p^2(0,z)},$$
+  da cui
+  $$\left|\frac{f^h(0)-f^h(z)}{1-f^h(0)f^h(z)}\right| \le \frac{2|z|}{1+|z|^2}.$$
 
-  Per dimostrare la seconda disuguaglianza, ripetiamo i passaggi svolti nella dimostrazione del lemma di Dieudonné prendendo $a=f^h(z)$ e $r=\frac{2|z|}{1+|z|^2}$. Otteniamo la disuguaglianza $|f^h(z)-\alpha| \le R$, dove si ha $\alpha=\dfrac{b(1-r^2)}{1-r^2b^2}$ e $R^2=\dfrac{r^2-b^2}{1-r^2b^2}+b^2\left(\dfrac{1-r^2}{1-r^2b^2}\right)^2$. Sostituendo troviamo
+  Per dimostrare la seconda disuguaglianza, supponiamo dapprima che si abbia $f^h(0)=b \in [0,1)$. Possiamo ripetere i passaggi svolti nella dimostrazione del lemma di Dieudonné ponendo $a=f^h(z)$ e $r=\frac{2|z|}{1+|z|^2}$. Otteniamo la disuguaglianza $|f^h(z)-\alpha| \le R$, dove $\alpha=\dfrac{b(1-r^2)}{1-r^2b^2}$ e $R^2=\dfrac{r^2-b^2}{1-r^2b^2}+b^2\left(\dfrac{1-r^2}{1-r^2b^2}\right)^2$. Sostituendo troviamo
   $$\alpha=\frac{b(1-|z|^2)^2}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)},$$
   $$R=\frac{2|z|(|z|^2+1)(1-b^2)}{(1+2b|z|+|z|^2)(1-2b|z|+|z|^2)}.$$
   Consideriamo adesso $F_b^h(z)=\dfrac{bz^2+2z+b}{|z|^2+2b\,\mathfrak{Re}z+1}\left(\dfrac{|1+b z|}{1+b z}\right)^2$. Si ha
   $$F_b^h(|z|)=\dfrac{b|z|^2+2|z|+b}{|z|^2+2b|z|+1}, \quad F_b^h(-|z|)=\dfrac{b|z|^2-2|z|+b}{|z|^2-2b|z|+1}.$$
-  Notiamo che $\alpha=\bigl(F_b^h(|z|)+F_b^h(-|z|)\bigr)/2$ e $R=\bigl(F_b^h(|z|)-F_b^h(-|z|)\bigr)/2$, perciò la disuguaglianza $|f^h(z)-\alpha| \le R$ ci dice che $f^h(z)$ appartiene al cerchio con diametro sull'asse reale passante per i punti $F_b^h(|z|)$ e $F_b^h(-|z|)$. La seconda disuguaglianza segue allora da semplici considerazioni geometriche.
+  Notiamo che $\alpha=\bigl(F_b^h(|z|)+F_b^h(-|z|)\bigr)/2$ e $R=\bigl(F_b^h(|z|)-F_b^h(-|z|)\bigr)/2$, perciò la disuguaglianza $|f^h(z)-\alpha| \le R$ ci dice che $f^h(z)$ appartiene al cerchio con diametro sull'asse reale passante per i punti $F_b^h(|z|)$ e $F_b^h(-|z|)$. Con semplici considerazioni geometriche otteniamo la seguente disuguaglianza:
+  $$F_b^h(-|z|) \le \mathfrak{Re}f^h(z) \le |f^h(z)| \le F_b^h(|z|),$$
+  la quale, ricordando che $b=f^h(0)$, ci dà
+  $$F_{f^h(0)}^h(-|z|) \le |f^h(z)| \le F_{f^h(0)}^h(|z|).$$
+  Per passare al caso generale consideriamo la funzione $g(z)=|f^h(0)|f(z)/f'(0)$. Osserviamo che $f(0)=0$ ci dice che $f'(0)=f^h(0)$, dunque $|g(z)|=|f(z)|$ e $|g'(z)|=|f'(z)|$, pertanto $|g^h(z)|=|f^h(z)|$; inoltre si ha anche $g(0)=0$, da cui $g^h(0)=g'(0)=|f^h(0)|$. Perciò applicando l'ultima disuguaglianza trovata alla funzione $g$ otteniamo proprio la seconda disuguaglianza della tesi.
 \end{proof}
 
-\begin{oss}
-  Sapendo solo che $|f'(0)|=b$, si può dimostrare che
-  $$F_b^h(-|z|) \le |f^h(z)| \le F_b^h(|z|).$$
-  Basta infatti considerare la funzione $bf(z)/f'(0)$.
-\end{oss}
-
 \begin{cor} \label{distorto}
-  Sia $f$ come nel Teorema \ref{distortion}. Allora $\mathfrak{Re}f'(z)>0$ per $|z|<b/(1+\sqrt{1-b^2})$.
+  Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e $f'(0) \in [0,1)$. Allora $\mathfrak{Re}f'(z)>0$ per $|z|<f^h(0)/\Bigl(1+\sqrt{1-\bigl(f^h(0)\bigr)^2}\Bigr)$.
 \end{cor}
 
 \begin{proof}
-  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in \bigl((1-\sqrt{1-b^2})/b, (1+\sqrt{1-b^2})/b\bigr)$, zero agli estremi e maggiore di $0$ altrove. Poiché l'estremo destro è maggiore di $1$, è da scartare.
-  Per il teorema \ref{distortion} abbiamo dunque che $\mathfrak{Re}f'(z) \ge F_b^h(-|z|)>0$ per gli $z$ tali che $|z|<(1-\sqrt{1-b^2})/b=b/(1+\sqrt{1-b^2})$.
+  Per $0 \le b<1$ e $z \in \mathbb{D}$ si ha $|z|^2-2b|z|+1>|z|^2-2|z|+1>0$, dunque il segno di $F_b^h(-|z|)$ coincide con quello di $b|z|^2-2|z|+b$. Quest'ultima quantità è minore di $0$ per $|z| \in \bigl((1-\sqrt{1-b^2})/b, (1+\sqrt{1-b^2})/b\bigr)$, zero agli estremi e maggiore di $0$ altrove.
+  Prendendo $b=f'(0)=f^h(0)$, nella dimostrazione del Teorema \ref{distortion} abbiamo visto che $\mathfrak{Re}f^h(z) \ge F_{f^h(0)}^h(-|z|)$; per gli $z$ tali che $|z|<\Bigl(1-\sqrt{1-\bigl(f^h(0)\bigr)^2}\Bigr)/f^h(0)=f^h(0)/\Bigl(1+\sqrt{1-\bigl(f^h(0)\bigr)^2}\Bigr)$ si ha quindi $\mathfrak{Re}f^h(z)>0$.
+  Ricordando che $f^h(z)=\frac{f'(z)(1-|z|^2)}{1-|f(z)|^2}$ e $f \in \text{Hol}(\mathbb{D},\mathbb{D})$, per tali $z$ si ha anche $\mathfrak{Re}f'(z)>0$.
 \end{proof}
 
 Del prossimo enunciato, dimostrato indipendentemente da Pick nel 1916 e Nevanlinna nel 1919, vedremo nel dettaglio solo un paio di casi particolari.
 
 \begin{thm}
-  (Pick-Nevanlinna, Theorem 2.2, Chapter 1 \cite{JBG}) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Per $k=1, \dots, n$, sia $A_k$ la matrice $k \times k$ data da $A_k(i,j)=\dfrac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}$.
+  (Pick-Nevanlinna, \cite[Chapter 1, Theorem 2.2]{JBG}) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Per $k=1, \dots, n$, sia $A_k$ la matrice $k \times k$ data da $A_k(i,j)=\dfrac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}$.
   Allora esiste una funzione $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(z_i)=w_i$ per $j=1, \dots, n$ se e solo se $\det{A_k} \ge 0$ per ogni $k=1, \dots, n$.
 \end{thm}
 

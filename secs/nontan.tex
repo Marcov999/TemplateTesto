@@ -58,26 +58,27 @@
   perciò
   $$\frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.$$
 
-  Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esista $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M \implies \dfrac{1-|z|}{|1-z|} \overset{(\star)}{\le} \dfrac{1}{M}$ e
-  \begin{gather*}
-    \frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\tan{\alpha'} \\
-    \frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1 \\
-    \frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}<\tan^2{\alpha'}+1 \\
-    \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}<\tan^2{\alpha'}+1 \\
-    \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M' \, (\star\star)
-  \end{gather*}
-  dove $\alpha'<\alpha \implies \tan{\alpha'}<\tan{\alpha} \implies M'<M$. Moltiplicando tra loro le disuguaglianze $(\star)$ e $(\star\star)$ troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
-  Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scrivendo $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$ e supponendo senza perdita di generalità $y>0$, la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
-  \begin{align*}
-    \frac{1-|z|}{1-\mathfrak{Re}(z)} &=\frac{1-\sqrt{x^2+y^2}}{1-x} \\
-    & =1-\frac{\sqrt{x^2+y^2}-x}{1-x}.
-  \end{align*}
+  Mostriamo adesso la prima inclusione. Fissiamo $\alpha'<\alpha$. Supponiamo per assurdo che, per ogni $\epsilon>0$, esista $z \in S(1,\alpha')\cap B(1,\epsilon)$ tale che $z \not\in K(1,M)$. Per tali $z$ si ha allora $\dfrac{|1-z|}{1-|z|} \ge M$, da cui
+  \begin{equation}
+    \dfrac{1-|z|}{|1-z|} \le \dfrac{1}{M}; \label{star1}
+  \end{equation}
+  inoltre, poiché $z \in S(1,\alpha')$ abbiamo
+  $$\frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\tan{\alpha'}.$$
+  Elevando al quadrato, sommando $1$ e sfruttando l'uguaglianza vista sopra otteniamo
+  $$\frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1,$$
+  che ci dà
+  \begin{equation}
+    \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M', \label{star2}
+  \end{equation}
+  dove $\alpha'<\alpha$, quindi $\tan{\alpha'}<\tan{\alpha}$ e dunque $M'<M$. Moltiplicando tra loro le disuguaglianze \eqref{star1} e \eqref{star2} troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
+  Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scriviamo dunque $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$, e supponiamo senza perdita di generalità $y>0$, per cui la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
+  $$\frac{1-|z|}{1-\mathfrak{Re}(z)}=\frac{1-\sqrt{x^2+y^2}}{1-x}=1-\frac{\sqrt{x^2+y^2}-x}{1-x}.$$
   Notiamo che $\dfrac{\sqrt{x^2+y^2}-x}{1-x}>0$, dunque per mostrare che tende a $0$ ci basta osservare che
+  \marginpar{Ho provato con due righe, ma viene tutto accrocchiato e non mi sembra comprensibilissimo. Posso provare a riformulare questi ultimi passaggi}
   \begin{align*}
     \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y} \\
     & =\tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
-    & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)} \\
-    & =\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x}
+    & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)}=\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x}
   \end{align*}
   e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
 \end{proof}
@@ -108,23 +109,18 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 \begin{proof}
   A meno di considerare $g(z)=\sigma^{-1}f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Se inoltre avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, poiché vale
   \begin{align*}
-    |g^h(z)| & =|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2} \\
-    & =|f'(\sigma z)|\frac{1-|z|^2}{1-|\sigma^{-1}f(\sigma z)|^2} \\
-    & =|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2} \\
-    & =|f^h(\sigma z)|
+    |g^h(z)| & =|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2}=|f'(\sigma z)|\frac{1-|z|^2}{1-|\sigma^{-1}f(\sigma z)|^2} \\
+    & =|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2}=|f^h(\sigma z)|
   \end{align*}
   e mediante la sostituzione $\zeta=\sigma z$ si ha
   $$o\bigl((z-1)^2\bigr)=o\bigl(\sigma^{-2}(\zeta-\sigma)^2\bigr)=o\bigl((\zeta-\sigma)^2\bigr)$$
   e ovviamente $|f^h(\sigma z)|=|f^h(\zeta)|$, troviamo l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
 
   Sia $M>1$ e consideriamo $z \in K(1,M)$. Allora per la Proposizione \ref{settori-stolz} si ha $z \in S(1,\alpha)$ dove $\alpha=\text{arctan}\sqrt{M^2-1}$.
-  Sia inoltre $\beta \in (0,\pi/2)$ con $\beta>\alpha$ e sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}\bigl(z, \partial S(1,\beta)\bigr)$, la distanza euclidea di $z$ dal bordo di $S(1,\beta)$. Allora per la formula integrale di Cauchy
-  \begin{align*}
-    f'(z) & =\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)}{(w-z)^2}\diff w \\
-    & =\frac{1}{2\pi i} \int_{C(z)} \frac{w-1+(f(w)-w)}{(w-z)^2}\diff w \\
-    & =\frac{1}{2\pi i} \int_{C(z)} \frac{1}{w-z}\diff w+\frac{1}{2\pi i} \int_{C(z)} \frac{z-1+f(w)-w}{(w-z)^2}\diff w \\
-    & =1+\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w=:1+I(z).
-  \end{align*}
+  Sia inoltre $\beta \in (0,\pi/2)$ con $\beta>\alpha$ e sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}\bigl(z, \partial S(1,\beta)\bigr)$, la distanza euclidea di $z$ dal bordo di $S(1,\beta)$. Allora per la formula integrale di Cauchy applicata alla funzione $f(z)-z$ si ha
+  $$f'(z)-1=\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w,$$
+  che scriviamo come
+  $$f'(z)=1+\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w=:1+I(z).$$
 
   \begin{center}
     \definecolor{qqffqq}{rgb}{0,1,0}
