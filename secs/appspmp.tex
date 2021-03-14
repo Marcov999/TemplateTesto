@@ -62,7 +62,7 @@ Vediamo il caso $n=2$.
     \frac{1}{1-p^2(w_1,w_2)} \le \frac{1}{1-p^2(z_1,z_2)} \\
     p(w_1,w_2) \le p(z_1,z_2).
   \end{gather*}
-  Ricordiamo adesso che $p$ è invariante per azione di $\text{Aut}(\mathbb{D})$; quindi, a meno di comporre a sinistra e a destra con opportuni automorfismi olomorfi di $\mathbb{D}$, possiamo supporre senza perdita di generalità $z_1=w_1=0$. La condizione diventa dunque $p(0,w_2) \le p(0,z_2) \implies |w_2| \le |z_2|$, perciò basta prendere la funzione $f(z)=w_2z/z_2$.
+  Ricordiamo adesso che $p$ è invariante per azione di $\text{Aut}(\mathbb{D})$; quindi, a meno di comporre a sinistra e a destra con opportuni automorfismi olomorfi di $\mathbb{D}$, possiamo supporre senza perdita di generalità $z_1=w_1=0$. La condizione diventa dunque $p(0,w_2) \le p(0,z_2)$, da cui $|w_2| \le |z_2|$; perciò basta prendere la funzione $f(z)=w_2z/z_2$.
 \end{proof}
 
 Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con una formulazione differente.
@@ -78,11 +78,11 @@ Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con un
 \begin{proof}
   Supponiamo che esista siffatta $f$. Allora la condizione (i) segue dal lemma di Schwarz-Pick. La condizione (ii) invece si riscrive come $\omega\bigl(f^*(z_2,z_1),f^*(z_3,z_1)\bigr) \le \omega(z_2,z_3)$, che è l'enunciato del Teorema \ref{31}.
 
-  Adesso dimostriamo l'altra freccia. Vediamo prima nel caso $z_1=w_1=0$. Allora per la condizione (i) abbiamo che $\omega(0,w_i) < \omega(0,z_i) \implies |w_i/z_i|<1$ per $i=2,3$. La condizione (ii) si riscrive invece come $\omega(w_2/z_2,w_3/z_3) \le \omega(z_2,z_3)$, cioè $p(w_2/z_2,w_3/z_3) \le p(z_2,z_3)$.
+  Adesso dimostriamo l'altra freccia. Vediamola prima nel caso $z_1=w_1=0$. Allora per la condizione (i) abbiamo $\omega(0,w_i) < \omega(0,z_i)$, quindi $|w_i/z_i|<1$ per $i=2,3$. La condizione (ii) si riscrive invece come $\omega(w_2/z_2,w_3/z_3) \le \omega(z_2,z_3)$, cioè $p(w_2/z_2,w_3/z_3) \le p(z_2,z_3)$.
   Dunque, per il caso $n=2$ del Teorema di Pick-Nevanlinna, esiste $g \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $g(z_2)=w_2/z_2$ e $g(z_3)=w_3/z_3$. Allora basta prendere $f(z)=zg(z)$.
 
    Mostriamo che ci si può ridurre a questo caso. Consideriamo $h, g \in \text{Aut}(\mathbb{D})$ date da
-   $$g(z)=\frac{z-z_1}{1-\bar{z}_1z}, \quad h(z)=\frac{z-w_1}{1-\bar{w}_1z}.$$
+   $$g(z)=\frac{z-z_1}{1-\bar{z}_1z} \text{ e } h(z)=\frac{z-w_1}{1-\bar{w}_1z}.$$
    Allora esiste $f$ come quella richiesta dal Teorema se e solo se esiste $F \in \text{Hol}(\mathbb{D},\mathbb{D})$, con $F=h \circ f \circ g^{-1}$, tale che $F(0)=0$, $F\bigl(g(z_2)\bigr)=h(w_2)$ e $F\bigl(g(z_3)\bigr)=h(w_3)$.
    Questo corrisponde proprio al caso precedente, quindi tale $F$ esiste se e solo se
    $$\omega\bigl(h(w_i),h(w_j)\bigr) \le \omega\bigl(g(z_i),g(z_j)\bigr)$$

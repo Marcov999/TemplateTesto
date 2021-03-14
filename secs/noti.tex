@@ -39,7 +39,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
   $$|g(z)| \le \max_{|w|=r} |g(w)|=\max_{|w|=r} \frac{|f(w)|}{r} \le \frac{1}{r}.$$
   Mandando $r$ a $1$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|g(z)| \le 1$, da cui $|f(z)|\le |z|$ e $|f'(0)| \le 1$.
 
-  Se vale una delle due ugaglianze, allora esiste $z_0 \in \mathbb{D}$ tale che $|g(z_0)|=1$. Dunque, sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$ in ogni disco di centro l'origine e raggio $|z_0|<r<1$, quindi su $\mathbb{D}$. Perciò $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$ da cui $f(z)=e^{i\theta}z$.
+  Se vale una delle due ugaglianze, allora esiste $z_0 \in \mathbb{D}$ tale che $|g(z_0)|=1$. Dunque, sempre per il principio del massimo $g$ è costantemente uguale a un valore di modulo $1$ in ogni disco di centro l'origine e raggio $|z_0|<r<1$, quindi su $\mathbb{D}$. Perciò $g(z)=e^{i\theta}$ con $\theta \in \mathbb{R}$, da cui $f(z)=e^{i\theta}z$.
 \end{proof}
 
 \begin{cor} \label{cor_schw}
@@ -47,7 +47,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \end{cor}
 
 \begin{proof}
-  Se $f \in \text{Aut}(\mathbb{D})$ anche $f^{-1} \in \text{Aut}(\mathbb{D})$; inoltre $(f^{-1})'(0)=\dfrac{1}{f'(0)}$. Per il lemma di Schwarz, $|f'(0)| \le 1$ e $|(f^{-1})'(0)| \le 1$, dunque $|f'(0)|=1$, da cui la tesi sempre per il lemma di Schwarz.
+  Se $f \in \text{Aut}(\mathbb{D})$ anche $f^{-1} \in \text{Aut}(\mathbb{D})$; inoltre $(f^{-1})'(0)=\dfrac{1}{f'(0)}$. Per il lemma di Schwarz, $|f'(0)| \le 1$ e $|(f^{-1})'(0)| \le 1$; dunque $|f'(0)|=1$, da cui la tesi sempre per il lemma di Schwarz.
 \end{proof}
 
 \begin{defn}
@@ -60,10 +60,10 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
   Sia $G$ un gruppo che agisce fedelmente su uno spazio $X$ e sia $G_{x_0}$ il gruppo di isotropia di $x_0 \in X$. Supponiamo che per ogni $x \in X$ esista $g_x \in G$ tale che $\gamma_{g_x}(x)=x_0$ e sia $\Gamma=\{g_x \mid x \in X\}$.
   Allora $G$ è generato da $\Gamma$ e $G_{x_0}$, cioè ogni $g \in G$ è della forma $g=hg_x$ con $x \in X$ e $h \in G_{x_0}$.
 \end{lm}
-\marginpar{A priori così non basta, se il gruppo non è abeliano. Le frecce tra parentesi vanno bene?}
+
 \begin{proof}
-  Sia $g \in G$ e $x=\gamma_g(x_0)$. Allora $(\gamma_{g_x}\circ \gamma_g)(x_0)=x_0$ da cui $\gamma_{g_x}\circ \gamma_g=\gamma_{g_xg}=\gamma_h$ con $h \in G_{x_0}$, dunque $g_xg=h$ e quindi $g=g_x^{-1}h$.
-  %Partendo da $g^{-1}$ avremmo ottenuto $g^{-1}=g_x^{-1}h$, perciò $g=h^{-1}g_x$ con $h^{-1} \in G_{x_0}$.
+  Sia $g \in G$ e $x=\gamma_{g^{-1}}(x_0)$. Allora $(\gamma_{g_x}\circ \gamma_{g^{-1}})(x_0)=x_0$ da cui $\gamma_{g_x}\circ \gamma_{g^{-1}}=\gamma_{g_xg^{-1}}=\gamma_h$ con $h \in G_{x_0}$,
+  dunque $g_xg^{-1}=h$ e quindi $g=h^{-1}g_x$ con $h^{-1} \in G_{x_0}$.
 \end{proof}
 
 \begin{prop} \label{aut}
@@ -105,7 +105,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
   \end{gather*}
   Sostituendo si ottiene la seconda disuguaglianza con $w$ al posto di $z$.
 
-  Per l'uguaglianza, nel primo caso avremmo $|(\gamma_2 \circ f \circ \gamma_1)(\zeta)|=|\zeta|$, mentre nel secondo $|(\gamma_2\circ f\circ\gamma_1)'(0)|=1$. In entrambi i casi, per il lemma di Schwarz $\gamma_2 \circ f \circ \gamma_1=g \in \text{Aut}(\mathbb{D})$ da cui $f=\gamma_2^{-1}\circ g \circ \gamma_1^{-1} \in \text{Aut}(\mathbb{D})$.
+  Per l'uguaglianza, nel primo caso avremmo $|(\gamma_2 \circ f \circ \gamma_1)(\zeta)|=|\zeta|$, mentre nel secondo $|(\gamma_2\circ f\circ\gamma_1)'(0)|=1$. In entrambi i casi, per il lemma di Schwarz $\gamma_2 \circ f \circ \gamma_1=g \in \text{Aut}(\mathbb{D})$, dunque $f=\gamma_2^{-1}\circ g \circ \gamma_1^{-1} \in \text{Aut}(\mathbb{D})$.
 \end{proof}
 
 \begin{defn}
@@ -132,8 +132,7 @@ Dal lemma di Schwarz-Pick abbiamo che la quantità $p(z,w)$ è contratta da $f \
   \begin{equation}
     p(z_1,z_2) \le \frac{p(z_1,z_0)+p(z_0,z_2)}{1+p(z_1,z_0)p(z_0,z_2)}. \label{star}
   \end{equation}
-  \marginpar{osservazione maiuscolo o minuscolo?}
-  Osserviamo che il lemma di Schwarz-Pick implica che $p$ è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$. Grazie all'osservazione \ref{transi}, possiamo dunque supporre senza perdita di generalità che $z_0=0$. Dato che $|1-\bar{z}_2z_1| \le 1+|z_1||z_2|$ e $1-|z_1|^2, 1-|z_2|^2>0$, ricordando l'equazione \eqref{formuletta}, per ogni $z_1, z_2 \in \mathbb{D}$ abbiamo che
+  Notiamo che per il lemma di Schwarz-Pick abbiamo che $p$ è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$. Grazie all'Osservazione \ref{transi}, possiamo dunque supporre senza perdita di generalità che $z_0=0$. Dato che $|1-\bar{z}_2z_1| \le 1+|z_1||z_2|$ e $1-|z_1|^2, 1-|z_2|^2>0$, ricordando l'equazione \eqref{formuletta}, per ogni $z_1, z_2 \in \mathbb{D}$ si ha che
   \begin{align*}
     1-\left|\frac{z_1-z_2}{1-\bar{z}_1z_2}\right|^2 & =\frac{(1-|z_1|^2)(1-|z_2|^2)}{|1-\bar{z}_1z_2|^2} \\
     & \ge \frac{(1-|z_1|^2)(1-|z_2|^2)}{(1+|z_1||z_2|)^2}=1-\left(\frac{|z_1|+|z_2|}{1+|z_1||z_2|}\right)^2
@@ -163,7 +162,7 @@ Notiamo che, poiché il limite di $f^*(z,w)$ per $z \longrightarrow w$ è ben de
   \begin{nlist}
     \item Le disuguaglianze del lemma di Schwarz-Pick possono essere riscritte come $|f^*(z,w)| \le 1$, con uguaglianza se e solo se $f \in \text{Aut}(\mathbb{D})$;
     \item  un altro modo di scrivere le disuguaglianze del lemma di Schwarz-Pick è $p\bigl(f(z),f(w)\bigr) \le p(z,w)$, che è equivalente a $\omega\bigl(f(z),f(w)\bigr) \le \omega(z,w)$ in quanto $\text{arctanh}$ è strettamente crescente;
-    \item $p(z,0)=|z| \implies \omega(z,0)=\omega(|z|,0)$ e analogamente $\omega(0,z)=\omega(0,|z|)$;
+    \item $p(z,0)=|z|$, quindi $\omega(z,0)=\omega(|z|,0)$; analogamente, $\omega(0,z)=\omega(0,|z|)$;
     \item per definizione, $|f^*(z,w)|=|f^*(w,z)|$.
   \end{nlist}
   Questi risultati verranno usati nelle varie dimostrazioni e verranno esplicitati solo quando ciò che ne segue non è immediato.

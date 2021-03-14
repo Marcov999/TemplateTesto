@@ -1,4 +1,4 @@
-\begin{defn} \marginpar{si usa "modulo minore di" con gli angoli? Non sapevo}
+\begin{defn}
   Dati $\alpha \in (0,\pi/2)$ e $\sigma \in \partial\mathbb{D}$, chiamiamo \textit{settore di vertice $\sigma$ e angolo $2\alpha$} l'insieme $S(\sigma,\alpha) \subset \mathbb{D}$ tale che per ogni $z \in S(\sigma,\alpha)$ l'angolo compreso tra la retta congiungente $\sigma$ e $0$ e la retta congiungente $\sigma$ e $z$ ha modulo minore di $\alpha$.
   \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.5cm,y=2.5cm]
@@ -49,7 +49,7 @@
 \end{prop}
 
 \begin{proof}
-  Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<\tan(\alpha)\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$. \marginpar{così o proprio tutto tanalpha tra parentesi?}
+  Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<(\tan{\alpha})\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$.
 
   Mostriamo la seconda inclusione. Poiché $1>|z|>\mathfrak{Re}(z)$, abbiamo
   $$M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)},$$
