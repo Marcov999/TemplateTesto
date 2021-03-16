@@ -51,10 +51,10 @@
 \begin{proof}
   Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<(\tan{\alpha})\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$.
 
-  Mostriamo la seconda inclusione. Poiché $1>|z|>\mathfrak{Re}(z)$, abbiamo
+  Mostriamo la seconda inclusione. Poiché $z \in K(1,M)$ e $1>|z|>\mathfrak{Re}(z)$, abbiamo che
   $$M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)},$$
   da cui
-  $$M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2},$$
+  $$M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2};$$
   perciò
   $$\frac{|\mathfrak{Im}(z)|}{1-\mathfrak{Re}(z)}<\sqrt{M^2-1}=\tan{\alpha}.$$
 
@@ -68,19 +68,17 @@
   $$\frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}+1<\tan^2{\alpha'}+1,$$
   che ci dà
   \begin{equation}
-    \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=M', \label{star2}
+    \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=:M', \label{star2}
   \end{equation}
   dove $\alpha'<\alpha$, quindi $\tan{\alpha'}<\tan{\alpha}$ e dunque $M'<M$. Moltiplicando tra loro le disuguaglianze \eqref{star1} e \eqref{star2} troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
   Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scriviamo dunque $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$, e supponiamo senza perdita di generalità $y>0$, per cui la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
   $$\frac{1-|z|}{1-\mathfrak{Re}(z)}=\frac{1-\sqrt{x^2+y^2}}{1-x}=1-\frac{\sqrt{x^2+y^2}-x}{1-x}.$$
-  Notiamo che $\dfrac{\sqrt{x^2+y^2}-x}{1-x}>0$, dunque per mostrare che tende a $0$ ci basta osservare che
-  \marginpar{Ho provato con due righe, ma viene tutto accrocchiato e non mi sembra comprensibilissimo. Posso provare a riformulare questi ultimi passaggi}
+  Vogliamo mostrare che la quantità $\dfrac{\sqrt{x^2+y^2}-x}{1-x}$ tende a $0$ per $(x,y) \longrightarrow (1,0)$ all'interno del settore di angolo $2\alpha'$. Notiamo che è sempre maggiore di $0$, dunque ci basta stimarne il $\limsup$. Usando che $y/(1-x)<\tan{\alpha'}$ e moltiplicando numeratore e denominatore per $\sqrt{x^2+y^2}-x$ troviamo
   \begin{align*}
-    \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y} \\
-    & =\tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
-    & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)}=\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x}
+    \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
+    & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)}=\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x};
   \end{align*}
-  e quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
+  quest'ultima espressione tende a $0$ per $x \longrightarrow 1$ e $y \longrightarrow 0$.
 \end{proof}
 
 \begin{defn}
@@ -107,14 +105,14 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 \end{prop}
 
 \begin{proof}
-  A meno di considerare $g(z)=\sigma^{-1}f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Se inoltre avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, poiché vale
-  \begin{align*}
-    |g^h(z)| & =|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2}=|f'(\sigma z)|\frac{1-|z|^2}{1-|\sigma^{-1}f(\sigma z)|^2} \\
-    & =|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2}=|f^h(\sigma z)|
-  \end{align*}
-  e mediante la sostituzione $\zeta=\sigma z$ si ha
+  A meno di considerare $g(z)=\sigma^{-1}f(\sigma z)$, possiamo supporre senza perdita di generalità $\sigma=1$. Infatti, è facile verificare che nell'ipotesi \eqref{o^3} si ha $g(z)=1+(z-1)+o\bigl((z-1)^3\bigr)$. Usando che $g'(z)=f'(\sigma z)$ si ha che vale
+  $$|g^h(z)|=|g'(z)|\frac{1-|z|^2}{1-|g(z)|^2}=|f'(\sigma z)|\frac{1-|z|^2}{1-|\sigma^{-1}f(\sigma z)|^2};$$
+  ricordando che $|\sigma|=1$ troviamo
+  $$|g^h(z)|=|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2}=|f^h(\sigma z)|.$$
+  Se avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, mediante la sostituzione $\zeta=\sigma z$ si avrebbe
+  \marginpar{forse può essere scritto in modo da rendere più chiaro cosa stai facendo}
   $$o\bigl((z-1)^2\bigr)=o\bigl(\sigma^{-2}(\zeta-\sigma)^2\bigr)=o\bigl((\zeta-\sigma)^2\bigr)$$
-  e ovviamente $|f^h(\sigma z)|=|f^h(\zeta)|$, troviamo l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
+  e $|f^h(\sigma z)|=|f^h(\zeta)|$; troviamo quindi l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
 
   Sia $M>1$ e consideriamo $z \in K(1,M)$. Allora per la Proposizione \ref{settori-stolz} si ha $z \in S(1,\alpha)$ dove $\alpha=\text{arctan}\sqrt{M^2-1}$.
   Sia inoltre $\beta \in (0,\pi/2)$ con $\beta>\alpha$ e sia $C(z)$ il cerchio di centro $z$ e raggio $r(z)=\text{dist}\bigl(z, \partial S(1,\beta)\bigr)$, la distanza euclidea di $z$ dal bordo di $S(1,\beta)$. Allora per la formula integrale di Cauchy applicata alla funzione $f(z)-z$ si ha
@@ -160,7 +158,7 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
         \fill [color=black] (1,0) circle (1.5pt);
         \draw[color=black] (1.04,0.05) node {$1$};
         \fill [color=black] (0.26,0.545) circle (1.5pt);
-        \draw[color=black] (0.20,0.58) node {$A$};
+        \draw[color=black] (0.18,0.58) node {$w_0$};
         \fill [color=black] (1,0) circle (1.5pt);
         \draw[color=qqqqff] (0.92,-0.03) node {$\alpha$};
         \draw[color=qqffqq] (0.83,0.16) node {$\gamma$};
@@ -170,18 +168,18 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
 
   Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\sqrt{\tan^2\beta+1}$.
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
-  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$ vale che
+  Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$, facendo la sostituzione $w=z+r(z)e^{i\theta}$, vale che
+  \marginpar{forse si può rendere più comprensibile, a costo di allungare un po' la dimsotrazione e riarrangiare le ipotesi viste nel paragrafo che precede queste formule}
   \begin{align*}
-    |I(z)| & \le \frac{\epsilon}{2\pi} \int_0^{2\pi} \frac{|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
+    |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
   \end{align*}
-  Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $A$ in figura). Perciò, detto $\gamma$ l'angolo tra la retta congiungente $1$ e $z$ e il tratto affine di $\partial S(1,\beta)$ più vicino a $z$ (che è effettivamente il tratto di bordo più vicino a $z$ se lo si prende sufficientemente vicino a $1$), si ha
-  \begin{align*}
-    |I(z)| & \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3=\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3 \\
-    & =\epsilon r(z)^2(1+\csc\gamma)^3 \le \epsilon r(z)^2\bigl(1+\csc(\beta-\alpha)\bigr)^3 \\
-    & \le \epsilon |z-1|^2\bigl(1+\csc(\beta-\alpha)\bigr)^3.
-  \end{align*}
-  La penultima disuguaglianza segue da $\gamma \ge \beta-\alpha$ e dal fatto che $\csc$ è decrescente sui positivi, mentre l'ultima segue da quanto visto sopra. Otteniamo dunque $f'(z)=1+o\bigl((z-1)^2\bigr)$ per $z \longrightarrow 1$ non tangenzialmente.
+  Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $w_0$ in figura); abbiamo che vale $|1-w_0|=r(z)+|z-1|$. Allora si ha
+  $$|I(z)| \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3=\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3.$$
+  Detto $\gamma$ l'angolo tra la retta congiungente $1$ e $z$ e il tratto affine di $\partial S(1,\beta)$ più vicino a $z$ (che è effettivamente il tratto di bordo più vicino a $z$ se lo si prende sufficientemente vicino a $1$), si ha $\dfrac{|z-1|}{r(z)}=\csc\gamma$.
+  Poiché vale che $\gamma \ge \beta-\alpha$ e $r(z) \le |z-1|$, troviamo $r(z)^2(1+\csc\gamma)^3 \le |z-1|^2\bigl(1+\csc(\beta-\alpha)\bigr)^3$. Concatenando le disuguaglianze appena viste, risulta che
+  $$|I(z)| \le \epsilon |z-1|^2\bigl(1+\csc(\beta-\alpha)\bigr)^3.$$
+  Otteniamo dunque $f'(z)=1+o\bigl((z-1)^2\bigr)$ per $z \longrightarrow 1$ non tangenzialmente.
 
   Notiamo che all'interno della regione di Stolz $K(1,M)$ si ha $1 \le \dfrac{|z-1|}{1-|z|} \le M$, il che ci  permette di usare indipendentemente $z-1$ o $1-|z|$ negli $o$-piccoli per $z \longrightarrow 1$ non tangenzialmente. Per ipotesi
   $$\frac{1-|f(z)|}{1-|z|}=\frac{1-|z|+o\bigl((z-1)^3\bigr)}{1-|z|}=1+o\bigl((z-1)^2\bigr)$$
