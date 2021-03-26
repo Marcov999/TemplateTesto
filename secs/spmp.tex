@@ -1,4 +1,62 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. Per trattare i casi di uguaglianza introduciamo la seguente classe di funzioni.
+
+\begin{defn}
+  Dati $a_1,\dots,a_n \in \mathbb{D}$ e $\theta \in \mathbb{R}$, chiamiamo \textit{prodotto di Blaschke} di grado $n$ la funzione
+  $$e^{i\theta}\prod_{j=1}^n \frac{z-a_j}{1-\bar{a}_jz}.$$
+  Indichiamo con $\mathcal{B}_n$ i prodotti di Blaschke di grado $n$.
+\end{defn}
+
+\begin{oss}
+  I prodotti di Blaschke sono funzioni olomorfe sul disco unitario, con zeri assegnati. Quelli di grado $1$ sono $\text{Aut}(\mathbb{D})$.
+\end{oss}
+
+\begin{lm} \label{Blaschke-car}
+  Tra le funzioni $f$ continue in $\overline{\mathbb{D}}$ e olomorfe in $\mathbb{D}$, i prodotti di Blaschke di grado $n$ sono caratterizzati dalle seguenti proprietà:
+  \begin{nlist}
+    \item se $|z|=1$ allora $|f(z)|=1$;
+    \item $f$ ha esattamente $n$ zeri in $\mathbb{D}$ contati con molteplicità.
+  \end{nlist}
+\end{lm}
+
+\begin{proof}
+  Se $f$ è un prodotto di Blaschke di grado $n$, che soddisfi (ii) è ovvio e che soddisfi (i) segue dall'Osservazione \ref{dom}.
+
+  Fissiamo ora $f$ che soddisfi (i) e (ii); consideriamo $B$ il prodotto di Blaschke definito con $\theta=0$ e $a_n$ gli zeri in $\mathbb{D}$ di $f$, contati con molteplicità. Allora $f/B$ e $B/f$ sono due funzioni olomorfe su $\mathbb{D}$ e continue in $\overline{\mathbb{D}}$, di modulo $1$ sul bordo. Per il principio del massimo per funzioni olomorfe, deve essere $|f/B| \le 1$ e $|B/f| \le 1$ sul disco unitario, da cui $|f/B|=1$ e $f/B$ è costante in $\mathbb{D}$.
+\end{proof}
+
+\begin{prop} \label{blaschke-prop}
+  Valgono le seguenti affermazioni:
+  \begin{nlist}
+    \item date $F \in \text{Hol}(\mathbb{D},\mathbb{D})$ e $S \in \text{Aut}(\mathbb{D})$, si ha che $F \in \mathcal{B}_n$ se e solo se $S\circ F \in \mathcal{B}_n$;
+    \item $f \in \mathcal{B}_{n+1}$ se e solo se $f^*(z,w) \in \mathcal{B}_n$, con $w$ un qualsiasi elemento di $\mathbb{D}$ fissato.
+  \end{nlist}
+\end{prop}
+
+\begin{proof}
+  Per dimostrare (i), basta mostrare che $S$ conserva le proprietà del Lemma \ref{Blaschke-car}. La prima segue dall'Osservazione \ref{dom}. Per transitività di $\text{Aut}(\mathbb{D})$, la seconda corrisponde a dover dimostrare che, dato $c \in \mathbb{D}$, l'equazione $F(z)=c$ ha esattamente $n$ zeri contati con molteplicità in $\mathbb{D}$, dove $F \in B_n$. Scriviamo $F(z)=\displaystyle e^{i\theta}\prod_{j=1}^n \frac{z-a_j}{1-\bar{a}_jz}$. Allora $F(z)=c$ si riscrive come
+  \begin{equation} \label{pol-eq}
+    c\prod_{j=1}^n (1-\bar{a}_jz)=e^{i\theta}\prod_{j=1}^n(z-a_j).
+  \end{equation}
+  Stiamo uguagliando due polinomi di grado $n$ con coefficienti direttivi diversi: quello al membro sinistro è di modulo minore di $1$, mentre quello al membro destro ha modulo esattamente $1$. Dunque la nostra equazione ha esattamente $n$ soluzioni, contate con molteplicità, in $\mathbb{C}$.
+  Per l'Osservazione \ref{dom}, se $z \not\in \mathbb{D}$ e $z\not=1/\bar{a}_j$ per $j=1,\dots,n$, si ha $|F(z)| \ge 1$; se $z=1/\bar{a}_j$ per qualche $j$, il membro sinistro di \eqref{pol-eq} è $0$ ma il membro destro no, quindi non ci sono soluzioni in quel caso. Perciò, per $|c|<1$, tutte le soluzioni trovate sono in $\mathbb{D}$ come voluto.
+
+  Per definizione di quoziente iperbolico, $[f(z),f(w)]=[z,w]f^*(z,w)$. Il membro di sinistra è della forma $S(f(z))$, dove $S \in \text{Aut}(\mathbb{D})$ è $S(z)=[z,f(w)]$; scriviamo anche $T(z)=[z,w]$.
+  Se $f^*(z,w) \in \mathcal{B}_n$, allora $T(z)f^*(z,w) \in \mathcal{B}_{n+1}$; dunque $S\circ f \in \mathcal{B}_{n+1}$ e per il punto (i) abbiamo $f \in \mathcal{B}_{n+1}$. Viceversa, se $f \in \mathcal{B}_{n+1}$ si ha $S\circ f \in \mathcal{B}_{n+1}$.
+  Sappiamo anche che $S\bigl(f(w)\bigr)=0$, dunque nel prodotto ci dev'essere il fattore $[z,w]$; segue dunque che $f^*(z,w) \in \mathcal{B}_n$.
+\end{proof}
+
+\begin{lm}
+  Sia $f \in \mathcal{B}_2$, esistono $S, T \in \text{Aut}(\mathbb{D})$ tali che $S\circ f\circ T(z)=z^2$.
+\end{lm}
+
+\begin{proof}
+  Per transitività di $\text{Aut}(\mathbb{D})$ su $\mathbb{D}$, ci basta dimostrare che esiste un punto $c \in \mathbb{D}$ tale che $f(z)-c$ abbia uno zero doppio nel disco. È sufficiente trovare $z_0 \in \mathbb{D}$ con $f'(z_0)=0$, dato che sappiamo già $f(z_0) \in \mathbb{D}$. Scriviamo $f(z)=e^{i\theta}\cdot\dfrac{z-a_1}{1-\bar{a}_1z}\cdot\dfrac{z-a_2}{1-\bar{a}_2z}$.
+  Sempre per transitività, usando $T$ possiamo supporre $a_1=0$ e poniamo $a_2=a$. Si ha
+  $$f'(z)=e^{i\theta}\left(\frac{z-a}{1-\bar{a}z}+z\cdot\frac{1-|a|^2}{1-\bar{a}z}\right).$$
+  Con qualche passaggio algebrico, l'equazione $f'(z)=0$ diventa
+  $$\bar{a}z^2-2z+a=0.$$
+  Le soluzioni sono $(1 \pm \sqrt{1-|a|^2})/\bar{a}$; da $|a|<1$, abbiamo che quella con il più sta fuori da $\mathbb{D}$ mentre quella con il meno sta dentro, dunque è la soluzione cercata.
+\end{proof}
 
 \begin{prop} \label{24}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
@@ -13,26 +71,37 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   \begin{equation} \label{3.1}
     \omega\bigl(f^*(z,v),f^*(w,v)\bigr) \le \omega(z,w).
   \end{equation}
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$.
 \end{thm}
 
 \begin{proof}
-  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è in $\text{Aut}(\mathbb{D})$; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'osservazione \ref{oss1}, punto (ii).
+  Poiché $f$ non è un automorfismo, per la Proposizione \ref{24} la funzione $z \longmapsto f^*(z,v)$ è in $\text{Hol}(\mathbb{D}, \mathbb{D})$; perciò il membro sinistro della disuguaglianza \eqref{3.1} è ben definito e la tesi segue dal lemma di Schwarz-Pick e dall'osservazione \ref{oss1}, punto (ii).
+
+  Sempre dal lemma di Schwarz-Pick, si ha l'uguaglianza se e solo se abbiamo $f^*(z,v) \in \text{Aut}(\mathbb{D})=\mathcal{B}_1$. Per il punto (ii) della Proposizione \ref{blaschke-prop}, questo è equivalente a $f \in \mathcal{B}_2$.
 \end{proof}
+
+Prima di enunciare il prossimo risultato, è necessario dare una definizione.
+
+\begin{defn}
+  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
+\end{defn}
 
 \begin{cor} \label{32}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation}
     \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{equation}
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e ???, $w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
 \end{cor}
 
 \begin{proof}
-  Si ha
+  Applicando la disuguaglianza triangolare per $\omega$ e il Teorema \ref{31}, si ha
   \begin{align*}
     \omega\bigl(0,f^*(z,v)\bigr) & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega\bigl(f^*(w,v),f^*(z,v)\bigr) \\
-    & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w),
+    & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{align*}
-  dove la prima è la disuguaglianza triangolare per la distanza $\omega$ e la seconda segue dal Teorema \ref{31}.
+
+  Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$.
 \end{proof}
 
 \begin{cor} \label{33}
@@ -53,11 +122,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Concatenando le due disuguaglianze otteniamo la tesi.
 \end{proof}
 
-Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza. Prima di enunciarlo, è però necessario dare una definizione.
-
-\begin{defn}
-  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
-\end{defn}
+Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza.
 
 \begin{cor} \label{35}
   Sia $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ e siano $z, w \in \mathbb{D}$. Sia $\sigma$ una geodetica con $\sigma(t_1)=z, \sigma(t_2)=v$ e sia $w=\sigma(t)$ con $t_1<t<t_2$. Allora
