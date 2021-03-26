@@ -1,4 +1,8 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. Per trattare i casi di uguaglianza introduciamo la seguente classe di funzioni.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. Ci serviranno alcune definizioni.
+
+\begin{defn}
+  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
+\end{defn}
 
 \begin{defn}
   Dati $a_1,\dots,a_n \in \mathbb{D}$ e $\theta \in \mathbb{R}$, chiamiamo \textit{prodotto di Blaschke} di grado $n$ la funzione
@@ -45,19 +49,6 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Sappiamo anche che $S\bigl(f(w)\bigr)=0$, dunque nel prodotto ci dev'essere il fattore $[z,w]$; segue dunque che $f^*(z,w) \in \mathcal{B}_n$.
 \end{proof}
 
-\begin{lm}
-  Sia $f \in \mathcal{B}_2$, esistono $S, T \in \text{Aut}(\mathbb{D})$ tali che $S\circ f\circ T(z)=z^2$.
-\end{lm}
-
-\begin{proof}
-  Per transitività di $\text{Aut}(\mathbb{D})$ su $\mathbb{D}$, ci basta dimostrare che esiste un punto $c \in \mathbb{D}$ tale che $f(z)-c$ abbia uno zero doppio nel disco. È sufficiente trovare $z_0 \in \mathbb{D}$ con $f'(z_0)=0$, dato che sappiamo già $f(z_0) \in \mathbb{D}$. Scriviamo $f(z)=e^{i\theta}\cdot\dfrac{z-a_1}{1-\bar{a}_1z}\cdot\dfrac{z-a_2}{1-\bar{a}_2z}$.
-  Sempre per transitività, usando $T$ possiamo supporre $a_1=0$ e poniamo $a_2=a$. Si ha
-  $$f'(z)=e^{i\theta}\left(\frac{z-a}{1-\bar{a}z}+z\cdot\frac{1-|a|^2}{1-\bar{a}z}\right).$$
-  Con qualche passaggio algebrico, l'equazione $f'(z)=0$ diventa
-  $$\bar{a}z^2-2z+a=0.$$
-  Le soluzioni sono $(1 \pm \sqrt{1-|a|^2})/\bar{a}$; da $|a|<1$, abbiamo che quella con il più sta fuori da $\mathbb{D}$ mentre quella con il meno sta dentro, dunque è la soluzione cercata.
-\end{proof}
-
 \begin{prop} \label{24}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
 \end{prop}
@@ -80,18 +71,12 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Sempre dal lemma di Schwarz-Pick, si ha l'uguaglianza se e solo se abbiamo $f^*(z,v) \in \text{Aut}(\mathbb{D})=\mathcal{B}_1$. Per il punto (ii) della Proposizione \ref{blaschke-prop}, questo è equivalente a $f \in \mathcal{B}_2$.
 \end{proof}
 
-Prima di enunciare il prossimo risultato, è necessario dare una definizione.
-
-\begin{defn}
-  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
-\end{defn}
-
 \begin{cor} \label{32}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation}
     \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{equation}
-  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e ???, $w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
+  Sia $T_v(z)=f^*(z,v)$. Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e $T_v^{-1}(0)$, $w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
 \end{cor}
 
 \begin{proof}
@@ -101,7 +86,8 @@ Prima di enunciare il prossimo risultato, è necessario dare una definizione.
     & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{align*}
 
-  Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$.
+  Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$. Per il Teorema \ref{blaschke-prop}, quest'ultimo fatto è anche equivalente a $T_v \in \text{Aut}(\mathbb{D})$. Ricordiamo che $p$, dunque anche $\omega$, è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$.
+  Allora il caso di uguaglianza nella prima delle due disuguaglianze si riscrive come $\omega\bigl(T_v^{-1}(0),z\bigr)=\omega\bigl(T_v^{-1}(0),w\bigr)+\omega(w,z)$, che caratterizza l'appartenenza, nell'ordine, alla stessa geodetica.
 \end{proof}
 
 \begin{cor} \label{33}
