@@ -3,7 +3,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
 \begin{defn}
   La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione $r_a \in \text{Aut}(\mathbb{D})$ data da
   $$r_a(z)=-\frac{z-\frac{2a}{1+|a|^2}}{1-\frac{2\bar{a}}{1+|a|^2}z}.$$
-  Con semplici passaggi algebrici, si può mostrare che è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$, da cui $r_a\circ r_a=\id$.
+  Chiamiamo $a$ il \textit{centro di rotazione} di $r_a$. Con semplici passaggi algebrici, si può mostrare che $r_a$ è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$, da cui $r_a\circ r_a=\id$.
 \end{defn}
 
 \begin{defn}
@@ -142,7 +142,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   $$\omega\bigl(0,f^*(v,w)\bigr) \le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).$$
   Mettendo assieme le due disuguaglianze otteniamo la \eqref{eq33}.
 
-  Se si ha l'uguaglianza, dobbiamo studiarla nelle due applicazioni del Corollario \ref{32}. In entrambi i casi ci dice che $f \in \mathcal{B}_2$. La prima ci dice anche che $R_f(v), w$ e $z$ appartengono, nell'ordine, alla stessa geodetica. Dalla seconda deduciamo la stessa cosa per $R_f(w), u$ e $v$. Poiché $R_f$ è un automorfismo e $\omega$ non cambia sotto l'azione di $\text{Aut}(\mathbb{D})$, abbiamo che lascia invariate le geodetiche; allora anche $w, R_f(u)$ e $R_f(v)$ stanno sulla stessa geodetica. Segue la tesi.
+  Se si ha l'uguaglianza, dobbiamo studiarla nelle due applicazioni del Corollario \ref{32}. In entrambi i casi ci dice che $f \in \mathcal{B}_2$. La prima ci dice anche che $R_f(v), w$ e $z$ appartengono, nell'ordine, alla stessa geodetica. Dalla seconda deduciamo la stessa cosa per $R_f(w), u$ e $v$. Poiché $R_f$ è un automorfismo e $\omega$ non cambia sotto l'azione di $\text{Aut}(\mathbb{D})$, abbiamo che lascia invariate le geodetiche; allora anche $w, R_f(u)$ e $R_f(v)$ stanno sulla stessa geodetica. Segue il secondo enunciato della tesi. Viceversa, se valgono tutte queste condizioni è facile vedere che si ha l'uguaglianza.
 \end{proof}
 
 Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza.
@@ -188,12 +188,14 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
 \end{cor}
 
 \begin{proof}
-  Notiamo che $f(0)=0$ e dunque $f^*(z,0)=f^*(0,z)$, quindi si ha
+  Da $f(0)=0$ si ha $f^*(z,0)=f^*(0,z)$. Dalla disuguaglianza triangolare per $\omega$ abbiamo che
   \begin{align*}
     \omega\bigl(f^h(0),f^h(z)\bigr) & = \omega\bigl(f^*(0,0),f^*(z,z)\bigr) \\
-    & \le \omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr)\le 2\omega(0,z)
+    & \le \omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr),
   \end{align*}
-  dove la prima è la disuguaglianza triangolare per $\omega$ e la seconda segue applicando il Teorema \ref{31}.
+  inoltre per il Teorema \ref{31} si ha
+  $$\omega\bigl(f^*(0,0),f^*(z,0)\bigr)+\omega\bigl(f^*(0,z),f^*(z,z)\bigr)\le 2\omega(0,z).$$
+  Mettendo assieme troviamo la disuguaglianza della tesi.
 
   Per dire che $2$ è la migliore costante possibile, basta prendere $f(z)=z^2$ e $z \in \mathbb{D}$ con $|z|=1/3$ per ottenere l'uguaglianza.
 \end{proof}
@@ -205,6 +207,7 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
   \begin{equation} \label{quasigol}
     \omega\bigl(|f^h(z)|, |f^h(w)|\bigr) \le 2\omega(z,w).
   \end{equation}
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e $z$ e $w$ giacciono sulla stessa geodetica, passante per il centro di rotazione di $R_f$.
 \end{cor}
 
 \begin{proof}
@@ -220,11 +223,11 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
     \omega\bigl(|f^h(z)|, |f^h(w)|\bigr)&=\omega\bigl(0,|f^h(z)|\bigr)-\omega\bigl(0,|f^h(w)|\bigr) \\
     & =\omega\bigl(0,f^h(z)\bigr)-\omega\bigl(0,f^h(w)\bigr) \le 2\omega(z,w),
   \end{align*}
-  dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$.
+  dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$. Il caso di uguaglianza segue facilmente.
 \end{proof}
 
-Concludiamo la sezione con il lemma di Dieudonné (\cite{D} pagina 351), per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
-\marginpar{da vedere come impostare la citazione}
+Concludiamo la sezione con il lemma di Dieudonné \cite[Chapter III, ???]{D}, per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
+\marginpar{Chapter o Chapitre? Poi: quale dei tanti? Non sono certo di quale sia quello più pertinente alla nostra versione}
 
 \begin{lm}
   (lemma di Dieudonné) Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e sia $z_0 \in \mathbb{D}$ con $|f(z_0)| \le |z_0|$. Allora
@@ -249,11 +252,8 @@ Concludiamo la sezione con il lemma di Dieudonné (\cite{D} pagina 351), per il 
     & \iff |a|^2(1-r^2|b|^2)-a\bar{b}(1-r^2)-\bar{a}b(1-r^2) \le r^2-|b|^2 \\
     & \iff |a|^2-a\cdot\frac{\bar{b}(1-r^2)}{1-r^2|b|^2}-\bar{a}\cdot\frac{b(1-r^2)}{1-r^2|b|^2} \le \frac{r^2-|b|^2}{1-r^2|b|^2};
   \end{align*}
-  ponendo $\alpha=\dfrac{b(1-r^2)}{1-r^2|b|^2}$ e $R^2=\dfrac{r^2-|b|^2}{1-r^2|b|^2}+|b|^2\left(\dfrac{1-r^2}{1-r^2|b|^2}\right)^2$ si ha
-  \begin{align*}
-    |a|^2-a\bar{\alpha}-\bar{a}\alpha & \le R^2-|\alpha|^2 \\
-    & \iff (a-\alpha)(\bar{a}-\bar{\alpha}) \le R^2\iff |a-\alpha| \le R,
-  \end{align*}
+  ponendo $\alpha=\dfrac{b(1-r^2)}{1-r^2|b|^2}$ e $R^2=\dfrac{r^2-|b|^2}{1-r^2|b|^2}+|b|^2\left(\dfrac{1-r^2}{1-r^2|b|^2}\right)^2$, si ha
+  $$|a|^2-a\bar{\alpha}-\bar{a}\alpha \le R^2-|\alpha|^2 \iff (a-\alpha)(\bar{a}-\bar{\alpha}) \le R^2\iff |a-\alpha| \le R.$$
   Ricordando che $r=|z_0|$ e osservando che $b=f^*(0,z_0)=\frac{[f(0),f(z_0)]}{[0,z_0]}=\frac{f(z_0)}{z_0}$, troviamo $\alpha=\dfrac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}$ e $R=\dfrac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)}$.
   Riprendendo infine la definizione di $a$, cioè $a=f^h(z_0)=\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}$, otteniamo che
   $$\left|\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}-\frac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}\right| \le \frac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)},$$

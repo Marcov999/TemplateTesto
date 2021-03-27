@@ -74,7 +74,6 @@
   Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scriviamo dunque $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$, e supponiamo senza perdita di generalità $y>0$, per cui la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
   $$\frac{1-|z|}{1-\mathfrak{Re}(z)}=\frac{1-\sqrt{x^2+y^2}}{1-x}=1-\frac{\sqrt{x^2+y^2}-x}{1-x}.$$
   Vogliamo mostrare che la quantità $\dfrac{\sqrt{x^2+y^2}-x}{1-x}$ tende a $0$ per $(x,y) \longrightarrow (1,0)$ all'interno del settore di angolo $2\alpha'$. Notiamo che è sempre maggiore di $0$, dunque ci basta stimarne il $\limsup$. Usando che $y/(1-x)<\tan{\alpha'}$ e moltiplicando numeratore e denominatore per $\sqrt{x^2+y^2}-x$ troviamo
-  \marginpar{forse nella seconda riga si può mettere direttamente l'ultima formula}
   \begin{align*}
     \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
     & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)}=\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x};
@@ -111,7 +110,6 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   ricordando che $|\sigma|=1$ troviamo
   $$|g^h(z)|=|f'(\sigma z)|\frac{1-|\sigma z|^2}{1-|f(\sigma z)|^2}=|f^h(\sigma z)|.$$
   Se avessimo $|g^h(z)|=1+o\bigl((z-1)^2\bigr)$, mediante la sostituzione $\zeta=\sigma z$ si avrebbe
-  \marginpar{forse può essere scritto in modo da rendere più chiaro cosa stai facendo}
   $$o\bigl((z-1)^2\bigr)=o\bigl(\sigma^{-2}(\zeta-\sigma)^2\bigr)=o\bigl((\zeta-\sigma)^2\bigr)$$
   e $|f^h(\sigma z)|=|f^h(\zeta)|$; troviamo quindi l'equazione \eqref{o^2} con $\zeta$ al posto di $z$.
 
@@ -170,7 +168,6 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   Per la Proposizione \ref{settori-stolz} esiste $\delta>0$ tale che, se $w \in S(1,\beta) \cap B(1,\delta)$, si ha $w \in K(1,M')$ con $M'>\sqrt{\tan^2\beta+1}$.
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
   Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$, facendo la sostituzione $w=z+r(z)e^{i\theta}$, vale che
-  \marginpar{forse si può rendere più comprensibile, a costo di allungare un po' la dimsotrazione e riarrangiare le ipotesi viste nel paragrafo che precede queste formule}
   \begin{align*}
     |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
     & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
