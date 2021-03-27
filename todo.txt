@@ -19,6 +19,9 @@ il più a destra possibile (mettendoci in fondo un \qquad), e poi allinei all’
 Tra parentesi, se l’argomento ti interessa c’e’ un articolo di Baribeau e altri che prosegue l’analogia per n>3 usando i rapporti
 iperbolici iterati.
 
+Qui:
+https://www.math.stonybrook.edu/~bishop/classes/math401.F09/Beardon-Minda.pdf
+
 Scrivere i ringraziamenti.
 
 Aggiungere la dedica.
