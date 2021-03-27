@@ -1,11 +1,7 @@
-Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi. Ci serviranno alcune definizioni.
+Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi.
 
 \begin{defn}
-  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
-\end{defn}
-
-\begin{defn}
-  La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione in $\text{Aut}(\mathbb{D})$ data da
+  La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione $r_a \in \text{Aut}(\mathbb{D})$ data da
   $$r_a(z)=-\frac{z-\frac{2a}{1+|a|^2}}{1-\frac{2\bar{a}}{1+|a|^2}z}.$$
   Con semplici passaggi algebrici, si può mostrare che è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$, da cui $r_a\circ r_a=\id$.
 \end{defn}
@@ -32,6 +28,34 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Se $f$ è un prodotto di Blaschke di grado $n$, che soddisfi (ii) è ovvio e che soddisfi (i) segue dall'Osservazione \ref{dom}.
 
   Fissiamo ora $f$ che soddisfi (i) e (ii); consideriamo $B$ il prodotto di Blaschke definito con $\theta=0$ e $a_n$ gli zeri in $\mathbb{D}$ di $f$, contati con molteplicità. Allora $f/B$ e $B/f$ sono due funzioni olomorfe su $\mathbb{D}$ e continue in $\overline{\mathbb{D}}$, di modulo $1$ sul bordo. Per il principio del massimo per funzioni olomorfe, deve essere $|f/B| \le 1$ e $|B/f| \le 1$ sul disco unitario, da cui $|f/B|=1$ e $f/B$ è costante in $\mathbb{D}$.
+\end{proof}
+
+\begin{lm} \label{z^2}
+  Sia $f \in \mathcal{B}_2$, esistono $S, T \in \text{Aut}(\mathbb{D})$ tali che $S\circ f\circ T(z)=z^2$.
+\end{lm}
+
+\begin{proof}
+  Per transitività di $\text{Aut}(\mathbb{D})$ su $\mathbb{D}$, ci basta dimostrare che esiste un punto $c \in \mathbb{D}$ tale che $f(z)-c$ abbia uno zero doppio nel disco. È sufficiente trovare $z_0 \in \mathbb{D}$ con $f'(z_0)=0$, dato che sappiamo già $f(z_0) \in \mathbb{D}$. Scriviamo $f(z)=e^{i\theta}\cdot\dfrac{z-a_1}{1-\bar{a}_1z}\cdot\dfrac{z-a_2}{1-\bar{a}_2z}$.
+  Sempre per transitività, usando $T$ possiamo supporre $a_1=0$ e poniamo $a_2=a$. Si ha
+  $$f'(z)=e^{i\theta}\left(\frac{z-a}{1-\bar{a}z}+z\cdot\frac{1-|a|^2}{1-\bar{a}z}\right).$$
+  Con qualche passaggio algebrico, l'equazione $f'(z)=0$ diventa
+  $$\bar{a}z^2-2z+a=0.$$
+  Le soluzioni sono $(1 \pm \sqrt{1-|a|^2})/\bar{a}$; da $|a|<1$, abbiamo che quella con il più sta fuori da $\mathbb{D}$ mentre quella con il meno sta dentro, dunque è la soluzione cercata.
+\end{proof}
+
+\begin{defn}
+  Sia $f \in \mathcal{B}_2$. Indichiamo con $R_f$ la rotazione iperbolica di ordine due attorno al punto $z_0$, trovato nella dimostrazione del Lemma \ref{z^2}.
+\end{defn}
+
+\begin{cor} \label{rotazioni}
+  Sia $f \in \mathcal{B}_2$. Allora $f^*\bigl(R_f(w),w\bigr)=0$.
+\end{cor}
+
+\begin{proof}
+  Siano $S, T \in \text{Aut}(\mathbb{D})$ date dal Lemma \ref{z^2} tali che $S\circ f\circ T=F$ con $F(z)=z^2$. Abbiamo $[R_F(z),0]=-[z,0]$, dunque per l'Osservazione \ref{muu} troviamo $\mu[T\bigl(R_F(z)\bigr),T(0)]=-\mu[T(z),T(0)]$.
+  Per costruzione, $T(0)$ dev'essere il punto attorno al quale avviene la rotazione $R_f$, che quindi è caratterizzata dall'equazione $[R_f(z),T(0)]=-[z,T(0)]$. Ne segue che $T\bigl(R_F(z)\bigr)=R_f\bigl(T(z)\bigr)$. Perciò abbiamo $f=S^{-1}\circ F\circ T^{-1}$ e $R_f=T\circ R_F\circ T^{-1}$, inoltre $F\circ R_F=F$. Ne deduciamo che
+  $$f\circ R_f=S^{-1}\circ F\circ R_F\circ T^{-1}=S^{-1}\circ F\circ T^{-1}=f,$$
+  che implica la tesi.
 \end{proof}
 
 \begin{prop} \label{blaschke-prop}
@@ -77,12 +101,17 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Sempre dal lemma di Schwarz-Pick, si ha l'uguaglianza se e solo se abbiamo $f^*(z,v) \in \text{Aut}(\mathbb{D})=\mathcal{B}_1$. Per il punto (ii) della Proposizione \ref{blaschke-prop}, questo è equivalente a $f \in \mathcal{B}_2$.
 \end{proof}
 
+\begin{defn}
+  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
+\end{defn}
+\marginpar{forse bisognerebbe aggiungere la caratterizzazione di appartenenza a una stessa geodetica?}
+
 \begin{cor} \label{32}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
   \begin{equation}
     \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{equation}
-  Sia $T_v(z)=f^*(z,v)$. Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e $T_v^{-1}(0)$, $w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e $R_f(v)$, $w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
 \end{cor}
 
 \begin{proof}
@@ -92,17 +121,17 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
     & \le \omega\bigl(0,f^*(w,v)\bigr)+\omega(z,w).
   \end{align*}
 
-  Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$. Per il Teorema \ref{blaschke-prop}, quest'ultimo fatto è anche equivalente a $T_v \in \text{Aut}(\mathbb{D})$. Ricordiamo che $p$, dunque anche $\omega$, è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$.
-  Allora il caso di uguaglianza nella prima delle due disuguaglianze si riscrive come $\omega\bigl(T_v^{-1}(0),z\bigr)=\omega\bigl(T_v^{-1}(0),w\bigr)+\omega(w,z)$, che caratterizza l'appartenenza, nell'ordine, alla stessa geodetica.
+  Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$. Sia $T_v(z)=f^*(z,v)$; per il Teorema \ref{blaschke-prop}, $f \in \mathcal{B}_2$ è equivalente a $T_v \in \text{Aut}(\mathbb{D})$. Ricordiamo che $p$, dunque anche $\omega$, è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$.
+  Allora il caso di uguaglianza nella prima delle due disuguaglianze si riscrive come $\omega\bigl(T_v^{-1}(0),z\bigr)=\omega\bigl(T_v^{-1}(0),w\bigr)+\omega(w,z)$, che caratterizza l'appartenenza, nell'ordine, alla stessa geodetica. Poiché $T_v$ è un automorfismo, esiste un solo valore per cui va in $0$; ma per il Corollario \ref{rotazioni}, questo valore è proprio $R_f(v)$.
 \end{proof}
 
 \begin{cor} \label{33}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v, u \in \mathbb{D}$ vale
-  \begin{equation}
+  \begin{equation} \label{eq33}
     \omega\bigl(0, f^*(z,v)\bigr) \le \omega\bigl(0, f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).
   \end{equation}
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$ e $R_f(v), R_f(u), w$ e $z$ giacciono sulla stessa geodetica, in quest'ordine.
 \end{cor}
-\marginpar{sia qui che in generale dove uso uno di quei fattarelli, devo citare l'osservazione \ref{oss1}?}
 \begin{proof}
   Applicando il Corollario \ref{32} si ha
   \begin{align*}
@@ -110,8 +139,10 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
     & =\omega\bigl(0,|f^*(v,w)|\bigr)+\omega(z,w)=\omega\bigl(0,f^*(v,w)\bigr)+\omega(z,w).
   \end{align*}
   Sempre per il Corollario \ref{32} abbiamo
-  $$\le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).$$
-  Concatenando le due disuguaglianze otteniamo la tesi.
+  $$\omega\bigl(0,f^*(v,w)\bigr) \le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).$$
+  Mettendo assieme le due disuguaglianze otteniamo la \eqref{eq33}.
+
+  Se si ha l'uguaglianza, dobbiamo studiarla nelle due applicazioni del Corollario \ref{32}. In entrambi i casi ci dice che $f \in \mathcal{B}_2$. La prima ci dice anche che $R_f(v), w$ e $z$ appartengono, nell'ordine, alla stessa geodetica. Dalla seconda deduciamo la stessa cosa per $R_f(w), u$ e $v$. Poiché $R_f$ è un automorfismo e $\omega$ non cambia sotto l'azione di $\text{Aut}(\mathbb{D})$, abbiamo che lascia invariate le geodetiche; allora anche $w, R_f(u)$ e $R_f(v)$ stanno sulla stessa geodetica. Segue la tesi.
 \end{proof}
 
 Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza.
@@ -141,7 +172,6 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   Adesso usiamo le seguenti uguaglianze:
   $$\frac{1+p^2}{1-p^2}=\cosh(2\omega) \text{ e } \frac{2p}{1-p^2}=\sinh(2\omega).$$
   Sommando appunto la quantità $\dfrac{1+p^2(z,v)}{1-p^2(z,v)}$ all'ultima disuguaglianza ottenuta, il membro destro diventa $\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)$. Ci basta dunque mostrare che il membro sinistro è uguale a $\exp\Bigl(2\omega\bigl(f(z),f(v)\bigr)\Bigr)$, cioè $\dfrac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}$. Si ha infatti
-  \marginpar{da capire come vuole che le allinei}
   \[
     \displaylines{\quad \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}+\frac{1+p^2(z,v)}{1-p^2(z,v)}\hfill \cr
     \hfill = \frac{p\bigl(f(z),f(v)\bigr)-p^2(z,v)+1-p^2(z,v)p\bigl(f(z),f(v)\bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}\hskip27pt\cr
