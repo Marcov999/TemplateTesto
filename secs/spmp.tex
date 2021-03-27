@@ -1,10 +1,15 @@
 Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi.
 
+L'idea generale è la seguente: stiamo studiando $\text{Hol}(\mathbb{D},\mathbb{D})$. Le funzioni di questo insieme che sono anche automorfismi conservano la distanza iperbolica. Sembra dunque ragionevole vedere come si traduce il lemma di Schwarz-Pick in termini iperbolici.
+
 \begin{defn}
-  La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione $r_a \in \text{Aut}(\mathbb{D})$ data da
-  $$r_a(z)=-\frac{z-\frac{2a}{1+|a|^2}}{1-\frac{2\bar{a}}{1+|a|^2}z}.$$
-  Chiamiamo $a$ il \textit{centro di rotazione} di $r_a$. Con semplici passaggi algebrici, si può mostrare che $r_a$ è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$, da cui $r_a\circ r_a=\id$.
+  La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione $r_a \in \text{Aut}(\mathbb{D})\setminus\{\id\}$ tale che $r_a \circ r_a=\id$ e $r_a(a)=a$.
+  Chiamiamo $a$ il \textit{centro di rotazione} di $r_a$.
 \end{defn}
+
+\begin{oss}
+  Le condizioni imposte sono sufficienti a determinare un unico automorfismo $r_a$. Infatti, a meno di coniugare possiamo supporre $a=0$, per cui $r_0$ dev'essere una rotazione di ordine due, cioè di $\pi$. Inoltre, è facile vedere che $r_a$ è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$.
+\end{oss}
 
 \begin{defn}
   Dati $a_1,\dots,a_n \in \mathbb{D}$ e $\theta \in \mathbb{R}$, chiamiamo \textit{prodotto di Blaschke} di grado $n$ la funzione
@@ -43,9 +48,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Le soluzioni sono $(1 \pm \sqrt{1-|a|^2})/\bar{a}$; da $|a|<1$, abbiamo che quella con il più sta fuori da $\mathbb{D}$ mentre quella con il meno sta dentro, dunque è la soluzione cercata.
 \end{proof}
 
-\begin{defn}
-  Sia $f \in \mathcal{B}_2$. Indichiamo con $R_f$ la rotazione iperbolica di ordine due attorno al punto $z_0$, trovato nella dimostrazione del Lemma \ref{z^2}.
-\end{defn}
+Notazione: sia $f \in \mathcal{B}_2$; indichiamo con $R_f$ la rotazione iperbolica di ordine due attorno al punto $z_0$, trovato nella dimostrazione del Lemma \ref{z^2}.
 
 \begin{cor} \label{rotazioni}
   Sia $f \in \mathcal{B}_2$. Allora $f^*\bigl(R_f(w),w\bigr)=0$.
@@ -79,13 +82,17 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   Sappiamo anche che $S\bigl(f(w)\bigr)=0$, dunque nel prodotto ci dev'essere il fattore $[z,w]$; segue dunque che $f^*(z,w) \in \mathcal{B}_n$.
 \end{proof}
 
+Il seguente risultato rende chiaro perché nelle varie disuguaglianze si richiede che $f$ non sia un automorfismo.
+
 \begin{prop} \label{24}
   Siano $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ e $v \in \mathbb{D}$. Allora per ogni $z \in \mathbb{D}$ si ha che $f^*(z,v) \in \mathbb{D}$ e la funzione $z \longmapsto f^*(z,v)$ è olomorfa.
 \end{prop}
 
 \begin{proof}
-  Per quanto riguarda l'olomorfia, dalla definizione sappiamo che l'unico punto che potrebbe dar problemi è $v$; abbiamo però visto che la funzione ammette limite finito per $z \longrightarrow v$, perciò $v$ è una singolarità rimovibile. Per il lemma di Schwarz-Pick, $|f^*(z,v)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
+  L'olomorfia l'abbiamo già vista quando abbiamo definito il rapporto iperbolico. Per il lemma di Schwarz-Pick, $|f^*(z,v)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
 \end{proof}
+
+L'idea dell'articolo di Beardon-Minda è di applicare il lemma di Schwarz-Pick alla funzione $f^*(z,v)$ con $v$ fissato. Per $f \in \text{Aut}(\mathbb{D})$, avremmo una funzione costante di modulo uguale a $1$, in particolare in $\mathcal{O}(\mathbb{D})\setminus\text{Hol}(\mathbb{D},\mathbb{D})$; non potremmo quindi applicare quanto appena detto.
 
 \begin{thm} \label{31}
   (Beardon-Minda, 2004) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
@@ -100,6 +107,13 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
 
   Sempre dal lemma di Schwarz-Pick, si ha l'uguaglianza se e solo se abbiamo $f^*(z,v) \in \text{Aut}(\mathbb{D})=\mathcal{B}_1$. Per il punto (ii) della Proposizione \ref{blaschke-prop}, questo è equivalente a $f \in \mathcal{B}_2$.
 \end{proof}
+
+Vogliamo vedere che questa versione a tre punti è effettivamente un miglioramento rispetto al lemma di Schwarz-Pick.
+
+\begin{ex}
+  Consideriamo una funzione $f \in \text{Hol}(\mathbb{D},\mathbb{D})\setminus\text{Aut}(\mathbb{D})$ tale che $f(0)=0$. Il lemma di Schwarz-Pick diventa semplicemente il lemma di Schwarz e ci dice che $f(z)/z \in \mathbb{D}$. Prendendo invece $w=0$ e $v=0$ in \eqref{3.1}, troviamo $\omega\bigl(f(z)/z,f'(0)\bigr) \le \omega(z,0)$.
+  Dunque $f(z)/z$ appartiene al disco iperbolico di centro $f'(0)$ e raggio $\omega(z,0)$, che è un sottoinsieme di $\mathbb{D}$.
+\end{ex}
 
 \begin{defn}
   Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
@@ -122,7 +136,7 @@ Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, 
   \end{align*}
 
   Si ha l'uguaglianza se e solo se vale in entrambe le disuguaglianze appena viste. La seconda è esattamente il caso di uguaglianza del Teorema \ref{31}, che è equivalente a $f \in \mathcal{B}_2$. Sia $T_v(z)=f^*(z,v)$; per il Teorema \ref{blaschke-prop}, $f \in \mathcal{B}_2$ è equivalente a $T_v \in \text{Aut}(\mathbb{D})$. Ricordiamo che $p$, dunque anche $\omega$, è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$.
-  Allora il caso di uguaglianza nella prima delle due disuguaglianze si riscrive come $\omega\bigl(T_v^{-1}(0),z\bigr)=\omega\bigl(T_v^{-1}(0),w\bigr)+\omega(w,z)$, che caratterizza l'appartenenza, nell'ordine, alla stessa geodetica. Poiché $T_v$ è un automorfismo, esiste un solo valore per cui va in $0$; ma per il Corollario \ref{rotazioni}, questo valore è proprio $R_f(v)$.
+  Allora il caso di uguaglianza nella prima delle due disuguaglianze si riscrive come $\omega\bigl(T_v^{-1}(0),z\bigr)=\omega\bigl(T_v^{-1}(0),w\bigr)+\omega(w,z)$, che caratterizza l'appartenenza, nell'ordine, alla stessa geodetica. Per il Corollario \ref{rotazioni} si ha $T_v^{-1}(0)=R_f(v)$.
 \end{proof}
 
 \begin{cor} \label{33}
@@ -179,6 +193,10 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   \]
 \end{proof}
 
+Vorremmo ora dedurre dei risultati simili al lemma di Schwarz-Pick anche per la derivata iperbolica. In generale $f^h$ non è olomorfa, dunque non è possibile applicare il lemma come si è fatto per $f^*(z,v)$. Tuttavia, quanto visto finora può essere usato per mostrare disuguaglianze che si avvicinano a qualcosa di tipo Schwarz-Pick, a costo di un fattore $2$.
+
+La prima richiede che uno dei due punti sia $0$.
+
 \begin{cor} \label{36}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$ tale che $f(0)=0$. Allora
   \begin{equation}
@@ -200,7 +218,7 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   Per dire che $2$ è la migliore costante possibile, basta prendere $f(z)=z^2$ e $z \in \mathbb{D}$ con $|z|=1/3$ per ottenere l'uguaglianza.
 \end{proof}
 
-Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglianza di Golusin.
+Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglianza di Golusin. È valido per ogni coppia di punti nel disco, ma dobbiamo considerare il modulo della derivata iperbolica.
 
 \begin{cor} \label{quasigolusin}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w \in \mathbb{D}$ vale
