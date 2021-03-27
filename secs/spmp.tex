@@ -166,31 +166,34 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   \begin{equation} \label{geod}
     2\omega\bigl(f(z),f(v)\bigr) \le \log\Bigl(\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)\Bigr).
   \end{equation}
+  Si ha l'uguaglianza se e solo se $f \in \mathcal{B}_2$, $z$ e $v$ giacciono sulla stessa geodetica passante per $c$, il centro di rotazione di $R_f$, e $w=z$ e sta fra $c$ e $v$ oppure $w=v$ e sta fra $c$ e $z$.
 \end{cor}
-\marginpar{da rivedere}
-\begin{proof}
-  Osserviamo che se $f \in \text{Aut}(\mathbb{D})$, allora per il lemma di Schwarz-Pick $|f^h(w)|=1$ e il membro destro della disuguaglianza \eqref{geod} è esattamente $2\omega(z,v)$. In questo caso, per il lemma di Schwarz-Pick si ha l'uguaglianza.
 
-  Supponiamo ora $f \not\in \text{Aut}(\mathbb{D})$, allora possiamo applicare il Corollario \ref{33} con $u=v$ per ottenere
-  \begin{gather*}
-    \omega\bigl(0,f^*(z,v)\bigr) \le \omega\bigl(0,f^h(w)\bigr)+\omega(z,v) \\
-    p\bigl(0,f^*(z,v)\bigr) \le \tanh\Bigl(\omega\bigl(0,f^h(w)\bigr)+\omega(z,v)\Bigr) \\
-    \frac{p\bigl(f(z),f(v)\bigr)}{p(z,v)} \le \frac{|f^h(w)|+p(z,v)}{1+|f^h(w)|p(z,v)},
-  \end{gather*}
-  dove abbiamo usato $p=\tanh\omega$, $f^*(z,v)=\frac{[f(z),f(v)]}{[z,v]}$, $\tanh(a+b)=\frac{\tanh{a}+\tanh{b}}{1+\tanh{a}\tanh{b}}$ e $p(0,\zeta)=|\zeta|$. Riscriviamo come
-  \begin{gather*}
-    \frac{p\bigl(f(z),f(v)\bigr)}{p(z,v)}-p(z,v) \le |f^h(w)|\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr) \\
-    \frac{p\bigl(f(z),f(v)\bigr)-p^2(z,v)}{p(z,v)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)} \le |f^h(w)| \\
-    \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)} \le |f^h(w)|\cdot \frac{2p(z,v)}{1-p^2(z,v)}.
-  \end{gather*}
-  Adesso usiamo le seguenti uguaglianze:
-  $$\frac{1+p^2}{1-p^2}=\cosh(2\omega) \text{ e } \frac{2p}{1-p^2}=\sinh(2\omega).$$
-  Sommando appunto la quantità $\dfrac{1+p^2(z,v)}{1-p^2(z,v)}$ all'ultima disuguaglianza ottenuta, il membro destro diventa $\cosh\bigl(2\omega(z,v)\bigr)+|f^h(w)|\sinh\bigl(2\omega(z,v)\bigr)$. Ci basta dunque mostrare che il membro sinistro è uguale a $\exp\Bigl(2\omega\bigl(f(z),f(v)\bigr)\Bigr)$, cioè $\dfrac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}$. Si ha infatti
-  \[
-    \displaylines{\quad \frac{2\Bigl(p\bigl(f(z),f(v)\bigr)-p^2(z,v)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}+\frac{1+p^2(z,v)}{1-p^2(z,v)}\hfill \cr
-    \hfill = \frac{p\bigl(f(z),f(v)\bigr)-p^2(z,v)+1-p^2(z,v)p\bigl(f(z),f(v)\bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}\hskip27pt\cr
-    \hfill = \frac{\bigl(1-p^2(z,v)\bigr)\Bigl(1+p\bigl(f(z),f(v)\bigr)\Bigr)}{\bigl(1-p^2(z,v)\bigr)\Bigl(1-p\bigl(f(z),f(v)\bigr)\Bigr)}=\frac{1+p\bigl(f(z),f(v)\bigr)}{1-p\bigl(f(z),f(v)\bigr)}.\quad \cr}
-  \]
+\begin{proof}
+  Ricordando le definizioni di $\omega$ e $p$, per ogni $z,w \in \mathbb{D}$ abbiamo
+  $$\tanh\bigl(\omega(0,z)\bigr)=|z|\text{ e }\tanh\bigl(\omega(z,w)\bigr)=p(z,w)=\tanh\bigl(\omega(0,[z,w])\bigl).$$
+  Dalla definizioni di $f^*(z,w)$ e $p$ e usando le uguaglianze appena citate, abbiamo
+  \begin{align*}
+    \tanh\Bigl(\omega\bigl(f(z),f(v)\bigr)\Bigr)&=p\bigl(f(z),f(v)\bigr)=p(z,v)|f^*(z,v)| \\
+    &=p(z,v)\tanh\Bigl(\omega\bigl(0,f^*(z,v)\bigr)\Bigr).
+  \end{align*}
+  Applicando il Corollario \ref{33} con $u=w$ e usando il fatto che $z,w$ e $v$ stanno, nell'ordine, sulla stessa geodetica, troviamo
+  $$\omega\bigl(0,f^*(z,v)\bigr) \le \omega\bigl(0,f^h(w)\bigr)+\omega(z,v);$$
+  ricordando che la tangente iperbolica è strettamente crescente e sfruttando la formula $\tanh(a+b)=\frac{\tanh{a}+\tanh{b}}{1+\tanh{a}\tanh{b}}$ e le uguaglianze di prima, si ha
+  $$\tanh\Bigl(\omega\bigl(0,f^*(z,w)\bigr)\Bigr) \le\frac{|f^h(w)|+p(z,v)}{1+|f^h(w)|p(z,v)}.$$
+  Mettendo assieme le varie disuguaglianze, risulta che
+  $$\tanh\Bigl(\omega\bigl(f(z),f(v)\bigr)\Bigr) \le p(z,v)\left(\frac{|f^h(w)|+p(z,v)}{1+|f^h(w)|p(z,v)}\right);$$
+  prendendo $\tanh^{-1}(x)=\frac{1}{2}\log\left(\frac{1+x}{1-x}\right)$ otteniamo
+  \begin{align*}
+    \omega\bigl(f(z),f(v)\bigr) & \le \frac{1}{2}\log\left(\frac{1+p(z,v)|f^h(w)|+p(z,v)(|f^h(w)|+p(z,v))}{1+p(z,v)|f^h(w)|-p(z,v)(|f^h(w)|+p(z,v))}\right) \\
+    & =\frac{1}{2}\left(\frac{1+p^2(z,v)}{1-p^2(z,v)}+|f^h(w)|\frac{2p(z,v)}{1-p^2(z,v)}\right).
+  \end{align*}
+  Usando le uguaglianze
+  $$\frac{1+p^2}{1-p^2}=\cosh(2\omega) \text{ e } \frac{2p}{1-p^2}=\sinh(2\omega)$$
+  otteniamo la disuguaglianza della tesi.
+  \marginpar{l'ultima affermazione di questa dimostrazione è molto "euristica"}
+  
+  Il caso di uguaglianza segue dall'uguaglianza nel Corollario \ref{33}, notando che se $w\not=z,v$ non possono essere soddisfatti tutti gli allineamenti richiesti nell'ordine giusto.
 \end{proof}
 
 Vorremmo ora dedurre dei risultati simili al lemma di Schwarz-Pick anche per la derivata iperbolica. In generale $f^h$ non è olomorfa, dunque non è possibile applicare il lemma come si è fatto per $f^*(z,v)$. Tuttavia, quanto visto finora può essere usato per mostrare disuguaglianze che si avvicinano a qualcosa di tipo Schwarz-Pick, a costo di un fattore $2$.
