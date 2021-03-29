@@ -124,7 +124,7 @@ Dal lemma di Schwarz-Pick abbiamo che la quantità $p(z,w)$ è contratta da $f \
 
  Consideriamo $\omega(z,w):=\text{arctanh}\bigl(p(z,w)\bigr)=\dfrac{1}{2}\log\left(\dfrac{1+p(z,w)}{1-p(z,w)}\right)$.
 
-\begin{prop}
+\begin{prop} \label{eunadistanza}
   La funzione $\omega: \mathbb{D}\times \mathbb{D} \longrightarrow [0,+\infty)$ è ben definita ed è effettivamente una distanza.
 \end{prop}
 
@@ -175,3 +175,37 @@ Notiamo che, poiché il limite di $f^*(z,w)$ per $z \longrightarrow w$ è ben de
   \end{nlist}
   Questi risultati verranno usati nelle varie dimostrazioni e verranno esplicitati solo quando ciò che ne segue non è immediato.
 \end{oss}
+
+Per trattare i casi estremali delle disuguaglianze in \cite{BM}, ci servirà qualche risultato di tipo geometrico sul disco con la distanza iperbolica.
+
+\begin{defn}
+  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
+
+  Diciamo che tre punti $z_1, z_2, z_3$ appartengono \textit{nell'ordine} alla stessa geodetica se $z_j=\sigma(t_j)$ con $t_1 \le t_2 \le t_3$.
+\end{defn}
+
+\begin{oss} \label{geoingeo}
+  Poiché $\omega$ è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$, gli automorfismi mandano geodetiche in geodetiche; inoltre, conservano l'ordine.
+\end{oss}
+
+\begin{ex} \label{diam}
+  Dato $z_0 \in \mathbb{D}$, la curva $\sigma(t)=\tanh(t)\frac{z_0}{|z_0|}$ (il diametro passante per $z_0$) è una geodetica. Che sia il diametro indicato segue dal fatto che la funzione $\tanh:\mathbb{R} \longrightarrow (-1,1)$ è biettiva. Che sia una geodetica segue dalla definizione di $\omega$, dalla formula già citata per $\tanh(a+b)$ e dal fatto che $\tanh$ è dispari.
+\end{ex}
+
+\begin{oss}
+  Dati due punti $z_0$ e $z_1$, esiste sempre una geodetica passante per entrambi. Infatti, per l'Osservazione \ref{geoingeo} e per transitività di $\text{Aut}(\mathbb{D})$ possiamo supporre $z_1=0$; basta dunque prendere il diametro visto nell'Esempio \ref{diam}.
+\end{oss}
+
+\begin{lm}
+  $z_1,z_2,z_3 \in \mathbb{D}$ appartengono nell'ordine alla stessa geodetica se e solo se $\omega(z_1,z_3)=\omega(z_1,z_2)+\omega(z_2,z_3)$.
+\end{lm}
+
+\begin{proof}
+  Se appartengono nell'ordine alla stessa geodetica, l'uguaglianza segue dalla definizione.
+
+  Supponiamo ora che valga $\omega(z_1,z_3)=\omega(z_1,z_2)+\omega(z_2,z_3)$. Per transitività di $\text{Aut}(\mathbb{D})$ possiamo supporre $z_2=0$. Usando la definizione di $\omega$, l'uguaglianza si riscrive come
+  $$\text{arctanh}\left|\frac{z_1-z_3}{1-\bar{z}_3z_1}\right|=\text{arctanh}|z_1|+\text{arctanh}|z_3|;$$
+  applicando la tangente iperbolica a entrambi i membri e usando ancora una volta la formula $\tanh(a+b)=\frac{\tanh(a)+\tanh(b)}{1+\tanh(a)\tanh(b)}$, otteniamo
+  $$\left|\frac{z_1-z_3}{1-\bar{z}_3z_1}\right|=\frac{|z_1|+|z_3|}{1+|z_1||z_3|}.$$
+  Nella dimostrazione della Proposizione \ref{eunadistanza} abbiamo visto una disuguaglianza che coinvolge le stesse quantità; ripercorrendo i passaggi, si trova che la condizione per l'uguaglianza è $|1-\bar{z}_3z_1|=1+|z_3||z_1|$. Ma questo dice proprio che $z_1$ e $z_3$ stanno sullo stesso diametro, da parti opposte rispetto a $0$.
+\end{proof}

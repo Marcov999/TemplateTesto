@@ -1,6 +1,6 @@
 Adesso possiamo procedere a dimostrare la serie di disuguaglianze di \cite{BM}, che coinvolgono la distanza di Poincaré $\omega$ e le funzioni olomorfe dal disco in sé che non sono automorfismi.
 
-L'idea generale è la seguente: stiamo studiando $\text{Hol}(\mathbb{D},\mathbb{D})$. Le funzioni di questo insieme che sono anche automorfismi conservano la distanza iperbolica. Sembra dunque ragionevole vedere come si traduce il lemma di Schwarz-Pick in termini iperbolici.
+L'idea generale è la seguente: stiamo studiando $\text{Hol}(\mathbb{D},\mathbb{D})$. Le funzioni di questo insieme che sono anche automorfismi conservano la distanza iperbolica. Sembra dunque ragionevole vedere come si traduce il lemma di Schwarz-Pick in termini iperbolici (abbiamo già visto che contrae $\omega$).
 
 \begin{defn}
   La \textit{rotazione iperbolica} di ordine due attorno a un punto $a \in \mathbb{D}$ è la funzione $r_a \in \text{Aut}(\mathbb{D})\setminus\{\id\}$ tale che $r_a \circ r_a=\id$ e $r_a(a)=a$.
@@ -9,6 +9,10 @@ L'idea generale è la seguente: stiamo studiando $\text{Hol}(\mathbb{D},\mathbb{
 
 \begin{oss}
   Le condizioni imposte sono sufficienti a determinare un unico automorfismo $r_a$. Infatti, a meno di coniugare possiamo supporre $a=0$, per cui $r_0$ dev'essere una rotazione di ordine due, cioè di $\pi$. Inoltre, è facile vedere che $r_a$ è caratterizzata dall'equazione $[r_a(z),a]=-[z,a]$.
+\end{oss}
+
+\begin{oss} \label{rotegeo}
+  $z, a$ e $r_a(z)$ appartengono, nell'ordine, alla stessa geodetica. Infatti, a meno di comporre con un opportuno automorfismo possiamo supporre $a=0$; ma poiché $r_0(z)=e^{i\pi}z$, l'affermazione risulta ovvia.
 \end{oss}
 
 \begin{defn}
@@ -92,7 +96,7 @@ Il seguente risultato rende chiaro perché nelle varie disuguaglianze si richied
   L'olomorfia l'abbiamo già vista quando abbiamo definito il rapporto iperbolico. Per il lemma di Schwarz-Pick, $|f^*(z,v)| \le 1$; inoltre, vale l'uguaglianza in qualche punto solo se $f$ è un automorfismo. Dunque le ipotesi su $f$ assicurano che vale la disuguaglianza stretta sempre, cioè $f^*(z,v) \in \mathbb{D}$ per ogni $z \in \mathbb{D}$.
 \end{proof}
 
-L'idea dell'articolo di Beardon-Minda è di applicare il lemma di Schwarz-Pick alla funzione $f^*(z,v)$ con $v$ fissato. Per $f \in \text{Aut}(\mathbb{D})$, avremmo una funzione costante di modulo uguale a $1$, in particolare in $\mathcal{O}(\mathbb{D})\setminus\text{Hol}(\mathbb{D},\mathbb{D})$; non potremmo quindi applicare quanto appena detto.
+L'idea dell'articolo di Beardon-Minda è di applicare il lemma di Schwarz-Pick alla funzione $f^*(z,v)$, con $v$ fissato. Per $f \in \text{Aut}(\mathbb{D})$, avremmo una funzione costante di modulo uguale a $1$, in particolare in $\mathcal{O}(\mathbb{D})\setminus\text{Hol}(\mathbb{D},\mathbb{D})$; non potremmo quindi applicare quanto appena detto.
 
 \begin{thm} \label{31}
   (Beardon-Minda, 2004) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
@@ -114,11 +118,6 @@ Vogliamo vedere che questa versione a tre punti è effettivamente un miglioramen
   Consideriamo una funzione $f \in \text{Hol}(\mathbb{D},\mathbb{D})\setminus\text{Aut}(\mathbb{D})$ tale che $f(0)=0$. Il lemma di Schwarz-Pick diventa semplicemente il lemma di Schwarz e ci dice che $f(z)/z \in \mathbb{D}$. Prendendo invece $w=0$ e $v=0$ in \eqref{3.1}, troviamo $\omega\bigl(f(z)/z,f'(0)\bigr) \le \omega(z,0)$.
   Dunque $f(z)/z$ appartiene al disco iperbolico di centro $f'(0)$ e raggio $\omega(z,0)$, che è un sottoinsieme di $\mathbb{D}$.
 \end{ex}
-
-\begin{defn}
-  Una \textit{geodetica} per $\omega$ è una curva $\sigma: \mathbb{R} \longrightarrow \mathbb{D}$ tale che per ogni $t_1,t_2 \in \mathbb{R}$ si ha $\omega\bigl(\sigma(t_1),\sigma(t_2)\bigr)=|t_1-t_2|$.
-\end{defn}
-\marginpar{forse bisognerebbe aggiungere la caratterizzazione di appartenenza a una stessa geodetica?}
 
 \begin{cor} \label{32}
   Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z, w, v \in \mathbb{D}$ vale
@@ -156,7 +155,7 @@ Vogliamo vedere che questa versione a tre punti è effettivamente un miglioramen
   $$\omega\bigl(0,f^*(v,w)\bigr) \le \omega\bigl(0,f^*(u,w)\bigr)+\omega(z,w)+\omega(v,u).$$
   Mettendo assieme le due disuguaglianze otteniamo la \eqref{eq33}.
 
-  Se si ha l'uguaglianza, dobbiamo studiarla nelle due applicazioni del Corollario \ref{32}. In entrambi i casi ci dice che $f \in \mathcal{B}_2$. La prima ci dice anche che $R_f(v), w$ e $z$ appartengono, nell'ordine, alla stessa geodetica. Dalla seconda deduciamo la stessa cosa per $R_f(w), u$ e $v$. Poiché $R_f$ è un automorfismo e $\omega$ non cambia sotto l'azione di $\text{Aut}(\mathbb{D})$, abbiamo che lascia invariate le geodetiche; allora anche $w, R_f(u)$ e $R_f(v)$ stanno sulla stessa geodetica. Segue il secondo enunciato della tesi. Viceversa, se valgono tutte queste condizioni è facile vedere che si ha l'uguaglianza.
+  Se si ha l'uguaglianza, dobbiamo studiarla nelle due applicazioni del Corollario \ref{32}. In entrambi i casi ci dice che $f \in \mathcal{B}_2$. La prima ci dice anche che $R_f(v), w$ e $z$ appartengono, nell'ordine, alla stessa geodetica. Dalla seconda deduciamo la stessa cosa per $R_f(w), u$ e $v$. Poiché $R_f$ è un automorfismo, abbiamo che lascia invariate le geodetiche e l'ordine dei punti sulle stesse; allora anche $w, R_f(u)$ e $R_f(v)$ stanno, nell'ordine, sulla stessa geodetica. Segue il secondo enunciato della tesi. Viceversa, se valgono tutte queste condizioni è facile vedere che si ha l'uguaglianza.
 \end{proof}
 
 Il risultato seguente non ci servirà nel seguito, ma viene riportato per completezza.
@@ -191,9 +190,8 @@ Il risultato seguente non ci servirà nel seguito, ma viene riportato per comple
   Usando le uguaglianze
   $$\frac{1+p^2}{1-p^2}=\cosh(2\omega) \text{ e } \frac{2p}{1-p^2}=\sinh(2\omega)$$
   otteniamo la disuguaglianza della tesi.
-  \marginpar{l'ultima affermazione di questa dimostrazione è molto "euristica"}
 
-  Il caso di uguaglianza segue dall'uguaglianza nel Corollario \ref{33}, notando che se $w\not=z,v$ non possono essere soddisfatti tutti gli allineamenti richiesti nell'ordine giusto.
+  Il caso di uguaglianza segue dall'uguaglianza nel Corollario \ref{33}: ricordando l'Osservazione \ref{rotegeo}, notiamo che se $w\not=z,v$ non possono essere soddisfatti tutti gli allineamenti richiesti nell'ordine giusto.
 \end{proof}
 
 \begin{oss}
