@@ -249,13 +249,19 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
   dove l'ultima disuguaglianza segue dal Corollario \ref{33} prendendo $u=w$ e $v=z$. Il caso di uguaglianza segue facilmente.
 \end{proof}
 
-Concludiamo la sezione con il lemma di Dieudonné \cite[Chapter III, ???]{D}, per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
-\marginpar{Chapter o Chapitre? Poi: quale dei tanti? Non sono certo di quale sia quello più pertinente alla nostra versione}
+Concludiamo la sezione con il lemma di Dieudonné \cite[Chapitre III, paragraphe 8, équation (25)]{D}, per il quale l'approccio dell'articolo di Beardon e Minda semplifica le dimostrazioni.
 
 \begin{lm}
-  (lemma di Dieudonné) Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e sia $z_0 \in \mathbb{D}$ con $|f(z_0)| \le |z_0|$. Allora
-  \begin{equation}
+  (lemma di Dieudonné) Sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $f(0)=0$ e sia $z_0 \in \mathbb{D}$. Allora
+  \begin{equation} \label{dieu}
     |f'(z_0)-f(z_0)/z_0| \le \frac{|z_0|^2-|f(z_0)|^2}{|z_0|(1-|z_0|^2)}.
+  \end{equation}
+  In particolare,
+  \begin{equation} \label{dieuprimo}
+    |f'(z)| \le \begin{cases}
+      1 & \mbox{se } |z| \le \sqrt{2}-1 \\
+      \dfrac{(1+|z|^2)^2}{4|z|(1-|z|^2)} & \mbox{se } |z| \ge \sqrt{2}-1.
+  \end{cases}
   \end{equation}
 \end{lm}
 
@@ -268,11 +274,11 @@ Concludiamo la sezione con il lemma di Dieudonné \cite[Chapter III, ???]{D}, pe
   dove l'equivalenza fra le due disuguaglianze segue dal fatto che $\text{arctanh}$ è strettamente crescente. Per semplificare, scriviamo $f^h(z_0)=a, f^*(0,z_0)=b$ e $|z_0|=r$. Vogliamo portare la disuguaglianza in forma euclidea. Abbiamo
   $$\left|\frac{a-b}{1-\bar{b}a}\right|=p(a,b) \le r,$$
   che si riscrive come
-  \marginpar{trova un modo più leggibile di fare tutta 'sta roba}
+  \marginpar{capire se questo passaggio è comprensibile}
   \begin{align*}
     (a-b)(\bar{a}-\bar{b}) & \le r^2(1-\bar{b}a)(1-b\bar{a}) \\
-    & \iff |a|^2-a\bar{b}-\bar{a}b+|b|^2 \le r^2-r^2a\bar{b}-r^2\bar{a}b+r^2|b|^2|a|^2 \\
-    & \iff |a|^2(1-r^2|b|^2)-a\bar{b}(1-r^2)-\bar{a}b(1-r^2) \le r^2-|b|^2 \\
+    % & \iff |a|^2-a\bar{b}-\bar{a}b+|b|^2 \le r^2-r^2a\bar{b}-r^2\bar{a}b+r^2|b|^2|a|^2 \\
+    % & \iff |a|^2(1-r^2|b|^2)-a\bar{b}(1-r^2)-\bar{a}b(1-r^2) \le r^2-|b|^2 \\
     & \iff |a|^2-a\cdot\frac{\bar{b}(1-r^2)}{1-r^2|b|^2}-\bar{a}\cdot\frac{b(1-r^2)}{1-r^2|b|^2} \le \frac{r^2-|b|^2}{1-r^2|b|^2};
   \end{align*}
   ponendo $\alpha=\dfrac{b(1-r^2)}{1-r^2|b|^2}$ e $R^2=\dfrac{r^2-|b|^2}{1-r^2|b|^2}+|b|^2\left(\dfrac{1-r^2}{1-r^2|b|^2}\right)^2$, si ha
@@ -280,5 +286,12 @@ Concludiamo la sezione con il lemma di Dieudonné \cite[Chapter III, ???]{D}, pe
   Ricordando che $r=|z_0|$ e osservando che $b=f^*(0,z_0)=\frac{[f(0),f(z_0)]}{[0,z_0]}=\frac{f(z_0)}{z_0}$, troviamo $\alpha=\dfrac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}$ e $R=\dfrac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)}$.
   Riprendendo infine la definizione di $a$, cioè $a=f^h(z_0)=\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}$, otteniamo che
   $$\left|\frac{f'(z_0)(1-|z_0|^2)}{1-|f(z_0)|^2}-\frac{f(z_0)(1-|z_0|^2)}{z_0\bigl(1-|f(z_0)|^2\bigr)}\right| \le \frac{|z_0|^2-|f(z_0)|^2}{|z_0|\bigl(1-|f(z_0)|^2\bigr)},$$
-  che è equivalente alla tesi moltiplicando entrambi i membri per $\frac{1-|f(z_0)|^2}{1-|z_0|^2}$.
+  che è equivalente alla \eqref{dieu} moltiplicando entrambi i membri per $\frac{1-|f(z_0)|^2}{1-|z_0|^2}$.
+
+  Mostriamo ora la \eqref{dieuprimo}. Dalla \eqref{dieu} con $z$ al posto di $z_0$ si ha
+  \begin{align*}
+    |f'(z)| & \le |f'(z)-f(z)/z|+|f(z)/z| \\
+    & \le \frac{|z|^2-|f(z)|^2}{|z|(1-|z|^2)}+\frac{|f(z)|}{|z|}=\frac{(|f(z)|+|z|^2)(1-|f(z)|)}{|z|(1-|z|^2)}.
+  \end{align*}
+  Adesso, per $|z|$ fissato un rapido conto mostra che il massimo si ottiene per $|f(z)|=\frac{1-|z|^2}{2}$; poiché per il lemma di Schwarz dev'essere $|f(z)| \le |z|$, questo caso può essere raggiunto solo se $|z| \ge \sqrt{2}-1$ e sostituendo otteniamo la seconda espressione della \eqref{dieuprimo}. Nell'altro caso il massimo si ottiene per $|f(z)|=|z|$ e sostituendo si trova che è proprio $1$.
 \end{proof}
