@@ -33,3 +33,9 @@
   \end{align*}
   Poiché $\displaystyle \lim_{z \longrightarrow 1} g(z)/(z-1)^3=-1/4$ si ha che $g(z)$ è $O\bigl((z-1)^3\bigr)$ ma non $o\bigl((z-1)^3\bigr)$ per $z \longrightarrow 1$. Allora il termine $o\bigl((z-\sigma)^3\bigr)$ nel Teorema \ref{burns_krantz} non è migliorabile.
 \end{ex}
+
+\begin{oss}
+  Lo stesso esempio mostra che anche nel Teorema \ref{boundary_schwarz_pick} il termine $o\bigl((|z_n|-1)^2\bigr)$ non può essere migliorato. Si ha infatti
+  $$|f^h(z)|=\frac{|f'(z)|(1-|z|^2)}{1-|f(z)|^2}=\frac{2|z|}{1+|z|^2},$$
+  da cui $\displaystyle \lim_{|z| \longrightarrow 1} \frac{|f^h(z)|-1}{(|z|-1)^2}=-\frac{1}{2}$; allora la quantità $|f^h(z)|-1$ è $O\bigl((|z|-1)^2\bigr)$ ma non $o\bigl((|z|-1)^2\bigr)$ per qualunque successione che si avvicina al bordo, e abbiamo già visto che $f$ non è un automorfismo.
+\end{oss}

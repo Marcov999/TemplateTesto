@@ -1,4 +1,13 @@
-Dalla disuguaglianza di Golusin possiamo dimostrare un risultato di rigidità al Bordo, seguendo la traccia data nel Remark 5.6 di \cite{BKR}.
+Dalla parte di unicità del lemma di Schwarz-Pick possiamo dedurre il seguente risultato di rigidità: sia $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che
+$$f(z)=z+o(z-z_0) \text{ per } z \longrightarrow z_0 \in \mathbb{D};$$
+allora $f$ è l'identità. Lo si può dimostrare osservando che $f'(z_0)=1$ e usando quest'altro risultato più forte, che è una diretta conseguenza del lemma di Schwarz-Pick: se $f \in \text{Hol}(\mathbb{D},\mathbb{D})$ è tale che
+$$|f^h(z)|=1+o(1) \text{ per } z \longrightarrow z_0 \in \mathbb{D},$$
+allora $f \in \text{Aut}(\mathbb{D})$. A questo punto, per dimostrare il primo enunciato basta supporre $z_0=0$, a meno di comporre con opportuni automorfismi.
+\marginpar{devo approfondire con i dettagli o va bene questa spiegazione?}
+
+Questi sono risultati di rigidità piuttosto forti. Ad esempio, il primo può essere riassunto così: se una funzione olomorfa dal disco in sé dista dall'identità per termini di grado minore al primo (e ovviamente non potremmo chiedere di meglio), allora è forzata a essere l'identità. Il secondo è simile: se la derivata iperbolica di una funzione si comporta come quella di un automorfismo (cioè la funzione e la sua derivata si comportano come quelle di un automorfismo), allora la funzione è necessariamente un automorfismo.
+
+Questi sono risultati che valgono per punti interni al disco; quello che andremo a fare in questa sezione e nella successiva è dimostrare i loro analoghi per punti sul bordo, andando a perdere due gradi nel resto delle ipotesi. Useremo la disuguaglianza di Golusin, seguendo la traccia data nel Remark 5.6 di \cite{BKR}.
 
 \begin{thm} \label{boundary_schwarz_pick}
   (Bracci-Kraus-Roth, 2020) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})$ tale che
