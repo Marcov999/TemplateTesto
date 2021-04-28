@@ -1,9 +1,10 @@
-Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente da Pick nel 1916 e Nevanlinna nel 1919; è un teorema di interpolazione interessante di per sé, e vedremo un paio di esempi in cui le ipotesi vengono riformulate in termini del lemma di Schwarz-Pick, usando in un caso anche il rapporto iperbolico.
+Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente da Pick nel 1916 \cite{P} e Nevanlinna nel 1919; è un teorema di interpolazione interessante di per sé, inoltre vedremo un paio di esempi in cui le ipotesi vengono riformulate in termini del lemma di Schwarz-Pick, usando in un caso anche il rapporto iperbolico. Seguiamo la dimostrazione vista in \cite[Chapter 1, Theorem 2.2]{JBG}.
+\marginpar{le fonti dicono 1916, ma andando a cercare l'articolo originale di Pick è del 1915. Quello di Nevanlinna è introvabile. Mah, mistero!}
 
 \begin{thm}
-  (Pick-Nevanlinna, \cite[Chapter 1, Theorem 2.2]{JBG}) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Consideriamo la forma quadratica
+  (Pick-Nevanlinna) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Consideriamo la forma quadratica
   $$A_n(t_1,\dots,t_n)=\sum_{i,j=1}^n\frac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}t_i\bar{t}_j.$$
-  Allora esiste una funzione $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(z_i)=w_i$ per $j=1, \dots, n$ se e solo se $A_n$ è definita positiva. In tal caso, si può trovare $f$ che sia un prodotto di Blaschke di grado al più $n$.
+  Allora esiste una funzione $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D})$ tale che $f(z_i)=w_i$ per $j=1, \dots, n$ se e solo se $A_n$ è semidefinita positiva. In tal caso, si può trovare $f$ che sia un prodotto di Blaschke di grado al più $n$.
 \end{thm}
 
 \begin{proof}
@@ -20,28 +21,33 @@ Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente 
     A_n'(t_1,\dots,t_n) & =\sum_{i,j=1}^n \frac{1-w_i'\bar{w}_j'}{1-z_i'\bar{z}_j'}t_i\bar{t}_j \\
     & =\sum_{i,j=1}^n \frac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}\left(\frac{\beta_i}{\alpha_i}t_i\right)\left(\frac{\bar{\beta}_j}{\bar{\alpha}_i}\bar{t}_j\right)=A_n\left(\frac{\beta_1}{\alpha_1}t_1,\dots,\frac{\beta_n}{\alpha_n}t_n\right).
   \end{align*}
-  Poiché $z_i,w_i \in \mathbb{D}$ si ha $\alpha_i,\beta_i\not=0$; perciò $A_n$ è definita positiva se e solo se lo è $A_n'$. Dato che $z_n'=w_n'=0$, a meno di cambiare $f$ con $g$ possiamo supporre senza perdita di generalità $z_n=w_n=0$. La condizione dell'enunciato diventa dunque $f(0)=0$ e $f(z_i)=w_i$ per $1 \le i \le n-1$.
-  Tale funzione esiste se e solo se la funzione $h(z)=f(z)/z$, con $h(0)=f'(0)$, appartiene a $\text{Hol}(\mathbb{D},\mathbb{D})$ e soddisfa $h(z_i)=w_i/z_i$ per $1 \le i \le n-1$. Per il punto (ii) della proposizione \ref{blaschke-prop} con $w=0$, abbiamo anche che $f \in \mathcal{B}_d$ se e solo se $h \in \mathcal{B}_{d-1}$. 
+  Poiché $z_i,w_i \in \mathbb{D}$ si ha $\alpha_i,\beta_i\not=0$; perciò $A_n$ è semidefinita positiva se e solo se lo è $A_n'$. Dato che $z_n'=w_n'=0$, a meno di cambiare $f$ con $g$ possiamo supporre senza perdita di generalità $z_n=w_n=0$. La condizione dell'enunciato diventa dunque $f(0)=0$ e $f(z_i)=w_i$ per $1 \le i \le n-1$.
+  Tale funzione esiste se e solo se la funzione $h(z)=f(z)/z$, con $h(0)=f'(0)$, appartiene a $\text{Hol}(\mathbb{D},\mathbb{D})$ e soddisfa $h(z_i)=w_i/z_i$ per $1 \le i \le n-1$. Per il punto (ii) della proposizione \ref{blaschke-prop} con $w=0$, abbiamo anche che $f \in \mathcal{B}_d$ se e solo se $h \in \mathcal{B}_{d-1}$.
+  Vogliamo dire che $A_n$ è semidefinita positiva se e solo se la forma quadratica $A_n''$, costruita usando i punti $z_i, w_i/z_i$, è semidefinita positiva. Dato che $z_n=w_n=0$, completando il quadrato abbiamo
+  \begin{align*}
+    A_n(t_1,\dots,t_n)&=|t_n|^2+2\cdot\mathfrak{Re}\sum_{i=1}^{n-1}\bar{t}_it_n+\sum_{i,j=1}^{n-1}\frac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}t_i\bar{t}_j \\
+    &=\left|\sum_{i=1}^n t_i\right|^2+\sum_{i,j=1}^{n-1}\left(\frac{1-w_i\bar{w}_j}{1-z_i\bar{z}_j}-1\right)t_i\bar{t}_j \\
+    &=\left|\sum_{i=1}^n t_i\right|^2+\sum_{i,j=1}^{n-1}\frac{1-(w_i/z_i)\overline{(w_j/z_j)}}{1-z_i\bar{z}_j}z_i\bar{z}_jt_i\bar{t}_j,
+  \end{align*}
+  quindi
+  $$A_n(t_1,\dots,t_n)=\left|\sum_{i=1}^n t_i\right|^2+A_n''(z_1t_1,\dots,z_{n-1}t_{n-1}).$$
+  Allora se $A_n''$ è semidefinita positiva lo è anche $A_n$, mentre per l'implicazione opposta basta prendere $\displaystyle t_n=-\sum_{i=1}^n t_i$ (ricordiamo che per ipotesi $z_i\not=z_n=0$ per $1 \le i \le n-1$).
 \end{proof}
 
-Vediamo il caso $n=2$.
+Vediamo che il caso $n=2$ è equivalente alla disuguaglianza del lemma di Schwarz-Pick. La forma quadratica $A_2$ è semidefinita positiva se e solo se i determinanti dei minori principali della matrice associata, che è hermitiana, sono non negativi. Per ipotesi $\frac{1-|w_1|^2}{1-|z_1|^2} \ge 0$, mentre per il determinante della matrice abbiamo
+$$\frac{1-|w_1|^2}{1-|z_1|^2}\cdot\frac{1-|w_2|^2}{1-|z_2|^2}-\left|\frac{1-w_1\bar{w}_2}{1-z_1\bar{z}_2}\right|^2 \ge 0,$$
+ovvero
+$$\frac{|1-z_1\bar{z}_2|^2}{(1-|z_1|^2)(1-|z_2|^2)} \ge \frac{|1-w_1\bar{w}_2|^2}{(1-|w_1|^2)(1-|w_2|^2)};$$
+riarrangiando i denominatori si ottiene
+$$\frac{|1-z_1\bar{z}_2|^2}{|1-\bar{z}_2z_1|^2-|z_1-z_2|^2} \ge \frac{|1-w_1\bar{w}_2|^2}{|1-\bar{w}_2w_1|^2-|w_1-w_2|^2},$$
+che è equivalente a
+\begin{align*}
+  \frac{1}{1-\left|\frac{z_1-z_2}{1-\bar{z}_2z_1}\right|^2} & \ge \frac{1}{1-\left|\frac{w_1-w_2}{1-\bar{w}_2w_1}\right|^2} \\
+  & \Leftrightarrow \frac{1}{1-p^2(w_1,w_2)} \le \frac{1}{1-p^2(z_1,z_2)} \Leftrightarrow \omega(w_1,w_2) \le \omega(z_1,z_2).
+\end{align*}
+Per invarianza di $p$, e dunque anche di $\omega$, sotto l'azione di $\text{Aut}(\mathbb{D})$, si può porre $w_1=z_1=0$ e la funzione di interpolazione si trova immediatamente.
 
-\begin{proof}
-  La condizione è sempre verificata per $k=1$, mentre per $k=2$ si riscrive come
-  \begin{gather*}
-    \frac{1-|w_1|^2}{1-|z_1|^2}\cdot\frac{1-|w_2|^2}{1-|z_2|^2}-\frac{1-w_1\bar{w}_2}{1-z_1\bar{z}_2}\cdot\frac{1-\bar{w}_1w_2}{1-\bar{z}_1z_2} \ge 0 \\
-    \frac{(1-|w_1|^2)(1-|w_2|^2)}{(1-|z_1|^2)(1-|z_2|^2)} \ge \frac{|1-w_1\bar{w}_2|^2}{|1-z_1\bar{z}_2|^2} \\
-    \frac{|1-z_1\bar{z}_2|^2}{(1-|z_1|^2)(1-|z_2|^2)} \ge \frac{|1-w_1\bar{w}_2|^2}{(1-|w_1|^2)(1-|w_2|^2)} \\
-    \frac{|1-z_1\bar{z}_2|^2}{1-|z_1|^2-|z_2|^2+|z_1|^2|z_2|^2} \ge \frac{|1-w_1\bar{w}_2|^2}{1-|w_1|^2-|w_2|^2+|w_1|^2|w_2|^2} \\
-    \frac{|1-z_1\bar{z}_2|^2}{|1-\bar{z}_2z_1|^2-|z_1-z_2|^2} \ge \frac{|1-w_1\bar{w}_2|^2}{|1-\bar{w}_2w_1|^2-|w_1-w_2|^2} \\
-    \frac{1}{1-\left|\frac{z_1-z_2}{1-\bar{z}_2z_1}\right|^2} \ge \frac{1}{1-\left|\frac{w_1-w_2}{1-\bar{w}_2w_1}\right|^2} \\
-    \frac{1}{1-p^2(w_1,w_2)} \le \frac{1}{1-p^2(z_1,z_2)} \\
-    p(w_1,w_2) \le p(z_1,z_2).
-  \end{gather*}
-  Ricordiamo adesso che $p$ è invariante per azione di $\text{Aut}(\mathbb{D})$; quindi, a meno di comporre a sinistra e a destra con opportuni automorfismi olomorfi di $\mathbb{D}$, possiamo supporre senza perdita di generalità $z_1=w_1=0$. La condizione diventa dunque $p(0,w_2) \le p(0,z_2)$, da cui $|w_2| \le |z_2|$; perciò basta prendere la funzione $f(z)=w_2z/z_2$.
-\end{proof}
-
-Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con una formulazione differente.
+Andiamo adesso a ridimostrare il caso $n=3$ con una formulazione differente; otteniamo così una sorta di inverso del Teorema \ref{31}.
 
 \begin{thm}
   Siano $z_1, z_2, z_3$ e $w_1, w_2, w_3$ due triple di punti distinti in $\mathbb{D}$. Allora esiste $f \in \normalfont{\text{Hol}}(\mathbb{D},\mathbb{D}) \setminus \normalfont{\text{Aut}}(\mathbb{D})$ tale che $f(z_i)=w_i$ per $i=1,2,3$ se e solo se valgono le seguenti condizioni:
@@ -55,14 +61,16 @@ Andiamo adesso a dimostrare il Teorema di Pick-Nevanlinna nel caso $n=3$, con un
   Supponiamo che esista siffatta $f$. Allora la condizione (i) segue dal lemma di Schwarz-Pick. La condizione (ii) invece si riscrive come $\omega\bigl(f^*(z_2,z_1),f^*(z_3,z_1)\bigr) \le \omega(z_2,z_3)$, che è l'enunciato del Teorema \ref{31}.
 
   Adesso dimostriamo l'altra freccia. Vediamola prima nel caso $z_1=w_1=0$. Allora per la condizione (i) abbiamo $\omega(0,w_i) < \omega(0,z_i)$, quindi $|w_i/z_i|<1$ per $i=2,3$. La condizione (ii) si riscrive invece come $\omega(w_2/z_2,w_3/z_3) \le \omega(z_2,z_3)$, cioè $p(w_2/z_2,w_3/z_3) \le p(z_2,z_3)$.
-  Dunque, per il caso $n=2$ del Teorema di Pick-Nevanlinna, esiste $g \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $g(z_2)=w_2/z_2$ e $g(z_3)=w_3/z_3$. Allora basta prendere $f(z)=zg(z)$.
+  Dunque, per il caso $n=2$ del teorema di Pick-Nevanlinna, esiste $g \in \text{Hol}(\mathbb{D},\mathbb{D})$ tale che $g(z_2)=w_2/z_2$ e $g(z_3)=w_3/z_3$. Allora basta prendere $f(z)=zg(z)$.
 
    Mostriamo che ci si può ridurre a questo caso. Consideriamo $h, g \in \text{Aut}(\mathbb{D})$ date da
-   $$g(z)=\frac{z-z_1}{1-\bar{z}_1z} \text{ e } h(z)=\frac{z-w_1}{1-\bar{w}_1z}.$$
+   $$g(z)=\frac{z-z_1}{1-\bar{z}_1z} \,\, \text{e} \,\, h(z)=\frac{z-w_1}{1-\bar{w}_1z}.$$
    Allora esiste $f$ come quella richiesta dal Teorema se e solo se esiste $F \in \text{Hol}(\mathbb{D},\mathbb{D})$, con $F=h \circ f \circ g^{-1}$, tale che $F(0)=0$, $F\bigl(g(z_2)\bigr)=h(w_2)$ e $F\bigl(g(z_3)\bigr)=h(w_3)$.
    Questo corrisponde proprio al caso precedente, quindi tale $F$ esiste se e solo se
    $$\omega\bigl(h(w_i),h(w_j)\bigr) \le \omega\bigl(g(z_i),g(z_j)\bigr)$$
    per $i,j=1,2,3$ con $i\not=j$ e
    $$\omega\left(\frac{h(w_2)}{g(z_2)},\frac{h(w_3)}{g(z_3)}\right) \le \omega\bigl(g(z_2),g(z_3)\bigr).$$
-   Poiché $p$, e di conseguenza $\omega$, è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo, sostituendo $h(z)=[z,w_1]$ e $g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
+   Poiché $\omega$ è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo, sostituendo $h(z)=[z,w_1]$ e $g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
 \end{proof}
+
+L'argomento viene trattato più in dettaglio in \cite{BRW}, dove il caso $n$ generico viene studiato usando i rapporti iperbolici iterati.
