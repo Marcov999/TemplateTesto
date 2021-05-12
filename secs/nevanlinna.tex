@@ -1,5 +1,4 @@
-Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente da Pick nel 1916 \cite{P} e Nevanlinna nel 1919; è un teorema di interpolazione interessante di per sé, inoltre vedremo un paio di esempi in cui le ipotesi vengono riformulate in termini del lemma di Schwarz-Pick, usando in un caso anche il rapporto iperbolico. Seguiamo la dimostrazione vista in \cite[Chapter 1, Theorem 2.2]{JBG}.
-\marginpar{le fonti dicono 1916, ma andando a cercare l'articolo originale di Pick è del 1915. Quello di Nevanlinna è introvabile. Mah, mistero!}
+Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente da Pick nel 1915 \cite{P} e Nevanlinna nel 1919 \cite{N}; è un teorema di interpolazione interessante di per sé, inoltre vedremo un paio di esempi in cui le ipotesi vengono riformulate in termini del lemma di Schwarz-Pick, usando in un caso anche il rapporto iperbolico. Seguiamo la dimostrazione vista in \cite[Chapter 1, Theorem 2.2]{JBG}.
 
 \begin{thm}
   (Pick-Nevanlinna) Siano dati $n$ punti distinti $z_1, \dots, z_n \in \mathbb{D}$ e altri $n$ punti distinti (non necessariamente diversi dai primi) $w_1, \dots, w_n \in \mathbb{D}$. Consideriamo la forma quadratica
@@ -34,7 +33,7 @@ Dedichiamo una sottosezione al seguente risultato, dimostrato indipendentemente 
   Allora se $A_n''$ è semidefinita positiva lo è anche $A_n$, mentre per l'implicazione opposta basta prendere $\displaystyle t_n=-\sum_{i=1}^n t_i$ (ricordiamo che per ipotesi $z_i\not=z_n=0$ per $1 \le i \le n-1$).
 \end{proof}
 
-Vediamo che il caso $n=2$ è equivalente alla disuguaglianza del lemma di Schwarz-Pick. La forma quadratica $A_2$ è semidefinita positiva se e solo se i determinanti dei minori principali della matrice associata, che è hermitiana, sono non negativi. Per ipotesi $\frac{1-|w_1|^2}{1-|z_1|^2} \ge 0$, mentre per il determinante della matrice abbiamo
+Vediamo che il caso $n=2$ è equivalente alla disuguaglianza del lemma di Schwarz-Pick. Una forma quadratica associata a una matrice hermitiana è definita positiva se e solo se i determinanti delle sottomatrici principali sono positivi. Per ipotesi $\frac{1-|w_1|^2}{1-|z_1|^2} > 0$, quindi in particolare $A_2$ è semidefinita positiva se e solo se il determinante è non negativo. Abbiamo
 $$\frac{1-|w_1|^2}{1-|z_1|^2}\cdot\frac{1-|w_2|^2}{1-|z_2|^2}-\left|\frac{1-w_1\bar{w}_2}{1-z_1\bar{z}_2}\right|^2 \ge 0,$$
 ovvero
 $$\frac{|1-z_1\bar{z}_2|^2}{(1-|z_1|^2)(1-|z_2|^2)} \ge \frac{|1-w_1\bar{w}_2|^2}{(1-|w_1|^2)(1-|w_2|^2)};$$
@@ -45,7 +44,7 @@ che è equivalente a
   \frac{1}{1-\left|\frac{z_1-z_2}{1-\bar{z}_2z_1}\right|^2} & \ge \frac{1}{1-\left|\frac{w_1-w_2}{1-\bar{w}_2w_1}\right|^2} \\
   & \Leftrightarrow \frac{1}{1-p^2(w_1,w_2)} \le \frac{1}{1-p^2(z_1,z_2)} \Leftrightarrow \omega(w_1,w_2) \le \omega(z_1,z_2).
 \end{align*}
-Per invarianza di $p$, e dunque anche di $\omega$, sotto l'azione di $\text{Aut}(\mathbb{D})$, si può porre $w_1=z_1=0$ e la funzione di interpolazione si trova immediatamente.
+Per invarianza di $\omega$ sotto l'azione di $\text{Aut}(\mathbb{D})$, si può porre $w_1=z_1=0$ e la funzione di interpolazione si trova immediatamente.
 
 Andiamo adesso a ridimostrare il caso $n=3$ con una formulazione differente; otteniamo così una sorta di inverso del Teorema \ref{31}.
 
@@ -73,4 +72,4 @@ Andiamo adesso a ridimostrare il caso $n=3$ con una formulazione differente; ott
    Poiché $\omega$ è invariante per azione di $\text{Aut}(\mathbb{D})$, la prima disuguaglianza è equivalente alla condizione (i). Sempre per questo motivo, sostituendo $h(z)=[z,w_1]$ e $g(z)=[z,z_1]$ otteniamo che la seconda è equivalente alla condizione (ii).
 \end{proof}
 
-L'argomento viene trattato più in dettaglio in \cite{BRW}, dove il caso $n$ generico viene studiato usando i rapporti iperbolici iterati. Nell'articolo i prodotti di Blaschke, e il loro legame con i rapporti iperbolici, vengono comparati ai polinomi e il loro legame con i rapporti incrementali nel caso euclideo. Anche l'algoritmo di interpolazione viene paragonato, formalmente, a quello di Newton per i polinomi.
+L'argomento viene trattato più in dettaglio in \cite{BRW}, dove il caso $n$ generico viene studiato usando i rapporti iperbolici iterati. Nell'articolo i prodotti di Blaschke, e il loro legame con i rapporti iperbolici, vengono comparati ai polinomi e il loro legame con i rapporti incrementali nel caso euclideo. Anche l'algoritmo di interpolazione è, formalmente, l'analogo di quello di Newton per i polinomi.

@@ -57,10 +57,11 @@ Vediamo ora il risultato che, come già anticipato, ci permetterà di dimostrare
     \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right).
   \end{gather*}
   Prendendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
-  \begin{align}
-    \nonumber \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right) \\
+  $$\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right),$$
+  da cui
+  \begin{equation}
     \frac{1+|f^h(z)|}{1-|f^h(z)|} \le \frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2. \label{golprimo}
-  \end{align}
+  \end{equation}
   Adesso, dalla Proposizione \ref{24} sappiamo che $f^h(z),f^h(0) \in \mathbb{D}$, in particolare $|f^h(z)|,|f^h(0)|<1$, perciò è giustificato il seguente passaggio:
   \begin{align*}
     |f^h(z)| & \le \frac{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2-1}{\frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2+1} \\

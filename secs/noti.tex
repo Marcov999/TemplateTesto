@@ -6,7 +6,7 @@
   Se $f \in \text{Hol}(\Omega, \Omega)$ è biettiva, allora si può dimostrare che anche $f^{-1}$ è olomorfa. In tal caso $f$ è detta \textit{automorfismo} (in senso olomorfo) di $\Omega$ e scriviamo $f \in \text{Aut}(\Omega)$.
 \end{defn}
 
-Com'è noto, la condizione di olomorfia per funzioni a valori complessi è molto più forte della derivabilità in senso reale (in particolare, è equivalente all'analiticità). Fra i vari risultati noti per le funzioni olomorfe, ci interessa studiare il lemma di Schwarz-Pick, fino a dimostrarne una versione al bordo.
+Com'è noto, la condizione di olomorfia per funzioni a valori complessi è molto più forte della derivabilità in senso reale (in particolare, è equivalente all'analiticità), il che rende le funzioni olomorfe degli oggetti piuttosto rigidi. Fra i vari risultati noti per tali funzioni, ci interessa il lemma di Schwarz-Pick: vogliamo vederlo appunto come risultato di rigidità, per poi dimostrarne versione al bordo.
 
 Notazione: indichiamo il disco unitario con $\mathbb{D}:=\{z \in \mathbb{C} \mid |z|<1\}$. Riportiamo ora alcuni risultati noti di analisi complessa che verranno usati nelle dimostrazioni.
 
@@ -85,7 +85,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \end{proof}
 
 \begin{oss} \label{dom}
-  Dalla dimostrazione abbiamo anche che $f(\partial \mathbb{D}) \subset \partial \mathbb{D}$; inoltre, per $|z|>1$ con $z \not=1/\bar{a}$ si ha $|f(z)|>1$.
+  Ogni automorfismo è olomorfo in $\mathbb{C}\setminus\{1/\bar{a}\}$, o tutto $\mathbb{C}$ se $a=0$. Dalla dimostrazione abbiamo anche che $f(\partial \mathbb{D}) \subset \partial \mathbb{D}$; inoltre, per $|z|>1$ con $z \not=1/\bar{a}$ si ha $|f(z)|>1$.
 \end{oss}
 
 \begin{oss} \label{transi}
@@ -189,7 +189,7 @@ Per trattare i casi estremali delle disuguaglianze in \cite{BM}, ci servirà qua
 \end{defn}
 
 \begin{oss} \label{geoingeo}
-  Poiché $\omega$ è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$, gli automorfismi mandano geodetiche in geodetiche; inoltre, conservano l'ordine di appartenenza dei punti.
+  Poiché $p$ è invariante sotto l'azione di $\text{Aut}(\mathbb{D})$, anche $\omega$ lo è, dunque gli automorfismi mandano geodetiche in geodetiche; inoltre, conservano l'ordine di appartenenza dei punti.
 \end{oss}
 
 \begin{ex} \label{diam}
@@ -207,7 +207,7 @@ Per trattare i casi estremali delle disuguaglianze in \cite{BM}, ci servirà qua
 \begin{proof}
   Se appartengono nell'ordine alla stessa geodetica, l'uguaglianza segue dalla definizione.
 
-  Supponiamo ora che valga $\omega(z_1,z_3)=\omega(z_1,z_2)+\omega(z_2,z_3)$. Per transitività di $\text{Aut}(\mathbb{D})$ possiamo supporre $z_2=0$. Usando la definizione di $\omega$, l'uguaglianza si riscrive come
+  Supponiamo ora che valga $\omega(z_1,z_3)=\omega(z_1,z_2)+\omega(z_2,z_3)$. Per transitività di $\text{Aut}(\mathbb{D})$ e invarianza di $\omega$, possiamo supporre $z_2=0$. Usando la definizione di $\omega$, l'uguaglianza si riscrive come
   $$\text{arctanh}\left|\frac{z_1-z_3}{1-\bar{z}_3z_1}\right|=\text{arctanh}|z_1|+\text{arctanh}|z_3|;$$
   applicando la tangente iperbolica a entrambi i membri e usando ancora una volta la formula $\tanh(a+b)=\frac{\tanh(a)+\tanh(b)}{1+\tanh(a)\tanh(b)}$, otteniamo
   $$\left|\frac{z_1-z_3}{1-\bar{z}_3z_1}\right|=\frac{|z_1|+|z_3|}{1+|z_1||z_3|}.$$
