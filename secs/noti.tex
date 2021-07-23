@@ -102,7 +102,7 @@ Vediamo adesso i lemmi di Schwarz e Schwarz-Pick.
 \begin{proof}
   Fissato $w \in \mathbb{D}$ siano $\gamma_1(z)=\dfrac{z+w}{1+\bar{w}z}$ e $\gamma_2(z)=\dfrac{z-f(w)}{1-\overline{f(w)}z}$. Si ha $\gamma_1, \gamma_2 \in \text{Aut}(\mathbb{D})$. Si ha anche che $\gamma_1(0)=w$ e $\gamma_2\bigl(f(w)\bigr)=0$; inoltre $\gamma_1^{-1}(z)=\dfrac{z-w}{1-\bar{w}z}$.
   Per il lemma di Schwarz applicato a $\gamma_2 \circ f \circ \gamma_1$ abbiamo che per ogni $\zeta \in \mathbb{D}$ si ha $|(\gamma_2 \circ f \circ \gamma_1)(\zeta)| \le |\zeta|$; prendendo $\zeta=\gamma_1^{-1}(z)$ otteniamo che per ogni $z \in \mathbb{D}$ si ha $|(\gamma_2 \circ f)(z)| \le |\gamma_1^{-1}(z)|$, che è la prima disuguaglianza.
-  Abbiamo poi $|(\gamma_2 \circ f \circ \gamma_1)'(0)| \le 1$, da cui $|\gamma_2'\bigl(f(w)\bigr)f'(w)\gamma_1'(0)| \le 1$. Valgono le seguenti uguaglianze:
+  Abbiamo poi $|(\gamma_2 \circ f \circ \gamma_1)'(0)| \le 1$, da cui $\left|\gamma_2'\bigl(f(w)\bigr)f'(w)\gamma_1'(0)\right| \le 1$. Valgono le seguenti uguaglianze:
   \begin{gather*}
     \gamma_1'(z)=\frac{1+\bar{w}z-\bar{w}(z+w)}{(1+\bar{w}z)^2} \implies \gamma_1'(0)=1-|w|^2, \\
     \gamma_2'(z)=\frac{1-\overline{f(w)}z+\overline{f(w)}\bigl(z-f(w)\bigr)}{\bigl(1-\overline{f(w)}z\bigr)^2} \implies \gamma_2'\bigl(f(w)\bigr)=\dfrac{1}{1-|f(w)|^2}.

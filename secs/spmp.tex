@@ -48,7 +48,7 @@ L'approccio generale è il seguente: stiamo studiando $\text{Hol}(\mathbb{D},\ma
 \end{prop}
 
 \begin{proof}
-  Per dimostrare (i), basta mostrare che $S$ conserva le proprietà del Lemma \ref{Blaschke-car}. La prima segue dall'Osservazione \ref{dom}. Per transitività di $\text{Aut}(\mathbb{D})$, la seconda corrisponde a dover dimostrare che, dato $c \in \mathbb{D}$, l'equazione $F(z)=c$ ha esattamente $n$ zeri contati con molteplicità in $\mathbb{D}$, dove $F \in B_n$. Scriviamo $F(z)=\displaystyle e^{i\theta}\prod_{j=1}^n \frac{z-a_j}{1-\bar{a}_jz}$. Allora $F(z)=c$ si riscrive come
+  Per dimostrare (i), basta mostrare che $S$ conserva le proprietà del Lemma \ref{Blaschke-car}. La prima segue dall'Osservazione \ref{dom}. Per transitività di $\text{Aut}(\mathbb{D})$ e biettività di $S$, la seconda corrisponde a dover dimostrare che, dato $c \in \mathbb{D}$, l'equazione $F(z)=c$ ha esattamente $n$ zeri contati con molteplicità in $\mathbb{D}$, dove $F \in B_n$. Scriviamo $F(z)=\displaystyle e^{i\theta}\prod_{j=1}^n \frac{z-a_j}{1-\bar{a}_jz}$. Allora $F(z)=c$ si riscrive come
   \begin{equation} \label{pol-eq}
     c\prod_{j=1}^n (1-\bar{a}_jz)=e^{i\theta}\prod_{j=1}^n(z-a_j).
   \end{equation}
@@ -67,7 +67,7 @@ L'approccio generale è il seguente: stiamo studiando $\text{Hol}(\mathbb{D},\ma
 \begin{proof}
   Per transitività di $\text{Aut}(\mathbb{D})$ su $\mathbb{D}$, ci basta dimostrare che esiste un $c \in \mathbb{D}$ tale che $f(z)-c$ abbia un unico zero doppio $z_0$ nel disco, il punto critico di $f$. È sufficiente imporre $f'(z_0)=0$, dato che sappiamo già che $f(z_0) \in \mathbb{D}$. Scriviamo $f(z)=e^{i\theta}\cdot\dfrac{z-a_1}{1-\bar{a}_1z}\cdot\dfrac{z-a_2}{1-\bar{a}_2z}$.
   Sempre per transitività, usando $T$ possiamo supporre $a_1=0$ e poniamo $a_2=a$. Si ha
-  $$f'(z)=e^{i\theta}\left(\frac{z-a}{1-\bar{a}z}+z\cdot\frac{1-|a|^2}{1-\bar{a}z}\right).$$
+  $$f'(z)=e^{i\theta}\left(\frac{z-a}{1-\bar{a}z}+z\cdot\frac{1-|a|^2}{(1-\bar{a}z)^2}\right).$$
   Con qualche passaggio algebrico, l'equazione $f'(z)=0$ diventa
   $$\bar{a}z^2-2z+a=0.$$
   Le soluzioni sono $(1 \pm \sqrt{1-|a|^2})/\bar{a}$; da $|a|<1$, abbiamo che quella con il più sta fuori da $\mathbb{D}$ mentre quella con il meno sta dentro, dunque è la soluzione cercata.
@@ -80,7 +80,7 @@ Notazione: sia $f \in \mathcal{B}_2$; indichiamo con $R_f$ la rotazione iperboli
 \end{cor}
 
 \begin{proof}
-  Siano $S, T \in \text{Aut}(\mathbb{D})$ date dal Lemma \ref{z^2} tali che $S\circ f\circ T=F$ con $F(z)=z^2$. Abbiamo $[R_F(z),0]=-[z,0]$, dunque per l'Osservazione \ref{muu} troviamo $\mu[T\bigl(R_F(z)\bigr),T(0)]=-\mu[T(z),T(0)]$.
+  Siano $S, T \in \text{Aut}(\mathbb{D})$ date dal Lemma \ref{z^2} tali che $S\circ f\circ T=F$ con $F(z)=z^2$. Abbiamo $[R_F(z),0]=-[z,0]$, dunque per l'Osservazione \ref{muu} troviamo $\mu\left[T\bigl(R_F(z)\bigr),T(0)\right]=-\mu[T(z),T(0)]$.
   Per costruzione, $T(0)$ dev'essere il punto critico di $f$, quindi la rotazione $R_f$ è caratterizzata dall'equazione $[R_f(z),T(0)]=-[z,T(0)]$. Ne segue che $T\bigl(R_F(z)\bigr)=R_f\bigl(T(z)\bigr)$. Perciò abbiamo $f=S^{-1}\circ F\circ T^{-1}$ e $R_f=T\circ R_F\circ T^{-1}$, inoltre $F\circ R_F=F$. Ne deduciamo che
   $$f\circ R_f=S^{-1}\circ F\circ R_F\circ T^{-1}=S^{-1}\circ F\circ T^{-1}=f,$$
   che implica la tesi.

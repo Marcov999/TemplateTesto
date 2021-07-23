@@ -166,8 +166,8 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
   Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$, facendo la sostituzione $w=z+r(z)e^{i\theta}$, vale che
   \begin{align*}
-    |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon|1-\bigl(z+r(z)e^{i\theta}\bigr)|^3}{|\bigl(z+r(z)e^{i\theta}\bigr)-z|^2}r(z)\diff\theta \\
-    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-\bigl(z+r(z)e^{i\theta}\bigr)|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
+    |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon\left|1-\bigl(z+r(z)e^{i\theta}\bigr)\right|^3}{\left|\bigl(z+r(z)e^{i\theta}\bigr)-z\right|^2}r(z)\diff\theta \\
+    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} \left|1-\bigl(z+r(z)e^{i\theta}\bigr)\right|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
   \end{align*}
   Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $w_0$ in figura); abbiamo che vale $|1-w_0|=r(z)+|z-1|$. Allora si ha
   $$|I(z)| \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3=\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3.$$
