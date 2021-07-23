@@ -18,7 +18,7 @@
       \tikzfillbetween[of=C and D]{blue, opacity=0.25};
     \end{tikzpicture}
 
-    In blu, il settore $S(1,2\pi/3)$
+    In blu, il settore $S(1,\pi/3)$
   \end{center}
 \end{defn}
 
@@ -51,7 +51,7 @@
 \begin{proof}
   Per definizione, $S(\sigma,\alpha)$ corrisponde all'insieme $S(1,\alpha)$ ruotato moltiplicando per $\sigma$. Lo stesso vale per $K(\sigma,M)$: infatti, $\dfrac{|\sigma-z|}{1-|z|}=\dfrac{|1-\sigma^{-1}z|}{1-|\sigma^{-1}z|}$. Possiamo dunque supporre senza perdita di generalità $\sigma=1$. È utile osservare che in questo caso $S(1,\alpha)=\left\{z \in \mathbb{D} \mid |\mathfrak{Im}(z)|<(\tan{\alpha})\bigl(1-\mathfrak{Re}(z)\bigr)\right\}$.
 
-  Mostriamo la seconda inclusione. Poiché $z \in K(1,M)$ e $1>|z|>\mathfrak{Re}(z)$, abbiamo che
+  Mostriamo la seconda inclusione. Sia $z \in K(1,M)$ e, poiché $1>|z|>\mathfrak{Re}(z)$, abbiamo che
   $$M>\frac{|1-z|}{1-|z|}\ge \frac{|1-z|}{1-\mathfrak{Re}(z)},$$
   da cui
   $$M^2-1 > \frac{|1-z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{1-2\mathfrak{Re}(z)+|z|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2}-1=\frac{|\mathfrak{Im}(z)|^2}{\bigl(1-\mathfrak{Re}(z)\bigr)^2};$$
@@ -71,9 +71,9 @@
     \frac{|1-z|}{1-\mathfrak{Re}(z)}<\sqrt{\tan^2{\alpha'}+1}=:M', \label{star2}
   \end{equation}
   dove $\alpha'<\alpha$, quindi $\tan{\alpha'}<\tan{\alpha}$ e dunque $M'<M$. Moltiplicando tra loro le disuguaglianze \eqref{star1} e \eqref{star2} troviamo $\dfrac{1-|z|}{1-\mathfrak{Re}(z)}<\dfrac{M'}{M}<1$.
-  Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scriviamo dunque $x=\mathfrak{Re}(z)$ e $y=\mathfrak{Im}(z)$, e supponiamo senza perdita di generalità $y>0$, per cui la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
+  Se mostriamo che $\displaystyle \lim_{\substack{z \longrightarrow 1, \\ z \in S(1,\alpha')}} \frac{1-|z|}{1-\mathfrak{Re}(z)}=1$ avremo trovato una contraddizione. Scriviamo dunque $x=\mathfrak{Re}(z)$ e $y=|\mathfrak{Im}(z)|$, per cui la condizione $z \in S(1,\alpha')$ si scrive come $y/(1-x)<\tan{\alpha'}$. Inoltre vale che
   $$\frac{1-|z|}{1-\mathfrak{Re}(z)}=\frac{1-\sqrt{x^2+y^2}}{1-x}=1-\frac{\sqrt{x^2+y^2}-x}{1-x}.$$
-  Vogliamo mostrare che la quantità $\dfrac{\sqrt{x^2+y^2}-x}{1-x}$ tende a $0$ per $(x,y) \longrightarrow (1,0)$ all'interno del settore di angolo $2\alpha'$. Notiamo che è sempre maggiore di $0$, dunque ci basta stimarne il $\limsup$. Usando che $y/(1-x)<\tan{\alpha'}$ e moltiplicando numeratore e denominatore per $\sqrt{x^2+y^2}-x$ troviamo
+  Vogliamo mostrare che la quantità $\dfrac{\sqrt{x^2+y^2}-x}{1-x}$ tende a $0$ per $(x,y) \longrightarrow (1,0)$ all'interno del settore di angolo $2\alpha'$. Notiamo che, a parte lungo $y=0$ dove il limite è banale, è sempre maggiore di $0$, dunque ci basta stimarne il $\limsup$. Usando che $y/(1-x)<\tan{\alpha'}$ e moltiplicando numeratore e denominatore per $\sqrt{x^2+y^2}-x$ troviamo
   \begin{align*}
     \frac{\sqrt{x^2+y^2}-x}{1-x} & < \tan{\alpha'}\cdot\frac{\sqrt{x^2+y^2}-x}{y}\cdot\frac{\sqrt{x^2+y^2}+x}{\sqrt{x^2+y^2}+x} \\
     & =\tan{\alpha'}\cdot\frac{y^2}{y(\sqrt{x^2+y^2}+x)}=\tan{\alpha'}\cdot\frac{y}{\sqrt{x^2+y^2}+x};
@@ -140,7 +140,7 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
       \draw [shift={(1,0)},color=ffqqqq] (180:0.26) arc (180:244.77:0.26);
       \draw [shift={(1,0)},color=ffqqqq] (180:0.23) arc (180:244.77:0.23);
       \draw(0.5,0.37) circle (0.888cm);
-      \draw (0.5,0.37)-- (0.77,0.49);
+      \draw (0.5,0.37)-- (0.765,0.502);
       \draw (0.27,0.54)-- (1,0);
       \draw [shift={(1,0)},color=qqffqq] (115.23:0.33) arc (115.23:143.3:0.33);
       \draw [shift={(1,0)},color=qqffqq] (115.23:0.3) arc (115.23:143.3:0.3);
@@ -166,8 +166,8 @@ La seguente proposizione asserisce che, per $z \longrightarrow 1$ non tangenzial
   Dato $\epsilon>0$ fissato e prendendo $\delta$ sufficientemente piccolo, per ipotesi abbiamo che $|f(w)-w|<\epsilon|1-w|^3$ per ogni $w \in K(1,M') \cap B(1,\delta)$ e di conseguenza per ogni $w \in S(1,\beta) \cap B(1,\delta)$.
   Poiché $S(1,\beta) \subset \mathbb{D}$, dev'essere $r(z) \le \text{dist}(z,\mathbb{D})=1-|z|$. Si ha anche $1-|z| \le |1-z|$; quindi prendendo $z \in B(1,\delta/2)$ abbiamo $r(z) \le |z-1|<\delta/2$. Dunque per ogni $w \in C(z)$ troviamo che $|w-1| \le |w-z|+|z-1|=r(z)+|z-1|<\delta$. Per questi $z$, facendo la sostituzione $w=z+r(z)e^{i\theta}$, vale che
   \begin{align*}
-    |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon|1-(z+r(z)e^{i\theta})|^3}{|(z+r(z)e^{i\theta})-z|^2}r(z)\diff\theta \\
-    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-(z+r(z)e^{i\theta})|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
+    |I(z)| & =\left|\frac{1}{2\pi i} \int_{C(z)} \frac{f(w)-w}{(w-z)^2}\diff w\right| \le \frac{1}{2\pi} \int_0^{2\pi} \frac{\epsilon|1-\bigl(z+r(z)e^{i\theta}\bigr)|^3}{|\bigl(z+r(z)e^{i\theta}\bigr)-z|^2}r(z)\diff\theta \\
+    & \le \frac{\epsilon}{r(z)}\max_{\theta \in [0,2\pi]} |1-\bigl(z+r(z)e^{i\theta}\bigr)|^3=\frac{\epsilon}{r(z)}\max_{w \in C(z)}|1-w|^3.
   \end{align*}
   Il massimo è raggiunto per l'intersezione più lontana da $1$ tra la circonferenza $C(z)$ e la retta passante per $1$ e $z$ (il punto $w_0$ in figura); abbiamo che vale $|1-w_0|=r(z)+|z-1|$. Allora si ha
   $$|I(z)| \le \frac{\epsilon}{r(z)}\bigl(r(z)+|z-1|\bigr)^3=\epsilon r(z)^2\left(1+\frac{|z-1|}{r(z)}\right)^3.$$
