@@ -86,7 +86,7 @@ Apriamo la sezione con il lemma di Dieudonné \cite[Chapitre III, paragraphe 8, 
   Ricordando che $f^h(z)=\frac{f'(z)(1-|z|^2)}{1-|f(z)|^2}$ e $f \in \text{Hol}(\mathbb{D},\mathbb{D})$, per tali $z$ si ha anche $\mathfrak{Re}f'(z)>0$.
 \end{proof}
 
-Vediamo ora il risultato che, come già anticipato, ci permetterà di dimostrare i teoremi successivi. L'enunciato originale si trova in \cite{GMG}, ma vedremo una formulazione che ci tornerà più utile, in particolare perché coinvolge la funzione $f^h$.
+Vediamo ora il risultato che, come già anticipato, ci permetterà di dimostrare i due teoremi di rigidità. L'enunciato originale si trova in \cite{GMG}, ma vedremo una formulazione che ci tornerà più utile, in particolare perché coinvolge la funzione $f^h$.
 
 \begin{thm} \label{golusin}
   (disuguaglianza di Golusin, 1945) Sia $f \in \text{\normalfont{Hol}}(\mathbb{D},\mathbb{D})\setminus\text{\normalfont{Aut}}(\mathbb{D})$. Allora per ogni $z \in \mathbb{D}$ vale
@@ -98,11 +98,14 @@ Vediamo ora il risultato che, come già anticipato, ci permetterà di dimostrare
 \begin{proof}
   Con passaggi analoghi a quelli della dimostrazione del Corollario \ref{quasigolusin} abbiamo che valgono le seguenti uguaglianze:
   \begin{gather*}
-    \omega\bigl(|f^h(z)|,|f^h(0)|\bigr)=\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right)\\
-    \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right).
+    \omega\bigl(|f^h(z)|,|f^h(0)|\bigr)=\left|\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right)\right|\text{ e}\\
+    \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right),
   \end{gather*}
-  Prendendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
-  $$\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) \le \log\left(\frac{1+|z|}{1-|z|}\right),$$
+  dove nella prima abbiamo preso il modulo perché non possiamo più imporre senza perdita di generalità $|f^h(z)| \ge |f^h(0)|$. Ponendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
+  \begin{align*}
+    \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) & \le \omega\bigl(|f^h(z)|,|f^h(0)|\bigr) \\
+    & \le 2\omega(z,0)=\log\left(\frac{1+|z|}{1-|z|}\right),
+  \end{align*}
   da cui
   \begin{equation}
     \frac{1+|f^h(z)|}{1-|f^h(z)|} \le \frac{1+|f^h(0)|}{1-|f^h(0)|}\left(\frac{1+|z|}{1-|z|}\right)^2. \label{golprimo}
