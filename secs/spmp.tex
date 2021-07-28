@@ -22,7 +22,7 @@ L'approccio generale è il seguente: stiamo studiando $\text{Hol}(\mathbb{D},\ma
 \end{defn}
 
 \begin{oss}
-  I prodotti di Blaschke sono funzioni olomorfe dal disco unitario in sé con zeri assegnati. Quelli di grado $1$ sono $\text{Aut}(\mathbb{D})$.
+  I prodotti di Blaschke sono funzioni olomorfe dal disco unitario in sé con zeri assegnati. Inoltre, i prodotti di Blaschke di grado $1$ sono tutti e soli gli automorfismi di $\mathbb{D}$.
 \end{oss}
 
 \begin{lm} \label{Blaschke-car}
@@ -61,7 +61,7 @@ L'approccio generale è il seguente: stiamo studiando $\text{Hol}(\mathbb{D},\ma
 \end{proof}
 
 \begin{lm} \label{z^2}
-  Sia $f \in \mathcal{B}_2$, esistono $S, T \in \text{Aut}(\mathbb{D})$ tali che $S\circ f\circ T(z)=z^2$.
+  Per ogni $f \in \mathcal{B}_2$ esistono $S, T \in \text{Aut}(\mathbb{D})$ tali che $S\circ f\circ T(z)=z^2$.
 \end{lm}
 
 \begin{proof}
@@ -234,14 +234,11 @@ Il prossimo risultato è quello che ci permetterà di dimostrare la disuguaglian
 \end{cor}
 
 \begin{proof}
-  Siano $z, w \in \mathbb{D}$; senza perdita di generalità possiamo supporre $|f^h(z)| \ge |f^h(w)|$. Allora dalla definizione di $\omega$ abbiamo
+  Siano $z, w \in \mathbb{D}$; senza perdita di generalità possiamo supporre $|f^h(z)| \ge |f^h(w)|$, inoltre $|f^h(z)|<1$ dal lemma di Schwarz-Pick. Quindi $0, |f^h(w)|, |f^h(z)|$ appartengono nell'ordine al diametro $(-1,1)$, che è una geodetica. Allora per il Lemma \ref{nellordine} si ha che
   \begin{align*}
-    \omega\bigl(|f^h(z)|, |f^h(w)|\bigr) & =\frac{1}{2}\log\left(\frac{1+\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}{1-\frac{|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|}}\right) \\
-    & =\frac{1}{2}\log\left(\frac{1-|f^h(w)||f^h(z)|+|f^h(z)|-|f^h(w)|}{1-|f^h(w)||f^h(z)|+|f^h(w)|-|f^h(z)|}\right) \\
-    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(w)|}{1+|f^h(w)|}\right) \\
-    & =\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\right)-\frac{1}{2}\log\left(\frac{1+|f^h(w)|}{1-|f^h(w)|}\right)
+    \omega\bigl(0,|f^h(z)|\bigr)=\omega\bigl(0,|f^h(w)|\bigr)+\omega\bigl(|f^h(w)|,|f^h(z)|\bigr);
   \end{align*}
-  Usando di nuovo la definizione di $\omega$ otteniamo dunque
+  otteniamo dunque
   \begin{align*}
     \omega\bigl(|f^h(z)|, |f^h(w)|\bigr)&=\omega\bigl(0,|f^h(z)|\bigr)-\omega\bigl(0,|f^h(w)|\bigr) \\
     & =\omega\bigl(0,f^h(z)\bigr)-\omega\bigl(0,f^h(w)\bigr) \le 2\omega(z,w),
