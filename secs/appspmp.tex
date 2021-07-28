@@ -96,12 +96,9 @@ Vediamo ora il risultato che, come già anticipato, ci permetterà di dimostrare
 \end{thm}
 
 \begin{proof}
-  Con passaggi analoghi a quelli della dimostrazione del Corollario \ref{quasigolusin} abbiamo che valgono le seguenti uguaglianze:
-  \begin{gather*}
-    \omega\bigl(|f^h(z)|,|f^h(0)|\bigr)=\left|\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right)\right|\text{ e}\\
-    \omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right),
-  \end{gather*}
-  dove nella prima abbiamo preso il modulo perché non possiamo più imporre senza perdita di generalità $|f^h(z)| \ge |f^h(0)|$. Ponendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
+  Abbiamo che $\omega(z, 0)=\omega(|z|,0)=\frac{1}{2}\log\left(\frac{1+|z|}{1-|z|}\right)$; allora, sfruttando le uguaglianze viste nella dimostrazione del Corollario \ref{quasigolusin}, vale anche
+  $$\omega\bigl(|f^h(z)|,|f^h(0)|\bigr)=\left|\frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right)\right|,$$
+  dove prendiamo il modulo perché non possiamo più imporre senza perdita di generalità $|f^h(z)| \ge |f^h(0)|$. Ponendo $w=0$ nella disuguaglianza \eqref{quasigol} otteniamo
   \begin{align*}
     \frac{1}{2}\log\left(\frac{1+|f^h(z)|}{1-|f^h(z)|}\cdot\frac{1-|f^h(0)|}{1+|f^h(0)|}\right) & \le \omega\bigl(|f^h(z)|,|f^h(0)|\bigr) \\
     & \le 2\omega(z,0)=\log\left(\frac{1+|z|}{1-|z|}\right),
