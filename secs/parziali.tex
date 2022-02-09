@@ -1,0 +1,28 @@
+Come già anticipato, passeremo da $\Sigma$; per fissare la notazione, data $f \in \mathcal{S}$, indichiamo con $F$ la funzione in $\Sigma$ data da $F(z)=1/f(1/z)+a_2$. Vediamo subito un risultato parziale che sarà un po' il fulcro di tutti i nostri tentativi di dimostrare qualcosa passando per $\Sigma$.
+
+\begin{prop}
+  Sia $f \in \mathcal{S}$ tale che per la $F \in \Sigma$ corrispondente e per ogni $\zeta,\eta \in \mathbb{C}\setminus\overline{\mathbb{D}}$ si ha
+  $$\left|\frac{F(\zeta)-F(\eta)}{\zeta-\eta}\right| \ge 1-\frac{1}{|\zeta\eta|};$$
+  allora vale la minorazione per $f$.
+\end{prop}
+
+\begin{proof}
+  Dati $z,w \in \mathbb{D}$, poniamo $\zeta=1/z, \eta=1/w$. Ricordando la definizione di $F$ abbiamo dunque che
+  \begin{gather*}
+    \left|\frac{1/f(z)-1/f(w)}{1/z-1/w}\right| \ge 1-|zw| \\
+    \left|\frac{f(z)-f(w)}{z-w}\right| \ge \left|\frac{f(w)f(z)}{zw}\right| (1-|zw|),
+  \end{gather*}
+  e a questo punto la tesi segue applicando la minorazione in \eqref{growth}.
+\end{proof}
+
+Quello che otterremo nella prima parte di questa sezione saranno delle stime dal basso per $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right|$ che, ripetendo il ragionamento appena fatto, ci daranno dei risultati parziali per la minorazione in \eqref{congettura}. Vedremo che, sotto alcune ipotesi aggiuntive, riusciremo a dimostrare la disuguaglianza voluta. \\
+
+Partiamo definendo dei coefficienti che chiameremo impropriamente coefficienti di Grunsky: data $F \in \Sigma$, scriviamo
+$$\log{\frac{F(z)-F(w)}{z-w}}=-\sum_{n,k=1}^{+\infty} \gamma_{nk}z^{-n}w^{-k}$$
+(i veri coefficienti di Grunsky sarebbero $\beta_{nk}=n\gamma_{nk}$).
+
+La strategia generale è la seguente: otterremo stime del tipo
+$$-\log{\left|\frac{F(z)-F(w)}{z-w}\right|} \le \left|\log{\frac{F(z)-F(w)}{z-w}}\right| \le \pm \log(\text{qualcosa}),$$
+dalle quali è poi facile concludere risultati della forma
+$$\left|\frac{f(z)-f(w)}{z-w}\right| \ge \frac{N(z,w)}{(1+|z|)^2(1+|w|)^2}$$
+dove $N(z,w)$ è un opportuno numeratore.
