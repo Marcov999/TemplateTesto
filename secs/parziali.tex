@@ -15,14 +15,31 @@ Come già anticipato, passeremo da $\Sigma$; per fissare la notazione, data $f \
   e a questo punto la tesi segue applicando la minorazione in \eqref{growth}.
 \end{proof}
 
-Quello che otterremo nella prima parte di questa sezione saranno delle stime dal basso per $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right|$ che, ripetendo il ragionamento appena fatto, ci daranno dei risultati parziali per la minorazione in \eqref{congettura}. Vedremo che, sotto alcune ipotesi aggiuntive, riusciremo a dimostrare la disuguaglianza voluta. \\
+Quello che otterremo in questa sezione saranno delle stime dal basso per $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right|$ che, ripetendo il ragionamento appena fatto, ci daranno dei risultati parziali per la minorazione in \eqref{congettura}. Vedremo che, sotto alcune ipotesi aggiuntive, riusciremo a dimostrare la disuguaglianza voluta. \\
 
 Partiamo definendo dei coefficienti che chiameremo impropriamente coefficienti di Grunsky: data $F \in \Sigma$, scriviamo
 $$\log{\frac{F(z)-F(w)}{z-w}}=-\sum_{n,k=1}^{+\infty} \gamma_{nk}z^{-n}w^{-k}$$
 (i veri coefficienti di Grunsky sarebbero $\beta_{nk}=n\gamma_{nk}$).
 
-La strategia generale è la seguente: otterremo stime del tipo
-$$-\log{\left|\frac{F(z)-F(w)}{z-w}\right|} \le \left|\log{\frac{F(z)-F(w)}{z-w}}\right| \le \pm \log(\text{qualcosa}),$$
-dalle quali è poi facile concludere risultati della forma
-$$\left|\frac{f(z)-f(w)}{z-w}\right| \ge \frac{N(z,w)}{(1+|z|)^2(1+|w|)^2}$$
-dove $N(z,w)$ è un opportuno numeratore.
+Per cominciare, enunciamo delle disuguaglianze molto utili sui coefficienti di Grunsky.
+\begin{thm}
+  (Grunsky, inserire citazione) Per ogni scelta di $\lambda_n, \mu_n \in \mathbb{C}$ vale
+  \begin{equation}\label{grunskystrong}
+    \sum_{k=1}^{+\infty} k\left|\sum_{n=1}^N\gamma_{nk}\lambda_n\right|^2 \le \sum_{n=1}^N \frac{|\lambda_n|^2}{n}
+  \end{equation}
+  e
+  \begin{equation}\label{grunskyweak}
+    \left|\sum_{n,k=1}^N \gamma_{nk}\lambda_n\mu_k\right|^2 \le \sum_{n=1}^N \frac{|\lambda_n|^2}{n}\sum_{n=1}^N \frac{|\mu_n|^2}{n}.
+  \end{equation}
+\end{thm}
+Vediamo come una diretta applicazione di \eqref{grunskyweak} con $\lambda_n=z^{-n},\mu_k=w^{-k}$ ci permette già di dire qualcosa (mandando $N \longrightarrow +\infty$):
+\begin{align*}
+  \left|\log{\frac{F(z)-F(w)}{z-w}}\right|^2 &\le \left(\sum_{n,k=1}^{+\infty} |\gamma_{nk}||z|^{-n}|w|^{-k}\right)^2 \le \\
+  &\le \sum_{n=1}^{+\infty} \frac{1}{n|z|^{2n}}\sum_{n=1}^{+\infty} \frac{1}{n|w|^{2n}}=\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right).
+\end{align*}
+Si ha allora
+$$-\log{\left|\frac{F(z)-F(w)}{z-w}\right|} \le \left|\log{\frac{F(z)-F(w)}{z-w}}\right| \le \sqrt{\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right)},$$
+da cui
+$$\left|\frac{F(z)-F(w)}{z-w}\right| \ge \exp\left(-\sqrt{\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right)}\right).$$
+Questo ci dà un'espressione per $N(z,w)$ non proprio bella da vedere, ma che per adesso è il miglior risultato generale ottenuto: \\
+$N(z,w)=\exp\left(-\sqrt{\log\left(1-|z|^2\right)\log\left(1-|w|^2\right)}\right)$. Volendo la si può sostituire con un'espressione leggermente peggiore come stima, ma più semplice da maneggiare e senza palesi aspetti negativi per la disuguaglianza che non fossero già presenti: $\sqrt{(1-|z|^2)(1-|w|^2)}$. Il problema principale di queste due espressioni per $N(z,w)$ è che, fissato $w$, tendono a $0$ per $|z| \longrightarrow 1$, cosa che non accade con $1-|zw|$. Entrambe ci permettono comunque di dedurre che la minorazione in \eqref{congettura} è vera per $|z|=|w|$.
