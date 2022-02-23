@@ -1,6 +1,6 @@
 Come già anticipato, passeremo da $\Sigma$; per fissare la notazione, data $f \in \mathcal{S}$, indichiamo con $F$ la funzione in $\Sigma$ data da $F(z)=1/f(1/z)+a_2$. Vediamo subito un risultato parziale che sarà un po' il fulcro di tutti i nostri tentativi di dimostrare qualcosa passando per $\Sigma$.
 
-\begin{prop}
+\begin{prop} \label{passaggio}
   Sia $f \in \mathcal{S}$ tale che per la $F \in \Sigma$ corrispondente e per ogni $\zeta,\eta \in \mathbb{C}\setminus\overline{\mathbb{D}}$ si ha
   $$\left|\frac{F(\zeta)-F(\eta)}{\zeta-\eta}\right| \ge 1-\frac{1}{|\zeta\eta|};$$
   allora vale la minorazione per $f$.
@@ -41,9 +41,38 @@ Si ha allora
 $$-\log{\left|\frac{F(z)-F(w)}{z-w}\right|} \le \left|\log{\frac{F(z)-F(w)}{z-w}}\right| \le \sqrt{\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right)},$$
 da cui
 $$\left|\frac{F(z)-F(w)}{z-w}\right| \ge \exp\left(-\sqrt{\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right)}\right).$$
-Questo ci dà un'espressione per $N(z,w)$ non proprio bella da vedere, ma che per adesso è il miglior risultato generale ottenuto: \\
-$N(z,w)=\exp\left(-\sqrt{\log\left(1-|z|^2\right)\log\left(1-|w|^2\right)}\right)$. Volendo la si può sostituire con un'espressione leggermente peggiore come stima, ma più semplice da maneggiare e senza palesi aspetti negativi per la disuguaglianza che non fossero già presenti: $\sqrt{(1-|z|^2)(1-|w|^2)}$. Il problema principale di queste due espressioni per $N(z,w)$ è che, fissato $w$, tendono a $0$ per $|z| \longrightarrow 1$, cosa che non accade con $1-|zw|$. Entrambe ci permettono comunque di dedurre che la minorazione in \eqref{congettura} è vera per $|z|=|w|$. \\
+Questo ci dà un'espressione per $N(z,w)$ non proprio bella da vedere, ma che per adesso è il miglior risultato generale ottenuto:
+\begin{equation} \label{best}
+  N(z,w)=\exp\left(-\sqrt{\log\left(1-|z|^2\right)\log\left(1-|w|^2\right)}\right).
+\end{equation}
+Volendo la si può sostituire con un'espressione più semplice da maneggiare: $\sqrt{(1-|z|^2)(1-|w|^2)}$; tuttavia, è una stima peggiore e il caso $w=0$ non interpola bene. Il problema principale di queste due espressioni per $N(z,w)$ è che, fissato $w$, tendono a $0$ per $|z| \longrightarrow 1$, cosa che non accade con $1-|zw|$. Entrambe ci permettono comunque di dedurre che la minorazione in \eqref{congettura} è vera per $|z|=|w|$.
 
-Altre cose da fare: citare la "generalizzazione" teorema 3 di IV.2 in Golusin; il suo articolo per poter dire arg(z)=arg(w) ok; la cosa di Gronwall per le F con coefficienti>=0; la "dimostrazione" (speriamo giusta) per le f convesse (cioè con immagine convessa) (anche se F è convessa va bene, si veda Golusin pag 134 espressione (15)).
+Una generalizzazione in più variabili per l'espressione \eqref{best}, o meglio per la stima del modulo del logaritmo, può essere trovata in (citare bene il teorema 3 di IV.2 in Golusin). \\
 
-Nella prossima sezione: controesempio (?) in Sigma, teorema 2 di IV.3 in Golusin.
+Un altro caso particolare è quello in cui $\arg{z}=\arg{w}$. Infatti, nell'articolo in cui Golusin applica metodi variazionali per ottenere questo tipo di stime ottiene il risultato (inserire citazione); questo ci permette di dire che la minorazione congetturata è vera in questo caso.
+
+Continuando ad indagare questi risultati parziali, possiamo dimostrare la minorazione anche per $F \in \Sigma$ con coefficienti non negativi. Questo grazie a un risultato dovuto a Gronwall, direttamente dall'articolo in cui dimostra il suo famoso teorema dell'area.
+\begin{prop}
+  (inserire citazione) Sia $F \in \Sigma$ e per $|z|>1$ scriviamo $F(z)=z+\displaystyle \sum_{n=1}^{+\infty} a_nz^{-n}$. Se $a_n \ge 0$ per ogni $n$, allora $\displaystyle \sum_{n=1}^{+\infty} na_n \le 1$.
+\end{prop}
+Vediamo come questo ci dà la minorazione:
+\begin{align*}
+  \left|\frac{F(z)-F(w)}{z-w}\right|&=\left|\frac{z-w+\sum_{n=1}^{+\infty}a_n(z^{-n}-w^{-n})}{z-w}\right|=\\
+  &=\left|1-\sum_{n=1}^{+\infty} \frac{a_n}{z^nw^n}\sum_{h+j=n-1}z^hw^j\right| \ge \\
+  &\ge 1-\sum_{n=1}^{+\infty} \frac{a_n}{|zw|}\sum_{h+j=n-1}|z|^{h-n+1}|w|^{j-n+1} \ge \\
+  & \ge 1-\frac{1}{|zw|}\sum_{n=1}^{+\infty} a_nn \ge 1-\frac{1}{|zw|}.
+\end{align*}
+
+Come ultimo risultato parziale, vediamo una dimostrazione per le funzioni in $\mathcal{S}$ convesse (cioè con immagine convessa), che è indipendente dalla stima per le funzioni in $\Sigma$.
+\begin{prop}
+  Sia $f \in \mathcal{S}$ tale che $\Ima{f}$ è convessa. Allora vale la minorazione in \eqref{congettura}.
+\end{prop}
+\begin{proof}
+  Supponiamo $|w|<|z|$ e sia $\Gamma(t)=f(w)+t\big(f(z)-f(w)\big) \subset \Ima{f}$ il segmente che collega le immagini dei due punti, per ipotesi tutto contenuto nell'immagine. Cambiando di variabile e applicando la minorazione in \eqref{distorsion} troviamo
+  \begin{align*}
+    |f(z)-f(w)|&=\int_{\Gamma} |\diff\eta|=\int_{f^{-1}(\Gamma)} |f'(\zeta)||\diff\zeta| \ge \\
+    &\ge \int_{f^{-1}(\Gamma)} \frac{1-|\zeta|}{(1+|\zeta|)^3}|\diff\zeta| \ge \\
+    &\ge \int_\gamma \frac{1-|\zeta|}{(1+|\zeta|)^3}|\diff\zeta|,
+  \end{align*}
+  dove $\gamma(t)=w+t(z-w)$ (è di questo passaggio che non sono tanto sicuro, perché non ho ben capito come fa Lowner a passare dall'uguaglianza alla disuguaglianza e se mi sono sbagliato potrebbe essere che quello che fa lui non va bene per il cambio di variabile che ci serve). Osserviamo che $(1-x)/(1+x)^3$ è decrescente, quindi possiamo concludere in maniera analoga a quanto già fatto per la maggiorazione per ottenere la tesi.
+\end{proof}
