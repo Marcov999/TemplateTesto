@@ -3,11 +3,13 @@ Siano
   \mathcal{S}=\{f \in \mathcal{O}(\mathbb{D}) \mid f(0)=0, f'(0)=1, f \text{ iniettiva}\}, \\
 \Sigma=\left\{F \in \mathcal{O}(\mathbb{C}\setminus \overline{\mathbb{D}}) \mid F \text{ iniettiva, } F(z)=z+\sum_{n \ge 1}b_nz^{-n}\right\}
 \end{gather*}
-(la condizione di iniettività verrà a volte indicata dicendo che la funzione è \textit{univalente}). Saremo soliti scrivere $f(z)=\displaystyle z+\sum_{n \ge 2}a_nz^n$ per $f \in \mathcal{S}$. È facile vedere che se $f \in S$ allora $1/f(1/z)+a_2 \in \Sigma$. Vale una sorta di viceversa, anche se non c'è esattamente corrispondenza biunivoca. Un risultato noto della teoria delle funzioni in $\mathcal{S}$ è una coppia di catene di disuguaglianze, note come i teoremi di distorsione e crescita di Koebe.
+(la condizione di iniettività verrà a volte indicata dicendo che la funzione è \textit{univalente}). Saremo soliti scrivere $f(z)=\displaystyle z+\sum_{n \ge 2}a_nz^n$ per $f \in \mathcal{S}$. È facile vedere che se $f \in S$ allora $1/f(1/z)+a_2 \in \Sigma$. Vale una sorta di viceversa, anche se non c'è esattamente corrispondenza biunivoca. Ricordiamo un esempio fondamentale di funzioni in $\mathcal{S}$: le funzioni di Koebe $f(z)=\dfrac{z}{(1-\sigma z)^2}$ al variare di $\sigma \in \partial \mathbb{D}$.
+
+Un risultato noto della teoria delle funzioni in $\mathcal{S}$ è una coppia di catene di disuguaglianze, note come i teoremi di distorsione e crescita di Koebe.
 
 \begin{thm}
-  (Koebe, inserire citazione) Siano $f \in \mathcal{S}$ e $x \in \mathbb{D}$, allora
-  \begin{equation}\label{distorsion}
+  (teoremi di distorsione e crescita, \cite[Chapter 2.3, Theorems 2.5 and 2.6]{D}) Siano $f \in \mathcal{S}$ e $z \in \mathbb{D}$, allora
+  \begin{equation}\label{distortion}
     \frac{1-|z|}{(1+|z|)^3} \le |f'(z)| \le \frac{1+|z|}{(1-|z|)^3}
   \end{equation}
   e
@@ -15,12 +17,12 @@ Siano
     \frac{|z|}{(1+|z|)^2} \le |f(z)| \le \frac{|z|}{(1-|z|)^2}.
   \end{equation}
 \end{thm}
-Se definiamo $f^*(z,w)=\dfrac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\cdot\frac{1-\bar{w}z}{z-w}$ (il \textit{rapporto iperbolico}), con la convenzione che $f^*(z,z)=\dfrac{f'(z)(1-|z|^2)}{1-|f(z)|^2}$ (la \textit{derivata iperbolica}), allora le disuguaglianze \eqref{distorsion} e \eqref{growth} si riscrivono come
+Se definiamo $f^*(z,w)=\dfrac{f(z)-f(w)}{1-\overline{f(w)}f(z)}\cdot\frac{1-\bar{w}z}{z-w}$ (il \textit{rapporto iperbolico}), con la convenzione che $f^*(z,z)=\dfrac{f'(z)(1-|z|^2)}{1-|f(z)|^2}$ (la \textit{derivata iperbolica}), allora le disuguaglianze \eqref{distortion} e \eqref{growth} si riscrivono come
 \begin{gather*}
   \frac{1-|z|}{(1+|z|)^3} \le |f^*(z,z)|\frac{\big(1-|f(z)|^2\big)}{(1-|z|^2)} \le \frac{1+|z|}{(1-|z|)^3}, \\
   \frac{|z|}{(1+|z|)^2} \le |f^*(z,0)||z| \le \frac{|z|}{(1-|z|)^2}.
 \end{gather*}
-Semplificando un po', troviamo
+Semplificando troviamo
 \begin{gather*}
   \frac{1}{(1+|z|)^4} \le |f^*(z,z)|\frac{\big(1-|f(z)|^2\big)}{(1-|z|^2)^2} \le \frac{1}{(1-|z|)^4}, \\
   \frac{1}{(1+|z|)^2} \le |f^*(z,0)| \le \frac{1}{(1-|z|)^2}.
@@ -29,12 +31,12 @@ Guardando queste equazioni, si potrebbe pensare di provare a interpolarle, otten
 \begin{gather*}
   \frac{1}{(1+|z|)^2(1+|w|)^2} \le |f^*(z,w)| \left|\frac{1-\overline{f(w)}f(z)}{(1-\bar{w}z)^2}\right| \le \frac{1}{(1-|z|)^2(1-|w|)^2};
 \end{gather*}
-adesso possiamo ``nascondere il rapporto iperbolico sotto il tappeto'' esplicitandolo, arrivando così a una prima congettura su come possiamo stimare il rapporto incrementale per $f$:
+adesso esplicitiamo il rapporto iperbolico, arrivando così a una prima congettura su come possiamo stimare il rapporto incrementale per $f$:
 \begin{gather*}
   \frac{|1-\bar{w}z|}{(1+|z|)^2(1+|w|)^2} \le \left|\frac{f(z)-f(w)}{z-w}\right| \le \frac{|1-\bar{w}z|}{(1-|z|)^2(1-|w|)^2}.
 \end{gather*}
-Tuttavia, non è questa la catena di disuguaglianze che ci interesserà studiare, per due motivi: il primo è che la minorazione è falsa, ed è facile costruire controesempi usando le funzioni di Koebe $f_{\theta}(z)=\dfrac{z}{(1-e^{i\theta}z)^2}, \theta \in \mathbb{R}$; il secondo è che la maggiorazione vale con un numeratore migliore, che sostituito nella minorazione ci dà una disuguaglianza che sembra essere vera (e lo è in molti casi), ma la cui dimostrazione in generale rimane sfuggente. Formuliamo dunque la nostra congettura:
+Tuttavia, non è questa la catena di disuguaglianze che ci interesserà studiare, per due motivi: il primo è che la minorazione è falsa, ed è facile costruire controesempi usando le funzioni di Koebe; il secondo è che la maggiorazione vale con un numeratore migliore, che sostituito nella minorazione ci dà una disuguaglianza che sembra essere vera (e lo è in molti casi), ma la cui dimostrazione in generale rimane sfuggente. Formuliamo dunque la nostra congettura:
 \begin{equation}\label{congettura}
   \frac{1-|wz|}{(1+|z|)^2(1+|w|)^2} \le \left|\frac{f(z)-f(w)}{z-w}\right| \le \frac{1-|wz|}{(1-|z|)^2(1-|w|)^2}.
 \end{equation}
-Nella prima sezione dimostreremo, in due modi diversi, la maggiorazione. Nella seconda vedremo alcuni risultati parziali che pensiamo di aver trovato per la minorazione. Nella terza vedremo un risultato che ci permetterà di dedurre che, a quanto pare, non è possibile approcciare il problema attraverso l'insieme $\Sigma$.
+Nella prima sezione dimostreremo, in due modi diversi, la maggiorazione. Nella seconda vedremo alcuni risultati parziali che pensiamo di aver trovato per la minorazione. Nella terza vedremo un risultato che ci permetterà di dedurre che, a quanto pare, non è possibile sperare di risolvere completamente il problema passando per le funzioni in $\Sigma$.

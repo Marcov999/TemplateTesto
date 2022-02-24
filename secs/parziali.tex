@@ -1,4 +1,4 @@
-Come già anticipato, passeremo da $\Sigma$; per fissare la notazione, data $f \in \mathcal{S}$, indichiamo con $F$ la funzione in $\Sigma$ data da $F(z)=1/f(1/z)+a_2$. Vediamo subito un risultato parziale che sarà un po' il fulcro di tutti i nostri tentativi di dimostrare qualcosa passando per $\Sigma$.
+Come già anticipato, per la maggior parte dei risultati in questa sezione passeremo dalle funzioni in $\Sigma$; per fissare la notazione, data $f \in \mathcal{S}$, indichiamo con $F$ la funzione in $\Sigma$ data da $F(z)=1/f(1/z)+a_2$. Vediamo subito un risultato parziale che sarà un po' il fulcro di tutti i nostri tentativi di dimostrare qualcosa passando per $\Sigma$.
 
 \begin{prop} \label{passaggio}
   Sia $f \in \mathcal{S}$ tale che per la $F \in \Sigma$ corrispondente e per ogni $\zeta,\eta \in \mathbb{C}\setminus\overline{\mathbb{D}}$ si ha
@@ -15,15 +15,16 @@ Come già anticipato, passeremo da $\Sigma$; per fissare la notazione, data $f \
   e a questo punto la tesi segue applicando la minorazione in \eqref{growth}.
 \end{proof}
 
-Quello che otterremo in questa sezione saranno delle stime dal basso per $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right|$ che, ripetendo il ragionamento appena fatto, ci daranno dei risultati parziali per la minorazione in \eqref{congettura}. Vedremo che, sotto alcune ipotesi aggiuntive, riusciremo a dimostrare la disuguaglianza voluta. \\
+Quello che otterremo in questa sezione saranno delle stime dal basso per $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right|$ che, ripetendo il ragionamento appena fatto, ci daranno dei risultati parziali per la minorazione in \eqref{congettura}.
+In generale, se $N: \mathbb{D}\times \mathbb{D} \longrightarrow [0,+\infty)$ è tale che $\left|\dfrac{F(\zeta)-F(\eta)}{\zeta-\eta}\right| \ge N(1/\zeta,1/\eta)$, allora vale la minorazione con $N(z,w)$ al posto di $1-|zw|$. Vedremo che, sotto alcune ipotesi aggiuntive, riusciremo a dimostrare la disuguaglianza voluta. \\
 
-Partiamo definendo dei coefficienti che chiameremo impropriamente coefficienti di Grunsky: data $F \in \Sigma$, scriviamo
+Definiamo adesso dei coefficienti che chiameremo impropriamente coefficienti di Grunsky: data $F \in \Sigma$, scriviamo
 $$\log{\frac{F(z)-F(w)}{z-w}}=-\sum_{n,k=1}^{+\infty} \gamma_{nk}z^{-n}w^{-k}$$
 (i veri coefficienti di Grunsky sarebbero $\beta_{nk}=n\gamma_{nk}$).
 
-Per cominciare, enunciamo delle disuguaglianze molto utili sui coefficienti di Grunsky.
+Enunciamo delle disuguaglianze molto utili sui coefficienti di Grunsky.
 \begin{thm}
-  (Grunsky, inserire citazione) Per ogni scelta di $\lambda_n, \mu_n \in \mathbb{C}$ vale
+  (disuguaglianze di Grunsky, \cite[Chapter 4.3, Inequalities (10) and (12)]{D}) Per ogni scelta di $\lambda_n, \mu_n \in \mathbb{C}$ vale
   \begin{equation}\label{grunskystrong}
     \sum_{k=1}^{+\infty} k\left|\sum_{n=1}^N\gamma_{nk}\lambda_n\right|^2 \le \sum_{n=1}^N \frac{|\lambda_n|^2}{n}
   \end{equation}
@@ -34,7 +35,7 @@ Per cominciare, enunciamo delle disuguaglianze molto utili sui coefficienti di G
 \end{thm}
 Vediamo come una diretta applicazione di \eqref{grunskyweak} con $\lambda_n=z^{-n},\mu_k=w^{-k}$ ci permette già di dire qualcosa (mandando $N \longrightarrow +\infty$):
 \begin{align*}
-  \left|\log{\frac{F(z)-F(w)}{z-w}}\right|^2 &\le \left(\sum_{n,k=1}^{+\infty} |\gamma_{nk}||z|^{-n}|w|^{-k}\right)^2 \le \\
+  \left|\log{\frac{F(z)-F(w)}{z-w}}\right|^2 &=\left|-\sum_{n,k=1}^{+\infty} \gamma_{nk}z^{-n}w^{-k}\right|^2 \le \left(\sum_{n,k=1}^{+\infty} |\gamma_{nk}||z|^{-n}|w|^{-k}\right)^2 \\
   &\le \sum_{n=1}^{+\infty} \frac{1}{n|z|^{2n}}\sum_{n=1}^{+\infty} \frac{1}{n|w|^{2n}}=\log\left(1-\frac{1}{|z|^2}\right)\log\left(1-\frac{1}{|w|^2}\right).
 \end{align*}
 Si ha allora
@@ -45,9 +46,9 @@ Questo ci dà un'espressione per $N(z,w)$ non proprio bella da vedere, ma che pe
 \begin{equation} \label{best}
   N(z,w)=\exp\left(-\sqrt{\log\left(1-|z|^2\right)\log\left(1-|w|^2\right)}\right).
 \end{equation}
-Volendo la si può sostituire con un'espressione più semplice da maneggiare: $\sqrt{(1-|z|^2)(1-|w|^2)}$; tuttavia, è una stima peggiore e il caso $w=0$ non interpola bene. Il problema principale di queste due espressioni per $N(z,w)$ è che, fissato $w$, tendono a $0$ per $|z| \longrightarrow 1$, cosa che non accade con $1-|zw|$. Entrambe ci permettono comunque di dedurre che la minorazione in \eqref{congettura} è vera per $|z|=|w|$.
+Volendo la si può sostituire con un'espressione più semplice da maneggiare: $\sqrt{(1-|z|^2)(1-|w|^2)}$; tuttavia, è una stima peggiore e il caso $w=0$ non interpola bene. Il problema principale di queste due espressioni per $N(z,w)$ è che, fissato $w$, tendono a $0$ per $|z| \longrightarrow 1$, cosa che non accade con $1-|zw|$ e che comunque non vale per il rapporto incrementale, quindi in quel caso non sarebbe una buona stima. Entrambe ci permettono comunque di dedurre che la minorazione in \eqref{congettura} è vera per $|z|=|w|$.
 
-Una generalizzazione in più variabili per l'espressione \eqref{best}, o meglio per la stima del modulo del logaritmo, può essere trovata in (citare bene il teorema 3 di IV.2 in Golusin). \\
+Una generalizzazione in più variabili per l'espressione \eqref{best}, o meglio per la stima del modulo del logaritmo, può essere trovata in \cite[Chapter IV.2, Theorem 3]{Gol}. \\
 
 Un altro caso particolare è quello in cui $\arg{z}=\arg{w}$. Infatti, nell'articolo in cui Golusin applica metodi variazionali per ottenere questo tipo di stime ottiene il risultato (inserire citazione); questo ci permette di dire che la minorazione congetturata è vera in questo caso.
 
@@ -68,7 +69,7 @@ Come ultimo risultato parziale, vediamo una dimostrazione per le funzioni in $\m
   Sia $f \in \mathcal{S}$ tale che $\Ima{f}$ è convessa. Allora vale la minorazione in \eqref{congettura}.
 \end{prop}
 \begin{proof}
-  Supponiamo $|w|<|z|$ e sia $\Gamma(t)=f(w)+t\big(f(z)-f(w)\big) \subset \Ima{f}$ il segmente che collega le immagini dei due punti, per ipotesi tutto contenuto nell'immagine. Cambiando di variabile e applicando la minorazione in \eqref{distorsion} troviamo
+  Supponiamo $|w|<|z|$ e sia $\Gamma(t)=f(w)+t\big(f(z)-f(w)\big) \subset \Ima{f}$ il segmente che collega le immagini dei due punti, per ipotesi tutto contenuto nell'immagine. Cambiando di variabile e applicando la minorazione in \eqref{distortion} troviamo
   \begin{align*}
     |f(z)-f(w)|&=\int_{\Gamma} |\diff\eta|=\int_{f^{-1}(\Gamma)} |f'(\zeta)||\diff\zeta| \ge \\
     &\ge \int_{f^{-1}(\Gamma)} \frac{1-|\zeta|}{(1+|\zeta|)^3}|\diff\zeta| \ge \\
