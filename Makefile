@@ -1,8 +1,8 @@
 SECS := $(wildcard secs/*.tex)
 
-all: KoebeDistorsion.pdf
+all: KoebeDistortion.pdf
 
-KoebeDistorsion.pdf: main.tex $(SECS) mstyle.sty
+KoebeDistortion.pdf: main.tex $(SECS) mstyle.sty
 	pdflatex main.tex
 	pdflatex main.tex
 	mkdir -p build
@@ -10,5 +10,5 @@ KoebeDistorsion.pdf: main.tex $(SECS) mstyle.sty
 	mv *.aux build
 	mv *.log build
 	mv *.out build
-	mv main.pdf KoebeDistorsion.pdf
+	mv main.pdf KoebeDistortion.pdf
 	rm -rf build
