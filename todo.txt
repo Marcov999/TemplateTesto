@@ -1,1 +1,1 @@
-Da riscrivere
+Ottimizzare main e mstyle.
